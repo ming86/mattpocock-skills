@@ -15,7 +15,7 @@ First establish an explicit review boundary such as a diff, commit range, branch
 
 ## Independent evidence
 
-When independent subagent contexts are available and proportionate, the two axes can be reviewed separately so one conclusion does not anchor the other. Sequential review is fine when separate contexts add little value.
+The two axes stay independent in reasoning and reporting. If the governing orchestration policy chooses separate reviewers or fresh contexts, each reviewer can receive one axis; otherwise one reviewer can evaluate them sequentially. The skill itself does not decide whether to spawn reviewers.
 
 The skill looks for substantive issues, not generic best-practice findings, cosmetic refactors, hypothetical hardening, or speculative future needs.
 

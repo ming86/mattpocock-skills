@@ -24,7 +24,7 @@ Model- or user-reachable.
 
 - **[prototype](./prototype/SKILL.md)**: Build the cheapest credible throwaway artifact that can answer one material design or feasibility question.
 - **[diagnosing-bugs](./diagnosing-bugs/SKILL.md)**: Use a disciplined evidence loop for difficult bugs and performance regressions.
-- **[research](./research/SKILL.md)**: Investigate a question against high-trust sources and preserve the findings durably.
+- **[research](./research/SKILL.md)**: Investigate a question against high-trust sources and preserve the evidence when later work needs it.
 - **[tdd](./tdd/SKILL.md)**: Use a red-green-refactor loop when test-first development fits the task and project.
 - **[domain-modeling](./domain-modeling/SKILL.md)**: Sharpen domain vocabulary, relationships, and durable domain decisions.
 - **[codebase-design](./codebase-design/SKILL.md)**: Reason about module depth, interfaces, seams, and codebase structure.

@@ -39,6 +39,11 @@ Supporting workflow behavior is also adapted where leaving the upstream version 
 - `ask-matt` is retained as a compatibility router but selects the smallest useful flow instead of enforcing a fixed main pipeline.
 - `setup-matt-pocock-skills` is optional shared configuration rather than a prerequisite or policy installer.
 - the experimental `implement-spec` drives a durable task graph while leaving delegation, parallelism, checkpoints, integration, and review to governing project policy.
+- `diagnosing-bugs` and `tdd` preserve their evidence-driven techniques without turning reproduction harnesses, seam approval, or test-first execution into universal gates.
+- `codebase-design` and `improve-codebase-architecture` preserve independent alternative generation and architecture exploration while leaving worker topology and parallelism to governing orchestration policy.
+- `resolving-merge-conflicts` and `wizard` no longer treat staging, committing, aborting, or repository documentation as actions authorized merely by invoking the skill.
+- `triage` treats rejection memory and domain documentation as optional project conventions rather than automatic side effects.
+- `research` preserves primary-source evidence without mandating a background worker or repository artifact, and `domain-modeling` uses established project documentation rather than assuming a root `CONTEXT.md`/ADR layout.
 
 Other upstream skills remain intact unless their behavior later conflicts with these principles or there is a concrete reason to adapt them.
 
