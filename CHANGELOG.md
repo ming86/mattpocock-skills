@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.6 - 2026-08-22
+
+- Add `resolving-merge-conflicts`, an explicit-only procedure for reconciling Git conflicts from the intent and evidence behind both sides without forcing abort/continue/commit policy.
+- Add `handoff`, an explicit-only transition procedure that compacts only live session state and points to existing durable work artifacts rather than duplicating them.
+- Add `to-questionnaire`, an explicit-only procedure for obtaining missing decisions or facts from the external person who owns them without manufacturing answers or interrogating the wrong user.
+- Apply the existing persistence, artifact-location, authority, and consultation principles to all three additions.
+
 ## 0.1.5 - 2026-08-22
 
 - Clarify that persistence complements existing project artifacts and conventions rather than replacing them.

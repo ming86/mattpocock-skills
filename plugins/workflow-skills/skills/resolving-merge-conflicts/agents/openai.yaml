@@ -1,0 +1,7 @@
+interface:
+  display_name: "Resolve Merge Conflicts"
+  short_description: "Resolve Git conflicts by recovering both sides' intent"
+  default_prompt: "Use $resolving-merge-conflicts to resolve this in-progress merge or rebase by recovering the intent behind both sides."
+
+policy:
+  allow_implicit_invocation: false
