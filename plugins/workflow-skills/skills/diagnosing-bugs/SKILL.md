@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: Diagnose hard bugs and performance regressions with the smallest credible evidence loop, then fix the established cause and preserve a useful regression signal.
+description: "Diagnose bugs, regressions, intermittent failures, or performance problems whose cause is not already established. Use when straightforward inspection is insufficient and evidence is needed to distinguish competing explanations; run the smallest credible diagnostic loop, fix the established cause, and preserve an appropriate regression signal."
 ---
 
 # Diagnosing Bugs

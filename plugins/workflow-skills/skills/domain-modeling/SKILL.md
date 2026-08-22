@@ -1,6 +1,6 @@
 ---
 name: domain-modeling
-description: Build or sharpen a project's domain vocabulary, relationships, and durable domain decisions when the model itself is part of the engineering work.
+description: "Clarify or evolve domain concepts, terminology, entities, relationships, invariants, and durable domain decisions. Use when ambiguity in the business or problem-domain model materially affects requirements, interfaces, data, or implementation; not merely for reorganizing software modules."
 ---
 
 # Domain Modeling

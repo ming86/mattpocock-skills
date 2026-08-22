@@ -143,7 +143,7 @@ The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-
 
 Each harness can install or register a local checkout for testing. The source of truth remains `plugins/workflow-skills/`; do not maintain separate Codex, Copilot, and Claude copies of the skills.
 
-The plugin version is currently `0.1.1`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.1.2`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

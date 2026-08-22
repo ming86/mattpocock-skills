@@ -1,6 +1,6 @@
 ---
 name: implement
-description: Implement a bounded piece of work from an established spec, ticket, or current plan while preserving its scope and surfacing material invalidated assumptions.
+description: "Implement a bounded unit of work whose scope and intended outcome are already established by a ticket, specification, or current plan. Use for execution rather than requirements discovery; preserve agreed scope, follow repository practices, validate proportionally, and surface material assumptions that implementation evidence invalidates."
 disable-model-invocation: true
 ---
 

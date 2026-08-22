@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Use a focused test-first red-green-refactor loop when test-driven development is appropriate for the behavior and repository.
+description: "Apply a focused red-green-refactor loop when implementing behavior with a useful test seam. Use when the user requests TDD, repository conventions favor test-first development, or writing the test first would materially clarify or protect the behavior; do not treat TDD as a mandatory prerequisite for every code change."
 ---
 
 # Test-Driven Development

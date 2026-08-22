@@ -1,6 +1,6 @@
 ---
 name: to-spec
-description: Turn the current conversation and established project context into a durable implementation spec without reopening already-resolved discussion.
+description: "Turn settled conversation and project context into a durable implementation specification. Use after material requirements and decisions are sufficiently resolved and later implementation needs a stable source of truth; preserve assumptions and unresolved points without reopening already-settled discussion."
 disable-model-invocation: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: research
-description: Investigate a technical or project question against high-trust primary sources, distinguish evidence from inference, and preserve durable findings when later work needs them.
+description: "Investigate technical or project questions that materially depend on documentation, specifications, source code, APIs, repository evidence, or other primary sources rather than model memory. Use when evidence can resolve the uncertainty without building an experiment; distinguish established facts from inference and preserve findings when later work needs them."
 ---
 
 # Research

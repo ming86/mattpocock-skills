@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 - 2026-08-22
+
+- Refine all skill descriptions as routing metadata so harnesses can distinguish adjacent skills before loading their bodies.
+- Add explicit trigger conditions and semantic boundaries without changing skill workflows or invocation policy.
+
 ## 0.1.1
 
 - Restore additive harness metadata without coupling skill behavior to a harness.

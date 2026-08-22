@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: Build the smallest throwaway artifact that can answer a material design, behavior, or UI question more cheaply or reliably than further discussion.
+description: "Build the smallest throwaway experiment that can answer a material design, behavior, UI, integration, or feasibility question. Use when empirical evidence from trying something is cheaper or more reliable than further discussion or research; do not treat prototype structure as production design by default."
 disable-model-invocation: true
 ---
 

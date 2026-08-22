@@ -1,6 +1,6 @@
 ---
 name: grill-with-docs
-description: Clarify material product, design, or domain decisions before dependent work, while recording durable decisions when useful.
+description: "Clarify material product, design, or domain decisions when existing repository context or documentation should be examined alongside user input. Use before dependent work when unresolved decisions could materially change scope, behavior, interfaces, or direction, and preserve durable decisions when useful."
 disable-model-invocation: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Review a bounded change along two independent axes: whether it matches the requested outcome and whether it is appropriate for the repository."
+description: "Review an existing bounded change for both requested-outcome conformance and repository fit. Use when asked to review an implementation, patch, pull request, or other meaningful change for semantic errors, integration problems, unsupported behavior, unnecessary complexity, or missed requirements; focus on substantive findings rather than generic style preferences."
 ---
 
 # Code Review

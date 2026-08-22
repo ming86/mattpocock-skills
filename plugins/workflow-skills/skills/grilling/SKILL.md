@@ -1,6 +1,6 @@
 ---
 name: grilling
-description: Clarify the decisions that materially affect a plan, design, or next step, using focused questions and environment evidence instead of exhaustive interrogation.
+description: "Clarify material decisions through focused questions when user judgment is needed before a plan, design, or next step can proceed. Use for interactive ambiguity resolution after inspecting available evidence; stop once remaining uncertainty is immaterial."
 ---
 
 # Grilling

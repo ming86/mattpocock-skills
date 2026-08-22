@@ -1,6 +1,6 @@
 ---
 name: to-tickets
-description: Break a plan, spec, or conversation into coherent, dependency-aware work units that can be executed and verified in focused contexts.
+description: "Decompose a plan or specification into coherent, dependency-aware work units that can be executed and verified in focused contexts. Use when the work is large enough to benefit from multiple independently understandable units or sessions; preserve tightly coupled reasoning instead of splitting work merely to make tickets smaller."
 disable-model-invocation: true
 ---
 

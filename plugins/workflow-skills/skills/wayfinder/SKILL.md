@@ -1,6 +1,6 @@
 ---
 name: wayfinder
-description: Externalize the durable decision state for work that is too large, uncertain, or multi-session to navigate reliably in one transient agent context.
+description: "Externalize decisions, evidence, dependencies, and open questions for work that is too large, uncertain, or multi-session to navigate reliably in one transient agent context. Use when important reasoning must survive context replacement and the path is not yet clear enough for ordinary planning."
 disable-model-invocation: true
 ---
 
