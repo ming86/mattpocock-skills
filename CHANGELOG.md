@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 - 2026-08-23
+
+- Tighten `workflow-guide` so the implicit advisory layer stays lean: keep the hidden explicit-workflow catalog, remove repeated explanation and examples, and make ordinary work the clear default.
+- Align each catalog entry with the target skill's routing description so the root gets enough information to judge a recommendation without loading the explicit skill itself.
+- Narrow the guide trigger to material workflow transitions and simplify the Codex default prompt without changing invocation policy.
+- Shorten the optional `AGENTS.md` integration example to the Root/user decision boundary and delegated-worker escalation rule; the plugin still does not bundle project instructions.
+
 ## 0.2.0 - 2026-08-23
 
 - Add `workflow-guide`, an implicit advisory skill that helps the root recognize when one explicit workflow may materially help without entering that workflow automatically.

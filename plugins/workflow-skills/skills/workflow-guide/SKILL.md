@@ -1,47 +1,42 @@
 ---
 name: workflow-guide
-description: "Advise when one deliberate workflow skill could materially improve the current work without entering that workflow automatically. Use when the work may be ready for an explicit transition such as grounded clarification, a prototype, Wayfinder, a spec, tickets, bounded implementation, focused implementation review, merge-conflict resolution, handoff, or an external questionnaire; recommend the nearest useful skill briefly and do nothing when ordinary work should continue."
+description: "Advise when the current work has reached a material transition where one explicit workflow skill may help. Use to identify and briefly recommend the nearest deliberate workflow for clarification, empirical uncertainty, long-running work, planning, implementation, review, conflict resolution, handoff, or an external decision owner. Do nothing when ordinary work can continue."
 ---
 
 # Workflow Guide
 
-Help the governing/root agent recognize when one of this plugin's explicit workflow skills may be worth using. This skill is advisory only. It does not replace project instructions, choose the overall workflow, or authorize another skill.
+Recognize whether one explicit workflow skill is worth proposing. This skill is advisory only: it does not choose the overall workflow or authorize another skill.
 
-The default is to continue ordinary work. Recommend an explicit workflow only when entering it would materially improve clarity, evidence, continuity, execution, or review. Do not recommend a skill merely because it is a plausible next step or because it exists.
+The default is to continue ordinary work. Recommend a transition only when it would materially improve the work.
 
-## Explicit workflow catalog
+## Explicit workflows
 
-- `grill-with-docs` — material user-owned product, design, or domain decisions need clarification grounded in repository or project evidence.
-- `prototype` — a material empirical uncertainty is cheaper or more reliable to settle with a small experiment than with more discussion or research.
-- `wayfinder` — large, uncertain, or multi-session work needs a durable overview of decisions, evidence, dependencies, and open questions.
-- `to-spec` — important understanding is sufficiently settled and a durable implementation contract would help dependent work.
-- `to-tickets` — a settled plan or spec would benefit from coherent dependency-aware work units.
-- `implement` — a bounded unit of work has an established scope and intended outcome and is ready for implementation.
-- `implementation-review` — a completed bounded implementation needs focused review against the requested outcome and repository integration. This does not replace broader independent criticism required by the project.
-- `resolving-merge-conflicts` — an active Git merge or rebase has conflicts whose correct resolution depends on understanding the intent and invariants behind both sides.
-- `handoff` — the current session, agent, or context is about to change and the next context needs a compact transition snapshot.
-- `to-questionnaire` — another person owns material information or decisions needed for the work, and a focused questionnaire would obtain them without manufacturing answers.
+- `grill-with-docs` — material product, design, or domain decisions need user judgment grounded in repository or project evidence before dependent work proceeds.
+- `prototype` — a design, behavior, UI, integration, or feasibility question materially affects the work and a small experiment can answer it more cheaply or reliably than more discussion or research.
+- `wayfinder` — large, uncertain, or multi-session work needs decisions, evidence, dependencies, and open questions to survive context replacement because an ordinary plan is not yet enough.
+- `to-spec` — requirements and decisions that materially shape implementation are settled enough, and later implementation needs a durable reference.
+- `to-tickets` — a plan or spec is large enough to benefit from clear dependency-aware work units; keep tightly coupled reasoning together.
+- `implement` — a bounded unit of work has established scope and intended outcome and is ready for execution rather than requirements discovery.
+- `implementation-review` — a completed bounded implementation needs focused review for correctness, repository integration, regressions, unnecessary complexity, or missed requirements; not broader critique of the plan or approach.
+- `resolving-merge-conflicts` — an in-progress Git merge or rebase has conflicts that cannot be resolved safely by choosing ours/theirs and require recovering the intent, invariants, and relevant constraints behind both sides.
+- `handoff` — work is deliberately moving to a new context, session, or agent and the next context needs the live state without duplicating settled specs, issues, commits, or other durable artifacts.
+- `to-questionnaire` — the current user cannot responsibly supply needed facts or decisions, repository research cannot answer them, and another person or domain expert owns the answer.
 
-Implicit analytical skills such as `research`, `grilling`, `diagnosing-bugs`, `tdd`, `domain-modeling`, and `codebase-design` are outside this catalog. They may be selected normally when the harness and governing instructions allow it.
+This guide advises only on the explicit workflows above. Implicit analytical skills such as `research`, `grilling`, `diagnosing-bugs`, `tdd`, `domain-modeling`, and `codebase-design` route normally.
 
 ## How to advise
 
-1. **Check whether ordinary work can continue.** A clear small change, routine repository inspection, straightforward implementation step, or already-authorized local technique usually needs no workflow recommendation.
-2. **Identify the actual transition point.** Ask what is preventing reliable progress or what new mode of work would materially help. Match that condition to the closest explicit skill above.
-3. **Prefer the smallest useful transition.** Recommend at most one skill by default. Do not propose a chain such as prototype → spec → tickets → implement. A later transition can be considered when the work actually reaches it. If two skills represent a genuine material choice, explain that choice instead of listing the catalog.
-4. **Keep the recommendation brief.** In a root or user-facing context, name the skill, give the concrete reason it fits now, and ask whether the user wants to use it. Do not load, invoke, simulate, or require the target workflow before approval.
-5. **Respect harness invocation rules.** User approval authorizes the workflow decision but does not bypass the current harness's skill-invocation rules. If the harness permits the root to deliberately invoke the approved skill, use that mechanism. If the harness requires user invocation, state the exact skill name or available command rather than pretending that approval alone loaded it.
-6. **Handle worker contexts differently.** A delegated worker may identify that an explicit workflow could help, but unless its assignment already authorizes that workflow, it should report the candidate and reason to the governing/root agent rather than prompting the user or expanding its assignment.
-7. **Honor a decline.** If the user declines the recommendation, continue without that workflow and do not ask again under the same circumstances. Reconsider only if the situation materially changes.
+1. **Prefer ordinary work.** If the work can continue reliably without a workflow transition, recommend nothing.
+2. **Match the actual transition.** Choose the nearest explicit skill for what is blocking or materially changing the work. Recommend at most one; do not propose workflow chains.
+3. **Ask before entering it.** In a root or user-facing context, name the skill, give the concrete reason it fits now, and ask whether to use it. Do not load, invoke, or simulate the target workflow before approval.
+4. **Follow the harness after approval.** If the harness requires user invocation, state the skill name or available command. Do not treat approval alone as invocation.
+5. **Workers escalate.** Unless already authorized, delegated workers report a useful workflow transition to the root rather than prompting the user or expanding their assignment.
+6. **Honor a decline.** Continue normally and do not ask again unless circumstances materially change.
 
-## Recommendation shape
+## Recommendation
 
-Keep the prompt lightweight. For example:
+Keep it brief:
 
-> The remaining question is empirical and the docs do not settle it. `prototype` would let us answer it with a small experiment. Would you like to use that workflow?
+> `<skill>` fits here because <concrete reason>. Would you like to use it?
 
-Or:
-
-> This work is now spanning contexts with several unresolved decisions. `wayfinder` could preserve the current map so we do not reconstruct it after compaction. Would you like to use it?
-
-Do not turn the recommendation into a workflow plan, a catalog of available skills, or a mandatory checkpoint.
+Do not turn the recommendation into a workflow plan, skill catalog, or mandatory checkpoint.

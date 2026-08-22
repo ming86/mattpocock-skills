@@ -30,20 +30,18 @@ The skills are procedures, not mandatory stages. A clear small change can go dir
 
 ## Deliberate workflow suggestions
 
-Several workflow-transition skills are intentionally explicit-only so a model does not silently turn a locally useful observation into a larger workflow. The implicit `workflow-guide` closes the corresponding discoverability gap: it can recognize when one of those explicit workflows may materially help, briefly recommend the nearest useful skill, and ask the user before the transition. It does not enter the target workflow before approval, chain workflows, or replace the project's governing instructions.
+Several workflow-transition skills are intentionally explicit-only so a model does not silently turn a useful observation into a larger workflow. The implicit `workflow-guide` closes the discoverability gap: it keeps a compact routing summary of those hidden workflows, recommends at most one when a material transition would help, and otherwise stays out of the way. Each catalog entry is a compressed routing summary of the target skill's own description; when a target description changes materially, review the guide entry too.
 
-In a root/worker setup, the root remains the user-facing orchestrator. Workers may surface that an explicit workflow would help, but should normally report that recommendation to the root rather than prompting the user or expanding their assignment. After approval, follow the current harness's invocation rules; some harnesses require the user to invoke an explicit skill directly.
+In a root/worker setup, the root remains the user-facing orchestrator. Delegated workers may surface a useful transition to the root rather than prompting the user or expanding their assignment. After approval, follow the current harness's invocation rules; some harnesses still require the user to invoke an explicit skill directly.
 
 A project that wants this interaction can add a small rule to its own `AGENTS.md`, for example:
 
 ```md
 ### Workflow transitions
 
-When an installed explicit workflow skill could materially improve the work, the root agent may recommend it before entering that workflow. Briefly name the nearest useful skill, explain why it fits now, and ask whether to use it. Do not load, invoke, simulate, or require the workflow before approval; if the user declines, continue normally and do not ask again unless circumstances materially change. Prefer one recommendation over a catalog or workflow chain.
+When available, the root agent may use an advisory workflow guide to identify explicit workflows that could materially help. The root agent may briefly recommend a relevant workflow and ask the user before entering it; if declined, continue normally unless circumstances materially change.
 
-If the installed workflow plugin provides an advisory workflow guide, the root may use it to discover these explicit workflows instead of relying on memory. The guide is advisory only and does not supersede this file or user authority. Follow the current harness's invocation rules after approval.
-
-Workers may identify that an explicit workflow could help, but unless their assignment already authorizes it, they should report the candidate and reason to the root rather than prompting the user or expanding their assignment.
+Delegated workers should surface useful workflow transitions to the root agent rather than prompting the user or expanding their assignment.
 ```
 
 The plugin does not bundle an `AGENTS.md`; project and user instructions remain the governing source of orchestration policy.
@@ -177,7 +175,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.0`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.1`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 
