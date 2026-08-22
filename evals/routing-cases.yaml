@@ -6,8 +6,12 @@
 #
 # invocation:
 #   implicit-ok   -> the skill is eligible for model invocation in supported harnesses
-#   explicit-only -> the skill may be the semantic match, but invocation is intentionally
-#                    user/governing-workflow initiated in the current package policy
+#   explicit-only -> the skill may be the semantic match, but automatic model invocation
+#                    is disabled; deliberate invocation follows the current harness rules
+#
+# For workflow-guide cases, `recommend` records the explicit workflow the guide should
+# propose without entering it. The default remains no recommendation when ordinary work
+# can continue reliably.
 
 cases:
   - id: diagnose-intermittent-double-charge
@@ -25,7 +29,7 @@ cases:
     avoid: [diagnosing-bugs, prototype]
 
   - id: prototype-browser-iframe-behavior
-    prompt: "We cannot tell from the docs whether this browser API actually works inside our sandboxed iframe. A tiny experiment would settle it."
+    prompt: "Use $prototype. We cannot tell from the docs whether this browser API actually works inside our sandboxed iframe, and a tiny experiment would settle it."
     expected:
       skill: prototype
       invocation: explicit-only
@@ -46,7 +50,7 @@ cases:
     avoid: [grilling, research]
 
   - id: questionnaire-external-domain-owner
-    prompt: "Finance owns the rule for whether a settled invoice may be cancelled. Prepare the questions we need them to answer."
+    prompt: "Use $to-questionnaire. Finance owns the rule for whether a settled invoice may be cancelled; prepare the questions we need them to answer."
     expected:
       skill: to-questionnaire
       invocation: explicit-only
@@ -176,7 +180,7 @@ cases:
     expected:
       skill: null
       invocation: none
-    avoid: [to-spec, to-tickets, wayfinder, prototype]
+    avoid: [workflow-guide, to-spec, to-tickets, wayfinder, prototype]
 
   - id: inspect-domain-before-structure
     prompt: "We cannot decide module boundaries because nobody agrees what a Subscription, Plan, and Entitlement mean or how they relate."
@@ -213,3 +217,34 @@ cases:
       invocation: implicit-ok
     avoid: [domain-modeling, implementation-review]
     note: "Do not automatically run Design It Twice. Compare alternative interfaces only when the user asks or a material interface decision cannot be resolved reliably without comparison."
+
+  - id: guide-suggest-prototype-after-research-stalls
+    prompt: "We checked the official docs and source, but they still do not establish whether this browser behavior works in our sandbox. A small experiment would settle the remaining uncertainty."
+    expected:
+      skill: workflow-guide
+      invocation: implicit-ok
+    recommend: prototype
+    avoid: [research, diagnosing-bugs]
+
+  - id: guide-suggest-wayfinder-for-cross-context-work
+    prompt: "This migration is now spanning several sessions, with unresolved rollout and architecture decisions that we keep reconstructing after context changes."
+    expected:
+      skill: workflow-guide
+      invocation: implicit-ok
+    recommend: wayfinder
+    avoid: [handoff, to-spec]
+
+  - id: guide-suggest-questionnaire-for-external-owner
+    prompt: "We cannot finish the cancellation rules because Finance owns several policy decisions and neither I nor the repository can answer them."
+    expected:
+      skill: workflow-guide
+      invocation: implicit-ok
+    recommend: to-questionnaire
+    avoid: [grilling, research]
+
+  - id: guide-does-not-sell-workflow-for-simple-change
+    prompt: "Update this existing error message and its matching test expectation. The scope and desired text are already clear."
+    expected:
+      skill: null
+      invocation: none
+    avoid: [workflow-guide, implement, to-spec, to-tickets, prototype, wayfinder]

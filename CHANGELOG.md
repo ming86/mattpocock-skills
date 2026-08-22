@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 - 2026-08-23
+
+- Add `workflow-guide`, an implicit advisory skill that helps the root recognize when one explicit workflow may materially help without entering that workflow automatically.
+- Keep all ten workflow-transition skills explicit-only; the guide recommends the nearest useful transition, asks the user first, and does nothing when ordinary work should continue.
+- Make worker behavior explicit: workers may surface a candidate workflow to the root but do not prompt the user or expand their assignment unless already authorized.
+- Document harness-aware approval semantics: approval does not bypass skill-invocation rules, and user invocation may still be required by the current harness.
+- Add an optional Root-level `AGENTS.md` integration snippet in the README without bundling project instructions into the plugin.
+- Extend the routing corpus with advisory and negative cases so the guide is tested for both useful recommendations and restraint.
+
 ## 0.1.9 - 2026-08-22
 
 - Repair semantic drift found by the repo-wide v3.8 language review while keeping the broader plain-language rewrite intact.

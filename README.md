@@ -6,8 +6,9 @@ This package is designed to complement whatever governing instructions, review a
 
 ## What is included
 
-The `workflow-skills` plugin currently contains 16 skills:
+The `workflow-skills` plugin currently contains 17 skills:
 
+- `workflow-guide`: advise when one deliberate explicit workflow may materially help, without entering it automatically
 - `grilling`: focused clarification of important decisions
 - `grill-with-docs`: clarification grounded in repository and project evidence
 - `research`: primary-source technical and project research
@@ -26,6 +27,26 @@ The `workflow-skills` plugin currently contains 16 skills:
 - `to-questionnaire`: ask an external decision-maker or domain expert for missing information
 
 The skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
+
+## Deliberate workflow suggestions
+
+Several workflow-transition skills are intentionally explicit-only so a model does not silently turn a locally useful observation into a larger workflow. The implicit `workflow-guide` closes the corresponding discoverability gap: it can recognize when one of those explicit workflows may materially help, briefly recommend the nearest useful skill, and ask the user before the transition. It does not enter the target workflow before approval, chain workflows, or replace the project's governing instructions.
+
+In a root/worker setup, the root remains the user-facing orchestrator. Workers may surface that an explicit workflow would help, but should normally report that recommendation to the root rather than prompting the user or expanding their assignment. After approval, follow the current harness's invocation rules; some harnesses require the user to invoke an explicit skill directly.
+
+A project that wants this interaction can add a small rule to its own `AGENTS.md`, for example:
+
+```md
+### Workflow transitions
+
+When an installed explicit workflow skill could materially improve the work, the root agent may recommend it before entering that workflow. Briefly name the nearest useful skill, explain why it fits now, and ask whether to use it. Do not load, invoke, simulate, or require the workflow before approval; if the user declines, continue normally and do not ask again unless circumstances materially change. Prefer one recommendation over a catalog or workflow chain.
+
+If the installed workflow plugin provides an advisory workflow guide, the root may use it to discover these explicit workflows instead of relying on memory. The guide is advisory only and does not supersede this file or user authority. Follow the current harness's invocation rules after approval.
+
+Workers may identify that an explicit workflow could help, but unless their assignment already authorizes it, they should report the candidate and reason to the root rather than prompting the user or expanding their assignment.
+```
+
+The plugin does not bundle an `AGENTS.md`; project and user instructions remain the governing source of orchestration policy.
 
 ## Durable working state
 
@@ -146,7 +167,7 @@ Run `/reload-plugins` if Claude Code tells you a reload is required after an ins
 
 The workflow instructions remain harness-neutral, but the package keeps additive metadata that a harness can use without changing workflow semantics. Codex reads each skill's `agents/openai.yaml` for presentation metadata and implicit-invocation policy. GitHub Copilot CLI and Claude Code understand `disable-model-invocation` in `SKILL.md`; selected explicit skills also use `argument-hint` when a short invocation hint improves the user-facing command experience.
 
-The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement`, plus `implementation-review`, `resolving-merge-conflicts`, `handoff`, and `to-questionnaire`, default to explicit invocation. Analytical and support skills remain eligible for automatic selection. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
+The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement`, plus `implementation-review`, `resolving-merge-conflicts`, `handoff`, and `to-questionnaire`, default to explicit invocation. The advisory `workflow-guide` plus analytical and support skills remain eligible for automatic selection. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
 
 `disable-model-invocation` is a Copilot/Claude extension rather than a field in the core Agent Skills specification. The canonical skills use that extension deliberately because both target harnesses consume it; other clients should ignore unknown frontmatter fields.
 
@@ -156,7 +177,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.1.9`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.0`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 
