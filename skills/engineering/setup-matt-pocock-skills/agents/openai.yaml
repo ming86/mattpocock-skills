@@ -1,5 +1,0 @@
-interface:
-  display_name: "Setup Workflow Skills"
-  short_description: "Optionally configure shared workflow state"
-policy:
-  allow_implicit_invocation: false

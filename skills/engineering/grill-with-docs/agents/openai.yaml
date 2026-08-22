@@ -1,5 +1,0 @@
-interface:
-  display_name: "Grill with Docs"
-  short_description: "Clarify material decisions and preserve useful context"
-policy:
-  allow_implicit_invocation: false

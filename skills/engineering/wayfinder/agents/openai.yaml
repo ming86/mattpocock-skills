@@ -1,5 +1,0 @@
-interface:
-  display_name: "Wayfinder"
-  short_description: "Externalize durable state for large uncertain work"
-policy:
-  allow_implicit_invocation: false
