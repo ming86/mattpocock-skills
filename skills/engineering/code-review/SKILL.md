@@ -1,87 +1,81 @@
 ---
 name: code-review
-description: "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
+description: Review a bounded change along two independent axes: whether it matches the requested outcome and whether it is appropriate for the repository.
 ---
 
-Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
+# Code Review
 
-- **Standards**: does the code conform to this repo's documented coding standards?
-- **Spec**: does the code faithfully implement the originating issue / spec?
+Review a bounded implementation without allowing technical polish to hide a goal mismatch, or requirement compliance to hide a poor repository integration.
 
-Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
+Keep two questions separate:
 
-The issue tracker should have been provided to you. If `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-matt-pocock-skills`.
+- **Intent / Spec:** Did the change implement the requested behavior, requirements, constraints, and scope?
+- **Repository / Implementation:** Is the change semantically correct and appropriate for this codebase, including its architecture, interfaces, conventions, and realistic integration behavior?
 
-## Process
+This skill is a focused implementation review. It does not replace broader independent criticism configured by the project. An independent reviewer such as `rubber-duck` may additionally examine whether the plan or implementation itself is sensible, proportionate, unnecessarily complex, based on bad assumptions, or drifting from the primary goal.
 
-### 1. Pin the fixed point
+## 1. Establish the review boundary
 
-Whatever the user said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, ask for it.
+Identify the exact change being reviewed: a diff against a commit, branch, tag, merge-base, PR, worktree state, or another explicit bounded surface. Verify that the boundary resolves and contains the intended changes before drawing conclusions.
 
-Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so the comparison is against the merge-base). Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
+If the user did not specify a fixed point but repository state makes the intended boundary clear, use it and state what was reviewed. Ask only when materially different boundaries remain plausible.
 
-Before going further, confirm the fixed point resolves (`git rev-parse <fixed-point>`) and the diff is non-empty. A bad ref or empty diff should fail here, not inside two parallel sub-agents.
+## 2. Identify the intent source
 
-### 2. Identify the spec source
+Use the strongest available source of requested behavior and scope, such as:
 
-Look for the originating spec, in this order:
+1. the originating spec or ticket;
+2. an approved plan or requirements document;
+3. the current user request and established decisions;
+4. when no durable spec exists, the best available task context.
 
-1. Issue references in the commit messages (`#123`, `Closes #45`, GitLab `!67`, etc.), fetched via the workflow in `docs/agents/issue-tracker.md`.
-2. A path the user passed as an argument.
-3. A spec file under `docs/`, `specs/`, or `.scratch/` matching the branch name or feature.
-4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
+Preserve the actual status of assumptions and unresolved points. Do not invent requirements to make the review more exhaustive.
 
-### 3. Identify the standards sources
+## 3. Identify repository evidence
 
-Anything in the repo that documents how code should be written, such as `CODING_STANDARDS.md` or `CONTRIBUTING.md`.
+Read the relevant repository instructions, ADRs, coding or contribution guidance, nearby implementation patterns, tests, types, and interfaces needed to judge this change.
 
-On top of whatever the repo documents, the Standards axis always carries the **smell baseline** below: a fixed set of Fowler code smells (_Refactoring_, ch.3) that applies even when a repo documents nothing. Two rules bind it:
+Repository conventions are evidence, not an excuse to flag every stylistic difference. Skip findings already enforced mechanically unless the change demonstrates a substantive problem that the tooling does not capture.
 
-- **The repo overrides.** A documented repo standard always wins; where it endorses something the baseline would flag, suppress the smell.
-- **Always a judgement call.** Each smell is a labelled heuristic ("possible Feature Envy"), never a hard violation. Like any standard here, skip anything tooling already enforces.
+## 4. Review the axes independently
 
-Each smell reads *what it is* → *how to fix*; match it against the diff:
+When independent subagent contexts are available and proportionate to the change, use separate fresh contexts for the two axes so one conclusion does not anchor the other. Otherwise review them sequentially while keeping the evidence and findings distinct.
 
-- **Mysterious Name**: a function, variable, or type whose name doesn't reveal what it does or holds. → rename it; if no honest name comes, the design's murky.
-- **Duplicated Code**: the same logic shape appears in more than one hunk or file in the change. → extract the shared shape, call it from both.
-- **Feature Envy**: a method that reaches into another object's data more than its own. → move the method onto the data it envies.
-- **Data Clumps**: the same few fields or params keep travelling together (a type wanting to be born). → bundle them into one type, pass that.
-- **Primitive Obsession**: a primitive or string standing in for a domain concept that deserves its own type. → give the concept its own small type.
-- **Repeated Switches**: the same `switch`/`if`-cascade on the same type recurs across the change. → replace with polymorphism, or one map both sites share.
-- **Shotgun Surgery**: one logical change forces scattered edits across many files in the diff. → gather what changes together into one module.
-- **Divergent Change**: one file or module is edited for several unrelated reasons. → split so each module changes for one reason.
-- **Speculative Generality**: abstraction, parameters, or hooks added for needs the spec doesn't have. → delete it; inline back until a real need shows.
-- **Message Chains**: long `a.b().c().d()` navigation the caller shouldn't depend on. → hide the walk behind one method on the first object.
-- **Middle Man**: a class or function that mostly just delegates onward. → cut it, call the real target direct.
-- **Refused Bequest**: a subclass or implementer that ignores or overrides most of what it inherits. → drop the inheritance, use composition.
+### Intent / Spec
 
-### 4. Spawn both sub-agents in parallel
+Look for:
 
-**Standards sub-agent prompt** should include:
+- requested behavior that is missing, partial, or incorrect;
+- behavior or commitments added without support from the current scope;
+- acceptance criteria that are not actually established by the implementation;
+- tentative assumptions or prototype artifacts accidentally promoted into requirements;
+- obsolete or superseded requirements preserved in the implementation.
 
-- The full diff command and commit list.
-- The list of standards-source files you found in step 3, **plus the smell baseline from step 3** pasted in full (the sub-agent has no other access to it).
-- The brief: "Report, per file/hunk where relevant, (a) every place the diff violates a documented standard: cite the standard (file + the rule); and (b) any baseline smell you spot: name it and quote the hunk. Distinguish hard violations from judgement calls: documented-standard breaches can be hard, but baseline smells are always judgement calls, and a documented repo standard overrides the baseline. Skip anything tooling enforces. Under 400 words."
+For each finding, point to the relevant requirement or decision source when available.
 
-**Spec sub-agent prompt** should include:
+### Repository / Implementation
 
-- The diff command and commit list.
-- The path or fetched contents of the spec.
-- The brief: "Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong. Quote the spec line for each finding. Under 400 words."
+Look for substantive issues in:
 
-If the spec is missing, skip the Spec sub-agent and note this in the final report.
+- semantic correctness and invariants;
+- integration with surrounding modules and interfaces;
+- regressions or realistic failure paths introduced by the change;
+- architecture or dependency direction where the repository establishes a meaningful pattern;
+- unnecessary complexity, indirection, duplication, or abstraction that materially harms the implementation;
+- performance, security, compatibility, or robustness only where the actual system assumptions make the concern relevant;
+- runtime or integration assumptions that inspection alone cannot establish and need targeted validation.
 
-### 5. Aggregate
+Do not manufacture generic best-practice findings, cosmetic refactors, hypothetical hardening, or speculative future needs.
 
-Present the two reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned. Do **not** merge or rerank findings, because the two axes are deliberately separate (see _Why two axes_).
+## 5. Report without masking one axis with the other
 
-End with a one-line summary: total findings per axis, and the worst issue _within each axis_ (if any). Don't pick a single winner across axes: that's the reranking the separation exists to prevent.
+Present findings under separate `Intent / Spec` and `Repository / Implementation` sections. For each substantive finding state:
 
-## Why two axes
+- the issue;
+- why it matters;
+- severity or whether it blocks completion;
+- the smallest credible correction or validation needed.
 
-A change can pass one axis and fail the other:
+If an axis has no substantive findings, say so explicitly. Do not merge the axes into a single score or allow a pass on one to cancel a failure on the other.
 
-- Code that follows every standard but implements the wrong thing → **Standards pass, Spec fail.**
-- Code that does exactly what the issue asked but breaks the project's conventions → **Spec pass, Standards fail.**
-
-Reporting them separately stops one axis from masking the other.
+Follow the governing project instructions for whether another independent review is required, who owns fixes, and what validation or checkpoint follows.
