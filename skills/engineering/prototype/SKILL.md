@@ -17,6 +17,8 @@ Identify the uncertainty the prototype is meant to resolve. Common forms include
 
 If materially different interpretations remain plausible and would produce different prototypes, follow the governing consultation rules. Otherwise infer the most likely question from the task and surrounding code and state any material assumption.
 
+For common experiment shapes, [LOGIC.md](LOGIC.md) and [UI.md](UI.md) provide optional patterns. Use them only when that shape fits the question; they do not add mandatory stages or retention rules.
+
 ## Rules
 
 1. **Keep it disposable.** Build only enough to answer the question. Avoid production hardening, generalized abstractions, persistence, broad error handling, exhaustive tests, cleanup, or unrelated refactoring unless the experiment itself requires them.
