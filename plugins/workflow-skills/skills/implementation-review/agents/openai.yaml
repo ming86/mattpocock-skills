@@ -1,0 +1,7 @@
+interface:
+  display_name: "Implementation Review"
+  short_description: "Review an implementation for intent and repository fit"
+  default_prompt: "Use $implementation-review to review this bounded implementation for requested-outcome conformance and repository fit."
+
+policy:
+  allow_implicit_invocation: false

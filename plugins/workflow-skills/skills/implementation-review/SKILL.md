@@ -1,9 +1,10 @@
 ---
-name: code-review
-description: "Review an existing bounded change for both requested-outcome conformance and repository fit. Use when asked to review an implementation, patch, pull request, or other meaningful change for semantic errors, integration problems, unsupported behavior, unnecessary complexity, or missed requirements; focus on substantive findings rather than generic style preferences."
+name: implementation-review
+description: "Review an existing bounded implementation for requested-outcome conformance and repository fit. Use only when explicitly asked to inspect a patch, pull request, or completed implementation for semantic errors, integration problems, regressions, unsupported behavior, unnecessary complexity, or missed requirements; this is not a broader critique of the underlying plan or approach."
+disable-model-invocation: true
 ---
 
-# Code Review
+# Implementation Review
 
 Review a bounded implementation without allowing technical polish to hide a goal mismatch, or requirement compliance to hide a poor repository integration.
 
@@ -12,7 +13,7 @@ Keep two questions separate:
 - **Intent / Spec:** Did the change implement the requested behavior, requirements, constraints, and scope?
 - **Repository / Implementation:** Is the change semantically correct and appropriate for this codebase, including its architecture, interfaces, conventions, and realistic integration behavior?
 
-This skill is a focused implementation review. It does not replace broader independent criticism configured by the project. A separate independent review may additionally examine whether the plan or implementation itself is sensible, proportionate, unnecessarily complex, based on bad assumptions, or drifting from the primary goal.
+This skill is a focused implementation review. It does not replace broader independent criticism configured by the project. A passing implementation review does not satisfy or cancel any broader independent-review checkpoint. A separate independent review may additionally examine whether the plan or implementation itself is sensible, proportionate, unnecessarily complex, based on bad assumptions, or drifting from the primary goal.
 
 ## 1. Establish the review boundary
 

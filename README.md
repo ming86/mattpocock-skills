@@ -16,7 +16,7 @@ The `workflow-skills` plugin currently contains 13 skills:
 - `to-spec`: convert settled understanding into an implementation spec
 - `to-tickets`: decompose work into coherent dependency-aware units
 - `implement`: execute one bounded work unit while preserving scope
-- `code-review`: review intent/spec conformance separately from repository integration
+- `implementation-review`: explicitly review a bounded implementation for intent/spec conformance and repository integration
 - `diagnosing-bugs`: evidence-driven debugging and regression diagnosis
 - `tdd`: focused red-green-refactor when test-first development is useful
 - `domain-modeling`: sharpen durable domain vocabulary, relationships, and invariants
@@ -135,7 +135,7 @@ Run `/reload-plugins` if Claude Code tells you a reload is required after an ins
 
 The workflow instructions remain harness-neutral, but the package keeps additive metadata that a harness can use without changing workflow semantics. Codex reads each skill's `agents/openai.yaml` for presentation metadata and implicit-invocation policy. GitHub Copilot CLI and Claude Code understand `disable-model-invocation` in `SKILL.md`.
 
-The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement` default to explicit invocation. Analytical and support skills remain eligible for automatic selection. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
+The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement`, plus the specialized `implementation-review` skill, default to explicit invocation. Analytical and support skills remain eligible for automatic selection. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
 
 `disable-model-invocation` is a Copilot/Claude extension rather than a field in the core Agent Skills specification. The canonical skills use that extension deliberately because both target harnesses consume it; other clients should ignore unknown frontmatter fields.
 
@@ -143,7 +143,7 @@ The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-
 
 Each harness can install or register a local checkout for testing. The source of truth remains `plugins/workflow-skills/`; do not maintain separate Codex, Copilot, and Claude copies of the skills.
 
-The plugin version is currently `0.1.2`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.1.3`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

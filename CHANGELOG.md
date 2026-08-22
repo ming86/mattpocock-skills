@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3 - 2026-08-22
+
+- Rename `code-review` to `implementation-review` so the skill is clearly narrower than broader independent criticism.
+- Make `implementation-review` explicit-only across Codex, GitHub Copilot CLI, and Claude Code.
+- Clarify that passing implementation review never satisfies or cancels a broader independent-review checkpoint configured by the project.
+
 ## 0.1.2 - 2026-08-22
 
 - Refine all skill descriptions as routing metadata so harnesses can distinguish adjacent skills before loading their bodies.
