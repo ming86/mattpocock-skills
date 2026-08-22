@@ -1,35 +1,37 @@
 ---
 name: implement-spec
-description: "Implement a specification in code."
+description: Drive an established specification and dependency-aware work graph to completion while leaving orchestration, review, and delivery policy to the governing project instructions.
 disable-model-invocation: true
 ---
 
-You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.
+# Implement Spec
 
-The goal is a PR which implements the entire spec on a single branch.
+Use this skill when a specification already exists, its work has been decomposed into dependency-aware units, and the user wants the whole bounded effort driven toward completion.
 
-The tickets are not a list of steps. They are a **task graph** with blocking relationships between them. This means there is always a **frontier** of tickets which are ready to be grabbed.
+This is a root-level orchestration workflow. If you are a spawned worker or subagent, do not use it to create another orchestration layer. Execute the work you were assigned and report back to the root agent.
 
-Communication to and from subagents should be sparse. Communicate primarily through **context pointers**: to the spec, tickets, research notes, and previous commits. Don't duplicate information already available via pointers.
+The specification and work units are the durable source of truth. The current agent context coordinates execution; it should not become the only place where material decisions, dependencies, or completion state live.
 
-**Implementer subagents** should be run in the background where possible for **maximum concurrency**.
+Follow the governing project or user instructions for worker selection, delegation, parallelism, user checkpoints, branches, worktrees, commits, pull requests, validation, and independent review.
 
-## Steps
+## Process
 
-1. Read the spec and tickets. Read enough to understand the task graph.
+1. **Load the governing state.** Read the specification, work units, dependency relationships, relevant repository instructions, and enough current codebase state to understand the integration surface. Preserve the distinction between requirements, decisions, facts, assumptions, and unresolved points.
 
-2. (optional) Use an **exploration subagent** to conduct any exploration required by the tickets - relevant codebase files or external documentation. Ensure the exploration subagent can save files - it should save its markdown notes in a directory outside the repo, accessible by all future subagents. This lets **implementer subagents** focus on implementation rather than exploration.
+2. **Establish the ready frontier.** A work unit is ready only when its genuine blockers are resolved. Do not treat the ticket list as a sequential checklist when dependencies permit another order, and do not invent parallelism where units share tightly coupled reasoning or integration state.
 
-3. Create a branch, and a draft PR. The PR should be marked as 'closing' the spec issue and tickets.
+3. **Choose the integration surface.** Use the repository's existing branch, pull-request, worktree, or direct-commit convention. Create new delivery machinery only when the project or requested workflow calls for it.
 
-4. Use **implementer subagents** to implement each ticket. Each implementer subagent should work in its own worktree, on its own branch.
+4. **Execute ready work in coherent contexts.** The root agent may delegate ready units according to the governing orchestration policy. Give each executor the bounded objective, relevant requirements and constraints, acceptance criteria, and pointers to durable sources. Include enough direct context to make the assignment reliable; context pointers are a tool for avoiding duplication, not a substitute for a clear assignment.
 
-5. Once an **implementer subagent** completes, merge its work to the PR branch with a **merger subagent**.
+5. **Integrate and verify before unlocking dependents.** Review each completed unit appropriately, integrate it into the shared line of development, and establish that its acceptance criteria and consequential assumptions hold before treating its blockers as resolved. Keep verification proportional to the change and project practices.
 
-6. If this changes the **frontier** of available tickets, kick off more **implementer subagents** to work on the new tickets. This allows for maximum concurrency.
+6. **Advance the frontier.** Recompute which units are ready after integration. Run independent units in parallel only when the governing orchestration policy permits it and when concurrency improves throughput without creating disproportionate coordination or merge risk. Optimize for reliable progress, not maximum concurrency.
 
-7. Once all tickets are complete, run /code-review on the PR branch. Fix all issues raised by the code review in a single **implementer subagent**.
+7. **Surface invalidated assumptions.** If implementation evidence materially changes the basis of the spec, interfaces, scope, dependencies, or approved direction, stop the affected path and follow the governing consultation rules. Do not silently redesign the specification merely to keep the graph moving.
 
-8. Mark the PR as ready for review.
+8. **Respect milestones and checkpoints.** When the project instructions require a checkpoint before materially dependent work, complete the appropriate review and validation, report the resulting state, and wait for the required decision before advancing.
 
-9. Clean up all **implementer subagent** worktrees.
+9. **Close the bounded effort.** Once all required units are complete, run the final validation and review required by the project. `code-review` can provide focused Intent / Spec and Repository / Implementation review when useful; broader independent criticism remains separate and governed by project instructions.
+
+10. **Finalize delivery.** Commit, update or open a pull request, mark it ready, or perform cleanup only according to the repository's delivery conventions and the user's requested scope. Remove temporary worktrees or branches only if this workflow created them and they are no longer needed.
