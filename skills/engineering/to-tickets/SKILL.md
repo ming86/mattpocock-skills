@@ -36,7 +36,7 @@ For wide mechanical changes that cannot remain valid as independent vertical sli
 
 ### 4. Declare dependencies
 
-For each ticket, identify only the other tickets that genuinely block it. Tickets with all blockers resolved form the ready frontier and may be executed independently or in parallel when the implementation environment permits it.
+For each ticket, identify only the other tickets that genuinely block it. Tickets with all blockers resolved form the ready frontier. The governing orchestration policy decides whether ready units are executed independently, sequentially, or in parallel.
 
 ### 5. Check material decomposition decisions
 

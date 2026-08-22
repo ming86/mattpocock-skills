@@ -17,7 +17,7 @@ A wizard is ephemeral by default: built for one run, saved to a scratch or `scri
 
 Work out every manual step the human must take and every value that gets captured along the way. Read the repo first, don't ask cold:
 
-- For setup: `.env`, `.env.example`, `.env.*`, `README`, `docker-compose*`, framework config, and `.github/workflows/*` (every `secrets.*` / `vars.*` reference is a value the wizard must produce).
+- For setup: inspect the relevant `.env` files, README/configuration, container setup, and CI references needed by the current procedure. Capture only the values this wizard actually needs; do not turn unrelated repository configuration into additional stages.
 - For a migration or transition: the current state, the target state, and the irreversible actions between them.
 
 Then show the user the ordered list of stages and the values each produces, and confirm: they may add, drop, or reorder.
@@ -41,4 +41,4 @@ Hold the bar the template sets: open the URL before asking for its value, use `a
 - `bash -n <script>`; run `shellcheck` if available.
 - `chmod +x <script>`.
 - Don't run it end-to-end yourself: it opens browsers and blocks on human input. Trace it statically instead: every value from step 1 is captured and lands where step 1 said, and every `set_secret` name exactly matches a `secrets.*` reference in CI.
-- Tell the user how to run it. If it's a repeatable setup path, commit it and link it from the README so the next person runs the script instead of asking an AI.
+- Tell the user how to run it. If the user wants the wizard to become a repeatable project setup path, follow the repository's normal scope, documentation, and commit conventions rather than adding those changes automatically.

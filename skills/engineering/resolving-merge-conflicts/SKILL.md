@@ -1,14 +1,24 @@
 ---
 name: resolving-merge-conflicts
-description: "Use when you need to resolve an in-progress git merge/rebase conflict."
+description: "Use when you need to understand and resolve an in-progress git merge or rebase conflict without losing either side's intent."
 ---
 
-1. **See the current state** of the merge/rebase. Check git history, and the conflicting files.
+# Resolving Merge Conflicts
 
-2. **Find the primary sources** for each conflict. Understand deeply why each change was made, and what the original intent was. Read the commit messages, check the PRs, check original issues/tickets.
+Resolve conflicts from the intent that produced each side, not by mechanically choosing ours or theirs.
 
-3. **Resolve each hunk.** Preserve both intents where possible. Where incompatible, pick the one matching the merge's stated goal and note the trade-off. Do **not** invent new behaviour. Always resolve; never `--abort`.
+Follow the governing project and user instructions for whether the merge or rebase should be completed, aborted, staged, committed, or paused for consultation. This skill provides the resolution procedure; it does not authorize delivery actions by itself.
 
-4. Discover the project's **automated checks** and run them, typically typecheck, then tests, then format. Fix anything the merge broke.
+## Process
 
-5. **Finish the merge/rebase.** Stage everything and commit. If rebasing, continue the rebase process until all commits are rebased.
+1. **Establish the current state.** Inspect the merge or rebase status, conflicting files, relevant history, and the exact operation in progress. Do not assume that completing the operation is still the desired outcome when the surrounding task says otherwise.
+
+2. **Find the primary sources.** For each substantive conflict, understand why both sides changed. Read the relevant commits, issues, pull requests, plans, tests, or nearby code needed to recover intent.
+
+3. **Resolve compatible intent.** Preserve both sides when they can coexist coherently. Where the intents are incompatible and the current task or repository evidence clearly establishes which one governs, resolve accordingly without inventing new behavior.
+
+4. **Surface material choices.** If an incompatible conflict represents a material product, behavior, architecture, compatibility, or operational decision that cannot be resolved from established direction, stop that path and use the governing consultation process. Do not make a new material decision merely to finish the merge.
+
+5. **Validate the resolved state.** Run the focused checks that establish the merge did not break the affected behavior. Expand validation only when project practice or the consequences of the change justify it.
+
+6. **Finish only when authorized.** Continue the merge or rebase, stage files, create commits, or abort the operation only when those actions are part of the requested scope and permitted by governing project instructions. Report any unresolved choice or validation gap before dependent work continues.

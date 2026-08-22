@@ -9,7 +9,7 @@ Design **deep modules**: a lot of behaviour behind a small interface, placed at 
 
 ## Glossary
 
-Use these terms exactly: don't substitute "component," "service," "API," or "boundary." Consistent language is the whole point.
+Use these terms as analytical vocabulary when the distinction matters. Preserve the repository's established names for its actual modules and domain concepts; do not rename a project "service" or "component" merely to make it fit this glossary.
 
 **Module**: anything with an interface and an implementation. Deliberately scale-agnostic: a function, class, package, or tier-spanning slice. _Avoid_: unit, component, service.
 
@@ -111,4 +111,4 @@ Good interfaces make testing natural:
 ## Going deeper
 
 - **Deepening a cluster given its dependencies**, see [DEEPENING.md](DEEPENING.md): dependency categories, seam discipline, and replace-don't-layer testing.
-- **Exploring alternative interfaces**, see [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md): spin up parallel sub-agents to design the interface several radically different ways, then compare on depth, locality, and seam placement.
+- **Exploring alternative interfaces**, see [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md): generate several materially different interfaces, then compare them on depth, locality, and seam placement. The governing orchestration policy decides whether those alternatives are produced sequentially, in fresh contexts, or by separate workers.

@@ -39,7 +39,7 @@ Repository conventions are evidence, not an excuse to flag every stylistic diffe
 
 ## 4. Review the axes independently
 
-When independent subagent contexts are available and proportionate to the change, use separate fresh contexts for the two axes so one conclusion does not anchor the other. Otherwise review them sequentially while keeping the evidence and findings distinct.
+Keep the two axes independent in reasoning and reporting. If the governing orchestration policy chooses separate reviewers or fresh contexts, give each reviewer only the axis and evidence it needs. Otherwise review the axes sequentially while keeping their evidence and findings distinct. This skill does not decide whether to spawn reviewers.
 
 ### Intent / Spec
 

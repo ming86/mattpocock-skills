@@ -1,6 +1,6 @@
 ---
 name: improve-codebase-architecture
-description: Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
+description: Survey a codebase for concrete deepening opportunities, present evidence-backed candidates, and explore the one the user chooses.
 disable-model-invocation: true
 ---
 
@@ -10,8 +10,8 @@ Surface architectural friction and propose **deepening opportunities**: refactor
 
 This command is _informed_ by the project's domain model and built on a shared design vocabulary:
 
-- Call the Skill tool with "codebase-design" for the architecture vocabulary (**module**, **interface**, **depth**, **seam**, **adapter**, **leverage**, **locality**) and its principles (the deletion test, "the interface is the test surface", "one adapter = hypothetical seam, two = real"). Use these terms exactly in every suggestion, and don't drift into "component," "service," "API," or "boundary."
-- The domain language in `CONTEXT.md` gives names to good seams; ADRs in `docs/adr/` record decisions this command should not re-litigate.
+- Use `codebase-design` for the architecture vocabulary (**module**, **interface**, **depth**, **seam**, **adapter**, **leverage**, **locality**) and its principles (the deletion test, "the interface is the test surface", "one adapter = hypothetical seam, two = real"). Use that vocabulary when it sharpens the analysis while preserving the repository's established names for actual modules and domain concepts.
+- Use the project's established domain vocabulary and architectural decision records when they exist. They are evidence about meaningful seams and prior tradeoffs, not a requirement to create `CONTEXT.md` or an ADR tree.
 
 ## Process
 
@@ -22,9 +22,9 @@ This command is _informed_ by the project's domain model and built on a shared d
 - If the user named a direction (a module, a subsystem, a pain point), take it, and skip the inference below.
 - Otherwise, walk back a good stretch of the commit history (`git log --oneline`) to find the codebase's hot spots, the files and areas that keep coming up, and let those paths pull your attention first. If the changes are scattered with no clear hot spot, widen the net.
 
-Read the project's domain glossary (`CONTEXT.md`) and any ADRs in the area you're touching first.
+Read the relevant domain glossary, architecture notes, or ADRs when the project has them.
 
-Then spawn a sub-agent to walk the codebase. Don't follow rigid heuristics; explore organically and note where you experience friction:
+Explore the relevant codebase surface directly or through workers chosen by the governing orchestration policy. The skill needs credible findings, not a particular execution topology. Do not follow rigid heuristics; explore organically and note where you experience friction:
 
 - Where does understanding one concept require bouncing between many small modules?
 - Where are modules **shallow**, with an interface nearly as complex as the implementation?
@@ -34,38 +34,26 @@ Then spawn a sub-agent to walk the codebase. Don't follow rigid heuristics; expl
 
 Apply the **deletion test** to anything you suspect is shallow: would deleting it concentrate complexity, or just move it? A "yes, concentrates" is the signal you want.
 
-### 2. Present candidates as an HTML report
+### 2. Present the candidates
 
-Write a self-contained HTML file to the OS temp directory so nothing lands in the repo. Resolve the temp dir from `$TMPDIR`, falling back to `/tmp` (or `%TEMP%` on Windows), and write to `<tmpdir>/architecture-review-<timestamp>.html` so each run gets a fresh file. Open it for the user (`xdg-open <path>` on Linux, `open <path>` on macOS, `start <path>` on Windows) and tell them the absolute path.
+Present only candidates backed by concrete friction from the inspected code. For each candidate include:
 
-The report uses **Tailwind via CDN** for layout and styling, and **Mermaid via CDN** for diagrams where a graph/flow/sequence reliably communicates the structure. Mix Mermaid with hand-crafted CSS/SVG visuals: use Mermaid when relationships are graph-shaped (call graphs, dependencies, sequences), and hand-built divs/SVG when you want something more editorial (mass diagrams, cross-sections, collapse animations). Each candidate gets a **before/after visualisation**. Be visual.
+- **Files or modules:** the affected surface;
+- **Problem:** what makes the current structure hard to understand, change, or verify;
+- **Proposed direction:** what would become deeper or move behind a clearer seam;
+- **Expected benefit:** the concrete improvement in locality, leverage, testability, or navigability;
+- **Confidence:** whether the evidence makes it a strong recommendation, worth exploring, or speculative.
 
-For each candidate, render a card with:
+Default to concise text when that communicates the candidates clearly. Use a temporary visual HTML report, Mermaid diagram, or before/after visualization only when the relationships are complex enough that the visual materially improves the decision. If you use the HTML scaffold in [HTML-REPORT.md](HTML-REPORT.md), keep it outside the repository unless the user explicitly wants a persistent artifact.
 
-- **Files**: which files/modules are involved
-- **Problem**: why the current architecture is causing friction
-- **Solution**: plain English description of what would change
-- **Benefits**: explained in terms of locality and leverage, and how tests would improve
-- **Before / After diagram**: side-by-side, custom-drawn, illustrating the shallowness and the deepening
-- **Recommendation strength**: one of `Strong`, `Worth exploring`, `Speculative`, rendered as a badge
-
-End the report with a **Top recommendation** section: which candidate you'd tackle first and why.
-
-**Use CONTEXT.md vocabulary for the domain, and the `/codebase-design` vocabulary for the architecture.** If `CONTEXT.md` defines "Order," talk about "the Order intake module," not "the FooBarHandler," and not "the Order service."
-
-**ADR conflicts**: if a candidate contradicts an existing ADR, only surface it when the friction is real enough to warrant revisiting the ADR. Mark it clearly in the card (e.g. a warning callout: _"contradicts ADR-0007, but worth reopening because…"_). Don't list every theoretical refactor an ADR forbids.
-
-See [HTML-REPORT.md](HTML-REPORT.md) for the full HTML scaffold, diagram patterns, and styling guidance.
-
-Do NOT propose interfaces yet. After the file is written, ask the user: "Which of these would you like to explore?"
+Do not design detailed interfaces for every candidate. Present the evidence first and ask the user which candidate, if any, is worth exploring further.
 
 ### 3. Grilling loop
 
 Once the user picks a candidate, call the Skill tool with "grilling" to walk the decision tree with them: constraints, dependencies, the shape of the deepened module, what sits behind the seam, what tests survive.
 
-Side effects happen inline as decisions crystallize; call the Skill tool with "domain-modeling" to keep the domain model current as you go:
+Preserve durable domain or architecture decisions only when later work genuinely depends on them, using the repository's established documentation convention. `domain-modeling` can help when the domain vocabulary itself changed; do not create or update `CONTEXT.md` or ADRs merely because this skill is running.
 
-- **Naming a deepened module after a concept not in `CONTEXT.md`?** Add the term to `CONTEXT.md`. Create the file lazily if it doesn't exist.
-- **Sharpening a fuzzy term during the conversation?** Update `CONTEXT.md` right there.
-- **User rejects the candidate with a load-bearing reason?** Offer an ADR, framed as: _"Want me to record this as an ADR so future architecture reviews don't re-suggest it?"_ Only offer when the reason would actually be needed by a future explorer to avoid re-suggesting the same thing; skip ephemeral reasons ("not worth it right now") and self-evident ones.
-- **Want to explore alternative interfaces for the deepened module?** Call the Skill tool with "codebase-design" and use its design-it-twice parallel sub-agent pattern.
+- **A term or domain relationship materially changed?** Use the project's existing domain artifact when one exists and the change will matter later.
+- **The user rejects a candidate for a durable, load-bearing reason?** Offer to record the reason only when doing so would prevent meaningful future rework; skip ephemeral reasons such as "not worth it right now."
+- **Want to explore alternative interfaces for the deepened module?** Use `codebase-design` and its `DESIGN-IT-TWICE.md` procedure. The governing orchestration policy decides whether alternatives are generated sequentially or by independent workers.
