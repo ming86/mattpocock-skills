@@ -1,6 +1,6 @@
 ---
 name: grill-me
-description: A relentless interview to sharpen a plan or design.
+description: A focused interview to sharpen a plan, design, decision, or idea until the material ambiguity is resolved.
 disable-model-invocation: true
 ---
 

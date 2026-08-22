@@ -1,28 +1,24 @@
 ---
 name: grilling
-description: Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+description: Clarify the decisions that materially affect a plan, design, or next step, using focused questions and environment evidence instead of exhaustive interrogation.
 ---
 
-Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.
+# Grilling
 
-Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
+Interview the user until there is enough shared understanding for the intended next step to proceed reliably. The goal is to resolve material ambiguity, not to visit every theoretically possible branch of a design tree.
 
-Format a round like so:
+Model the unresolved decisions and their dependencies. The **frontier** is the set of material decisions whose prerequisites are already settled and that can usefully be answered now.
 
-```
-❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
+## Process
 
-➡️ <your recommended answer>
+1. Establish what the clarification is trying to unblock: a decision, plan, specification, implementation, or other next step.
+2. Inspect available evidence before asking factual questions. Facts that can be established from the filesystem, codebase, tools, documentation, or other available sources are the agent's job to investigate.
+3. Identify unresolved user-owned decisions that would materially change the next step. Do not manufacture questions for immaterial edge cases, speculative future needs, or detail that can safely remain open.
+4. Ask focused questions from the current frontier. Prefer one decision at a time when later questions depend on it. Independent questions may be grouped when doing so reduces unnecessary back-and-forth without making the user's decision harder.
+5. Give a recommended answer when the available evidence supports one, together with the reason or tradeoff that matters. Keep a free-text path open when the provided choices are not exhaustive.
+6. Recompute the frontier after each answer or evidence-gathering result. Retire questions that become irrelevant and add newly exposed questions only when they materially affect the goal.
+7. Stop when the remaining uncertainty no longer materially blocks the intended next step. Preserve unresolved points according to the calling workflow instead of forcing arbitrary closure.
 
----
+User decisions remain the user's. Do not silently choose a material product, scope, interface, operational, or tradeoff decision merely to finish the interview.
 
-❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
-
-➡️ <your recommended answer>
-```
-
-Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.
-
-Finding _facts_ is your job, never the user's. When a frontier question needs a fact from the environment (filesystem, tools, etc.), dispatch a sub-agent to find it; don't ask the user for anything you could look up yourself. Don't block on it: a running exploration is an unsettled prerequisite, so only the questions downstream of it wait for the sub-agent to report; ask the rest of the frontier now. The _decisions_ are the user's: put each to them and wait.
-
-The session is done when the frontier is empty: every branch of the design tree visited, nothing left silently assumed. Do not act on it until the user confirms you have reached a shared understanding.
+When another skill calls `grilling`, follow that skill's narrower purpose, documentation behavior, and stopping conditions. Follow governing project or user instructions for consultation and checkpoints.
