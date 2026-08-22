@@ -1,6 +1,6 @@
 # Design It Twice
 
-Use this technique when an important interface decision still has several credible shapes and comparing them is likely to improve the choice. Do not generate alternatives merely because this file exists.
+Use this technique when the user wants to compare alternative interfaces, or when a material interface decision cannot be resolved reliably without comparing several credible designs. Do not generate alternatives merely because this file exists.
 
 The value comes from comparing genuinely different designs, not from any particular subagent setup. The idea is based on Ousterhout's "Design It Twice": the first plausible interface is not always the best one.
 
@@ -19,11 +19,11 @@ Write down what every candidate must satisfy:
 - important invariants, ordering rules, error behavior, and performance expectations;
 - a small code sketch when it makes the constraints clearer without prematurely choosing a design.
 
-If different interpretations of the problem would lead to meaningfully different designs, resolve that through the project's consultation rules before treating one interpretation as settled.
+If plausible interpretations of the problem would lead to materially different designs, resolve that through the applicable project and user instructions for consultation before treating one interpretation as settled.
 
 ### 2. Generate distinct alternatives
 
-Produce two or, when useful, three substantially different interfaces only when the decision is important enough to justify comparison. Make them differ in structure or tradeoffs, not just naming.
+When the gate above is met, produce two or, when useful, three substantially different interfaces. Make them differ in structure or tradeoffs, not just naming.
 
 Useful design pressures include:
 
@@ -46,4 +46,4 @@ For each alternative, capture:
 
 Compare the alternatives on the constraints that actually matter. Explain the tradeoffs in plain terms rather than scoring every possible dimension.
 
-Recommend one when the evidence supports it. A hybrid is valid when it combines compatible strengths without making the interface larger or less clear. Leave an important tradeoff unresolved when the available evidence cannot settle it; do not force a conclusion merely to finish the exercise.
+Recommend one when the evidence supports it. A hybrid is valid when it combines compatible strengths without making the interface larger or less clear. Leave a material tradeoff unresolved when the available evidence cannot settle it; do not force a conclusion merely to finish the exercise.

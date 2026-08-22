@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.9 - 2026-08-22
+
+- Repair semantic drift found by the repo-wide v3.8 language review while keeping the broader plain-language rewrite intact.
+- Restore `material` where it acts as a routing, consultation, scope, or authority threshold rather than as stylistic wording.
+- Keep research focused on evidence relevant to the current question or decision, and narrow its trigger back to questions that materially depend on primary evidence.
+- Tighten `DESIGN-IT-TWICE` so alternative generation is user-requested or justified by a material interface decision that cannot be resolved reliably without comparison.
+- Restore bug-fix authorization wording, merge-conflict invariants, and project/user authority wording where v3.8 had become too broad or too project-specific.
+- Add negative routing cases for routine repository inspection and glossary lookup, plus a boundary case that prevents `codebase-design` from implying automatic alternative generation.
+
 ## 0.1.8 - 2026-08-22
 
 - Rewrite all 16 skill entry files for clearer, more direct engineering language while preserving routing, authority, stopping conditions, and workflow behavior.

@@ -38,9 +38,9 @@ For wide mechanical changes that cannot remain valid as independent vertical sli
 
 For each ticket, identify only the other tickets that genuinely block it. Tickets whose blockers are resolved form the ready set. The governing orchestration policy decides whether ready units run independently, sequentially, or in parallel.
 
-### 5. Check important decomposition choices
+### 5. Check material decomposition choices
 
-If different ways of splitting the work would meaningfully change interfaces, scope, sequencing risk, ownership, or the user's intended delivery shape, raise the tradeoff through the project's consultation rules. Do not require a ceremonial approval round for routine decomposition when the direction is already clear.
+If different ways of splitting the work would materially change interfaces, scope, sequencing risk, ownership, or the user's intended delivery shape, raise the tradeoff through the applicable project and user instructions for consultation. Do not require a ceremonial approval round for routine decomposition when the direction is already clear.
 
 ### 6. Publish durable work units
 

@@ -191,3 +191,25 @@ cases:
       skill: codebase-design
       invocation: implicit-ok
     avoid: [domain-modeling, to-spec]
+
+  - id: routine-call-site-inspection-no-research
+    prompt: "Find every call site of parseConfig() in this repository and show me the files."
+    expected:
+      skill: null
+      invocation: none
+    avoid: [research, codebase-design]
+
+  - id: existing-glossary-lookup-no-domain-modeling
+    prompt: "What does Customer mean in this project? Read the existing glossary and tell me the current definition; do not redesign the model."
+    expected:
+      skill: null
+      invocation: none
+    avoid: [domain-modeling, research]
+
+  - id: codebase-design-does-not-imply-alternative-generation
+    prompt: "Review whether this existing module interface is sensible and suggest the smallest design improvement if one is needed."
+    expected:
+      skill: codebase-design
+      invocation: implicit-ok
+    avoid: [domain-modeling, implementation-review]
+    note: "Do not automatically run Design It Twice. Compare alternative interfaces only when the user asks or a material interface decision cannot be resolved reliably without comparison."

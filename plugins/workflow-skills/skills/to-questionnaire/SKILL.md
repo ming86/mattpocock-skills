@@ -11,9 +11,9 @@ Use this skill when the missing information belongs to another person. The goal 
 
 If repository evidence can establish the answer, research it. If the current user owns the decision, clarify it with them. If nobody knows yet and evidence must be created, use an experiment or prototype. Use a questionnaire when another identifiable person or role holds the needed judgment, facts, or domain knowledge.
 
-## Clarify the send, not the subject
+## Clarify who should answer and what you need back
 
-Do not interview the user about subject matter they have already established they cannot answer. Resolve what you can from existing context, then clarify only the send when needed:
+Do not interview the user about subject matter they have already established they cannot answer. Resolve what you can from existing context, then clarify only these two things when needed:
 
 1. **Who should answer?** Establish the recipient or responsible role, their relevant expertise, and enough relationship/context to pitch the questionnaire appropriately.
 2. **What must come back?** Identify the decisions, facts, constraints, or confirmations the work needs. Focus on what the user must be able to decide or do after receiving the response.
@@ -36,7 +36,7 @@ Create questions that target the gap between what the recipient knows and what t
 
 Produce the questionnaire in the requested delivery format when one is specified. Otherwise, create or return a Markdown draft appropriate for the work.
 
-When a durable copy is useful, reuse the work's existing location or follow the project's documentation or durable-state convention. A local working-state location is appropriate for a provisional draft that should survive contexts without becoming shared project documentation. If choosing a new shared location or making the questionnaire authoritative would be important, follow the project's consultation rules.
+When a durable copy is useful, reuse the work's existing location or follow the project's documentation or durable-state convention. A local working-state location is appropriate for a provisional draft that should survive contexts without becoming shared project documentation. If choosing a new shared location or making the questionnaire authoritative would be material, follow the applicable project and user instructions for consultation.
 
 The questionnaire is a request for information, not the resulting project decision. When answers return, preserve their provenance and uncertainty; incorporate them into a spec, issue, model, or other source of truth only through the work's normal decision process.
 

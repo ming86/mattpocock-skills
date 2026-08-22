@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: "Build the smallest throwaway experiment that can answer an important design, behavior, UI, integration, or feasibility question. Use when trying something will answer the uncertainty more cheaply or reliably than more discussion or research; do not treat prototype structure as production design."
+description: "Build the smallest throwaway experiment that can answer a design, behavior, UI, integration, or feasibility question that materially affects the work. Use when trying something will answer the uncertainty more cheaply or reliably than more discussion or research; do not treat prototype structure as production design."
 disable-model-invocation: true
 ---
 
@@ -16,7 +16,7 @@ Identify the uncertainty the prototype is meant to resolve. Common forms include
 - **UI or interaction:** "Which structure or interaction best communicates the intended behavior?"
 - **Integration or feasibility:** "Does this proposed mechanism actually work against the real dependency or environment?"
 
-If different plausible interpretations would lead to meaningfully different prototypes, follow the project's consultation rules. Otherwise infer the most likely question from the task and surrounding code, and state any important assumption.
+If plausible interpretations would lead to materially different prototypes, follow the applicable project and user instructions for consultation. Otherwise infer the most likely question from the task and surrounding code, and state any important assumption.
 
 For common experiment shapes, [LOGIC.md](LOGIC.md) and [UI.md](UI.md) provide optional patterns. Use them only when that shape fits the question; they do not add mandatory stages or retention rules.
 
@@ -27,7 +27,7 @@ For common experiment shapes, [LOGIC.md](LOGIC.md) and [UI.md](UI.md) provide op
 3. **Make the relevant state or outcome observable.** The user or agent should be able to see the evidence that answers the question, not merely inspect internal implementation.
 4. **Use realistic dependencies only when they matter to the uncertainty.** Otherwise isolate the experiment from production state and persistent data.
 5. **Stop when the question is answered.** Do not continue polishing a prototype after it has produced enough evidence for the decision.
-6. **Preserve the validated decision, not accidental prototype structure.** When later contexts depend on the result, record the question, relevant evidence, conclusion, and remaining uncertainty in the work's existing durable location or follow the project's durable-state convention. Use local working state when the evidence is provisional or too detailed for shared project documentation. If no convention exists, use the simplest permitted work-centered location for a low-impact choice; consult the project or user when the location or authority is important. Keep the record compact rather than saving a transcript or prototype diary. Retain, commit, branch, or discard the prototype itself according to project conventions and the value of keeping it as evidence; no particular retention method is required.
+6. **Preserve the validated decision, not accidental prototype structure.** When later contexts depend on the result, record the question, relevant evidence, conclusion, and remaining uncertainty in the work's existing durable location or follow the project's durable-state convention. Use local working state when the evidence is provisional or too detailed for shared project documentation. If no convention exists, use the simplest permitted work-centered location for a low-impact choice; follow the applicable project and user instructions for consultation when the location or authority is material. Keep the record compact rather than saving a transcript or prototype diary. Retain, commit, branch, or discard the prototype itself according to project conventions and the value of keeping it as evidence; no particular retention method is required.
 7. **Do not silently turn the prototype into production code.** Production implementation should follow the validated decision and current project constraints. It does not need to preserve throwaway code or turn provisional working state into project truth.
 
 Follow repository and user instructions for where temporary artifacts belong and for any checkpoint before dependent implementation begins.

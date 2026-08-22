@@ -57,4 +57,4 @@ Use this structure only when the repository already uses the `CONTEXT.md` conven
 - If only a root `CONTEXT.md` exists, treat it as a single context.
 - If neither exists and the project has explicitly chosen this convention, start with one root `CONTEXT.md`; split into multiple contexts only when real domain boundaries justify it.
 
-When multiple contexts exist, infer which one the current topic belongs to. If several meaningfully different placements remain plausible, follow the project's consultation rules rather than inventing one.
+When multiple contexts exist, infer which one the current topic belongs to. If choosing among several plausible placements would be material, follow the applicable project and user instructions for consultation rather than inventing one.

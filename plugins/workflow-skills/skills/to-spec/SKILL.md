@@ -1,6 +1,6 @@
 ---
 name: to-spec
-description: "Turn settled conversation and project context into a durable implementation specification. Use when important requirements and decisions are clear enough and later implementation needs a stable reference; preserve assumptions and unresolved points without reopening settled discussion."
+description: "Turn settled conversation and project context into a durable implementation specification. Use when the requirements and decisions that materially shape implementation are clear enough and later implementation needs a stable reference; preserve assumptions and unresolved points without reopening settled discussion."
 disable-model-invocation: true
 ---
 
@@ -30,7 +30,7 @@ What should be true when the work succeeds, including important externally obser
 
 ## Scope and Requirements
 
-The established requirements, constraints, and boundaries that meaningfully shape the work. Use user stories only when they clarify actors, behavior, or value; do not manufacture an exhaustive list for its own sake.
+The established requirements, constraints, and boundaries that materially shape the work. Use user stories only when they clarify actors, behavior, or value; do not manufacture an exhaustive list for its own sake.
 
 ## Implementation Decisions
 

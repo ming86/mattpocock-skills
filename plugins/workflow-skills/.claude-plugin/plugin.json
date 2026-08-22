@@ -1,6 +1,6 @@
 {
   "name": "workflow-skills",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Adaptive engineering workflow skills for clarification, research, planning, implementation, validation, and review.",
   "author": {
     "name": "Ming"

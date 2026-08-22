@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: "Diagnose bugs, regressions, intermittent failures, or performance problems whose cause is not known. Use when straightforward inspection is not enough and evidence is needed to distinguish competing explanations; use the smallest useful diagnostic loop and fix the cause only when the current task authorizes a change."
+description: "Diagnose bugs, regressions, intermittent failures, or performance problems whose cause is not known. Use when straightforward inspection is not enough and evidence is needed to distinguish competing explanations; use the smallest useful diagnostic loop and fix the cause only when the current task authorizes a fix."
 ---
 
 # Diagnosing Bugs
@@ -42,7 +42,7 @@ A minimal reproduction is useful evidence, not a gate. Do not block diagnosis on
 
 When the cause is not already established by direct evidence, form multiple plausible hypotheses and rank them by the evidence available. Each hypothesis should predict an observation that would make it more or less likely.
 
-Share the hypotheses with the user when their domain knowledge could materially change the ranking or when the project's consultation rules call for a checkpoint. Do not create a user round-trip merely because this skill has reached a hypothesis step.
+Share the hypotheses with the user when their domain knowledge could materially change the ranking or when the applicable project and user instructions call for a checkpoint. Do not create a user round-trip merely because this skill has reached a hypothesis step.
 
 ## 4. Test the differences that best separate the hypotheses
 
@@ -70,6 +70,6 @@ Before considering the task complete, establish the evidence appropriate to its 
 - temporary debug instrumentation and disposable artifacts are removed or intentionally retained in an established location;
 - unresolved uncertainty or validation limits are reported clearly.
 
-For a substantial or multi-session investigation, preserve the current diagnostic state when repeating the work would be costly: confirmed observations, active or eliminated hypotheses, the root cause when known, evidence pointers, and remaining leads. Reuse the work's existing durable location or follow the project's durable-state convention. Use local working state when the investigation is provisional or too detailed for shared project documentation. If no convention exists, use the simplest permitted work-centered location for a low-impact choice and consult the project or user when the location or authority is important. Keep this state current rather than appending a chronological debugging transcript.
+For a substantial or multi-session investigation, preserve the current diagnostic state when repeating the work would be costly: confirmed observations, active or eliminated hypotheses, the root cause when known, evidence pointers, and remaining leads. Reuse the work's existing durable location or follow the project's durable-state convention. Use local working state when the investigation is provisional or too detailed for shared project documentation. If no convention exists, use the simplest permitted work-centered location for a low-impact choice and follow the applicable project and user instructions for consultation when the location or authority is material. Keep this state current rather than appending a chronological debugging transcript.
 
 Preserve or share the root cause and supporting evidence when future work would materially benefit, using the project's normal durable-state conventions and artifact authority. If the project uses a commit or pull-request explanation, include the cause there when appropriate and when such an artifact already belongs to the authorized work; this skill does not require or authorize a commit by itself.
