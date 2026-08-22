@@ -1,5 +1,5 @@
 interface:
-  display_name: "Setup Matt Pocock Skills"
-  short_description: "Configure a repo for the skills"
+  display_name: "Setup Workflow Skills"
+  short_description: "Optionally configure shared workflow state"
 policy:
   allow_implicit_invocation: false

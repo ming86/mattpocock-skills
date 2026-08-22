@@ -1,11 +1,11 @@
 # In Progress
 
-Beta. These skills are public on purpose: try them and tell me what breaks. They're excluded from the plugin and the top-level README until they graduate to a stable bucket, they get no docs pages, and they can change or disappear without warning.
+Beta skills. They are public for experimentation, excluded from the plugin and top-level promoted-skill list until they graduate, and do not require human-facing docs pages. Their behavior may change substantially.
 
-The plugin won't give you these. Install one directly:
+Install one directly from this fork:
 
 ```bash
-npx skills@latest add mattpocock/skills --skill=<name>
+npx skills@latest add ming86/mattpocock-skills --skill=<name>
 ```
 
 - **[loop-me](./loop-me/SKILL.md)**: Grill yourself into implementable workflow specs over multiple sessions, using the current directory as a stateful workspace. User-invoked.
@@ -14,4 +14,4 @@ npx skills@latest add mattpocock/skills --skill=<name>
 - **[writing-shape](./writing-shape/SKILL.md)**: Take a markdown file of raw material and shape it into an article paragraph by paragraph, arguing format choices at each step.
 - **[claude-handoff](./claude-handoff/SKILL.md)**: Hand the current conversation off to a fresh background agent that picks up the work immediately, seeded with a handoff summary via `claude --bg`. User-invoked.
 - **[setup-ts-deep-modules](./setup-ts-deep-modules/SKILL.md)**: Wire dependency-cruiser into a TypeScript repo so each package is a deep module: implementation hidden in subfolders, reachable only through its entry-point files, tests exercising it through those. User-invoked.
-- **[implement-spec](./implement-spec/SKILL.md)**: Implement a whole spec on one branch. Works the tickets as a task graph rather than a list, running implementer subagents across the ready frontier for maximum concurrency, and lands the result as a single PR. User-invoked.
+- **[implement-spec](./implement-spec/SKILL.md)**: Drive an established spec and dependency-aware work graph to completion while leaving worker selection, parallelism, integration, review, and delivery policy to the governing project instructions. User-invoked.
