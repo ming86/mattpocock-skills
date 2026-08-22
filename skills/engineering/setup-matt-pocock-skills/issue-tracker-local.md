@@ -18,13 +18,12 @@ Create a new file under `.scratch/<feature-slug>/` (creating the directory if ne
 
 Read the file at the referenced path. The user will normally pass the path or the issue number directly.
 
-## Wayfinding operations
+## Wayfinding storage
 
-Used by `/wayfinder`. The **map** is a file with one **child** file per ticket.
+When the project chooses local Markdown for durable Wayfinder state:
 
-- **Map**: `.scratch/<effort>/map.md` (the Notes / Decisions-so-far / Fog body).
-- **Child ticket**: `.scratch/<effort>/issues/NN-<slug>.md`, numbered from `01`, with the question in the body. A `Type:` line records the ticket type (`research`/`prototype`/`grilling`/`task`); a `Status:` line records `claimed`/`resolved`.
-- **Blocking**: a `Blocked by: NN, NN` line near the top. A ticket is unblocked when every file it lists is `resolved`.
-- **Frontier**: scan `.scratch/<effort>/issues/` for files that are open, unblocked, and unclaimed; first by number wins.
-- **Claim**: set `Status: claimed` and save before any work.
-- **Resolve**: append the answer under an `## Answer` heading, set `Status: resolved`, then append a context pointer (gist + link) to the map's Decisions-so-far in `map.md`.
+- **Map:** keep one `map.md` for the effort using the current Wayfinder sections such as Destination, Established context, Decisions so far, Open questions, Not yet clear enough to decide, and Out of scope.
+- **Work units:** use one file per precise research, prototype, clarification, or enabling unit when separate files materially help independent execution or dependency tracking. Small efforts can keep open questions directly in the map.
+- **Dependencies:** record genuine blockers explicitly when separate units depend on one another, for example a `Blocked by: 01, 03` line when numbered issue files are the local convention.
+- **Ready frontier:** ready means genuine blockers are resolved. File numbering or listing order does not decide execution order; the governing orchestration policy does.
+- **Results:** record the outcome near the work unit or source evidence and update the canonical map with material decisions, facts, and newly exposed questions. Do not require a gist, assignment state, or other tracker emulation unless the project actually uses it.

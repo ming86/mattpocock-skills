@@ -51,10 +51,10 @@ _Avoid_: Client, buyer, account
 - **Ordering ↔ Billing**: Shared types for `CustomerId` and `Money`
 ```
 
-The skill infers which structure applies:
+Use this structure only when the repository already uses the `CONTEXT.md` convention or the governing project workflow has chosen it as a new durable domain artifact. Then:
 
-- If `CONTEXT-MAP.md` exists, read it to find contexts
-- If only a root `CONTEXT.md` exists, single context
-- If neither exists, create a root `CONTEXT.md` lazily when the first term is resolved
+- If `CONTEXT-MAP.md` exists, read it to find contexts.
+- If only a root `CONTEXT.md` exists, treat it as a single context.
+- If neither exists and the project has explicitly chosen this convention, start with one root `CONTEXT.md`; split into multiple contexts only when real domain boundaries justify it.
 
-When multiple contexts exist, infer which one the current topic relates to. If unclear, ask.
+When multiple contexts exist, infer which one the current topic relates to. If materially different contexts remain plausible, follow the governing consultation rules rather than inventing a placement.

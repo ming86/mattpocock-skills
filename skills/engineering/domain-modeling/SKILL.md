@@ -1,74 +1,44 @@
 ---
 name: domain-modeling
-description: Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR.
+description: Build or sharpen a project's domain vocabulary, relationships, and durable domain decisions when the model itself is part of the engineering work.
 ---
 
 # Domain Modeling
 
-Actively build and sharpen the project's domain model as you design. This is the *active* discipline: challenging terms, inventing edge-case scenarios, and writing the glossary and decisions down the moment they crystallise. (Merely *reading* `CONTEXT.md` for vocabulary is not this skill: that's a one-line habit any skill can do. This skill is for when you're changing the model, not just consuming it.)
+Use this skill when the domain model itself is changing or materially ambiguous: terminology, entities, relationships, invariants, or decisions that later code and discussion need to name consistently.
 
-## File structure
+Merely reading an existing glossary for vocabulary is not domain modeling. Follow the repository's established documentation convention rather than assuming every project should have a root `CONTEXT.md` or `docs/adr/` tree.
 
-Most repos have a single context:
+## Establish the current model
 
-```
-/
-├── CONTEXT.md
-├── docs/
-│   └── adr/
-│       ├── 0001-event-sourced-orders.md
-│       └── 0002-postgres-for-write-model.md
-└── src/
-```
+Inspect the project's existing glossary, context documents, ADRs, schema, code, tests, and user language that bear on the concept being discussed. If the repository has a configured domain-document convention, use it.
 
-If a `CONTEXT-MAP.md` exists at the root, the repo has multiple contexts. The map points to where each one lives:
-
-```
-/
-├── CONTEXT-MAP.md
-├── docs/
-│   └── adr/                          ← system-wide decisions
-├── src/
-│   ├── ordering/
-│   │   ├── CONTEXT.md
-│   │   └── docs/adr/                 ← context-specific decisions
-│   └── billing/
-│       ├── CONTEXT.md
-│       └── docs/adr/
-```
-
-Create files lazily: only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `docs/adr/` exists, create it when the first ADR is needed.
+If no durable domain artifact exists, do not create one automatically for incidental terminology. Create or propose a durable artifact only when preserving the model has concrete value for later work and the governing project instructions permit it.
 
 ## During the session
 
-### Challenge against the glossary
+### Challenge conflicting language
 
-When the user uses a term that conflicts with the existing language in `CONTEXT.md`, call it out immediately. "Your glossary defines 'cancellation' as X, but you seem to mean Y. Which is it?"
+When current discussion conflicts with established terminology or behavior, surface the contradiction. Distinguish a vocabulary disagreement from a real change in domain meaning.
 
-### Sharpen fuzzy language
+### Sharpen fuzzy concepts
 
-When the user uses vague or overloaded terms, propose a precise canonical term. "You're saying 'account': do you mean the Customer or the User? Those are different things."
+When an overloaded term hides materially different concepts, propose clearer names or definitions and test them against concrete scenarios. Do not manufacture distinctions that have no behavioral consequence.
 
-### Discuss concrete scenarios
+### Probe relationships and invariants
 
-When domain relationships are being discussed, stress-test them with specific scenarios. Invent scenarios that probe edge cases and force the user to be precise about the boundaries between concepts.
+Use representative scenarios and edge cases when they help expose whether entities, states, ownership, or transitions are actually understood. Keep the exploration tied to decisions the current work needs.
 
-### Cross-reference with code
+### Cross-check the implementation
 
-When the user states how something works, check whether the code agrees. If you find a contradiction, surface it: "Your code cancels entire Orders, but you just said partial cancellation is possible. Which is right?"
+When the user states how the domain behaves, compare it with relevant code, schema, tests, or existing docs. Treat discrepancies as evidence to resolve, not as automatic proof that either the code or conversation is authoritative.
 
-### Update CONTEXT.md inline
+### Preserve durable changes when useful
 
-When a term is resolved, update `CONTEXT.md` right there. Don't batch these up: capture them as they happen. Use the format in [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md).
+When a term, relationship, or invariant is materially resolved and later work depends on it, update the repository's established domain artifact. If the project uses `CONTEXT.md`, [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md) is available as a format. Do not create or update documentation for every conversational refinement.
 
-`CONTEXT.md` should be totally devoid of implementation details. Do not treat `CONTEXT.md` as a spec, a scratch pad, or a repository for implementation decisions. It is a glossary and nothing else.
+### Record architectural decisions separately
 
-### Offer ADRs sparingly
+Offer or create an ADR only when the repository uses ADRs and the decision is genuinely costly to reverse, surprising without context, and the result of a meaningful tradeoff. Use [ADR-FORMAT.md](./ADR-FORMAT.md) when that convention fits the project.
 
-Only offer to create an ADR when all three are true:
-
-1. **Hard to reverse**: the cost of changing your mind later is meaningful
-2. **Surprising without context**: a future reader will wonder "why did they do it this way?"
-3. **The result of a real trade-off**: there were genuine alternatives and you picked one for specific reasons
-
-If any of the three is missing, skip the ADR. Use the format in [ADR-FORMAT.md](./ADR-FORMAT.md).
+Follow governing consultation rules for material domain decisions. Preserve the actual status of facts, explicit decisions, working assumptions, and unresolved points rather than forcing premature closure.

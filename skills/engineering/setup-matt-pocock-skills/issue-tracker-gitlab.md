@@ -34,13 +34,12 @@ Create a GitLab issue.
 
 Run `glab issue view <number> --comments`.
 
-## Wayfinding operations
+## Wayfinding storage
 
-Used by `/wayfinder`. The **map** is a single issue with **child** issues as tickets.
+When the project chooses GitLab Issues for durable Wayfinder state:
 
-- **Map**: a single issue labelled `wayfinder:map`, holding the Notes / Decisions-so-far / Fog body. `glab issue create --label wayfinder:map`. (On GitLab tiers with native epics, an epic may hold the map instead; a labelled issue works everywhere.)
-- **Child ticket**: an issue carrying `Part of #<map>` at the top of its description and labels `wayfinder:<type>` (`research`/`prototype`/`grilling`/`task`). Once claimed, the ticket is assigned to the driving dev.
-- **Blocking**: GitLab's **native blocking link**, the canonical, UI-visible representation. Add it with the `/blocked_by #<n>` quick action, posted as a note (`glab issue note <child> --message "/blocked_by #<blocker>"`). Native blocking links are a Premium/Ultimate feature; on the free tier (or where unavailable) fall back to a `Blocked by: #<n>, #<n>` line at the top of the description. A ticket is unblocked when every blocker is closed.
-- **Frontier query**: `glab issue list -F json` scoped to the map's children, drop any with an open blocker: a native `blocked_by` link to an open issue (`glab api projects/:id/issues/:iid/links`), or an open issue in the `Blocked by` line, or an assignee; first in map order wins.
-- **Claim**: `glab issue update <n> --assignee @me`, the session's first write.
-- **Resolve**: `glab issue note <n> --message "<answer>"`, then `glab issue close <n>`, then append a context pointer (gist + link) to the map's Decisions-so-far.
+- **Map:** keep one issue or, when appropriate and available, an epic for the effort, using the current Wayfinder sections such as Destination, Established context, Decisions so far, Open questions, Not yet clear enough to decide, and Out of scope.
+- **Work units:** use child or linked issues for precise research, prototype, clarification, or enabling work. A `Part of #<map>` line is a portable fallback when no native parent relationship is available. Type labels are optional project conventions.
+- **Dependencies:** use native blocking links when the project tier supports them, for example the `/blocked_by #<n>` quick action posted with `glab issue note`. Otherwise record an explicit `Blocked by:` relationship or the project's established dependency notation.
+- **Ready frontier:** ready means genuine blockers are resolved. Selection, assignment, claiming, parallelism, and execution order belong to the governing orchestration policy rather than this tracker template.
+- **Results:** record outcomes using the project's normal issue conventions and update the canonical map with material decisions, facts, or newly exposed questions. Closing or assigning issues follows project conventions and current authorization.

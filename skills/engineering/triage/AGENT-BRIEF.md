@@ -1,6 +1,6 @@
 # Writing Agent Briefs
 
-An agent brief is a structured comment posted on a GitHub issue or PR when it moves to `ready-for-agent`. It is the authoritative specification that an AFK agent will work from. The original body and discussion are context: the agent brief is the contract.
+An agent brief is a structured comment posted on an issue or PR when it moves to `ready-for-agent`. It is a durable implementation handoff: it should capture the currently established outcome, constraints, and completion evidence without forcing the next agent to reconstruct the full triage conversation. Governing project instructions and later maintainer decisions remain authoritative if they change the direction.
 
 The brief states **what the agent should do**, which stretches to both surfaces: for an issue, that's building the change from nothing; for a PR, it's what's left to do *to the existing diff*: finish it, close gaps, address review points. Same principles either way; the PR example below shows the difference.
 
@@ -110,39 +110,34 @@ and append "..." to indicate truncation.
 ## Agent Brief
 
 **Category:** enhancement
-**Summary:** Add `.out-of-scope/` directory support for tracking rejected feature requests
+**Summary:** Add an optional timeout to the report export command
 
 **Current behavior:**
-When a feature request is rejected, the issue is closed with a `wontfix` label
-and a comment. There is no persistent record of the decision or reasoning.
-Future similar requests require the maintainer to recall or search for the
-prior discussion.
+The export command waits indefinitely for the remote report service. A stalled
+request can therefore leave CI jobs running until the outer job timeout.
 
 **Desired behavior:**
-Rejected feature requests should be documented in `.out-of-scope/<concept>.md`
-files that capture the decision, reasoning, and links to all issues that
-requested the feature. When triaging new issues, these files should be
-checked for matches.
+Allow callers to set a timeout for one export request. When the timeout expires,
+the command should stop waiting and return the same error shape used for other
+remote-request failures. Existing callers that do not set a timeout should keep
+the current behavior.
 
 **Key interfaces:**
-- Markdown file format in `.out-of-scope/`: each file should have a
-  `# Concept Name` heading, a `**Decision:**` line, a `**Reason:**` line,
-  and a `**Prior requests:**` list with issue links
-- The triage workflow should read all `.out-of-scope/*.md` files early
-  and match incoming issues against them by concept similarity
+- Export command options: accept an optional duration or timeout value using the
+  project's existing duration convention
+- Remote request path: apply the timeout to the request without changing the
+  response format
 
 **Acceptance criteria:**
-- [ ] Closing a feature as wontfix creates/updates a file in `.out-of-scope/`
-- [ ] The file includes the decision, reasoning, and link to the closed issue
-- [ ] If a matching `.out-of-scope/` file already exists, the new issue is
-      appended to its "Prior requests" list rather than creating a duplicate
-- [ ] During triage, existing `.out-of-scope/` files are checked and surfaced
-      when a new issue matches a prior rejection
+- [ ] Callers can configure a timeout for an export request
+- [ ] Expiration returns through the existing remote-request error interface
+- [ ] Omitting the option preserves current behavior
+- [ ] A focused test covers timeout expiration and the unchanged default path
 
 **Out of scope:**
-- Automated matching (human confirms the match)
-- Reopening previously rejected features
-- Bug reports (only enhancement rejections go to `.out-of-scope/`)
+- Changing global CI timeouts
+- Adding retries or retry policy
+- Changing unrelated report-service calls
 ```
 
 ### Good agent brief (PR)
