@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research"
+  short_description: "Investigate technical questions from primary evidence"
+  default_prompt: "Use $research to investigate this technical or project question against high-trust primary sources."
+
+policy:
+  allow_implicit_invocation: true

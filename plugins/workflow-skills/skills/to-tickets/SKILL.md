@@ -1,6 +1,7 @@
 ---
 name: to-tickets
 description: Break a plan, spec, or conversation into coherent, dependency-aware work units that can be executed and verified in focused contexts.
+disable-model-invocation: true
 ---
 
 # To Tickets

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Prototype"
+  short_description: "Test uncertainty with the smallest credible experiment"
+  default_prompt: "Use $prototype to build the smallest throwaway experiment that can answer this material uncertainty."
+
+policy:
+  allow_implicit_invocation: false

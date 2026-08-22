@@ -1,0 +1,7 @@
+interface:
+  display_name: "To Spec"
+  short_description: "Turn settled understanding into a durable spec"
+  default_prompt: "Use $to-spec to turn the settled decisions and project context into a durable implementation specification."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,6 +1,7 @@
 ---
 name: to-spec
 description: Turn the current conversation and established project context into a durable implementation spec without reopening already-resolved discussion.
+disable-model-invocation: true
 ---
 
 # To Spec

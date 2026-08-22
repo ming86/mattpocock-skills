@@ -1,6 +1,7 @@
 ---
 name: prototype
 description: Build the smallest throwaway artifact that can answer a material design, behavior, or UI question more cheaply or reliably than further discussion.
+disable-model-invocation: true
 ---
 
 # Prototype

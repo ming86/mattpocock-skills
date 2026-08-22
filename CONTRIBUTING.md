@@ -12,6 +12,8 @@ Prefer evidence-driven, proportional procedures over mandatory ceremony. Add a s
 
 ## Plugin structure
 
+Harness-specific metadata is allowed when it is additive and safely ignored by other harnesses. Keep core workflow semantics in `SKILL.md`; use sidecars such as `agents/openai.yaml` for product presentation or equivalent invocation controls. Do not encode model choice, worker topology, reviewer identity, permissions, or governing project policy in harness adapters.
+
 The canonical plugin is `plugins/workflow-skills/`:
 
 - root `plugin.json`: Agent Plugins 1.0.0 portable manifest

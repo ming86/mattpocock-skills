@@ -1,0 +1,7 @@
+interface:
+  display_name: "Grilling"
+  short_description: "Resolve material ambiguity with focused questions"
+  default_prompt: "Use $grilling to resolve the material ambiguity blocking the next decision or step."
+
+policy:
+  allow_implicit_invocation: true

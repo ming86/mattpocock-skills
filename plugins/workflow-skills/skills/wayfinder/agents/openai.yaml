@@ -1,0 +1,7 @@
+interface:
+  display_name: "Wayfinder"
+  short_description: "Externalize durable state for uncertain work"
+  default_prompt: "Use $wayfinder to externalize the decisions, evidence, dependencies, and open questions for this long-running work."
+
+policy:
+  allow_implicit_invocation: false

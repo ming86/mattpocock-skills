@@ -1,6 +1,7 @@
 ---
 name: grill-with-docs
 description: Clarify material product, design, or domain decisions before dependent work, while recording durable decisions when useful.
+disable-model-invocation: true
 ---
 
 # Grill With Docs

@@ -1,6 +1,7 @@
 ---
 name: implement
 description: Implement a bounded piece of work from an established spec, ticket, or current plan while preserving its scope and surfacing material invalidated assumptions.
+disable-model-invocation: true
 ---
 
 # Implement

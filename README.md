@@ -131,11 +131,19 @@ Remove with:
 
 Run `/reload-plugins` if Claude Code tells you a reload is required after an install or update.
 
+## Harness-specific skill metadata
+
+The workflow instructions remain harness-neutral, but the package keeps additive metadata that a harness can use without changing workflow semantics. Codex reads each skill's `agents/openai.yaml` for presentation metadata and implicit-invocation policy. GitHub Copilot CLI and Claude Code understand `disable-model-invocation` in `SKILL.md`.
+
+The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement` default to explicit invocation. Analytical and support skills remain eligible for automatic selection. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
+
+`disable-model-invocation` is a Copilot/Claude extension rather than a field in the core Agent Skills specification. The canonical skills use that extension deliberately because both target harnesses consume it; other clients should ignore unknown frontmatter fields.
+
 ## Local development
 
 Each harness can install or register a local checkout for testing. The source of truth remains `plugins/workflow-skills/`; do not maintain separate Codex, Copilot, and Claude copies of the skills.
 
-The plugin version is currently `0.1.0`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.1.1`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

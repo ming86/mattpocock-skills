@@ -1,0 +1,7 @@
+interface:
+  display_name: "Domain Modeling"
+  short_description: "Clarify domain vocabulary and invariants"
+  default_prompt: "Use $domain-modeling to clarify the domain concepts, relationships, and invariants that matter to this work."
+
+policy:
+  allow_implicit_invocation: true

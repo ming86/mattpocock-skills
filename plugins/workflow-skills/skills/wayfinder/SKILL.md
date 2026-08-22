@@ -1,6 +1,7 @@
 ---
 name: wayfinder
 description: Externalize the durable decision state for work that is too large, uncertain, or multi-session to navigate reliably in one transient agent context.
+disable-model-invocation: true
 ---
 
 # Wayfinder
