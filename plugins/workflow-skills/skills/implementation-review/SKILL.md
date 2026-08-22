@@ -1,17 +1,17 @@
 ---
 name: implementation-review
-description: "Review an existing bounded implementation for requested-outcome conformance and repository fit. Use only when explicitly asked to inspect a patch, pull request, or completed implementation for semantic errors, integration problems, regressions, unsupported behavior, unnecessary complexity, or missed requirements; this is not a broader critique of the underlying plan or approach."
+description: "Review a bounded implementation against the requested outcome and the surrounding repository. Use only when explicitly asked to inspect a patch, pull request, or completed implementation for correctness, integration problems, regressions, unnecessary complexity, or missed requirements. This is not a broader critique of the underlying plan or approach."
 disable-model-invocation: true
 ---
 
 # Implementation Review
 
-Review a bounded implementation without allowing technical polish to hide a goal mismatch, or requirement compliance to hide a poor repository integration.
+Review a bounded implementation without letting polished code hide a goal mismatch, or requirement compliance hide poor integration with the repository.
 
 Keep two questions separate:
 
 - **Intent / Spec:** Did the change implement the requested behavior, requirements, constraints, and scope?
-- **Repository / Implementation:** Is the change semantically correct and appropriate for this codebase, including its architecture, interfaces, conventions, and realistic integration behavior?
+- **Repository / Implementation:** Is the change correct and appropriate for this codebase, including its architecture, interfaces, conventions, and real integration behavior?
 
 This skill is a focused implementation review. It does not replace broader independent criticism configured by the project. A passing implementation review does not satisfy or cancel any broader independent-review checkpoint. A separate independent review may additionally examine whether the plan or implementation itself is sensible, proportionate, unnecessarily complex, based on bad assumptions, or drifting from the primary goal.
 
@@ -19,7 +19,7 @@ This skill is a focused implementation review. It does not replace broader indep
 
 Identify the exact change being reviewed: a diff against a commit, branch, tag, merge-base, PR, worktree state, or another explicit bounded surface. Verify that the boundary resolves and contains the intended changes before drawing conclusions.
 
-If the user did not specify a fixed point but repository state makes the intended boundary clear, use it and state what was reviewed. Ask only when materially different boundaries remain plausible.
+If the user did not specify a fixed point but the repository makes the intended boundary clear, use it and state what was reviewed. Ask only when meaningfully different boundaries remain plausible.
 
 ## 2. Identify the intent source
 
@@ -58,11 +58,11 @@ For each finding, point to the relevant requirement or decision source when avai
 
 Look for substantive issues in:
 
-- semantic correctness and invariants;
+- correctness and important invariants;
 - integration with surrounding modules and interfaces;
 - regressions or realistic failure paths introduced by the change;
 - architecture or dependency direction where the repository establishes a meaningful pattern;
-- unnecessary complexity, indirection, duplication, or abstraction that materially harms the implementation;
+- unnecessary complexity, indirection, duplication, or abstraction that meaningfully harms the implementation;
 - performance, security, compatibility, or robustness only where the actual system assumptions make the concern relevant;
 - runtime or integration assumptions that inspection alone cannot establish and need targeted validation.
 

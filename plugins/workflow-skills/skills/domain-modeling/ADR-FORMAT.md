@@ -12,7 +12,7 @@ Create `docs/adr/` only when the project has chosen this convention and the firs
 {1-3 sentences: what's the context, what did we decide, and why.}
 ```
 
-That's it. An ADR can be a single paragraph. The value is in recording *that* a decision was made and *why*, not in filling out sections.
+An ADR can be a single paragraph. Its value is recording the decision and why it was made, not filling out a template.
 
 ## Optional sections
 
@@ -28,7 +28,7 @@ Scan `docs/adr/` for the highest existing number and increment by one.
 
 ## When to offer an ADR
 
-All three of these must be true:
+Use an ADR when all three are true:
 
 1. **Hard to reverse**: the cost of changing your mind later is meaningful
 2. **Surprising without context**: a future reader will look at the code and wonder "why on earth did they do it this way?"

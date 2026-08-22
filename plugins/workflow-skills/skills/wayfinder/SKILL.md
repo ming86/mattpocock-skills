@@ -1,18 +1,18 @@
 ---
 name: wayfinder
-description: "Externalize decisions, evidence, dependencies, and open questions for work that is too large, uncertain, or multi-session to navigate reliably in one transient agent context. Use when important reasoning must survive context replacement and the path is not yet clear enough for ordinary planning."
+description: "Keep decisions, evidence, dependencies, and open questions outside transient agent context for work that is large, uncertain, or likely to span sessions. Use when important reasoning must survive context replacement and the path is not yet clear enough for an ordinary plan."
 disable-model-invocation: true
 ---
 
 # Wayfinder
 
-Use Wayfinder when important project reasoning must survive context replacement and the route to the desired outcome is not yet sufficiently clear for direct specification or implementation.
+Use Wayfinder when important project reasoning must survive context replacement and the route to the desired outcome is not yet clear enough for a normal spec or implementation plan.
 
 Wayfinding is not a mandatory planning phase. If the goal, important decisions, dependencies, and next work are already clear enough for a normal plan or implementation context, do not create a map.
 
 ## Purpose
 
-The map is durable orientation state for the effort. Its purpose is to let a fresh context recover the important decisions, evidence, dependencies, and unresolved frontier without reconstructing prior conversations. It should let a fresh context answer:
+The map is a durable overview of the work. It lets a fresh context recover important decisions, evidence, dependencies, and open work without reconstructing earlier conversations. A fresh context should be able to answer:
 
 - What outcome are we trying to reach?
 - What material decisions have already been made, and why?
@@ -21,13 +21,13 @@ The map is durable orientation state for the effort. Its purpose is to let a fre
 - Which unresolved questions depend on others?
 - What is currently ready to investigate or decide?
 
-A Wayfinder map should normally be durable because surviving context replacement is part of its purpose. Its storage and authority follow the project's existing conventions: the map may be an existing shared planning artifact, tracker state, work document, or local working state. Reuse the effort's existing source of orientation rather than introducing a parallel map. A configured local area such as `.local/` is appropriate when detailed or provisional state needs to survive contexts but does not belong in a shared project artifact. If no convention exists, use the simplest permitted work-centered artifact for a low-impact choice; follow governing project or user consultation when creating a new shared source of truth or choosing its authority is material.
+A Wayfinder map should normally persist because surviving context replacement is part of its purpose. Follow the project's existing conventions for where it lives and how authoritative it is. The map may be an existing planning document, tracker state, work document, or local working state. Reuse the work's existing overview instead of creating a parallel one. A configured local area such as `.local/` is appropriate when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists, use the simplest permitted work-centered location for a low-impact choice; consult the project or user before creating a new shared source of truth or making an important authority choice.
 
 Treat the map as maintained current state, not an append-only log. Update or remove superseded assumptions and questions as understanding changes. Preserve conclusions, status, rationale, and evidence pointers rather than discussion transcripts. Tracker-specific labels, assignment mechanics, native dependencies, and issue relationships are useful when available but are not part of the core method.
 
 ## The map
 
-Keep one primary low-resolution orientation artifact or view for the effort when practical:
+Keep one primary overview of the effort when practical:
 
 ```markdown
 ## Destination
@@ -55,7 +55,7 @@ Keep one primary low-resolution orientation artifact or view for the effort when
 <only material boundaries that prevent accidental expansion>
 ```
 
-Keep detail near its source. The map is an index and orientation aid, not a duplicate of every investigation or discussion.
+Keep detail near its source. The map is an overview and index, not a copy of every investigation or discussion.
 
 ## Work units
 
@@ -68,7 +68,7 @@ Useful modes include:
 - **Clarification:** obtain user judgment on a material product, scope, interface, domain, or tradeoff decision.
 - **Enabling task:** perform concrete work that is genuinely necessary before a decision can be made.
 
-Do not create a ticket for uncertainty that is still too vague to state meaningfully. Keep it in the map until upstream evidence makes the question precise enough.
+Do not create a ticket for uncertainty that is still too vague to state clearly. Keep it in the map until new evidence makes the question precise enough.
 
 ## Chart the map
 
@@ -76,8 +76,8 @@ Do not create a ticket for uncertainty that is still too vague to state meaningf
 2. Inspect existing project evidence before creating questions the repository can already answer.
 3. Identify the first set of precise unresolved decisions or investigations and their genuine dependencies.
 4. Record less-defined in-scope uncertainty without prematurely decomposing it.
-5. Establish or update the primary map or orientation view using the work's existing durable location or the project's durable-state convention. Prefer an existing source of orientation over creating a new one, and keep detailed research or experiment evidence near its source rather than duplicating it into the map. If choosing a new shared location or its authority is material, follow the governing consultation rules.
-6. Stop charting when the known frontier is sufficient. Do not try to predict the complete task graph through unresolved uncertainty.
+5. Establish or update the primary overview using the work's existing durable location or the project's durable-state convention. Prefer an existing overview over creating a new one, and keep detailed research or experiment evidence near its source rather than copying it into the map. If choosing a new shared location or its authority is important, follow the project's consultation rules.
+6. Stop charting when the known next questions are enough to proceed. Do not try to predict the complete task graph through unresolved uncertainty.
 
 If this process reveals that the route is already clear and the remaining work fits ordinary planning, stop using Wayfinder and hand off to that simpler workflow.
 
@@ -89,7 +89,7 @@ For each selected open question:
 2. Resolve it using repository evidence, research, a prototype, or user consultation as appropriate.
 3. Record the result with its actual status: established fact, explicit decision, working assumption, or unresolved issue.
 4. Update dependencies and retire questions invalidated by the new result.
-5. Promote newly precise uncertainty into work units only when it is now useful to do so.
-6. Re-evaluate whether the destination is clear enough to leave Wayfinder. Do not continue mapping after the remaining route can be captured more simply as a spec, plan, or tickets.
+5. Turn newly clear uncertainty into a work unit only when doing so is useful.
+6. Reassess whether the destination is clear enough to leave Wayfinder. Do not keep mapping once the remaining route can be captured more simply as a spec, plan, or tickets.
 
 Independent work units may be handled in fresh or parallel contexts when the governing orchestration policy permits it. The project-level agent instructions remain authoritative for delegation, user checkpoints, claims/assignment, review, and execution.

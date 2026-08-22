@@ -1,6 +1,6 @@
 # UI Prototype
 
-Use this shape when the uncertainty is visual or interaction design and comparing concrete alternatives will produce better evidence than more verbal discussion.
+Use this pattern when the uncertainty is visual or interaction design and concrete alternatives will answer it better than more verbal discussion.
 
 ## Keep the variants in realistic context
 
@@ -12,7 +12,7 @@ A URL parameter or small temporary switcher can make comparison easy when the fr
 
 ## Use realistic data only when it matters
 
-Reuse existing read paths or representative fixtures when they materially affect the design question. Avoid wiring prototype variants to production mutations unless the interaction itself is what needs validation.
+Reuse existing read paths or representative fixtures when they meaningfully affect the design question. Avoid wiring prototype variants to production mutations unless the interaction itself is what needs validation.
 
 ## Capture the result and remove prototype machinery
 

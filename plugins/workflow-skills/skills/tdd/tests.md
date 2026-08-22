@@ -2,7 +2,7 @@
 
 ## Strong behavioral tests
 
-Prefer tests that establish behavior users or callers care about through a stable observable seam.
+Prefer tests that prove behavior users or callers care about through a stable observable interface.
 
 ```typescript
 // GOOD: Tests observable behavior
@@ -20,9 +20,9 @@ Useful characteristics include:
 - Uses a stable public or integration interface when that interface exposes the relevant behavior
 - Survives harmless internal refactors
 - Describes WHAT is protected more than HOW it happens
-- Keeps each test focused on one coherent behavioral claim; multiple assertions are fine when they jointly establish that claim
+- Keeps each test focused on one clear behavioral claim; multiple assertions are fine when they jointly prove that claim
 
-Lower-level tests can still be appropriate when they protect a meaningful invariant, algorithm, parser, performance property, failure mode, or other behavior that would be expensive or ambiguous to establish only through a broader interface.
+Lower-level tests can still be appropriate when they protect an important invariant, algorithm, parser, performance property, failure mode, or other behavior that would be expensive or unclear to prove only through a broader interface.
 
 ## Fragile implementation-detail tests
 
@@ -40,7 +40,7 @@ test("checkout calls paymentService.process", async () => {
 Red flags include:
 
 - Mocking internal collaborators merely to assert the current call graph
-- Testing private methods without a meaningful invariant that justifies the narrower seam
+- Testing private methods without an important invariant that justifies the narrower test surface
 - Asserting call counts/order when callers do not depend on that ordering
 - Breaking on a harmless refactor with no corresponding behavior change
 - Test names that describe incidental HOW rather than protected WHAT
@@ -56,7 +56,7 @@ test("createUser makes user retrievable", async () => {
 });
 ```
 
-Direct inspection of storage, events, logs, or another lower-level surface is not automatically wrong. Use it when that surface is itself the behavior being protected or when the normal interface cannot establish the property without disproportionate setup. Make the reason clear so the test does not accidentally become an implementation-coupled substitute for an available behavioral assertion.
+Direct inspection of storage, events, logs, or another lower-level surface is not automatically wrong. Use it when that surface is itself the behavior being protected or when the normal interface cannot prove the property without excessive setup. Make the reason clear so the test does not accidentally become an implementation-coupled substitute for a simpler behavioral check.
 
 **Tautological tests**: Expected value restates the implementation, so the test passes by construction.
 

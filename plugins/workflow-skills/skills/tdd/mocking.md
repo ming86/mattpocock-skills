@@ -1,6 +1,6 @@
 # When to Mock
 
-Prefer the most realistic collaborator that still gives a focused, reliable, and proportionate test. Mocks and fakes are tools for controlling dependencies; system boundaries are common places to use them, not the only legitimate places.
+Prefer the most realistic collaborator that still gives a focused and reliable test at reasonable cost. Mocks and fakes are tools for controlling dependencies; system boundaries are common places to use them, not the only valid places.
 
 Common candidates include:
 
@@ -8,13 +8,13 @@ Common candidates include:
 - Databases when a real or lightweight test database is disproportionately expensive
 - Time, randomness, network failures, and other nondeterministic inputs
 - File systems or operating-system interactions when a real substitute is impractical
-- Narrow internal collaborators when controlling them materially improves failure reproduction, speed, determinism, or coverage and does not make the test primarily assert implementation wiring
+- Narrow internal collaborators when controlling them meaningfully improves failure reproduction, speed, determinism, or coverage without making the test mainly assert implementation wiring
 
-Be cautious about mocking your own classes/modules or internal collaborators when doing so makes tests mirror the current call graph. Prefer real collaborators or a higher-level observable seam when that remains cheap and gives a more credible behavioral signal.
+Be cautious about mocking your own classes, modules, or internal collaborators when doing so makes tests mirror the current call graph. Prefer real collaborators or a higher-level observable interface when that remains cheap and gives a more credible behavioral signal.
 
 ## Designing for controllable dependencies
 
-When a dependency genuinely needs substitution, make the seam easy to control without exposing unnecessary implementation detail.
+When a dependency genuinely needs substitution, make the replacement point easy to control without exposing unnecessary implementation detail.
 
 **1. Accept dependencies when substitution is useful**
 

@@ -158,7 +158,7 @@ cases:
     avoid: [to-questionnaire, grilling]
 
   - id: wayfinder-not-handoff
-    prompt: "Use $wayfinder to maintain the durable decision frontier for this uncertain six-week rewrite; no session transition is happening right now."
+    prompt: "Use $wayfinder to maintain the durable decision map for this uncertain six-week rewrite; no session transition is happening right now."
     expected:
       skill: wayfinder
       invocation: explicit-only

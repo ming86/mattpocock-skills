@@ -1,12 +1,12 @@
 ---
 name: to-tickets
-description: "Decompose a plan or specification into coherent, dependency-aware work units that can be executed and verified in focused contexts. Use when the work is large enough to benefit from multiple independently understandable units or sessions; preserve tightly coupled reasoning instead of splitting work merely to make tickets smaller."
+description: "Split a plan or specification into clear work units with real dependencies that can be executed and checked in focused contexts. Use when the work is large enough to benefit from multiple independently understandable units or sessions; keep tightly coupled reasoning together instead of splitting work just to make smaller tickets."
 disable-model-invocation: true
 ---
 
 # To Tickets
 
-Turn an established plan or spec into durable work units. Tickets should preserve enough context for a fresh agent or engineer to understand what outcome is required without carrying the entire planning conversation.
+Turn an established plan or spec into durable work units. Each ticket should give a fresh agent or engineer enough context to understand the required outcome without carrying the whole planning conversation.
 
 ## Process
 
@@ -18,14 +18,14 @@ Work from the current conversation, approved plan, spec, relevant issue, and rep
 
 Inspect the codebase enough to choose meaningful boundaries and dependencies. Use established domain vocabulary and respect relevant ADRs and repository conventions.
 
-Do not create prefactoring work merely because it might make later implementation cleaner. Add enabling refactors only when there is concrete evidence that they are required or materially reduce the risk or complexity of the requested work.
+Do not create preparatory refactors merely because they might make later implementation cleaner. Add enabling refactors only when evidence shows they are required or meaningfully reduce the risk or complexity of the requested work.
 
 ### 3. Decompose at natural boundaries
 
 Prefer work units that are coherent in terms of behavior, ownership, dependency, and reasoning. A ticket should normally:
 
 - deliver an observable or independently verifiable increment of the requested outcome;
-- contain a reasoning scope that a fresh context can understand reliably;
+- contain enough focused context for a fresh session to understand reliably;
 - state genuine prerequisites rather than incidental ordering preferences;
 - avoid bundling semantically independent work merely because it is adjacent;
 - avoid splitting tightly coupled reasoning merely to make tickets smaller.
@@ -36,15 +36,15 @@ For wide mechanical changes that cannot remain valid as independent vertical sli
 
 ### 4. Declare dependencies
 
-For each ticket, identify only the other tickets that genuinely block it. Tickets with all blockers resolved form the ready frontier. The governing orchestration policy decides whether ready units are executed independently, sequentially, or in parallel.
+For each ticket, identify only the other tickets that genuinely block it. Tickets whose blockers are resolved form the ready set. The governing orchestration policy decides whether ready units run independently, sequentially, or in parallel.
 
-### 5. Check material decomposition decisions
+### 5. Check important decomposition choices
 
-If materially different decompositions would change interfaces, scope, sequencing risk, ownership, or the user's intended delivery shape, surface the tradeoff according to the governing consultation rules. Do not require a ceremonial approval round for routine decomposition when the direction is already established.
+If different ways of splitting the work would meaningfully change interfaces, scope, sequencing risk, ownership, or the user's intended delivery shape, raise the tradeoff through the project's consultation rules. Do not require a ceremonial approval round for routine decomposition when the direction is already clear.
 
 ### 6. Publish durable work units
 
-Use the effort's existing task location or the project's configured issue-tracker or task convention. Reuse an existing tracker, planning artifact, or work location rather than introducing a parallel ticket store. When the tracker itself preserves the durable work units and dependencies, do not mirror the same tickets into local state merely for persistence; local working state should hold only detail or provisional context the shared artifact does not preserve well. If no convention exists, use the simplest permitted work-centered task artifact for a low-impact choice and follow governing consultation rules when selecting a new shared source of truth is material. Preserve blocking relationships using native tracker relationships when practical; otherwise state them explicitly in the ticket.
+Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, use the simplest permitted work-centered task location for a low-impact choice and consult the project or user before selecting a new shared source of truth. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket.
 
 Each ticket should contain:
 

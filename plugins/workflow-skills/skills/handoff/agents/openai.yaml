@@ -1,6 +1,6 @@
 interface:
   display_name: "Handoff"
-  short_description: "Compact live work state for a fresh agent or session"
+  short_description: "Package live work state for a fresh context"
   default_prompt: "Use $handoff to package the live state of this work so a fresh context can continue without reconstructing the conversation."
 
 policy:

@@ -1,8 +1,8 @@
 # Logic or State Prototype
 
-Use this shape when the uncertainty is about state transitions, business rules, data shape, or an interface that becomes easier to judge by driving concrete scenarios.
+Use this pattern when the uncertainty is about state transitions, business rules, data shape, or an interface that becomes easier to judge with concrete scenarios.
 
-The goal is evidence about the model, not reusable production code.
+The goal is evidence about the behavior or model, not reusable production code.
 
 ## Choose the smallest useful harness
 
@@ -12,7 +12,7 @@ State the question visibly enough that someone evaluating the prototype knows wh
 
 ## Keep the model observable
 
-Represent the relevant state and actions directly. Make it easy to exercise the happy path and the awkward cases that motivated the prototype. If a UI shell is used, keep the domain logic separate enough that the experiment is easy to reason about, but do not treat that prototype structure as a production architecture decision unless the experiment specifically validates it.
+Represent the relevant state and actions directly. Make it easy to exercise the happy path and the awkward cases that motivated the prototype. If a UI shell is used, keep the domain logic separate enough that the experiment is easy to reason about. Do not treat that prototype structure as a production architecture decision unless the experiment specifically validates it.
 
 Useful scenarios include:
 

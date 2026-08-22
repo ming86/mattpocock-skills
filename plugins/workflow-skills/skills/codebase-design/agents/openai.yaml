@@ -1,7 +1,7 @@
 interface:
   display_name: "Codebase Design"
-  short_description: "Design deep modules and meaningful code seams"
-  default_prompt: "Use $codebase-design to evaluate the module boundaries, interfaces, and seams in this design."
+  short_description: "Design clear module boundaries and interfaces"
+  default_prompt: "Use $codebase-design to evaluate the module boundaries, interfaces, and dependency structure in this design."
 
 policy:
   allow_implicit_invocation: true

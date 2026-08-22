@@ -1,7 +1,7 @@
 interface:
   display_name: "Diagnosing Bugs"
-  short_description: "Find root causes with focused evidence loops"
-  default_prompt: "Use $diagnosing-bugs to diagnose this bug with the smallest credible evidence loop, and fix it only if the current task authorizes a correction."
+  short_description: "Find root causes with focused evidence"
+  default_prompt: "Use $diagnosing-bugs to diagnose this bug with focused evidence, and fix it only if the current task authorizes a change."
 
 policy:
   allow_implicit_invocation: true

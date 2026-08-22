@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: "Apply a focused red-green-refactor loop when implementing behavior with a useful test seam. Use when the user requests TDD, repository conventions favor test-first development, or writing the test first would materially clarify or protect the behavior; do not treat TDD as a mandatory prerequisite for every code change."
+description: "Apply a focused red-green-refactor loop when test-first development fits the behavior being changed. Use when the user requests TDD, the repository favors it, or writing the test first would meaningfully clarify or protect the behavior; do not make TDD a prerequisite for every code change."
 ---
 
 # Test-Driven Development
@@ -15,13 +15,13 @@ Tests should verify behavior through an observable interface rather than mirror 
 
 See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidance.
 
-## Choose the seam deliberately
+## Choose what the test should observe
 
-A **seam** is the interface through which the test observes behavior. Prefer an existing public or integration boundary that represents the real behavior being changed.
+Prefer an existing public, integration, or other stable interface that exposes the real behavior being changed. In testing literature this kind of replaceable or observable point is sometimes called a **seam**; use the repository's normal term when it is clearer.
 
-Establish the relevant seam from the spec, ticket, repository architecture, existing tests, and call sites. If materially different seam choices would change architecture, scope, or what the test proves, surface that design decision according to the governing consultation rules. Do not require user confirmation for a routine seam that is already established by the codebase.
+Choose the test surface from the spec, ticket, repository architecture, existing tests, and call sites. If meaningfully different choices would change architecture, scope, or what the test proves, raise that design decision through the project's consultation rules. Do not require user confirmation for a routine test surface already established by the codebase.
 
-When the interface itself is the design question, use `codebase-design` as a vocabulary and reasoning reference.
+When the interface itself is the design question, use `codebase-design` for design guidance.
 
 ## The loop
 
@@ -40,6 +40,6 @@ Watch for:
 - tautological assertions that compute the expected result the same way as the implementation;
 - mocks of internal collaborators that bypass the real behavior under test;
 - broad snapshots or fixture construction that obscure the behavioral claim;
-- test seams too shallow to reproduce the actual bug or requirement.
+- test surfaces too narrow to reproduce the actual bug or requirement.
 
 Stop using the TDD loop when another validation technique is a better fit for the remaining work. The objective is reliable behavior, not completion of a ritual.

@@ -24,8 +24,8 @@ _Avoid_: Client, buyer, account
 
 ## Rules
 
-- **Be opinionated.** When multiple words exist for the same concept, pick the best one and list the others under `_Avoid_`.
-- **Keep definitions tight.** One or two sentences max. Define what it IS, not what it does.
+- **Choose a preferred term.** When several words mean the same domain concept, choose the clearest project term and list confusing synonyms under `_Avoid_` when that helps keep usage consistent.
+- **Keep definitions short.** Usually one or two sentences. Define the concept clearly; include behavior only when it is part of the meaning.
 - **Only include terms specific to this project's context.** General programming concepts (timeouts, error types, utility patterns) don't belong even if the project uses them extensively. Before adding a term, ask: is this a concept unique to this context, or a general programming concept? Only the former belongs.
 - **Group terms under subheadings** when natural clusters emerge. If all terms belong to a single cohesive area, a flat list is fine.
 
@@ -57,4 +57,4 @@ Use this structure only when the repository already uses the `CONTEXT.md` conven
 - If only a root `CONTEXT.md` exists, treat it as a single context.
 - If neither exists and the project has explicitly chosen this convention, start with one root `CONTEXT.md`; split into multiple contexts only when real domain boundaries justify it.
 
-When multiple contexts exist, infer which one the current topic relates to. If materially different contexts remain plausible, follow the governing consultation rules rather than inventing a placement.
+When multiple contexts exist, infer which one the current topic belongs to. If several meaningfully different placements remain plausible, follow the project's consultation rules rather than inventing one.

@@ -1,7 +1,7 @@
 interface:
   display_name: "To Tickets"
-  short_description: "Split work into coherent dependency-aware units"
-  default_prompt: "Use $to-tickets to decompose this plan or spec into coherent, dependency-aware work units."
+  short_description: "Split work into clear units with real dependencies"
+  default_prompt: "Use $to-tickets to split this plan or spec into clear work units with real dependencies."
 
 policy:
   allow_implicit_invocation: false

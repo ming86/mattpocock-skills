@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.8 - 2026-08-22
+
+- Rewrite all 16 skill entry files for clearer, more direct engineering language while preserving routing, authority, stopping conditions, and workflow behavior.
+- Stop `codebase-design` from imposing a private design dialect: keep deep-module concepts available when useful while preserving ordinary repository terms such as service, API, boundary, and component.
+- Simplify supporting TDD, prototype, domain-modeling, and codebase-design guidance where abstract wording or categorical vocabulary could steer models toward unnecessary formalism.
+- Simplify user-facing Codex skill descriptions and prompts so harness metadata uses the same plain-language boundaries as the skills themselves.
+- Keep the 16-skill set, explicit/implicit invocation policy, routing cases, persistence model, and orchestration boundaries unchanged.
+
 ## 0.1.7 - 2026-08-22
 
 - Make inherited `codebase-design` and TDD testing guidance proportional: deep-module, seam, mock, and interface-testing rules remain strong heuristics rather than universal laws.

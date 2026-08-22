@@ -1,11 +1,11 @@
 ---
 name: diagnosing-bugs
-description: "Diagnose bugs, regressions, intermittent failures, or performance problems whose cause is not already established. Use when straightforward inspection is insufficient and evidence is needed to distinguish competing explanations; run the smallest credible diagnostic loop, establish the cause, and fix it only when the current task authorizes a correction."
+description: "Diagnose bugs, regressions, intermittent failures, or performance problems whose cause is not known. Use when straightforward inspection is not enough and evidence is needed to distinguish competing explanations; use the smallest useful diagnostic loop and fix the cause only when the current task authorizes a change."
 ---
 
 # Diagnosing Bugs
 
-Use an evidence-driven loop for bugs that are not resolved reliably by straightforward inspection. Scale the procedure to the uncertainty and consequences of the bug rather than forcing every case through the same number of phases.
+Use evidence to narrow bugs that straightforward inspection cannot resolve reliably. Match the depth of the investigation to the uncertainty and consequences instead of forcing every case through the same sequence at the same depth.
 
 When exploring the codebase, use `CONTEXT.md`, ADRs, tests, logs, history, and nearby implementation as evidence when they are relevant. Follow governing project instructions for user consultation, temporary instrumentation, commits, review, and production-impacting actions.
 
@@ -38,17 +38,17 @@ Confirm that the signal matches the user's reported symptom rather than a differ
 
 A minimal reproduction is useful evidence, not a gate. Do not block diagnosis on minimization when the existing reproduction is already precise enough to test causes.
 
-## 3. Form falsifiable hypotheses
+## 3. Form testable hypotheses
 
 When the cause is not already established by direct evidence, form multiple plausible hypotheses and rank them by the evidence available. Each hypothesis should predict an observation that would make it more or less likely.
 
-Share the hypotheses with the user when their domain knowledge could materially change the ranking or when the governing consultation rules call for a checkpoint. Do not create a user round-trip merely because this skill has reached a hypothesis step.
+Share the hypotheses with the user when their domain knowledge could materially change the ranking or when the project's consultation rules call for a checkpoint. Do not create a user round-trip merely because this skill has reached a hypothesis step.
 
-## 4. Test the highest-value distinctions
+## 4. Test the differences that best separate the hypotheses
 
 Choose probes that distinguish competing explanations with the least disruption. Prefer direct inspection, a debugger, a narrow log or trace, a controlled input/configuration change, or a focused comparison over broad instrumentation.
 
-Change one material variable at a time when causal attribution depends on it. Tag temporary instrumentation so it can be found and removed reliably.
+Change one important variable at a time when you need to know which change caused the result. Tag temporary instrumentation so it can be found and removed reliably.
 
 For performance regressions, measure before changing code. Use the metric or profiler that can establish whether the suspected cause actually explains the regression.
 
@@ -56,7 +56,7 @@ For performance regressions, measure before changing code. Use the metric or pro
 
 Once the evidence supports a cause, distinguish diagnosis from permission to change the system. If the current task authorizes a fix, implement the smallest coherent correction within scope. If the task asks only for diagnosis, report the cause, supporting evidence, confidence or remaining uncertainty, and the smallest credible correction without modifying the implementation.
 
-If the evidence invalidates a material requirement, architecture assumption, interface, or operational direction, surface that finding through the governing project or user-consultation path rather than silently redesigning the system.
+If the evidence invalidates a material requirement, architecture assumption, interface, or operational direction, report that finding through the governing project or user-consultation path rather than silently redesigning the system.
 
 When a fix is authorized, add or retain a regression test when there is a correct observable seam and the test materially protects the behavior. A shallow or artificial test that cannot reproduce the real failure is not useful merely because a regression test seems customary.
 
@@ -70,6 +70,6 @@ Before considering the task complete, establish the evidence appropriate to its 
 - temporary debug instrumentation and disposable artifacts are removed or intentionally retained in an established location;
 - unresolved uncertainty or validation limits are reported clearly.
 
-For a substantial or multi-session investigation, preserve the current diagnostic state when repeating the investigation would be costly: established observations, active or eliminated hypotheses, root cause when known, evidence pointers, and remaining leads. Reuse the work's existing durable location or follow the project's configured durable-state convention. Use local working state when the investigation is provisional or too detailed for a shared project artifact. If no convention exists, use the simplest permitted work-centered artifact for a low-impact choice and follow governing consultation rules when the location or authority is material. Keep it current rather than appending a chronological debugging transcript.
+For a substantial or multi-session investigation, preserve the current diagnostic state when repeating the work would be costly: confirmed observations, active or eliminated hypotheses, the root cause when known, evidence pointers, and remaining leads. Reuse the work's existing durable location or follow the project's durable-state convention. Use local working state when the investigation is provisional or too detailed for shared project documentation. If no convention exists, use the simplest permitted work-centered location for a low-impact choice and consult the project or user when the location or authority is important. Keep this state current rather than appending a chronological debugging transcript.
 
 Preserve or share the root cause and supporting evidence when future work would materially benefit, using the project's normal durable-state conventions and artifact authority. If the project uses a commit or pull-request explanation, include the cause there when appropriate and when such an artifact already belongs to the authorized work; this skill does not require or authorize a commit by itself.

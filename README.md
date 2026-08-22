@@ -1,6 +1,6 @@
 # Workflow Skills
 
-A focused set of engineering workflow skills for coding agents. The skills help clarify material decisions, gather evidence, externalize long-running project state, turn settled understanding into specs and work units, implement bounded changes, and validate them without imposing a second project-level orchestration policy.
+A focused set of engineering workflow skills for coding agents. The skills help clarify important decisions, gather evidence, preserve long-running work state, turn settled understanding into specs and work units, implement bounded changes, and check the results without imposing a second project-level orchestration policy.
 
 This package is designed to complement whatever governing instructions, review agents, issue tracker, and engineering conventions a project already uses. It does not bundle or require a particular `AGENTS.md`, custom reviewer, worker topology, tracker, commit policy, or delivery workflow.
 
@@ -8,30 +8,30 @@ This package is designed to complement whatever governing instructions, review a
 
 The `workflow-skills` plugin currently contains 16 skills:
 
-- `grilling`: focused clarification of material decisions
+- `grilling`: focused clarification of important decisions
 - `grill-with-docs`: clarification grounded in repository and project evidence
 - `research`: primary-source technical and project research
-- `prototype`: smallest useful experiment for a material uncertainty
-- `wayfinder`: durable decision state for large, uncertain, or multi-session work
+- `prototype`: smallest useful experiment for an important uncertainty
+- `wayfinder`: durable overview for large, uncertain, or multi-session work
 - `to-spec`: convert settled understanding into an implementation spec
-- `to-tickets`: decompose work into coherent dependency-aware units
+- `to-tickets`: split work into clear units with real dependencies
 - `implement`: execute one bounded work unit while preserving scope
-- `implementation-review`: explicitly review a bounded implementation for intent/spec conformance and repository integration
+- `implementation-review`: explicitly review a bounded implementation against the requested outcome and repository integration
 - `diagnosing-bugs`: evidence-driven debugging and regression diagnosis
 - `tdd`: focused red-green-refactor when test-first development is useful
 - `domain-modeling`: sharpen durable domain vocabulary, relationships, and invariants
-- `codebase-design`: reason about module interfaces, seams, depth, and testability
+- `codebase-design`: reason about module boundaries, interfaces, dependencies, and testability
 - `resolving-merge-conflicts`: reconcile in-progress Git conflicts from the intent behind both sides
-- `handoff`: compact live transition state for a fresh session or agent
+- `handoff`: package live work state for a fresh session or agent
 - `to-questionnaire`: ask an external decision-maker or domain expert for missing information
 
 The skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
 
 ## Durable working state
 
-Coding-agent context is transient. When detailed findings, decisions, assumptions, evidence, or open questions would be expensive or unreliable to reconstruct after compaction or a fresh session, the skills may externalize that state. Persistence is value-driven rather than mandatory.
+Coding-agent context is transient. When detailed findings, decisions, assumptions, evidence, or open questions would be expensive or unreliable to reconstruct after compaction or a fresh session, the skills may save that state outside the conversation. Persistence is useful when it preserves real value; it is not mandatory.
 
-Persistence complements existing project artifacts and conventions; it does not replace them. Prefer work-centered artifacts over skill-centered files, and first reuse the effort's existing durable location or the project's configured tracker, documentation, or durable-state convention. Use a configured local working-state area, for example `.local/work/<work>/`, when detailed or provisional state should survive contexts but does not belong in a shared project artifact. If no convention exists and the choice is low-impact, use the simplest permitted work-centered artifact. When choosing a new shared location, source of truth, or artifact authority is material, follow the governing project instructions and user-consultation path.
+Persistence complements existing project documents and conventions; it does not replace them. Prefer files or records organized around the work rather than around the skill that produced them. First reuse the work's existing durable location or the project's tracker, documentation, or durable-state convention. Use a configured local working-state area, for example `.local/work/<work>/`, when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists and the choice is low-impact, use the simplest permitted work-centered location. When a new shared location or source of truth would be an important project decision, follow the project instructions and user-consultation path.
 
 Keep durable state compact and current: preserve conclusions, status, rationale, and evidence pointers rather than transcripts or append-only diaries. A shared issue, spec, ADR, design document, or tracker may already be the right authoritative home; local working state may remain provisional. Promotion from local state into shared project truth is one possible lifecycle, not a required one. If information is immediately consumed and cheap to reconstruct, leaving it transient is often better.
 
@@ -156,7 +156,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.1.7`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.1.8`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

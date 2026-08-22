@@ -1,45 +1,49 @@
 # Design It Twice
 
-When the user wants to explore alternative interfaces for a chosen deepening candidate, generate several materially different designs before converging. The useful mechanism is independent alternatives, not a particular subagent topology. Based on "Design It Twice" (Ousterhout): the first plausible interface is rarely the only one worth considering.
+Use this technique when an important interface decision still has several credible shapes and comparing them is likely to improve the choice. Do not generate alternatives merely because this file exists.
 
-Use the vocabulary in [SKILL.md](SKILL.md): **module**, **interface**, **seam**, **adapter**, **leverage**.
+The value comes from comparing genuinely different designs, not from any particular subagent setup. The idea is based on Ousterhout's "Design It Twice": the first plausible interface is not always the best one.
 
-Follow the governing project instructions for delegation, fresh contexts, parallelism, and user checkpoints. This procedure works whether alternatives are produced by one agent sequentially or by independent workers chosen by the governing orchestration policy.
+Use the design concepts from [SKILL.md](SKILL.md) when they help, while keeping the repository's normal terminology.
+
+Follow governing project instructions for delegation, fresh contexts, parallel work, and user checkpoints. One agent can produce the alternatives sequentially, or the governing orchestration policy can assign them to independent workers.
 
 ## Process
 
-### 1. Frame the problem space
+### 1. State the constraints
 
-Write down the constraints every candidate interface must satisfy:
+Write down what every candidate must satisfy:
 
-- the behavior and use cases the interface must support;
-- the dependencies it relies on and their category from [DEEPENING.md](DEEPENING.md);
-- important invariants, ordering constraints, error modes, and performance expectations;
-- a small illustrative code sketch when it helps make the constraints concrete without prematurely selecting a design.
+- behavior and use cases the interface must support;
+- relevant dependencies and their category from [DEEPENING.md](DEEPENING.md);
+- important invariants, ordering rules, error behavior, and performance expectations;
+- a small code sketch when it makes the constraints clearer without prematurely choosing a design.
 
-If materially different problem framings remain plausible, follow the governing consultation rules before treating one as established.
+If different interpretations of the problem would lead to meaningfully different designs, resolve that through the project's consultation rules before treating one interpretation as settled.
 
-### 2. Generate independent alternatives
+### 2. Generate distinct alternatives
 
-Produce at least two, and usually three, substantially different interfaces when the design question is consequential enough to justify comparison. Use different design pressures so the alternatives are genuinely distinct rather than cosmetic variants. Useful pressures include:
+Produce two or, when useful, three substantially different interfaces only when the decision is important enough to justify comparison. Make them differ in structure or tradeoffs, not just naming.
 
-- minimize the interface and maximize leverage per entry point;
-- maximize flexibility across known use cases;
-- optimize the most common caller and make the default path trivial;
-- place a seam around a real external or replaceable dependency when that is material.
+Useful design pressures include:
 
-If the governing orchestration policy chooses separate workers, give each a self-contained brief with the relevant files, constraints, dependency category, domain vocabulary, and expected output. Do not spawn workers merely because this document exists.
+- minimize what callers must learn;
+- support known variation without making the common path awkward;
+- make the most common caller simple;
+- isolate a real external or replaceable dependency when that helps the design.
+
+If the governing orchestration policy uses separate workers, give each one the relevant files, constraints, dependency information, domain language, and expected output. Do not spawn workers merely because this technique mentions alternatives.
 
 For each alternative, capture:
 
-1. Interface: types, methods, parameters, invariants, ordering, and error modes.
-2. Usage example showing how representative callers use it.
-3. What complexity the implementation hides behind the seam.
-4. Dependency and adapter strategy where relevant.
-5. Tradeoffs in leverage, locality, flexibility, and migration cost.
+1. The interface: types, methods, parameters, invariants, ordering, and error behavior.
+2. A short example showing how representative callers use it.
+3. The complexity hidden behind the interface.
+4. Dependency or adapter choices when relevant.
+5. The important tradeoffs: caller simplicity, how concentrated changes stay, flexibility, testability, and migration cost.
 
 ### 3. Compare and recommend
 
-Compare the alternatives on the constraints that actually matter to this module, especially **depth**, **locality**, and **seam placement**. Explain the material tradeoffs rather than scoring every dimension mechanically.
+Compare the alternatives on the constraints that actually matter. Explain the tradeoffs in plain terms rather than scoring every possible dimension.
 
-Give a recommendation when the evidence supports one. A hybrid is valid when it combines compatible strengths without creating a larger or less coherent interface. Preserve unresolved material tradeoffs instead of forcing convergence for its own sake.
+Recommend one when the evidence supports it. A hybrid is valid when it combines compatible strengths without making the interface larger or less clear. Leave an important tradeoff unresolved when the available evidence cannot settle it; do not force a conclusion merely to finish the exercise.
