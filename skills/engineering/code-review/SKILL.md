@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Review a bounded change along two independent axes: whether it matches the requested outcome and whether it is appropriate for the repository.
+description: "Review a bounded change along two independent axes: whether it matches the requested outcome and whether it is appropriate for the repository."
 ---
 
 # Code Review
