@@ -67,4 +67,6 @@ Before considering the diagnosis complete, establish the evidence appropriate to
 - temporary debug instrumentation and disposable artifacts are removed or intentionally retained in an established location;
 - unresolved uncertainty or validation limits are reported clearly.
 
-Preserve the root cause and important evidence in the project's normal durable artifact when later engineers would benefit from it. If the project uses a commit or pull-request explanation, include the cause there when appropriate, but this skill does not require or authorize a commit by itself.
+For a substantial or multi-session investigation, preserve the current diagnostic state when repeating the investigation would be costly: established observations, active or eliminated hypotheses, root cause when known, evidence pointers, and remaining leads. Reuse the work's existing location first; otherwise use the project's configured local working-state location, or the simplest permitted work-centered local artifact when no convention exists. Keep it current rather than appending a chronological debugging transcript.
+
+Promote the root cause into the project's normal shared artifact when later engineers would benefit from it. If the project uses a commit or pull-request explanation, include the cause there when appropriate, but this skill does not require or authorize a commit by itself.

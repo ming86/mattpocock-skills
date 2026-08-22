@@ -24,6 +24,14 @@ The `workflow-skills` plugin currently contains 13 skills:
 
 The skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
 
+## Durable working state
+
+Coding-agent context is transient. When detailed findings, decisions, assumptions, evidence, or open questions would be expensive or unreliable to reconstruct after compaction or a fresh session, the skills may externalize that state. Persistence is value-driven rather than mandatory.
+
+Prefer work-centered artifacts over skill-centered files. Reuse an existing work location when one already exists; otherwise use the project's configured local working-state area when appropriate, for example `.local/work/<work>/`. If no convention exists and persistence is justified, use the simplest work-centered local artifact the project permits. Keep durable working state compact and current: preserve conclusions, status, rationale, and evidence pointers rather than transcripts or append-only diaries.
+
+Local working state may be provisional. Promote it into shared project documentation, ADRs, specs, or tracker state only when it belongs in project truth. If information is immediately consumed and cheap to reconstruct, leaving it transient is often better.
+
 ## Plugin layout
 
 The canonical package follows Agent Plugins 1.0.0:
@@ -143,7 +151,7 @@ The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-
 
 Each harness can install or register a local checkout for testing. The source of truth remains `plugins/workflow-skills/`; do not maintain separate Codex, Copilot, and Claude copies of the skills.
 
-The plugin version is currently `0.1.3`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.1.4`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

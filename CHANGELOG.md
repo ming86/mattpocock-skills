@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.4 - 2026-08-22
+
+- Add value-driven persistence for working state that needs to survive context compaction, fresh sessions, or handoffs.
+- Prefer work-centered artifacts and existing work locations over skill-specific files or parallel folder trees.
+- Make Wayfinder normally establish or reuse durable current state while keeping other skills conditional and proportional.
+- Preserve compressed conclusions, evidence, status, and open questions rather than transcripts or append-only agent diaries.
+- Keep local working state provisional unless it is deliberately promoted into shared project truth.
+
 ## 0.1.3 - 2026-08-22
 
 - Rename `code-review` to `implementation-review` so the skill is clearly narrower than broader independent criticism.

@@ -79,4 +79,6 @@ Present findings under separate `Intent / Spec` and `Repository / Implementation
 
 If an axis has no substantive findings, say so explicitly. Do not merge the axes into a single score or allow a pass on one to cancel a failure on the other.
 
+Review findings can remain in the current response when they will be acted on immediately. Persist them only when they become durable follow-up work or materially change the effort's existing state; reuse that work location rather than creating a separate review log.
+
 Follow the governing project instructions for whether another independent review is required, who owns fixes, and what validation or checkpoint follows.

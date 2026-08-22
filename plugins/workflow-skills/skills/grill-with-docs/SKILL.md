@@ -14,7 +14,7 @@ Use this skill when unresolved decisions or domain ambiguity would materially af
 2. Use `grilling` for material product, behavior, scope, interface, or tradeoff decisions that require the user's judgment.
 3. Use `domain-modeling` when ambiguity in domain concepts, terminology, entities, invariants, or relationships is itself material to the work. Do not invoke it merely because the task has domain vocabulary.
 4. Ask one focused question at a time when an answer materially changes subsequent work. Do not manufacture decisions or continue interviewing after the remaining uncertainty is immaterial.
-5. Preserve important resolved decisions in the project's existing durable artifacts when useful. Keep their status accurate: distinguish explicit decisions from discovered facts, working assumptions, and unresolved points.
-6. When enough is known for the next phase, stop. Do not turn clarification into an open-ended requirements exercise.
+5. Preserve important resolved decisions when they have meaningful cross-context value. Reuse the work's existing artifact or location when one already exists; otherwise use the project's configured local working-state location when appropriate, or the simplest permitted work-centered local artifact when no convention exists. Keep status accurate: distinguish explicit decisions from discovered facts, working assumptions, and unresolved points. Preserve the compressed decision state, not a question-and-answer transcript.
+6. When enough is known for the next phase, stop. Do not turn clarification into an open-ended requirements exercise or create durable files for information that is immediately consumed and cheap to reconstruct.
 
 Follow the governing project or user instructions for consultation, checkpoints, documentation, and issue-tracker behavior.

@@ -13,7 +13,7 @@ Merely reading an existing glossary for vocabulary is not domain modeling. Follo
 
 Inspect the project's existing glossary, context documents, ADRs, schema, code, tests, and user language that bear on the concept being discussed. If the repository has a configured domain-document convention, use it.
 
-If no durable domain artifact exists, do not create one automatically for incidental terminology. Create or propose a durable artifact only when preserving the model has concrete value for later work and the governing project instructions permit it.
+If no durable domain artifact exists, do not create one automatically for incidental terminology. When a working model has cross-context value but is not yet shared project truth, reuse the effort's existing work location or configured local working-state area; if neither exists, use a simple work-centered local artifact only when preserving the model is justified. Create or propose canonical domain documentation only when preserving the model has concrete shared value and the governing project instructions permit it.
 
 ## During the session
 
@@ -35,7 +35,7 @@ When the user states how the domain behaves, compare it with relevant code, sche
 
 ### Preserve durable changes when useful
 
-When a term, relationship, or invariant is materially resolved and later work depends on it, update the repository's established domain artifact. If the project uses `CONTEXT.md`, [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md) is available as a format. Do not create or update documentation for every conversational refinement.
+When a term, relationship, or invariant is materially resolved and later work depends on it, preserve the compact current model in the work's existing state. Update the repository's established domain artifact when the result is intended as shared project truth. If the project uses `CONTEXT.md`, [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md) is available as a format. Do not record every conversational refinement or preserve a transcript.
 
 ### Record architectural decisions separately
 

@@ -5,13 +5,13 @@
   },
   "metadata": {
     "description": "Adaptive engineering workflow skills",
-    "version": "0.1.3"
+    "version": "0.1.4"
   },
   "plugins": [
     {
       "name": "workflow-skills",
       "description": "Adaptive engineering workflow skills for clarification, research, planning, implementation, validation, and review.",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "source": "./plugins/workflow-skills"
     }
   ]

@@ -16,7 +16,7 @@ If a material decision is still unresolved and the spec would have to invent an 
 2. Separate what is actually known from what is merely inferred. Preserve the status of material information: explicit requirement or decision, discovered fact or constraint, working assumption, or unresolved point.
 3. Identify verification seams appropriate to the change. Prefer existing observable boundaries when they provide useful confidence. Do not create new seams, test layers, or testing commitments solely to satisfy this template.
 4. Write the spec using the structure below, omitting sections or details that add no useful information. Keep the amount of detail proportional to the work.
-5. Publish or store the spec using the project's configured tracker or documentation convention. Do not require a tracker when the governing project instructions use another durable artifact.
+5. Publish or store the spec as durable work state using the project's configured tracker or documentation convention. Reuse the effort's existing work location when one already exists instead of scattering another artifact elsewhere. A configured local working-state area is appropriate for a personal or provisional spec; promote it into shared project documentation only when that is the intended source of truth. If no durable-state convention exists, use the simplest work-centered artifact permitted by the project. Do not require a tracker when another durable artifact fits the work better.
 
 <spec-template>
 

@@ -12,7 +12,7 @@ Wayfinding is not a mandatory planning phase. If the goal, important decisions, 
 
 ## Purpose
 
-The map is durable project memory for the decisions that shape later work. It should let a fresh context answer:
+The map is durable working memory for the decisions that shape later work. It should let a fresh context answer:
 
 - What outcome are we trying to reach?
 - What material decisions have already been made, and why?
@@ -21,7 +21,9 @@ The map is durable project memory for the decisions that shape later work. It sh
 - Which unresolved questions depend on others?
 - What is currently ready to investigate or decide?
 
-The durable state belongs in the project's configured issue tracker or documentation convention. Tracker-specific labels, assignment mechanics, native dependencies, and issue relationships are useful when available but are not part of the core method.
+A Wayfinder map should normally be durable because surviving context replacement is part of its purpose. Reuse an existing work location when the effort already has one. Otherwise prefer the project's configured local working-state location, such as a work-centered subfolder under `.local/`, or the configured issue tracker or planning convention. If no convention exists, use the simplest work-centered local artifact permitted by the project. Do not create parallel locations for the same work merely because Wayfinder is running.
+
+Treat the map as maintained current state, not an append-only log. Update or remove superseded assumptions and questions as understanding changes. Preserve conclusions, status, rationale, and evidence pointers rather than discussion transcripts. Tracker-specific labels, assignment mechanics, native dependencies, and issue relationships are useful when available but are not part of the core method.
 
 ## The map
 
@@ -74,7 +76,7 @@ Do not create a ticket for uncertainty that is still too vague to state meaningf
 2. Inspect existing project evidence before creating questions the repository can already answer.
 3. Identify the first set of precise unresolved decisions or investigations and their genuine dependencies.
 4. Record less-defined in-scope uncertainty without prematurely decomposing it.
-5. Publish the map and actionable work units using the project's durable-state convention.
+5. Establish or update the canonical work-centered map using the project's durable-state convention. Prefer an existing location over creating a new one, and keep detailed research or experiment evidence near its source rather than duplicating it into the map.
 6. Stop charting when the known frontier is sufficient. Do not try to predict the complete task graph through unresolved uncertainty.
 
 If this process reveals that the route is already clear and the remaining work fits ordinary planning, stop using Wayfinder and hand off to that simpler workflow.

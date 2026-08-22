@@ -19,6 +19,8 @@ Model the unresolved decisions and their dependencies. The **frontier** is the s
 6. Recompute the frontier after each answer or evidence-gathering result. Retire questions that become irrelevant and add newly exposed questions only when they materially affect the goal.
 7. Stop when the remaining uncertainty no longer materially blocks the intended next step. Preserve unresolved points according to the calling workflow instead of forcing arbitrary closure.
 
+When clarification produces decisions or unresolved points that later contexts would otherwise have to reconstruct, preserve the compact current state in the work's existing durable artifact or configured local working-state location; if neither exists and persistence is justified, use the simplest work-centered local artifact permitted by the project. Record conclusions, rationale, status, and evidence pointers rather than a transcript of the interview. Do not create a file for clarification that is immediately consumed and cheap to reconstruct.
+
 User decisions remain the user's. Do not silently choose a material product, scope, interface, operational, or tradeoff decision merely to finish the interview.
 
 When another skill calls `grilling`, follow that skill's narrower purpose, documentation behavior, and stopping conditions. Follow governing project or user instructions for consultation and checkpoints.
