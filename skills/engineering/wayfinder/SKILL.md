@@ -42,7 +42,7 @@ Keep one canonical low-resolution artifact for the effort:
 
 ## Open questions
 
-- <question> — <dependencies or status if useful>
+- <question>: <dependencies or status if useful>
 
 ## Not yet clear enough to decide
 
