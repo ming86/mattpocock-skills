@@ -1,12 +1,14 @@
 # Fork adaptation principles
 
-This fork keeps the useful workflow mechanisms from Matt Pocock's skills while making them complementary to a repository or user-level `AGENTS.md` rather than a second orchestration policy.
+This fork keeps useful workflow mechanisms from Matt Pocock's skills while making them complementary to repository or user-level agent policy rather than a second orchestration framework.
+
+The upstream project remains the source of the original skill set and is preserved under the MIT license in [LICENSE](./LICENSE).
 
 ## Authority boundaries
 
-- `AGENTS.md` owns engineering policy: scope, orchestration, delegation, user consultation, checkpoints, validation, and independent review.
+- `AGENTS.md`, `CLAUDE.md`, or equivalent governing instructions own engineering policy: scope, orchestration, delegation, user consultation, checkpoints, validation, commits, and independent review.
 - Skills provide task-specific procedures. They should not override repository instructions or turn optional practices into mandatory gates.
-- Independent critic agents such as `rubber-duck` remain separate from workflow skills. A workflow skill may prepare work for review, but review policy belongs to `AGENTS.md`.
+- Independent critic agents such as `rubber-duck` remain separate from workflow skills. A workflow skill may prepare work for review, but review policy belongs to the governing agent instructions.
 
 ## Design principles
 
@@ -19,9 +21,9 @@ This fork keeps the useful workflow mechanisms from Matt Pocock's skills while m
 7. **Keep execution subordinate to the goal.** Implementation should follow the current approved direction while remaining able to surface evidence that invalidates a material assumption. It should not independently redesign the work.
 8. **Separate review questions.** "Did we build what was requested?" and "Is it appropriate for this codebase?" are distinct review axes. Broader goal, proportionality, and assumption review can remain the responsibility of an independent critic.
 
-## Initial adaptation scope
+## Adapted workflow surface
 
-The first pass focuses on the workflow spine used for substantial agent-driven engineering:
+The initial fork work adapts the workflow spine used for substantial agent-driven engineering:
 
 - `grill-with-docs`
 - `prototype`
@@ -31,4 +33,28 @@ The first pass focuses on the workflow spine used for substantial agent-driven e
 - `implement`
 - `code-review`
 
-Other upstream skills remain intact unless their behavior later conflicts with this fork's workflow.
+Supporting workflow behavior is also adapted where leaving the upstream version intact would contradict those skills:
+
+- `grilling` and `grill-me` now stop when material ambiguity is resolved instead of requiring exhaustive interrogation.
+- `ask-matt` is retained as a compatibility router but selects the smallest useful flow instead of enforcing a fixed main pipeline.
+- `setup-matt-pocock-skills` is optional shared configuration rather than a prerequisite or policy installer.
+- the experimental `implement-spec` drives a durable task graph while leaving delegation, parallelism, checkpoints, integration, and review to governing project policy.
+
+Other upstream skills remain intact unless their behavior later conflicts with these principles or there is a concrete reason to adapt them.
+
+## Compatibility names
+
+The `ask-matt` and `setup-matt-pocock-skills` invocation names are retained for compatibility even though their behavior and displayed titles are now fork-specific. Renaming them can be considered separately if breaking existing installations and references becomes worthwhile.
+
+## Upstream changes
+
+Treat upstream as a source of useful mechanisms and improvements, not as a policy authority for the fork.
+
+When upstream changes a skill that has been adapted here:
+
+1. inspect the upstream change and identify the underlying mechanism or bug fix;
+2. check whether it still fits the authority boundaries and design principles above;
+3. port the useful behavior intentionally rather than blindly restoring upstream text;
+4. update fork docs and metadata when the behavior visible to users changes.
+
+This keeps upstream learning cheap without making the fork dependent on conflict-heavy wholesale merges.
