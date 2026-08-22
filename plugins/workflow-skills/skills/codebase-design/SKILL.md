@@ -61,38 +61,38 @@ When designing an interface, ask:
 
 - **Depth is a property of the interface, not the implementation.** A deep module can be internally composed of small, mockable, swappable parts; they just aren't part of the interface. A module can have **internal seams** (private to its implementation, used by its own tests) as well as the **external seam** at its interface.
 - **The deletion test.** Imagine deleting the module. If complexity vanishes, it was a pass-through. If complexity reappears across N callers, it was earning its keep.
-- **The interface is the test surface.** Callers and tests cross the same seam. If you want to test *past* the interface, the module is probably the wrong shape.
-- **One adapter means a hypothetical seam. Two adapters means a real one.** Don't introduce a seam unless something actually varies across it.
+- **Prefer the interface as the main behavioral test surface.** Callers and tests often benefit from crossing the same stable seam. Lower-level tests can still be useful when they protect a meaningful invariant, algorithm, performance property, or failure mode more directly.
+- **Require a seam to earn its keep.** Multiple real consumers, implementations, ownership boundaries, or materially different test/production adapters are evidence that a seam is useful. Do not introduce one solely to satisfy an architectural pattern or make a mock convenient.
 
 ## Designing for testability
 
 Good interfaces make testing natural:
 
-1. **Accept dependencies, don't create them.**
+1. **Make dependencies controllable when substitution has real value.** Accept an external or variable dependency when doing so creates a meaningful seam for testing, ownership, or implementation variation. Do not add dependency injection mechanically around stable local details.
 
    ```typescript
-   // Testable
+   // Useful when payment is a meaningful external seam
    function processOrder(order, paymentGateway) {}
 
-   // Hard to test
+   // More coupled to Stripe and harder to control in focused tests
    function processOrder(order) {
      const gateway = new StripeGateway();
    }
    ```
 
-2. **Return results, don't produce side effects.**
+2. **Separate pure computation from side effects when the separation improves the interface.** Returning a value is often easier to test and compose, but side effects are legitimate behavior when the module exists to perform them.
 
    ```typescript
-   // Testable
+   // Simple computation with an observable result
    function calculateDiscount(cart): Discount {}
 
-   // Hard to test
+   // A command-style interface may still be appropriate when mutation is the behavior
    function applyDiscount(cart): void {
      cart.total -= discount;
    }
    ```
 
-3. **Small surface area.** Fewer methods = fewer tests needed. Fewer params = simpler test setup.
+3. **Prefer a small surface area.** Fewer methods and parameters usually reduce what callers and tests must understand, provided the interface still exposes the genuinely distinct operations the module owns.
 
 ## Relationships
 
@@ -110,5 +110,5 @@ Good interfaces make testing natural:
 
 ## Going deeper
 
-- **Deepening a cluster given its dependencies**, see [DEEPENING.md](DEEPENING.md): dependency categories, seam discipline, and replace-don't-layer testing.
+- **Deepening a cluster given its dependencies**, see [DEEPENING.md](DEEPENING.md): dependency categories, seam discipline, and proportional test consolidation.
 - **Exploring alternative interfaces**, see [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md): generate several materially different interfaces, then compare them on depth, locality, and seam placement. The governing orchestration policy decides whether those alternatives are produced sequentially, in fresh contexts, or by separate workers.

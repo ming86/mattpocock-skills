@@ -1,8 +1,8 @@
 # Good and Bad Tests
 
-## Good Tests
+## Strong behavioral tests
 
-**Integration-style**: Test through real interfaces, not mocks of internal parts.
+Prefer tests that establish behavior users or callers care about through a stable observable seam.
 
 ```typescript
 // GOOD: Tests observable behavior
@@ -14,20 +14,22 @@ test("user can checkout with valid cart", async () => {
 });
 ```
 
-Characteristics:
+Useful characteristics include:
 
-- Tests behavior users/callers care about
-- Uses public API only
-- Survives internal refactors
-- Describes WHAT, not HOW
-- One logical assertion per test
+- Tests behavior users or callers care about
+- Uses a stable public or integration interface when that interface exposes the relevant behavior
+- Survives harmless internal refactors
+- Describes WHAT is protected more than HOW it happens
+- Keeps each test focused on one coherent behavioral claim; multiple assertions are fine when they jointly establish that claim
 
-## Bad Tests
+Lower-level tests can still be appropriate when they protect a meaningful invariant, algorithm, parser, performance property, failure mode, or other behavior that would be expensive or ambiguous to establish only through a broader interface.
 
-**Implementation-detail tests**: Coupled to internal structure.
+## Fragile implementation-detail tests
+
+Tests become suspicious when they primarily encode incidental structure rather than the behavior that structure exists to provide.
 
 ```typescript
-// BAD: Tests implementation details
+// FRAGILE: Tests current wiring rather than payment behavior
 test("checkout calls paymentService.process", async () => {
   const mockPayment = jest.mock(paymentService);
   await checkout(cart, payment);
@@ -35,30 +37,26 @@ test("checkout calls paymentService.process", async () => {
 });
 ```
 
-Red flags:
+Red flags include:
 
-- Mocking internal collaborators
-- Testing private methods
-- Asserting on call counts/order
-- Test breaks when refactoring without behavior change
-- Test name describes HOW not WHAT
-- Verifying through external means instead of interface
+- Mocking internal collaborators merely to assert the current call graph
+- Testing private methods without a meaningful invariant that justifies the narrower seam
+- Asserting call counts/order when callers do not depend on that ordering
+- Breaking on a harmless refactor with no corresponding behavior change
+- Test names that describe incidental HOW rather than protected WHAT
+
+Prefer verification through the normal interface when it credibly exposes the result:
 
 ```typescript
-// BAD: Bypasses interface to verify
-test("createUser saves to database", async () => {
-  await createUser({ name: "Alice" });
-  const row = await db.query("SELECT * FROM users WHERE name = ?", ["Alice"]);
-  expect(row).toBeDefined();
-});
-
-// GOOD: Verifies through interface
+// GOOD: Verifies through the normal interface
 test("createUser makes user retrievable", async () => {
   const user = await createUser({ name: "Alice" });
   const retrieved = await getUser(user.id);
   expect(retrieved.name).toBe("Alice");
 });
 ```
+
+Direct inspection of storage, events, logs, or another lower-level surface is not automatically wrong. Use it when that surface is itself the behavior being protected or when the normal interface cannot establish the property without disproportionate setup. Make the reason clear so the test does not accidentally become an implementation-coupled substitute for an available behavioral assertion.
 
 **Tautological tests**: Expected value restates the implementation, so the test passes by construction.
 

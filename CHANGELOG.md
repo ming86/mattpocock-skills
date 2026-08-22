@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.7 - 2026-08-22
+
+- Make inherited `codebase-design` and TDD testing guidance proportional: deep-module, seam, mock, and interface-testing rules remain strong heuristics rather than universal laws.
+- Separate bug diagnosis from permission to modify the implementation; `diagnosing-bugs` now fixes only when the current task authorizes a correction and otherwise reports the established cause and smallest credible fix.
+- Clarify that handoffs must be accessible to the receiving context and are transition snapshots whose stale live state should be retired, replaced, or updated after consumption when necessary.
+- Allow ordinary staging/marking of resolved paths as part of an authorized merge-conflict resolution while keeping continue, commit, abort, and merge-strategy decisions under governing project/user authority.
+- Remove the unused human-in-the-loop debugging shell template.
+- Add a lightweight routing-case corpus for preserving semantic boundaries and explicit/implicit invocation intent without introducing a routing framework.
+- Re-evaluate the explicit-only set and retain the v3.6 invocation policy unchanged for this consolidation release.
+
 ## 0.1.6 - 2026-08-22
 
 - Add `resolving-merge-conflicts`, an explicit-only procedure for reconciling Git conflicts from the intent and evidence behind both sides without forcing abort/continue/commit policy.

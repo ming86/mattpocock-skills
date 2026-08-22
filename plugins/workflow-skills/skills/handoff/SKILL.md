@@ -21,9 +21,10 @@ Create a compact transition artifact for the next context. A handoff carries the
    - current validation or failure state;
    - repository pointers needed to resume efficiently.
 4. **Keep the handoff compact.** Preserve conclusions, status, rationale, and evidence pointers rather than the conversation transcript. Do not repeat settled requirements, design decisions, issue bodies, diffs, or research that already have durable homes.
-5. **Choose the artifact location according to the work.** Reuse an existing work-centered location or the project's configured durable-state convention when appropriate. A local or temporary artifact is suitable when the handoff is intentionally transitional and should not become shared project truth. If creating a new shared location or assigning authority to the handoff is material, follow the governing consultation path.
-6. **Redact sensitive material.** Do not copy credentials, API keys, passwords, private tokens, or unnecessary personal information into the handoff. Reference secure sources where appropriate instead.
-7. **Point forward.** Include relevant next procedures or skills only when they materially help the receiving context; do not manufacture a workflow sequence merely because the skills are available.
+5. **Choose a receiver-accessible artifact location.** Put the handoff somewhere the intended receiving context can actually read. Reuse an existing work-centered location or the project's configured durable-state convention when appropriate. A local or temporary artifact is suitable when the handoff is intentionally transitional and should not become shared project truth. If creating a new shared location or assigning authority to the handoff is material, follow the governing consultation path.
+6. **Treat the handoff as transition state.** Its live status can become stale as soon as the next context resumes work. After consumption, preserve any still-useful durable information through the work's normal state and retire, replace, or update the handoff when leaving it in place would mislead a later context. Do not create a cleanup protocol when the artifact is already ephemeral or its lifecycle is otherwise obvious.
+7. **Redact sensitive material.** Do not copy credentials, API keys, passwords, private tokens, or unnecessary personal information into the handoff. Reference secure sources where appropriate instead.
+8. **Point forward.** Include relevant next procedures or skills only when they materially help the receiving context; do not manufacture a workflow sequence merely because the skills are available.
 
 ## Suggested structure
 
@@ -61,4 +62,4 @@ Use only the sections that carry useful transition state.
 <only skills or procedures that are likely to help next, if any>
 ```
 
-A successful handoff lets a fresh context recover momentum quickly without turning the handoff itself into a second copy of the project's durable state.
+A successful handoff lets a fresh context recover momentum quickly without turning the handoff itself into a second copy of the project's durable state or leaving a stale transition snapshot that appears current later.

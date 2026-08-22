@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: "Diagnose bugs, regressions, intermittent failures, or performance problems whose cause is not already established. Use when straightforward inspection is insufficient and evidence is needed to distinguish competing explanations; run the smallest credible diagnostic loop, fix the established cause, and preserve an appropriate regression signal."
+description: "Diagnose bugs, regressions, intermittent failures, or performance problems whose cause is not already established. Use when straightforward inspection is insufficient and evidence is needed to distinguish competing explanations; run the smallest credible diagnostic loop, establish the cause, and fix it only when the current task authorizes a correction."
 ---
 
 # Diagnosing Bugs
@@ -52,21 +52,24 @@ Change one material variable at a time when causal attribution depends on it. Ta
 
 For performance regressions, measure before changing code. Use the metric or profiler that can establish whether the suspected cause actually explains the regression.
 
-## 5. Fix the established cause
+## 5. Act on the established cause according to task authority
 
-Once the evidence supports a cause, implement the smallest coherent correction within scope. If the evidence instead invalidates a material requirement, architecture assumption, interface, or operational direction, surface that finding through the governing project or user-consultation path rather than silently redesigning the system.
+Once the evidence supports a cause, distinguish diagnosis from permission to change the system. If the current task authorizes a fix, implement the smallest coherent correction within scope. If the task asks only for diagnosis, report the cause, supporting evidence, confidence or remaining uncertainty, and the smallest credible correction without modifying the implementation.
 
-Add or retain a regression test when there is a correct observable seam and the test materially protects the behavior. A shallow or artificial test that cannot reproduce the real failure is not useful merely because a regression test seems customary.
+If the evidence invalidates a material requirement, architecture assumption, interface, or operational direction, surface that finding through the governing project or user-consultation path rather than silently redesigning the system.
+
+When a fix is authorized, add or retain a regression test when there is a correct observable seam and the test materially protects the behavior. A shallow or artificial test that cannot reproduce the real failure is not useful merely because a regression test seems customary.
 
 ## 6. Verify and clean up
 
-Before considering the diagnosis complete, establish the evidence appropriate to the bug:
+Before considering the task complete, establish the evidence appropriate to its scope:
 
-- the original symptom no longer reproduces, or the measured regression is corrected;
-- the focused regression signal passes when one exists;
+- the root cause is established to the degree the available evidence permits;
+- when a fix was authorized, the original symptom no longer reproduces or the measured regression is corrected;
+- when a fix was authorized, the focused regression signal passes when one exists;
 - temporary debug instrumentation and disposable artifacts are removed or intentionally retained in an established location;
 - unresolved uncertainty or validation limits are reported clearly.
 
 For a substantial or multi-session investigation, preserve the current diagnostic state when repeating the investigation would be costly: established observations, active or eliminated hypotheses, root cause when known, evidence pointers, and remaining leads. Reuse the work's existing durable location or follow the project's configured durable-state convention. Use local working state when the investigation is provisional or too detailed for a shared project artifact. If no convention exists, use the simplest permitted work-centered artifact for a low-impact choice and follow governing consultation rules when the location or authority is material. Keep it current rather than appending a chronological debugging transcript.
 
-Promote the root cause into the project's normal shared artifact when later engineers would benefit from it. If the project uses a commit or pull-request explanation, include the cause there when appropriate, but this skill does not require or authorize a commit by itself.
+Preserve or share the root cause and supporting evidence when future work would materially benefit, using the project's normal durable-state conventions and artifact authority. If the project uses a commit or pull-request explanation, include the cause there when appropriate and when such an artifact already belongs to the authorized work; this skill does not require or authorize a commit by itself.

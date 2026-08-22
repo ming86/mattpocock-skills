@@ -1,0 +1,193 @@
+# Lightweight semantic routing cases for workflow-skills.
+#
+# These are not a mandatory execution pipeline or a harness-specific test suite.
+# They preserve intended boundaries between neighboring skills so future trigger
+# description changes can be checked against representative prompts.
+#
+# invocation:
+#   implicit-ok   -> the skill is eligible for model invocation in supported harnesses
+#   explicit-only -> the skill may be the semantic match, but invocation is intentionally
+#                    user/governing-workflow initiated in the current package policy
+
+cases:
+  - id: diagnose-intermittent-double-charge
+    prompt: "Why does checkout occasionally charge a customer twice? We do not know the cause yet."
+    expected:
+      skill: diagnosing-bugs
+      invocation: implicit-ok
+    avoid: [research, prototype]
+
+  - id: research-vendor-webhook-contract
+    prompt: "What does the payment provider officially guarantee about webhook retry timing?"
+    expected:
+      skill: research
+      invocation: implicit-ok
+    avoid: [diagnosing-bugs, prototype]
+
+  - id: prototype-browser-iframe-behavior
+    prompt: "We cannot tell from the docs whether this browser API actually works inside our sandboxed iframe. A tiny experiment would settle it."
+    expected:
+      skill: prototype
+      invocation: explicit-only
+    avoid: [research, diagnosing-bugs]
+
+  - id: grill-user-owned-product-decision
+    prompt: "I have not decided whether admins should be allowed to bypass the approval step. Help me work through the decision."
+    expected:
+      skill: grilling
+      invocation: implicit-ok
+    avoid: [to-questionnaire, research]
+
+  - id: grill-with-existing-design-docs
+    prompt: "Use $grill-with-docs to help me settle the remaining authorization design choices using the existing ADRs and codebase."
+    expected:
+      skill: grill-with-docs
+      invocation: explicit-only
+    avoid: [grilling, research]
+
+  - id: questionnaire-external-domain-owner
+    prompt: "Finance owns the rule for whether a settled invoice may be cancelled. Prepare the questions we need them to answer."
+    expected:
+      skill: to-questionnaire
+      invocation: explicit-only
+    avoid: [grilling, research]
+
+  - id: domain-modeling-terminology
+    prompt: "Our code uses customer, account, tenant, and organization inconsistently. Help establish the concepts, relationships, and invariants."
+    expected:
+      skill: domain-modeling
+      invocation: implicit-ok
+    avoid: [codebase-design, grilling]
+
+  - id: codebase-design-module-boundary
+    prompt: "Should these three thin modules remain separate or become one deeper module with a smaller interface?"
+    expected:
+      skill: codebase-design
+      invocation: implicit-ok
+    avoid: [domain-modeling, implementation-review]
+
+  - id: tdd-requested
+    prompt: "Implement this behavior test-first with a tight red-green-refactor loop."
+    expected:
+      skill: tdd
+      invocation: implicit-ok
+    avoid: [diagnosing-bugs, implementation-review]
+
+  - id: wayfinder-long-running-uncertainty
+    prompt: "Use $wayfinder for this migration. It will span several sessions and we still have unresolved architecture and rollout decisions."
+    expected:
+      skill: wayfinder
+      invocation: explicit-only
+    avoid: [handoff, to-spec]
+
+  - id: handoff-imminent-context-switch
+    prompt: "Use $handoff. I am moving this work to a fresh session; package only what the next context needs to resume from here."
+    expected:
+      skill: handoff
+      invocation: explicit-only
+    avoid: [wayfinder, to-spec]
+
+  - id: spec-from-settled-understanding
+    prompt: "Use $to-spec to turn the decisions we have already settled into an implementation-ready specification."
+    expected:
+      skill: to-spec
+      invocation: explicit-only
+    avoid: [wayfinder, grilling]
+
+  - id: tickets-from-settled-plan
+    prompt: "Use $to-tickets to break this approved implementation plan into dependency-aware work units."
+    expected:
+      skill: to-tickets
+      invocation: explicit-only
+    avoid: [to-spec, implement]
+
+  - id: implement-bounded-ticket
+    prompt: "Use $implement to execute ticket AUTH-142 exactly as scoped."
+    expected:
+      skill: implement
+      invocation: explicit-only
+    avoid: [to-spec, to-tickets]
+
+  - id: implementation-review-bounded-patch
+    prompt: "Use $implementation-review on this completed patch. Check requested behavior and repository integration."
+    expected:
+      skill: implementation-review
+      invocation: explicit-only
+    avoid: [codebase-design, diagnosing-bugs]
+
+  - id: resolve-in-progress-merge
+    prompt: "Use $resolving-merge-conflicts on the merge Git has stopped on. Recover why both sides changed this code before reconciling it."
+    expected:
+      skill: resolving-merge-conflicts
+      invocation: explicit-only
+    avoid: [diagnosing-bugs, implement]
+
+  - id: completed-merge-regression-is-debugging
+    prompt: "The merge completed yesterday, but authentication is now failing in production. Find the cause."
+    expected:
+      skill: diagnosing-bugs
+      invocation: implicit-ok
+    avoid: [resolving-merge-conflicts, implementation-review]
+
+  - id: docs-can-answer-no-prototype
+    prompt: "Check the framework source and official docs to determine whether this callback runs before transaction commit."
+    expected:
+      skill: research
+      invocation: implicit-ok
+    avoid: [prototype, diagnosing-bugs]
+
+  - id: observed-failure-no-research
+    prompt: "This test flakes only under parallel execution. We need evidence that distinguishes the race-condition hypotheses."
+    expected:
+      skill: diagnosing-bugs
+      invocation: implicit-ok
+    avoid: [research, prototype]
+
+  - id: current-user-not-external-questionnaire
+    prompt: "The choice is mine: should this CLI default to destructive cleanup or require an explicit flag? Ask me the important questions."
+    expected:
+      skill: grilling
+      invocation: implicit-ok
+    avoid: [to-questionnaire, grill-with-docs]
+
+  - id: no-questionnaire-when-repo-has-answer
+    prompt: "The product manager thinks retention is 30 days, but the answer should already be in the contract and repository docs. Establish what they actually say."
+    expected:
+      skill: research
+      invocation: implicit-ok
+    avoid: [to-questionnaire, grilling]
+
+  - id: wayfinder-not-handoff
+    prompt: "Use $wayfinder to maintain the durable decision frontier for this uncertain six-week rewrite; no session transition is happening right now."
+    expected:
+      skill: wayfinder
+      invocation: explicit-only
+    avoid: [handoff, to-tickets]
+
+  - id: handoff-not-wayfinder
+    prompt: "Use $handoff for the next agent. The durable plan already exists; capture only where execution stopped and what to do next."
+    expected:
+      skill: handoff
+      invocation: explicit-only
+    avoid: [wayfinder, to-spec]
+
+  - id: small-change-no-workflow-expansion
+    prompt: "Change the typo in this error message and update the existing expectation."
+    expected:
+      skill: null
+      invocation: none
+    avoid: [to-spec, to-tickets, wayfinder, prototype]
+
+  - id: inspect-domain-before-structure
+    prompt: "We cannot decide module boundaries because nobody agrees what a Subscription, Plan, and Entitlement mean or how they relate."
+    expected:
+      skill: domain-modeling
+      invocation: implicit-ok
+    avoid: [codebase-design, to-spec]
+
+  - id: architecture-with-domain-settled
+    prompt: "The domain model is settled. Decide whether policy evaluation belongs behind one module interface or remains spread across callers."
+    expected:
+      skill: codebase-design
+      invocation: implicit-ok
+    avoid: [domain-modeling, to-spec]
