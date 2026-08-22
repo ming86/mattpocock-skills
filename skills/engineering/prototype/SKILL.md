@@ -1,26 +1,30 @@
 ---
 name: prototype
-description: Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.
+description: Build the smallest throwaway artifact that can answer a material design, behavior, or UI question more cheaply or reliably than further discussion.
 ---
 
 # Prototype
 
-A prototype is **throwaway code that answers a question**. The question decides the shape.
+A prototype is **throwaway work that answers a specific question**. Use it when concrete evidence will resolve an important uncertainty more effectively than more planning or discussion. Do not insert a prototype stage when the relevant behavior or design is already clear enough to proceed.
 
-## Pick a branch
+## Choose the question first
 
-Identify which question is being answered, using the user's prompt, the surrounding code, or by asking if the user is around:
+Identify the uncertainty the prototype is meant to resolve. Common forms include:
 
-- **"Does this logic / state model feel right?"** → [LOGIC.md](LOGIC.md). Build a single shareable HTML file (free-play buttons plus tabbed guided walkthroughs) that pushes the state machine through cases that are hard to reason about on paper, and that a non-developer can drive.
-- **"What should this look like?"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar.
+- **Logic or state:** "Does this model behave coherently across the cases that are hard to reason about on paper?"
+- **UI or interaction:** "Which structure or interaction best communicates the intended behavior?"
+- **Integration or feasibility:** "Does this proposed mechanism actually work against the real dependency or environment?"
 
-The two branches produce very different artifacts, so getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend module → logic; a page or component → UI) and state the assumption at the top of the prototype.
+If materially different interpretations remain plausible and would produce different prototypes, follow the governing consultation rules. Otherwise infer the most likely question from the task and surrounding code and state any material assumption.
 
-## Rules that apply to both
+## Rules
 
-1. **Throwaway from day one, and clearly marked as such.** Locate the prototype code close to where it will actually be used (next to the module or page it's prototyping for) so context is obvious, but name it so a casual reader can see it's a prototype, not production. For throwaway UI routes, obey whatever routing convention the project already uses; don't invent a new top-level structure.
-2. **Trivial to run.** A UI prototype starts from one command in the project's task runner: `pnpm <name>`, `python <path>`, `bun <path>`, etc. A logic demo is a single HTML file the user double-clicks. Either way, no thinking required to start it.
-3. **No persistence by default.** State lives in memory. Persistence is the thing the prototype is _checking_, not something it should depend on. If the question explicitly involves a database, hit a scratch DB or a local file with a clear "PROTOTYPE, wipe me" name.
-4. **Skip the polish.** No tests, no error handling beyond what makes the prototype _runnable_, no abstractions. The point is to learn something fast.
-5. **Surface the state.** After every action (logic) or on every variant switch (UI), print or render the full relevant state so the user can see what changed.
-6. **Capture it when done.** Fold any validated decision into the real code, then capture the prototype itself as a **primary source**: commit it to a throwaway branch, out of main, and leave a context pointer to that branch on the implementation issue. Capture the answer too (the verdict and the question it settled) in the issue or a commit. The main branch keeps only the validated decision.
+1. **Keep it disposable.** Build only enough to answer the question. Avoid production hardening, generalized abstractions, persistence, broad error handling, exhaustive tests, cleanup, or unrelated refactoring unless the experiment itself requires them.
+2. **Use the cheapest credible fidelity.** Prefer a focused executable example, temporary route, small harness, scratch script, single HTML file, or similarly narrow artifact over production-shaped implementation.
+3. **Make the relevant state or outcome observable.** The user or agent should be able to see the evidence that answers the question, not merely inspect internal implementation.
+4. **Use realistic dependencies only when they matter to the uncertainty.** Otherwise isolate the experiment from production state and persistent data.
+5. **Stop when the question is answered.** Do not continue polishing a prototype after it has produced enough evidence for the decision.
+6. **Preserve the validated decision, not accidental prototype structure.** Record the question, evidence, and resulting decision in the project's durable state when later work depends on it. Retain, commit, branch, or discard the prototype itself according to project conventions and the value of keeping it as evidence; no particular retention mechanism is mandatory.
+7. **Do not silently promote the prototype into production.** Production implementation should be guided by the validated decision and current project constraints, not by a requirement to preserve throwaway code.
+
+Follow repository and user instructions for where temporary artifacts belong and for any checkpoint before dependent implementation begins.
