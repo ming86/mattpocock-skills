@@ -44,7 +44,7 @@ If materially different decompositions would change interfaces, scope, sequencin
 
 ### 6. Publish durable work units
 
-Use the project's configured issue tracker or local task convention; if neither exists, use the simplest work-centered task artifact permitted by the project. Reuse the existing work location when local artifacts already organize the effort. When the tracker itself preserves the durable work units and dependencies, do not mirror the same tickets into a separate local document merely for persistence; local working state should hold only context the tracker does not preserve well. Preserve blocking relationships using native tracker relationships when practical; otherwise state them explicitly in the ticket.
+Use the effort's existing task location or the project's configured issue-tracker or task convention. Reuse an existing tracker, planning artifact, or work location rather than introducing a parallel ticket store. When the tracker itself preserves the durable work units and dependencies, do not mirror the same tickets into local state merely for persistence; local working state should hold only detail or provisional context the shared artifact does not preserve well. If no convention exists, use the simplest permitted work-centered task artifact for a low-impact choice and follow governing consultation rules when selecting a new shared source of truth is material. Preserve blocking relationships using native tracker relationships when practical; otherwise state them explicitly in the ticket.
 
 Each ticket should contain:
 

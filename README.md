@@ -28,9 +28,9 @@ The skills are procedures, not mandatory stages. A clear small change can go dir
 
 Coding-agent context is transient. When detailed findings, decisions, assumptions, evidence, or open questions would be expensive or unreliable to reconstruct after compaction or a fresh session, the skills may externalize that state. Persistence is value-driven rather than mandatory.
 
-Prefer work-centered artifacts over skill-centered files. Reuse an existing work location when one already exists; otherwise use the project's configured local working-state area when appropriate, for example `.local/work/<work>/`. If no convention exists and persistence is justified, use the simplest work-centered local artifact the project permits. Keep durable working state compact and current: preserve conclusions, status, rationale, and evidence pointers rather than transcripts or append-only diaries.
+Persistence complements existing project artifacts and conventions; it does not replace them. Prefer work-centered artifacts over skill-centered files, and first reuse the effort's existing durable location or the project's configured tracker, documentation, or durable-state convention. Use a configured local working-state area, for example `.local/work/<work>/`, when detailed or provisional state should survive contexts but does not belong in a shared project artifact. If no convention exists and the choice is low-impact, use the simplest permitted work-centered artifact. When choosing a new shared location, source of truth, or artifact authority is material, follow the governing project instructions and user-consultation path.
 
-Local working state may be provisional. Promote it into shared project documentation, ADRs, specs, or tracker state only when it belongs in project truth. If information is immediately consumed and cheap to reconstruct, leaving it transient is often better.
+Keep durable state compact and current: preserve conclusions, status, rationale, and evidence pointers rather than transcripts or append-only diaries. A shared issue, spec, ADR, design document, or tracker may already be the right authoritative home; local working state may remain provisional. Promotion from local state into shared project truth is one possible lifecycle, not a required one. If information is immediately consumed and cheap to reconstruct, leaving it transient is often better.
 
 ## Plugin layout
 
@@ -151,7 +151,7 @@ The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-
 
 Each harness can install or register a local checkout for testing. The source of truth remains `plugins/workflow-skills/`; do not maintain separate Codex, Copilot, and Claude copies of the skills.
 
-The plugin version is currently `0.1.4`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.1.5`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

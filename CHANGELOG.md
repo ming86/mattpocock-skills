@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.5 - 2026-08-22
+
+- Clarify that persistence complements existing project artifacts and conventions rather than replacing them.
+- Let existing project sources of truth, durable-state conventions, and governing consultation determine artifact location and authority.
+- Keep local working state as an option for detailed or provisional cross-context state, not a preferred destination.
+- Reframe Wayfinder maps as durable orientation state that may live in shared project artifacts, trackers, work documents, or local state.
+- Replace canonical-map wording with a primary orientation artifact or view to avoid implying that Wayfinder must create project truth.
+
 ## 0.1.4 - 2026-08-22
 
 - Add value-driven persistence for working state that needs to survive context compaction, fresh sessions, or handoffs.
