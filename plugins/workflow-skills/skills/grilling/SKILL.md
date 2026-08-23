@@ -13,7 +13,7 @@ Track unresolved decisions and their dependencies. Focus on decisions that are r
 
 1. Establish what the clarification is trying to unblock: a decision, plan, specification, implementation, or other next step.
 2. Inspect available evidence before asking factual questions. Facts that can be established from the filesystem, codebase, tools, documentation, or other available sources are the agent's job to investigate.
-3. Identify unresolved user-owned decisions that could materially change the next step. Do not invent questions for minor edge cases, speculative future needs, or details that can safely remain open.
+3. Identify unresolved user-owned decisions that could materially change the next step. Do not invent questions for minor edge cases, speculative future needs, or details that can safely remain open. Do not promote a possibility supported only by the model's own speculation into a user decision. Ground questions in the user's stated goal, project evidence, established constraints, or a concrete ambiguity in the requested work.
 4. Ask focused questions that are ready to answer. Prefer one decision at a time when later questions depend on it. Group independent questions only when that reduces unnecessary back-and-forth without making the decision harder.
 5. Give a recommended answer when the available evidence supports one, together with the reason or tradeoff that matters. Keep a free-text path open when the provided choices are not exhaustive.
 6. Reassess the open decisions after each answer or new piece of evidence. Drop questions that no longer matter and add newly exposed questions only when they affect the goal.

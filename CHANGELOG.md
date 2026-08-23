@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.3 - 2026-08-23
+
+- Keep `grilling` from turning model-generated hypothetical edge cases into user-owned decisions.
+- Require clarification questions to be grounded in the user's stated goal, project evidence, established constraints, or a concrete ambiguity in the requested work.
+
 ## 0.2.2 - 2026-08-23
 
 - Simplify `workflow-guide` into a compact catalog for identifying explicit workflow skills.
