@@ -38,7 +38,7 @@ Produce the questionnaire in the requested delivery format when one is specified
 
 When a durable copy is useful, reuse the work's existing location or follow the project's documentation or durable-state convention. A local working-state location is appropriate for a provisional draft that should survive contexts without becoming shared project documentation. Do not silently make the questionnaire a new shared source of truth when that choice is material.
 
-The questionnaire is a request for information, not the resulting project decision. When answers return, preserve their provenance and uncertainty; incorporate them into a spec, issue, model, or other source of truth only through the work's normal decision process.
+The questionnaire is a request for information, not the resulting project decision. Creating it does not itself authorize sending it; delivery follows the user's instructions. When answers return, preserve their provenance and uncertainty; incorporate them into a spec, issue, model, or other source of truth only through the work's normal decision process.
 
 ## Suggested structure
 

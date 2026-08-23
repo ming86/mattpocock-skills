@@ -17,7 +17,7 @@ Write down what every candidate must satisfy:
 - important invariants, ordering rules, error behavior, and performance expectations;
 - a small code sketch when it makes the constraints clearer without prematurely choosing a design.
 
-If plausible interpretations of the problem would lead to materially different designs, establish the intended interpretation before comparing designs; do not silently choose one.
+If plausible interpretations of the problem would lead to materially different designs, surface the ambiguity and establish the intended interpretation before comparing designs; do not silently choose one.
 
 ### 2. Generate distinct alternatives
 

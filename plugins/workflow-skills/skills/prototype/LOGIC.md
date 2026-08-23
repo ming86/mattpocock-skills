@@ -24,4 +24,4 @@ Useful scenarios include:
 
 Stop when the scenarios answer the question. Record the evidence and resulting decision when later work depends on it.
 
-Production implementation may reuse an idea or small piece of code when that is genuinely appropriate, but do not assume prototype code should be lifted into the real module. Keep or discard the harness according to whether it remains useful as evidence.
+Production implementation may reuse an idea or small piece of code when that is genuinely appropriate, but do not assume prototype code should be lifted into the real module. Keep or discard the harness according to project conventions and whether it remains useful as evidence.

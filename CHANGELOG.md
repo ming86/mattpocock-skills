@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.5 - 2026-08-23
+
+- Refine the orchestration-residue cleanup so skills may still reinforce authority and handoff boundaries that are intrinsic to the procedure.
+- Clarify that focused implementation review does not satisfy broader review required by project instructions, implementation completion does not bypass required review or user checkpoints, prototype evidence does not authorize dependent implementation, and drafting a questionnaire does not authorize sending it.
+- Keep worker topology, delegation, fresh-context, parallelism, reviewer-spawning, and generic orchestration boilerplate out of skill procedures.
+- Restore project-convention context where it directly affects prototype artifact handling, and make material ambiguity/tradeoff wording surface decisions without prescribing how the Root orchestrates them.
+
 ## 0.2.4 - 2026-08-23
 
 - Remove leftover orchestration boilerplate from skill bodies and references, including background-agent, worker-topology, reviewer-spawning, parallelism, checkpoint, and commit-policy commentary.

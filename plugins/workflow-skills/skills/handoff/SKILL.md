@@ -24,7 +24,7 @@ Create a compact handoff for the next context. Carry only the live information t
 5. **Put it somewhere the receiver can read.** Reuse an existing work-centered location or follow the project's durable-state convention when appropriate. A local or temporary file is suitable when the handoff is intentionally short-lived and should not become shared project documentation. Do not silently make the handoff a new shared source of truth when that choice is material.
 6. **Treat the handoff as transition state.** Its live status can become stale as soon as the next context resumes work. After consumption, preserve any still-useful durable information through the work's normal state and retire, replace, or update the handoff when leaving it in place would mislead a later context. Do not create a cleanup protocol when the artifact is already ephemeral or its lifecycle is otherwise obvious.
 7. **Redact sensitive material.** Do not copy credentials, API keys, passwords, private tokens, or unnecessary personal information into the handoff. Reference secure sources where appropriate instead.
-8. **Point forward.** Mention a next procedure or skill only when it is already relevant to continuing the live work.
+8. **Point forward.** Mention next work, procedures, or skills when they would help the receiver resume. Distinguish established next steps from suggestions.
 
 ## Suggested structure
 

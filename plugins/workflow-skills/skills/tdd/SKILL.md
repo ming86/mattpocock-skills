@@ -19,7 +19,7 @@ See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking g
 
 Prefer an existing public, integration, or other stable interface that exposes the real behavior being changed. In testing literature this kind of replaceable or observable point is sometimes called a **seam**; use the repository's normal term when it is clearer.
 
-Choose the test surface from the spec, ticket, repository architecture, existing tests, and call sites. If different choices would materially change architecture, scope, or what the test proves, treat that as a design decision rather than a routine testing detail.
+Choose the test surface from the spec, ticket, repository architecture, existing tests, and call sites. If different choices would materially change architecture, scope, or what the test proves, surface that as a design decision rather than choosing solely for testing convenience.
 
 When the interface itself is the design question, use `codebase-design` for design guidance.
 

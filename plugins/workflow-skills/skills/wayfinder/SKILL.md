@@ -72,7 +72,7 @@ Do not create a ticket for uncertainty that is still too vague to state clearly.
 
 ## Chart the map
 
-1. Establish the destination from the current goal, established requirements, and relevant constraints. Keep materially different plausible destinations explicit until the direction is settled.
+1. Establish the destination from the current goal, established requirements, and relevant constraints. If materially different destinations remain plausible, surface them rather than silently selecting one.
 2. Inspect existing project evidence before creating questions the repository can already answer.
 3. Identify the first set of precise unresolved decisions or investigations and their genuine dependencies.
 4. Record less-defined in-scope uncertainty without prematurely decomposing it.

@@ -40,7 +40,7 @@ For each ticket, identify only the other tickets that genuinely block it. Ticket
 
 ### 5. Check material decomposition choices
 
-If different ways of splitting the work would materially change interfaces, scope, sequencing risk, ownership, or the user's intended delivery shape, do not silently choose among materially different decompositions; keep the tradeoff explicit until the direction is settled.
+If different ways of splitting the work would materially change interfaces, scope, sequencing risk, ownership, or the user's intended delivery shape, surface the tradeoff rather than silently choosing among materially different decompositions. Routine decomposition can proceed when the direction is already clear.
 
 ### 6. Publish durable work units
 

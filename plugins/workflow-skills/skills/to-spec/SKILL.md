@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Turn the current understanding into a durable spec. Record what is already established; do not start a second requirements interview.
 
-If a material decision is still unresolved and the spec would have to invent an answer, keep that point explicitly unresolved instead of silently choosing.
+If a material decision is still unresolved and the spec would have to invent an answer, surface that point as unresolved instead of silently choosing.
 
 ## Process
 
