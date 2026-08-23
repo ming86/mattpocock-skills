@@ -1,7 +1,7 @@
 interface:
   display_name: "Workflow Guide"
-  short_description: "Suggest a deliberate workflow only when it materially helps"
-  default_prompt: "Use $workflow-guide to recommend at most one explicit workflow if a material transition would help; otherwise continue normally."
+  short_description: "Identify relevant explicit workflow skills"
+  default_prompt: "Use $workflow-guide to identify relevant explicit workflow skills for the current work."
 
 policy:
   allow_implicit_invocation: true

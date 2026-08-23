@@ -9,9 +9,8 @@
 #   explicit-only -> the skill may be the semantic match, but automatic model invocation
 #                    is disabled; deliberate invocation follows the current harness rules
 #
-# For workflow-guide cases, `recommend` records the explicit workflow the guide should
-# propose without entering it. The default remains no recommendation when ordinary work
-# can continue reliably.
+# For workflow-guide cases, `candidate` records the explicit workflow the guide should
+# identify. Project or user instructions decide whether and how to enter that workflow.
 
 cases:
   - id: diagnose-intermittent-double-charge
@@ -223,7 +222,7 @@ cases:
     expected:
       skill: workflow-guide
       invocation: implicit-ok
-    recommend: prototype
+    candidate: prototype
     avoid: [research, diagnosing-bugs]
 
   - id: guide-suggest-wayfinder-for-cross-context-work
@@ -231,7 +230,7 @@ cases:
     expected:
       skill: workflow-guide
       invocation: implicit-ok
-    recommend: wayfinder
+    candidate: wayfinder
     avoid: [handoff, to-spec]
 
   - id: guide-suggest-questionnaire-for-external-owner
@@ -239,7 +238,7 @@ cases:
     expected:
       skill: workflow-guide
       invocation: implicit-ok
-    recommend: to-questionnaire
+    candidate: to-questionnaire
     avoid: [grilling, research]
 
   - id: guide-does-not-sell-workflow-for-simple-change

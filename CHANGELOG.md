@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.2 - 2026-08-23
+
+- Simplify `workflow-guide` into a compact catalog for identifying explicit workflow skills.
+- Move Root/user approval and worker-escalation behavior out of the skill and into project-level orchestration guidance.
+- Keep the guide catalog aligned with the routing descriptions of the explicit skills it summarizes.
+
 ## 0.2.1 - 2026-08-23
 
 - Tighten `workflow-guide` so the implicit advisory layer stays lean: keep the hidden explicit-workflow catalog, remove repeated explanation and examples, and make ordinary work the clear default.

@@ -1,13 +1,11 @@
 ---
 name: workflow-guide
-description: "Advise when the current work has reached a material transition where one explicit workflow skill may help. Use to identify and briefly recommend the nearest deliberate workflow for clarification, empirical uncertainty, long-running work, planning, implementation, review, conflict resolution, handoff, or an external decision owner. Do nothing when ordinary work can continue."
+description: "Identify relevant explicit workflow skills for the current work. Use when deciding among the plugin's explicit workflows for clarification, experiments, long-running work, specs, task decomposition, implementation, review, conflict resolution, handoff, or decisions owned by another person."
 ---
 
 # Workflow Guide
 
-Recognize whether one explicit workflow skill is worth proposing. This skill is advisory only: it does not choose the overall workflow or authorize another skill.
-
-The default is to continue ordinary work. Recommend a transition only when it would materially improve the work.
+Use this guide to identify explicit workflow skills that fit the current situation.
 
 ## Explicit workflows
 
@@ -22,21 +20,4 @@ The default is to continue ordinary work. Recommend a transition only when it wo
 - `handoff` — work is deliberately moving to a new context, session, or agent and the next context needs the live state without duplicating settled specs, issues, commits, or other durable artifacts.
 - `to-questionnaire` — the current user cannot responsibly supply needed facts or decisions, repository research cannot answer them, and another person or domain expert owns the answer.
 
-This guide advises only on the explicit workflows above. Implicit analytical skills such as `research`, `grilling`, `diagnosing-bugs`, `tdd`, `domain-modeling`, and `codebase-design` route normally.
-
-## How to advise
-
-1. **Prefer ordinary work.** If the work can continue reliably without a workflow transition, recommend nothing.
-2. **Match the actual transition.** Choose the nearest explicit skill for what is blocking or materially changing the work. Recommend at most one; do not propose workflow chains.
-3. **Ask before entering it.** In a root or user-facing context, name the skill, give the concrete reason it fits now, and ask whether to use it. Do not load, invoke, or simulate the target workflow before approval.
-4. **Follow the harness after approval.** If the harness requires user invocation, state the skill name or available command. Do not treat approval alone as invocation.
-5. **Workers escalate.** Unless already authorized, delegated workers report a useful workflow transition to the root rather than prompting the user or expanding their assignment.
-6. **Honor a decline.** Continue normally and do not ask again unless circumstances materially change.
-
-## Recommendation
-
-Keep it brief:
-
-> `<skill>` fits here because <concrete reason>. Would you like to use it?
-
-Do not turn the recommendation into a workflow plan, skill catalog, or mandatory checkpoint.
+Implicit analytical skills such as `research`, `grilling`, `diagnosing-bugs`, `tdd`, `domain-modeling`, and `codebase-design` route normally.

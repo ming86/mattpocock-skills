@@ -8,7 +8,7 @@ This package is designed to complement whatever governing instructions, review a
 
 The `workflow-skills` plugin currently contains 17 skills:
 
-- `workflow-guide`: advise when one deliberate explicit workflow may materially help, without entering it automatically
+- `workflow-guide`: compact catalog for identifying relevant explicit workflow skills
 - `grilling`: focused clarification of important decisions
 - `grill-with-docs`: clarification grounded in repository and project evidence
 - `research`: primary-source technical and project research
@@ -28,20 +28,18 @@ The `workflow-skills` plugin currently contains 17 skills:
 
 The skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
 
-## Deliberate workflow suggestions
+## Explicit workflow discovery
 
-Several workflow-transition skills are intentionally explicit-only so a model does not silently turn a useful observation into a larger workflow. The implicit `workflow-guide` closes the discoverability gap: it keeps a compact routing summary of those hidden workflows, recommends at most one when a material transition would help, and otherwise stays out of the way. Each catalog entry is a compressed routing summary of the target skill's own description; when a target description changes materially, review the guide entry too.
+Several workflow skills are intentionally explicit-only, which can make their descriptions unavailable to normal model routing. The implicit `workflow-guide` closes that discoverability gap with a compact catalog of those workflows. Each catalog entry is a compressed routing summary of the target skill's own description; when a target description changes materially, review the guide entry too.
 
-In a root/worker setup, the root remains the user-facing orchestrator. Delegated workers may surface a useful transition to the root rather than prompting the user or expanding their assignment. After approval, follow the current harness's invocation rules; some harnesses still require the user to invoke an explicit skill directly.
-
-A project that wants this interaction can add a small rule to its own `AGENTS.md`, for example:
+The guide identifies relevant explicit skills; project and user instructions decide whether and how to enter them. A root/worker project can add a small rule to its own `AGENTS.md`, for example:
 
 ```md
-### Workflow transitions
+### Workflow skills
 
-When available, the root agent may use an advisory workflow guide to identify explicit workflows that could materially help. The root agent may briefly recommend a relevant workflow and ask the user before entering it; if declined, continue normally unless circumstances materially change.
+When available, the root agent should use the workflow guide to identify relevant explicit workflow skills. Before entering an explicit workflow, briefly recommend the relevant skill and ask the user.
 
-Delegated workers should surface useful workflow transitions to the root agent rather than prompting the user or expanding their assignment.
+Delegated workers should surface useful workflow needs to the root agent rather than prompting the user or expanding their assignment.
 ```
 
 The plugin does not bundle an `AGENTS.md`; project and user instructions remain the governing source of orchestration policy.
@@ -179,7 +177,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.1`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.2`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 
