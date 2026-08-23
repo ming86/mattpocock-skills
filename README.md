@@ -169,6 +169,10 @@ The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-
 
 `disable-model-invocation` is a Copilot/Claude extension rather than a field in the core Agent Skills specification. The canonical skills use that extension deliberately because both target harnesses consume it; other clients should ignore unknown frontmatter fields.
 
+## Repository agent instructions
+
+This source repository includes a root `AGENTS.md` with repository-specific maintenance guidance. It is for agents working on this repository and is not part of the installed workflow plugin. `CLAUDE.md` imports the same file for Claude Code so the repository guidance has one source of truth.
+
 ## Local development
 
 Each harness can install or register a local checkout for testing. The source of truth remains `plugins/workflow-skills/`; do not maintain separate Codex, Copilot, and Claude copies of the skills.
