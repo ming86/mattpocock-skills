@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Turn the current understanding into a durable spec. Record what is already established; do not start a second requirements interview.
 
-If a material decision is still unresolved and the spec would have to invent an answer, report that unresolved point instead of silently choosing. Follow the governing project or user instructions for whether that requires an immediate consultation or can remain explicitly unresolved.
+If a material decision is still unresolved and the spec would have to invent an answer, keep that point explicitly unresolved instead of silently choosing.
 
 ## Process
 
@@ -16,7 +16,7 @@ If a material decision is still unresolved and the spec would have to invent an 
 2. Separate what is actually known from what is merely inferred. Preserve the status of material information: explicit requirement or decision, discovered fact or constraint, working assumption, or unresolved point.
 3. Identify verification seams appropriate to the change. Prefer existing observable boundaries when they provide useful confidence. Do not create new seams, test layers, or testing commitments solely to satisfy this template.
 4. Write the spec using the structure below, leaving out sections or details that add no useful information. Match the level of detail to the work.
-5. Store the spec in the work's existing authoritative location or follow the project's tracker, documentation, or durable-state convention. Reuse an existing work location instead of creating a parallel one. A configured local working-state area is appropriate for a personal or provisional spec; an existing shared spec, issue, or design document may already be the source of truth. If no convention exists, use the simplest permitted work-centered location for a low-impact choice and consult the project or user before choosing a new shared source of truth. Do not require a tracker when another durable document fits the work better.
+5. Store the spec in the work's existing authoritative location or follow the project's tracker, documentation, or durable-state convention. Reuse an existing work location instead of creating a parallel one. A configured local working-state area is appropriate for a personal or provisional spec; an existing shared spec, issue, or design document may already be the source of truth. If no convention exists, use the simplest permitted work-centered location for a low-impact choice; do not silently establish a new shared source of truth when that choice is material. Do not require a tracker when another durable document fits the work better.
 
 <spec-template>
 

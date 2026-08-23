@@ -18,4 +18,4 @@ Reuse existing read paths or representative fixtures when they meaningfully affe
 
 Stop once the comparison resolves the design question well enough for the next phase. Record the chosen direction and the evidence or feedback that mattered.
 
-The production implementation should follow that validated direction under normal project constraints. Remove losing variants, temporary switchers, and prototype-only routes from the production path. Retain the prototype itself only when project conventions or its value as evidence justify doing so; no throwaway branch or other retention mechanism is mandatory.
+The production implementation should follow that validated direction under normal project constraints. Remove losing variants, temporary switchers, and prototype-only routes from the production path. Keep the prototype itself only when it remains useful as evidence.

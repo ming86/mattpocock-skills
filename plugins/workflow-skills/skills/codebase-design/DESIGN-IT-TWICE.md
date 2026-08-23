@@ -2,11 +2,9 @@
 
 Use this technique when the user wants to compare alternative interfaces, or when a material interface decision cannot be resolved reliably without comparing several credible designs. Do not generate alternatives merely because this file exists.
 
-The value comes from comparing genuinely different designs, not from any particular subagent setup. The idea is based on Ousterhout's "Design It Twice": the first plausible interface is not always the best one.
+The value comes from comparing genuinely different designs. The idea is based on Ousterhout's "Design It Twice": the first plausible interface is not always the best one.
 
 Use the design concepts from [SKILL.md](SKILL.md) when they help, while keeping the repository's normal terminology.
-
-Follow governing project instructions for delegation, fresh contexts, parallel work, and user checkpoints. One agent can produce the alternatives sequentially, or the governing orchestration policy can assign them to independent workers.
 
 ## Process
 
@@ -19,7 +17,7 @@ Write down what every candidate must satisfy:
 - important invariants, ordering rules, error behavior, and performance expectations;
 - a small code sketch when it makes the constraints clearer without prematurely choosing a design.
 
-If plausible interpretations of the problem would lead to materially different designs, resolve that through the applicable project and user instructions for consultation before treating one interpretation as settled.
+If plausible interpretations of the problem would lead to materially different designs, establish the intended interpretation before comparing designs; do not silently choose one.
 
 ### 2. Generate distinct alternatives
 
@@ -31,8 +29,6 @@ Useful design pressures include:
 - support known variation without making the common path awkward;
 - make the most common caller simple;
 - isolate a real external or replaceable dependency when that helps the design.
-
-If the governing orchestration policy uses separate workers, give each one the relevant files, constraints, dependency information, domain language, and expected output. Do not spawn workers merely because this technique mentions alternatives.
 
 For each alternative, capture:
 

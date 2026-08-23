@@ -13,7 +13,7 @@ Keep two questions separate:
 - **Intent / Spec:** Did the change implement the requested behavior, requirements, constraints, and scope?
 - **Repository / Implementation:** Is the change correct and appropriate for this codebase, including its architecture, interfaces, conventions, and real integration behavior?
 
-This skill is a focused implementation review. It does not replace broader independent criticism configured by the project. A passing implementation review does not satisfy or cancel any broader independent-review checkpoint. A separate independent review may additionally examine whether the plan or implementation itself is sensible, proportionate, unnecessarily complex, based on bad assumptions, or drifting from the primary goal.
+This is a focused implementation review, not a broader critique of the plan or approach.
 
 ## 1. Establish the review boundary
 
@@ -40,7 +40,7 @@ Repository conventions are evidence, not an excuse to flag every stylistic diffe
 
 ## 4. Review the axes independently
 
-Keep the two axes independent in reasoning and reporting. If the governing orchestration policy chooses separate reviewers or fresh contexts, give each reviewer only the axis and evidence it needs. Otherwise review the axes sequentially while keeping their evidence and findings distinct. This skill does not decide whether to spawn reviewers.
+Keep the two axes independent in reasoning and reporting. Judge each against its own evidence and keep their findings distinct.
 
 ### Intent / Spec
 
@@ -80,5 +80,3 @@ Present findings under separate `Intent / Spec` and `Repository / Implementation
 If an axis has no substantive findings, say so explicitly. Do not merge the axes into a single score or allow a pass on one to cancel a failure on the other.
 
 Review findings can remain in the current response when they will be acted on immediately. Persist them only when they become durable follow-up work or materially change the effort's existing state; reuse that work location rather than creating a separate review log.
-
-Follow the governing project instructions for whether another independent review is required, who owns fixes, and what validation or checkpoint follows.

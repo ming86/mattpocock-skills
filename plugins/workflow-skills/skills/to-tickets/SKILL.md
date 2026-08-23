@@ -36,15 +36,15 @@ For wide mechanical changes that cannot remain valid as independent vertical sli
 
 ### 4. Declare dependencies
 
-For each ticket, identify only the other tickets that genuinely block it. Tickets whose blockers are resolved form the ready set. The governing orchestration policy decides whether ready units run independently, sequentially, or in parallel.
+For each ticket, identify only the other tickets that genuinely block it. Tickets whose blockers are resolved form the ready set.
 
 ### 5. Check material decomposition choices
 
-If different ways of splitting the work would materially change interfaces, scope, sequencing risk, ownership, or the user's intended delivery shape, raise the tradeoff through the applicable project and user instructions for consultation. Do not require a ceremonial approval round for routine decomposition when the direction is already clear.
+If different ways of splitting the work would materially change interfaces, scope, sequencing risk, ownership, or the user's intended delivery shape, do not silently choose among materially different decompositions; keep the tradeoff explicit until the direction is settled.
 
 ### 6. Publish durable work units
 
-Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, use the simplest permitted work-centered task location for a low-impact choice and consult the project or user before selecting a new shared source of truth. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket.
+Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, use the simplest permitted work-centered task location for a low-impact choice; do not silently establish a new shared source of truth when that choice is material. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket.
 
 Each ticket should contain:
 
@@ -65,5 +65,3 @@ References to genuine prerequisite tickets, or `None`.
 Only decision-relevant context that a fresh executor would otherwise be likely to miss: important constraints, established decisions, relevant evidence, or links to the source spec/prototype. Do not copy the entire planning history.
 
 Avoid volatile file-by-file instructions unless a file or interface location is itself a meaningful constraint. Preserve prototype-derived snippets only when they encode a validated decision more precisely than prose.
-
-Follow the governing project instructions for labels, assignment, user checkpoints, parallelism, commits, and when dependent work may begin.

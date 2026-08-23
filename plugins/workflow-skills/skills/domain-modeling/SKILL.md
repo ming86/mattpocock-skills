@@ -13,7 +13,7 @@ Merely reading an existing glossary for vocabulary is not domain modeling. Follo
 
 Inspect the project's existing glossary, context documents, ADRs, schema, code, tests, and user language that bear on the concept being discussed. If the repository has a configured domain-document convention, use it.
 
-If no durable domain document exists, do not create one automatically for incidental terminology. When a working model is worth keeping across contexts, first reuse the work's existing durable location or follow the project's domain or durable-state convention. A local working-state area is appropriate when the model is provisional or too detailed for shared project documentation. If no convention exists, use a simple work-centered document only when preserving the model is useful, and follow the applicable project and user instructions for consultation before creating a new shared domain source of truth.
+If no durable domain document exists, do not create one automatically for incidental terminology. When a working model is worth keeping across contexts, first reuse the work's existing durable location or follow the project's domain or durable-state convention. A local working-state area is appropriate when the model is provisional or too detailed for shared project documentation. If no convention exists, use a simple work-centered document only when preserving the model is useful; do not silently establish a new shared domain source of truth when that choice is material.
 
 ## During the session
 
@@ -41,4 +41,4 @@ When a term, relationship, or invariant is materially resolved and later work de
 
 Offer or create an ADR only when the repository uses ADRs and the decision is genuinely costly to reverse, surprising without context, and the result of a meaningful tradeoff. Use [ADR-FORMAT.md](./ADR-FORMAT.md) when that convention fits the project.
 
-For material domain decisions, follow the applicable project and user instructions for consultation. Preserve the actual status of facts, explicit decisions, working assumptions, and unresolved points rather than forcing premature closure.
+Preserve the actual status of facts, explicit decisions, working assumptions, and unresolved points rather than forcing premature closure on material domain decisions.

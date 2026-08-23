@@ -36,7 +36,7 @@ Create questions that target the gap between what the recipient knows and what t
 
 Produce the questionnaire in the requested delivery format when one is specified. Otherwise, create or return a Markdown draft appropriate for the work.
 
-When a durable copy is useful, reuse the work's existing location or follow the project's documentation or durable-state convention. A local working-state location is appropriate for a provisional draft that should survive contexts without becoming shared project documentation. If choosing a new shared location or making the questionnaire authoritative would be material, follow the applicable project and user instructions for consultation.
+When a durable copy is useful, reuse the work's existing location or follow the project's documentation or durable-state convention. A local working-state location is appropriate for a provisional draft that should survive contexts without becoming shared project documentation. Do not silently make the questionnaire a new shared source of truth when that choice is material.
 
 The questionnaire is a request for information, not the resulting project decision. When answers return, preserve their provenance and uncertainty; incorporate them into a spec, issue, model, or other source of truth only through the work's normal decision process.
 
@@ -71,5 +71,3 @@ Use only the sections that help the recipient answer.
 
 <optional catch-all for important context the questionnaire failed to ask about>
 ```
-
-Delivery, follow-up, and incorporation of answers remain governed by the user's instructions and the project's normal communication and decision process.

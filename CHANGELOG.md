@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.4 - 2026-08-23
+
+- Remove leftover orchestration boilerplate from skill bodies and references, including background-agent, worker-topology, reviewer-spawning, parallelism, checkpoint, and commit-policy commentary.
+- Keep boundaries that are intrinsic to the procedure, but express them directly instead of routing them through generic governing-policy language.
+- Keep material artifact-authority and decision-status boundaries while leaving delegation, review topology, user checkpoints, and follow-on workflow choices to project-level instructions.
+
 ## 0.2.3 - 2026-08-23
 
 - Keep `grilling` from turning model-generated hypothetical edge cases into user-owned decisions.

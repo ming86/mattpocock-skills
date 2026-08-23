@@ -22,7 +22,7 @@ When changing a skill:
 - keep its description precise enough to distinguish neighboring skills before the body is loaded;
 - prefer ordinary engineering language unless a specialized term carries a useful distinction;
 - do not turn a useful technique into a mandatory project workflow;
-- do not add project-level choices about workers, reviewers, trackers, commits, merges, releases, or permission escalation to the skill.
+- do not add or restate project-level choices about workers, reviewers, trackers, commits, merges, releases, or permission escalation; mention them only when they define a real boundary intrinsic to the skill.
 
 If an explicit workflow skill's routing description changes materially, review its compressed entry in `workflow-guide` as well.
 

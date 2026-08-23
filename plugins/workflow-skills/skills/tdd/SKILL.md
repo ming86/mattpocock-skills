@@ -7,7 +7,7 @@ description: "Apply a focused red-green-refactor loop when test-first developmen
 
 TDD is a technique for discovering and protecting behavior through a short test-first loop. Use it when the requested work, repository practices, or uncertainty benefit from test-first execution. It is not a prerequisite for `implement` or for every code change.
 
-When exploring the codebase, use the project's domain language and existing test conventions. Follow governing project instructions for user consultation, validation scope, review, and commits.
+When exploring the codebase, use the project's domain language and existing test conventions.
 
 ## What a useful test is
 
@@ -19,7 +19,7 @@ See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking g
 
 Prefer an existing public, integration, or other stable interface that exposes the real behavior being changed. In testing literature this kind of replaceable or observable point is sometimes called a **seam**; use the repository's normal term when it is clearer.
 
-Choose the test surface from the spec, ticket, repository architecture, existing tests, and call sites. If different choices would materially change architecture, scope, or what the test proves, raise that design decision through the applicable project and user instructions for consultation. Do not require user confirmation for a routine test surface already established by the codebase.
+Choose the test surface from the spec, ticket, repository architecture, existing tests, and call sites. If different choices would materially change architecture, scope, or what the test proves, treat that as a design decision rather than a routine testing detail.
 
 When the interface itself is the design question, use `codebase-design` for design guidance.
 

@@ -111,4 +111,4 @@ These relationships are reasoning aids, not naming requirements for the codebase
 ## Going deeper
 
 - For **combining shallow modules when dependencies make that useful**, see [DEEPENING.md](DEEPENING.md).
-- For **comparing genuinely different interface designs when the decision warrants it**, see [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md). The governing orchestration policy decides whether alternatives are explored sequentially, in fresh contexts, or by separate workers.
+- For **comparing genuinely different interface designs when the decision warrants it**, see [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md).

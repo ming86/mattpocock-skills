@@ -1,6 +1,6 @@
 # ADR Format
 
-Use this format when the repository already uses ADRs in `docs/adr/`, or when the governing project workflow has explicitly chosen that convention. Under this convention, ADRs use sequential numbering such as `0001-slug.md`, `0002-slug.md`, and so on.
+Use this format when the repository already uses ADRs in `docs/adr/`, or when the project has explicitly adopted that convention. Under this convention, ADRs use sequential numbering such as `0001-slug.md`, `0002-slug.md`, and so on.
 
 Create `docs/adr/` only when the project has chosen this convention and the first decision actually qualifies for an ADR. If the repository has a different ADR location or naming scheme, follow it instead.
 
