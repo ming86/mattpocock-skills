@@ -13,7 +13,7 @@ Keep two questions separate:
 - **Intent / Spec:** Did the change implement the requested behavior, requirements, constraints, and scope?
 - **Repository / Implementation:** Is the change correct and appropriate for this codebase, including its architecture, interfaces, conventions, and real integration behavior?
 
-This is a focused implementation review, not a broader critique of the plan or approach. A passing focused review does not satisfy or cancel a broader independent review required by the governing project instructions.
+This is a focused implementation review, not a broader critique of the plan or approach. It assesses whether the bounded implementation matches its intended behavior and fits the repository; it does not answer whether the underlying plan or approach was the right one.
 
 ## 1. Establish the review boundary
 

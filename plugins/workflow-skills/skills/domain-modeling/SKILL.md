@@ -13,7 +13,7 @@ Merely reading an existing glossary for vocabulary is not domain modeling. Follo
 
 Inspect the project's existing glossary, context documents, ADRs, schema, code, tests, and user language that bear on the concept being discussed. If the repository has a configured domain-document convention, use it.
 
-If no durable domain document exists, do not create one automatically for incidental terminology. When a working model is worth keeping across contexts, first reuse the work's existing durable location or follow the project's domain or durable-state convention. A local working-state area is appropriate when the model is provisional or too detailed for shared project documentation. If no convention exists, use a simple work-centered document only when preserving the model is useful; do not silently establish a new shared domain source of truth when that choice is material.
+If no durable domain document exists, do not create one automatically for incidental terminology. When a working model is worth keeping across contexts, first reuse the work's existing durable location or follow the project's domain or durable-state convention. A local working-state area is appropriate when the model is provisional or too detailed for shared project documentation. If no convention exists, use a simple work-centered document only when preserving the model is useful.
 
 ## During the session
 

@@ -2,7 +2,7 @@
 
 Use this technique when the user wants to compare alternative interfaces, or when a material interface decision cannot be resolved reliably without comparing several credible designs. Do not generate alternatives merely because this file exists.
 
-The value comes from comparing genuinely different designs. The idea is based on Ousterhout's "Design It Twice": the first plausible interface is not always the best one.
+The value comes from comparing genuinely different designs that expose different tradeoffs; how the alternatives are generated is incidental. The idea is based on Ousterhout's "Design It Twice": the first plausible interface is not always the best one.
 
 Use the design concepts from [SKILL.md](SKILL.md) when they help, while keeping the repository's normal terminology.
 
@@ -17,7 +17,7 @@ Write down what every candidate must satisfy:
 - important invariants, ordering rules, error behavior, and performance expectations;
 - a small code sketch when it makes the constraints clearer without prematurely choosing a design.
 
-If plausible interpretations of the problem would lead to materially different designs, surface the ambiguity and establish the intended interpretation before comparing designs; do not silently choose one.
+If plausible interpretations of the problem would lead to materially different designs, establish a common intended interpretation before comparing them. Otherwise the comparison may measure different problem definitions rather than different designs.
 
 ### 2. Generate distinct alternatives
 

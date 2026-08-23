@@ -40,11 +40,11 @@ For each ticket, identify only the other tickets that genuinely block it. Ticket
 
 ### 5. Check material decomposition choices
 
-If different ways of splitting the work would materially change interfaces, scope, sequencing risk, ownership, or the user's intended delivery shape, surface the tradeoff rather than silently choosing among materially different decompositions. Routine decomposition can proceed when the direction is already clear.
+If different ways of splitting the work would materially change interfaces, scope, sequencing risk, ownership, or the intended delivery shape, do not hide that decision inside ticket decomposition. Keep the materially different decomposition choices explicit until the direction is settled. Routine decomposition can proceed when the direction is already clear.
 
 ### 6. Publish durable work units
 
-Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, use the simplest permitted work-centered task location for a low-impact choice; do not silently establish a new shared source of truth when that choice is material. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket.
+Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, keep the tickets in the simplest work-centered task location that fits the work. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket.
 
 Each ticket should contain:
 

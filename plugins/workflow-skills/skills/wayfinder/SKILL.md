@@ -21,7 +21,7 @@ The map is a durable overview of the work. It lets a fresh context recover impor
 - Which unresolved questions depend on others?
 - What is currently ready to investigate or decide?
 
-A Wayfinder map should normally persist because surviving context replacement is part of its purpose. Follow the project's existing conventions for where it lives and how authoritative it is. The map may be an existing planning document, tracker state, work document, or local working state. Reuse the work's existing overview instead of creating a parallel one. A configured local area such as `.local/` is appropriate when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists, use the simplest permitted work-centered location for a low-impact choice; do not silently establish a new shared source of truth or authority when that choice is material.
+A Wayfinder map should normally persist because surviving context replacement is part of its purpose. Follow the project's existing conventions for where it lives and how authoritative it is. The map may be an existing planning document, tracker state, work document, or local working state. Reuse the work's existing overview instead of creating a parallel one. A configured local area such as `.local/` is appropriate when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists, keep the map in the simplest work-centered location that can survive the intended context transitions.
 
 Treat the map as maintained current state, not an append-only log. Update or remove superseded assumptions and questions as understanding changes. Preserve conclusions, status, rationale, and evidence pointers rather than discussion transcripts. Tracker-specific metadata and relationships can be useful when available but are not part of the core method.
 
@@ -72,11 +72,11 @@ Do not create a ticket for uncertainty that is still too vague to state clearly.
 
 ## Chart the map
 
-1. Establish the destination from the current goal, established requirements, and relevant constraints. If materially different destinations remain plausible, surface them rather than silently selecting one.
+1. Establish the destination from the current goal, established requirements, and relevant constraints. If materially different destinations remain plausible, keep them explicit rather than selecting one as settled.
 2. Inspect existing project evidence before creating questions the repository can already answer.
 3. Identify the first set of precise unresolved decisions or investigations and their genuine dependencies.
 4. Record less-defined in-scope uncertainty without prematurely decomposing it.
-5. Establish or update the primary overview using the work's existing durable location or the project's durable-state convention. Prefer an existing overview over creating a new one, and keep detailed research or experiment evidence near its source rather than copying it into the map. Do not silently establish a new shared location or authority when that choice is material.
+5. Establish or update the primary overview using the work's existing durable location or the project's durable-state convention. Prefer an existing overview over creating a new one, and keep detailed research or experiment evidence near its source rather than copying it into the map. If no location is already established, use the simplest work-centered location that can serve as the current overview.
 6. Stop charting when the known next questions are enough to proceed. Do not try to predict the complete task graph through unresolved uncertainty.
 
 If this process reveals that the route is already clear and the remaining work fits ordinary planning, stop using Wayfinder; the map has served its purpose.

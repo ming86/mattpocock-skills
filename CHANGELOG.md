@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.6 - 2026-08-23
+
+- Reconcile the previous orchestration cleanup around a stable boundary: skills describe how to perform and interpret their workflow, while project-level instructions govern surrounding orchestration and authorization.
+- Keep useful removals of worker topology, reviewer spawning, commit policy, checkpoint boilerplate, and other project-level mechanics from skill procedures.
+- Replace vague `surface it` wording and defensive `does not authorize/replace/satisfy` disclaimers with workflow-specific semantics: what an artifact establishes, what remains unresolved, and where the procedure itself stops.
+- Clarify prototype, implementation review, merge-conflict, handoff, questionnaire, design-comparison, and durable-state boundaries without turning those skills into policy wrappers.
+
 ## 0.2.5 - 2026-08-23
 
 - Refine the orchestration-residue cleanup so skills may still reinforce authority and handoff boundaries that are intrinsic to the procedure.
