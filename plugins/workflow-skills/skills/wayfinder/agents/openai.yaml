@@ -1,7 +1,7 @@
 interface:
   display_name: "Wayfinder"
   short_description: "Keep long-running work state across contexts"
-  default_prompt: "Use $wayfinder to preserve the decisions, evidence, dependencies, and open questions needed across contexts."
+  default_prompt: "Use $wayfinder to preserve the decisions, findings, dependencies, and open questions needed across contexts."
 
 policy:
   allow_implicit_invocation: false

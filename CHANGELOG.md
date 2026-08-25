@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.11 - 2026-08-25
+
+- Use more direct engineering language in selected workflow guidance where formal abstractions obscured concrete actions, while keeping specialized terms where they carry real technical meaning.
+- Refine `workflow-guide` routing prose around concrete situations and consequences while preserving the prospective triggers introduced in 0.2.9.
+- Simplify `to-spec`, `implement`, merge-conflict, handoff, and Wayfinder wording without changing their workflow responsibilities, stopping conditions, or routing boundaries.
+
 ## 0.2.10 - 2026-08-25
 
 - Rewrite governance-heavy workflow wording into direct engineering language while preserving the same stopping, scope, evidence, and user-decision boundaries.

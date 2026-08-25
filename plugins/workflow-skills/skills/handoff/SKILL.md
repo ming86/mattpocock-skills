@@ -7,12 +7,12 @@ disable-model-invocation: true
 
 # Handoff
 
-Create a compact handoff for the next context. Carry only the live information that still exists mainly in conversation or short-term context; do not replace the work's existing durable documents or state.
+Create a compact handoff for the next context. Carry only the live information that still exists mainly in conversation or short-term context; do not replace the project's existing work documents or saved state.
 
 ## Process
 
-1. **Identify what the receiver should continue.** Use any user-supplied argument or current context to understand what the next session or agent is expected to do. Ask only if meaningfully different handoff targets remain plausible.
-2. **Locate existing durable state.** Find the relevant spec, issue, plan, Wayfinder map, working-state document, commits, branch, diff, tests, and other useful current sources. Point to them instead of copying their contents.
+1. **Identify what the receiver should continue.** Use any user-supplied argument or current context to understand what the next session or agent is expected to do. Ask only if different plausible handoff targets would lead to different work.
+2. **Locate existing project state.** Find the relevant spec, issue, plan, Wayfinder map, working-state document, commits, branch, diff, tests, and other useful current sources. Point to them instead of copying their contents.
 3. **Capture only the live transition state.** Record information the next context would otherwise lose or have to reconstruct, such as:
    - what is currently in flight and why;
    - the exact next useful action or decision;
@@ -20,11 +20,11 @@ Create a compact handoff for the next context. Carry only the live information t
    - active assumptions, blockers, or unresolved tradeoffs;
    - current validation or failure state;
    - repository pointers needed to resume efficiently.
-4. **Keep the handoff compact.** Preserve conclusions, status, rationale, and evidence pointers rather than the conversation transcript. Do not repeat settled requirements, design decisions, issue bodies, diffs, or research that already have durable homes.
-5. **Put it somewhere the receiver can read.** Reuse an existing work-centered location or follow the project's durable-state convention when appropriate. A local or temporary file is suitable when the handoff is intentionally short-lived or provisional.
-6. **Treat the handoff as transition state.** Its live status can become stale as soon as the next context resumes work. After consumption, preserve any still-useful durable information through the work's normal state and retire, replace, or update the handoff when leaving it in place would mislead a later context. Do not create a cleanup protocol when the artifact is already ephemeral or its lifecycle is otherwise obvious.
+4. **Keep the handoff compact.** Preserve conclusions, current status, why important choices were made, and useful references rather than the conversation transcript. Do not repeat settled requirements, design decisions, issue bodies, diffs, or research that already live elsewhere.
+5. **Put it somewhere the receiver can read.** Reuse an existing work-centered location or put it where the project normally keeps ongoing work when appropriate. A local or temporary file is suitable when the handoff is intentionally short-lived or provisional.
+6. **Treat the handoff as transition state.** Its live status can become stale as soon as the next context resumes work. After it is used, move any information that still matters into the project's normal work state and retire, replace, or update the handoff when leaving it in place would mislead a later context. Do not create a cleanup protocol when the handoff is already temporary or its lifecycle is obvious.
 7. **Redact sensitive material.** Do not copy credentials, API keys, passwords, private tokens, or unnecessary personal information into the handoff. Reference secure sources where appropriate instead.
-8. **Point forward.** Mention next work, procedures, or skills when they would help the receiver resume. Distinguish established next steps from suggestions.
+8. **Point forward.** Mention next work, procedures, or skills when they would help the receiver resume. Distinguish agreed next steps from suggestions.
 
 ## Suggested structure
 
@@ -47,7 +47,7 @@ Use only the sections that carry useful transition state.
 
 ## Open / blocked
 
-<material unresolved questions, assumptions, blockers, or tradeoffs>
+<unresolved questions, assumptions, blockers, or tradeoffs>
 
 ## Validation state
 
@@ -55,11 +55,11 @@ Use only the sections that carry useful transition state.
 
 ## References
 
-- <spec / issue / work-state artifact / commit / branch / diff / file / external source>
+- <spec / issue / work-state document / commit / branch / diff / file / external source>
 
 ## Relevant procedures
 
 <only skills or procedures that are likely to help next, if any>
 ```
 
-A successful handoff lets a fresh context recover momentum quickly without turning the handoff itself into a second copy of the project's durable state or leaving a stale transition snapshot that appears current later.
+A successful handoff lets a fresh context recover momentum quickly without turning the handoff into a second copy of the project's saved state or leaving a stale snapshot that appears current later.
