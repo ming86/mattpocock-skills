@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.10 - 2026-08-25
+
+- Rewrite governance-heavy workflow wording into direct engineering language while preserving the same stopping, scope, evidence, and user-decision boundaries.
+- Replace abstract `authority`/`authoritative` phrasing in debugging, implementation review, specs, Wayfinder, handoff, questionnaires, and domain modeling with concrete descriptions of the requested work and current project state.
+- Prefer `current` or `agreed` plans over approval-oriented wording where no actual permission boundary is involved, and align repository-maintenance guidance with the same plain-language style.
+
 ## 0.2.9 - 2026-08-25
 
 - Strengthen `workflow-guide` from a current-state catalog into a prospective router that recognizes explicit workflows that are relevant now or becoming relevant and surfaces them at useful transition points.

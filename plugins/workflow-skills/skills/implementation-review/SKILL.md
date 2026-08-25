@@ -23,7 +23,7 @@ If the user did not specify a fixed point but the repository makes the intended 
 
 ## 2. Identify the intent source
 
-Identify the current authoritative sources of requested behavior and scope. These may include the current user request and established decisions, the originating spec or ticket, an approved plan or requirements document, and other relevant task context. Interpret them according to their current status and chronology, giving effect to later decisions or requirements that supersede earlier ones.
+Identify the current requirements and decisions that define the requested behavior and scope. These may come from the current user request and established decisions, the originating spec or ticket, an agreed plan or requirements document, and other relevant task context. Account for later decisions or requirements that changed or replaced earlier ones.
 
 Preserve the actual status of assumptions and unresolved points. Do not invent requirements to make the review more exhaustive.
 

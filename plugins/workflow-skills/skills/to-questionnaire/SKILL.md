@@ -30,15 +30,15 @@ Create questions that target the gap between what the recipient knows and what t
 - Explain why a question matters only when that is likely to improve the answer.
 - Make uncertainty safe: "I don't know," partial answers, caveats, and confidence levels can be useful evidence.
 - Do not bias the recipient toward a preferred answer unless a real constraint or tradeoff must be stated.
-- Do not invent deadlines, effort estimates, authority, or delivery channels that the user has not established.
+- Do not invent deadlines, effort estimates, who can make the decision, or delivery channels that the user has not established.
 
-## Artifact and authority
+## Questionnaire and answers
 
 Produce the questionnaire in the requested delivery format when one is specified. Otherwise, create or return a Markdown draft appropriate for the work.
 
 When a durable copy is useful, reuse the work's existing location or follow the project's documentation or durable-state convention. A local working-state location is appropriate for a provisional draft that should survive contexts without becoming shared project documentation.
 
-The questionnaire is a request for information, not the resulting project decision. When answers return, preserve their provenance and uncertainty. Treat them as sourced evidence until the relevant spec, issue, model, or other project state incorporates them.
+The questionnaire is a request for information, not the resulting project decision. When answers return, keep track of who supplied them and any uncertainty. Treat them as sourced evidence until the relevant spec, issue, model, or other project state incorporates them.
 
 ## Suggested structure
 

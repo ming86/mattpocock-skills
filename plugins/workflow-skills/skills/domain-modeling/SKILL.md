@@ -31,7 +31,7 @@ Use representative scenarios and edge cases when they help expose whether entiti
 
 ### Cross-check the implementation
 
-When the user states how the domain behaves, compare it with relevant code, schema, tests, or existing docs. Treat discrepancies as evidence to resolve, not as automatic proof that either the code or conversation is authoritative.
+When the user states how the domain behaves, compare it with relevant code, schema, tests, or existing docs. Treat discrepancies as evidence to resolve, not as automatic proof that either the code or the conversation should take precedence.
 
 ### Preserve durable changes when useful
 

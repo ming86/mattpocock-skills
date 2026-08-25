@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository maintains a focused set of engineering workflow skills for coding agents. The skills complement project-level instructions and orchestration; they do not define a user's worker topology, reviewer policy, issue tracker, commit policy, delivery workflow, or ownership of material decisions.
+This repository maintains a focused set of engineering workflow skills for coding agents. The skills complement project-level instructions and orchestration; they do not define a user's worker topology, reviewer policy, issue tracker, commit policy, delivery workflow, or who makes important project decisions.
 
 ## Source of truth
 
@@ -18,11 +18,11 @@ Keep changes proportional to the concrete problem being solved. Do not add workf
 
 When changing a skill:
 
-- preserve its authority boundaries, stopping conditions, and intended scope;
+- preserve its responsibilities, stopping conditions, and intended scope;
 - keep its description precise enough to distinguish neighboring skills before the body is loaded;
 - prefer ordinary engineering language unless a specialized term carries a useful distinction;
 - do not turn a useful technique into a mandatory project workflow;
-- keep workflow-specific method, semantics, stopping conditions, and output meaning in the skill; leave surrounding orchestration, authorization, and project workflow to project-level instructions. Express intrinsic boundaries in terms of what the skill establishes, produces, or leaves unresolved rather than restating external policy or adding defensive disclaimers.
+- keep workflow-specific method, semantics, stopping conditions, and output meaning in the skill; leave surrounding orchestration and project workflow to project-level instructions. Express intrinsic boundaries in terms of what the skill establishes, produces, or leaves unresolved rather than restating external policy or adding defensive disclaimers.
 
 If an explicit workflow skill's routing description changes materially, review its compressed entry in `workflow-guide` as well.
 
@@ -32,7 +32,7 @@ Use `evals/routing-cases.yaml` when changing routing or invocation boundaries. A
 
 Keep the core skill behavior harness-neutral. Harness-specific metadata is additive and may differ where Codex, GitHub Copilot CLI, and Claude Code expose different controls.
 
-When changing harness metadata, preserve the intended routing and authority semantics rather than forcing identical fields to mean identical behavior. Keep package and marketplace versions synchronized when the installable plugin version changes.
+When changing harness metadata, preserve the intended routing and invocation semantics rather than forcing identical fields to mean identical behavior. Keep package and marketplace versions synchronized when the installable plugin version changes.
 
 ## Upstream
 

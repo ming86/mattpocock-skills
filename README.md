@@ -48,9 +48,9 @@ The plugin does not bundle an `AGENTS.md`; project and user instructions remain 
 
 Coding-agent context is transient. When detailed findings, decisions, assumptions, evidence, or open questions would be expensive or unreliable to reconstruct after compaction or a fresh session, the skills may save that state outside the conversation. Persistence is useful when it preserves real value; it is not mandatory.
 
-Persistence complements existing project documents and conventions; it does not replace them. Prefer files or records organized around the work rather than around the skill that produced them. First reuse the work's existing durable location or the project's tracker, documentation, or durable-state convention. Use a configured local working-state area, for example `.local/work/<work>/`, when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists and the choice is low-impact, use the simplest permitted work-centered location. When a new shared location or source of truth would be an important project decision, follow the project instructions and user-consultation path.
+Persistence complements existing project documents and conventions; it does not replace them. Prefer files or records organized around the work rather than around the skill that produced them. First reuse the work's existing durable location or the project's tracker, documentation, or durable-state convention. Use a configured local working-state area, for example `.local/work/<work>/`, when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists and the choice is low-impact, use the simplest permitted work-centered location. When creating a new shared location would be an important project decision, follow the project instructions rather than choosing one implicitly.
 
-Keep durable state compact and current: preserve conclusions, status, rationale, and evidence pointers rather than transcripts or append-only diaries. A shared issue, spec, ADR, design document, or tracker may already be the right authoritative home; local working state may remain provisional. Promotion from local state into shared project truth is one possible lifecycle, not a required one. If information is immediately consumed and cheap to reconstruct, leaving it transient is often better.
+Keep durable state compact and current: preserve conclusions, status, rationale, and evidence pointers rather than transcripts or append-only diaries. A shared issue, spec, ADR, design document, or tracker may already be the right place for the current state; local working state may remain provisional. Moving local state into shared project documentation is one possible lifecycle, not a required one. If information is immediately consumed and cheap to reconstruct, leaving it transient is often better.
 
 ## Plugin layout
 
@@ -177,7 +177,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.9`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.10`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

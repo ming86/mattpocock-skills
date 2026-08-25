@@ -12,7 +12,7 @@ Create a compact handoff for the next context. Carry only the live information t
 ## Process
 
 1. **Identify what the receiver should continue.** Use any user-supplied argument or current context to understand what the next session or agent is expected to do. Ask only if meaningfully different handoff targets remain plausible.
-2. **Locate existing durable state.** Find the relevant spec, issue, plan, Wayfinder map, working-state document, commits, branch, diff, tests, and other useful or authoritative sources. Point to them instead of copying their contents.
+2. **Locate existing durable state.** Find the relevant spec, issue, plan, Wayfinder map, working-state document, commits, branch, diff, tests, and other useful current sources. Point to them instead of copying their contents.
 3. **Capture only the live transition state.** Record information the next context would otherwise lose or have to reconstruct, such as:
    - what is currently in flight and why;
    - the exact next useful action or decision;

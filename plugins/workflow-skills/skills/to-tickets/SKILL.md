@@ -12,7 +12,7 @@ Turn an established plan or spec into durable work units. Each ticket should giv
 
 ### 1. Gather the source of truth
 
-Work from the current conversation, approved plan, spec, relevant issue, and repository evidence. If a referenced artifact exists, read the material needed to preserve its requirements, decisions, constraints, and unresolved points accurately.
+Work from the current conversation, current plan, spec, relevant issue, and repository evidence. If a referenced artifact exists, read the material needed to preserve its requirements, decisions, constraints, and unresolved points accurately.
 
 ### 2. Understand the implementation surface when needed
 

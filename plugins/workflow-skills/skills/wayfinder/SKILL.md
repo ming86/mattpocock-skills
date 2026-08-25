@@ -21,7 +21,7 @@ The map is a durable overview of the work. It lets a fresh context recover impor
 - Which unresolved questions depend on others?
 - What is currently ready to investigate or decide?
 
-A Wayfinder map should normally persist because surviving context replacement is part of its purpose. Follow the project's existing conventions for where it lives and how authoritative it is. The map may be an existing planning document, tracker state, work document, or local working state. Reuse the work's existing overview instead of creating a parallel one. A configured local area such as `.local/` is appropriate when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists, keep the map in the simplest work-centered location that can survive the intended context transitions.
+A Wayfinder map should normally persist because surviving context replacement is part of its purpose. Follow the project's existing conventions for where this state lives and which artifact represents the current view of the work. The map may be an existing planning document, tracker state, work document, or local working state. Reuse the work's existing overview instead of creating a parallel one. A configured local area such as `.local/` is appropriate when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists, keep the map in the simplest work-centered location that can survive the intended context transitions.
 
 Treat the map as maintained current state, not an append-only log. Update or remove superseded assumptions and questions as understanding changes. Preserve conclusions, status, rationale, and evidence pointers rather than discussion transcripts. Tracker-specific metadata and relationships can be useful when available but are not part of the core method.
 
@@ -86,7 +86,7 @@ If this process reveals that the route is already clear and the remaining work f
 For each selected open question:
 
 1. Load the map and only the detailed context relevant to that question.
-2. Resolve it using repository evidence, research, a prototype, or user consultation as appropriate.
+2. Resolve it using repository evidence, research, or a prototype, or by asking the user as appropriate.
 3. Record the result with its actual status: established fact, explicit decision, working assumption, or unresolved issue.
 4. Update dependencies and retire questions invalidated by the new result.
 5. Turn newly clear uncertainty into a work unit only when doing so is useful.

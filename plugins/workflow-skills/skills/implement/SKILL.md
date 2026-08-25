@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Implement
 
-Implement the bounded work described by the current spec, ticket, or approved plan.
+Implement the bounded work described by the current spec, ticket, or current plan.
 
 ## Process
 
