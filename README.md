@@ -177,7 +177,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.3`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.7`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.7 - 2026-08-25
+
+- Compose `grill-with-docs` directly with `grilling` and `domain-modeling` through the Skill tool instead of partially restating those skills' procedures.
+- Make implementation review resolve intent from the current authority and chronology of requirements and decisions rather than implying a fixed precedence among specs, plans, and the current request.
+- Rename `to-tickets` output from `Acceptance criteria` to `Completion criteria` and define it as observable conditions or evidence that establish the intended outcome.
+
 ## 0.2.6 - 2026-08-23
 
 - Reconcile the previous orchestration cleanup around a stable boundary: skills describe how to perform and interpret their workflow, while project-level instructions govern surrounding orchestration and authorization.

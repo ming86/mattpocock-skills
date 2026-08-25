@@ -52,9 +52,9 @@ Each ticket should contain:
 
 The coherent behavior, result, migration state, or other outcome this ticket makes true.
 
-## Acceptance criteria
+## Completion criteria
 
-A small set of observable criteria sufficient to establish completion. Do not restate implementation details as acceptance criteria unless the implementation detail is itself a requirement.
+A small set of observable conditions or evidence sufficient to establish that the intended outcome has been achieved.
 
 ## Blocked by
 

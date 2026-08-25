@@ -23,12 +23,7 @@ If the user did not specify a fixed point but the repository makes the intended 
 
 ## 2. Identify the intent source
 
-Use the strongest available source of requested behavior and scope, such as:
-
-1. the originating spec or ticket;
-2. an approved plan or requirements document;
-3. the current user request and established decisions;
-4. when no durable spec exists, the best available task context.
+Identify the current authoritative sources of requested behavior and scope. These may include the current user request and established decisions, the originating spec or ticket, an approved plan or requirements document, and other relevant task context. Interpret them according to their current status and chronology, giving effect to later decisions or requirements that supersede earlier ones.
 
 Preserve the actual status of assumptions and unresolved points. Do not invent requirements to make the review more exhaustive.
 
