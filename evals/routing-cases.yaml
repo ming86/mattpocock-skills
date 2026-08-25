@@ -241,6 +241,46 @@ cases:
     candidate: to-questionnaire
     avoid: [grilling, research]
 
+  - id: guide-suggest-grill-before-dependent-planning
+    prompt: "The repository narrows this authorization design to two viable choices, but the product decision is mine and the implementation plan will differ materially depending on which we choose."
+    expected:
+      skill: workflow-guide
+      invocation: implicit-ok
+    candidate: grill-with-docs
+    avoid: [grilling, to-spec, implement]
+
+  - id: guide-suggest-spec-before-dependent-implementation
+    prompt: "We have settled the behavior, interfaces, and important constraints. Implementation is about to begin across later sessions, but those decisions still exist mostly in this conversation."
+    expected:
+      skill: workflow-guide
+      invocation: implicit-ok
+    candidate: to-spec
+    avoid: [wayfinder, grilling, implement]
+
+  - id: guide-suggest-tickets-before-multi-unit-execution
+    prompt: "The implementation plan is settled and contains several independently executable pieces with real dependencies. We are about to start work across multiple focused sessions."
+    expected:
+      skill: workflow-guide
+      invocation: implicit-ok
+    candidate: to-tickets
+    avoid: [to-spec, implement, wayfinder]
+
+  - id: guide-suggest-handoff-before-context-switch
+    prompt: "I am about to move this work to a fresh session. The durable spec and tickets already exist, but the current execution state and immediate next step only exist in this context."
+    expected:
+      skill: workflow-guide
+      invocation: implicit-ok
+    candidate: handoff
+    avoid: [wayfinder, to-spec]
+
+  - id: guide-suggest-review-after-bounded-implementation
+    prompt: "This bounded implementation is complete and its tests pass. Before I treat the patch as settled, I want a focused check that it actually matches the requested behavior and integrates cleanly with the repository."
+    expected:
+      skill: workflow-guide
+      invocation: implicit-ok
+    candidate: implementation-review
+    avoid: [codebase-design, diagnosing-bugs]
+
   - id: guide-does-not-sell-workflow-for-simple-change
     prompt: "Update this existing error message and its matching test expectation. The scope and desired text are already clear."
     expected:

@@ -1,23 +1,23 @@
 ---
 name: workflow-guide
-description: "Identify relevant explicit workflow skills for the current work. Use when deciding among the plugin's explicit workflows for clarification, experiments, long-running work, specs, task decomposition, implementation, review, conflict resolution, handoff, or decisions owned by another person."
+description: "Recognize explicit workflow skills that would help the current or approaching work and surface them early enough to be useful. Use throughout the task for clarification, experiments, long-running work, specs, task decomposition, implementation, review, conflict resolution, handoff, or decisions owned by another person."
 ---
 
 # Workflow Guide
 
-Use this guide to identify explicit workflow skills that fit the current situation.
+Use this guide throughout the work to recognize explicit workflow skills that are relevant now or are becoming relevant. Suggest a workflow at the point where choosing it would be most useful, including before dependent work reaches the phase it is meant to support.
 
 ## Explicit workflows
 
-- `grill-with-docs` — material product, design, or domain decisions need user judgment grounded in repository or project evidence before dependent work proceeds.
-- `prototype` — a design, behavior, UI, integration, or feasibility question materially affects the work and a small experiment can answer it more cheaply or reliably than more discussion or research.
-- `wayfinder` — large, uncertain, or multi-session work needs decisions, evidence, dependencies, and open questions to survive context replacement because an ordinary plan is not yet enough.
-- `to-spec` — requirements and decisions that materially shape implementation are settled enough, and later implementation needs a durable reference.
-- `to-tickets` — a plan or spec is large enough to benefit from clear dependency-aware work units; keep tightly coupled reasoning together.
-- `implement` — a bounded unit of work has established scope and intended outcome and is ready for execution rather than requirements discovery.
-- `implementation-review` — a completed bounded implementation needs focused review for correctness, repository integration, regressions, unnecessary complexity, or missed requirements; not broader critique of the plan or approach.
-- `resolving-merge-conflicts` — an in-progress Git merge or rebase has conflicts that cannot be resolved safely by choosing ours/theirs and require recovering the intent, invariants, and relevant constraints behind both sides.
-- `handoff` — work is deliberately moving to a new context, session, or agent and the next context needs the live state without duplicating settled specs, issues, commits, or other durable artifacts.
-- `to-questionnaire` — the current user cannot responsibly supply needed facts or decisions, repository research cannot answer them, and another person or domain expert owns the answer.
+- `grill-with-docs` — suggest before dependent planning or implementation when unresolved product, design, or domain decisions could materially change scope, behavior, interfaces, or direction and repository or project evidence can ground the user's judgment.
+- `prototype` — suggest when a material design, behavior, UI, integration, or feasibility uncertainty remains and a small experiment can answer it more cheaply or reliably than further discussion or research.
+- `wayfinder` — suggest when work is becoming large, uncertain, or likely to span contexts while important decisions, evidence, dependencies, or open questions still need to survive context replacement and an ordinary plan is not yet enough.
+- `to-spec` — suggest once the requirements and decisions that materially shape implementation are settled enough that upcoming implementation would benefit from a durable reference.
+- `to-tickets` — suggest when an established plan or specification is ready to be executed across multiple independently understandable work units or sessions with real dependencies; keep tightly coupled reasoning together.
+- `implement` — suggest when a bounded unit of work has established scope and intended outcome and is ready for execution rather than requirements discovery.
+- `implementation-review` — suggest when a bounded implementation is complete and focused review against the requested outcome and repository integration would be useful before treating that implementation as settled.
+- `resolving-merge-conflicts` — suggest when Git has stopped on merge or rebase conflicts whose correct resolution depends on recovering the intent, invariants, or constraints behind both sides rather than choosing ours/theirs.
+- `handoff` — suggest before work deliberately moves to another context, session, or agent when the next context will need live state that is not already captured in durable artifacts.
+- `to-questionnaire` — suggest when progress depends on material facts or decisions owned by another person or domain expert that neither the current user nor repository research can responsibly supply.
 
 Implicit analytical skills such as `research`, `grilling`, `diagnosing-bugs`, `tdd`, `domain-modeling`, and `codebase-design` route normally.

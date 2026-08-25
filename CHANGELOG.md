@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.9 - 2026-08-25
+
+- Strengthen `workflow-guide` from a current-state catalog into a prospective router that recognizes explicit workflows that are relevant now or becoming relevant and surfaces them at useful transition points.
+- Restore material trigger and timing nuance from the explicit workflow descriptions so the guide can suggest clarification, specs, ticket decomposition, review, handoff, and other workflows before their need becomes obvious.
+- Extend routing cases for prospective suggestions of `grill-with-docs`, `to-spec`, `to-tickets`, `implementation-review`, and `handoff`, and align Workflow Guide harness metadata with the same semantics.
+
 ## 0.2.8 - 2026-08-25
 
 - Generalize `codebase-design` dependency guidance from a fixed local/remote/vendor taxonomy to overlapping dependency characteristics and common shapes that also fit systems, native, device, tooling, and service software.

@@ -1,7 +1,7 @@
 interface:
   display_name: "Workflow Guide"
-  short_description: "Identify relevant explicit workflow skills"
-  default_prompt: "Use $workflow-guide to identify relevant explicit workflow skills for the current work."
+  short_description: "Recognize useful workflow transitions early"
+  default_prompt: "Use $workflow-guide throughout the work to recognize explicit workflows that are relevant now or becoming relevant."
 
 policy:
   allow_implicit_invocation: true
