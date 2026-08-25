@@ -1,7 +1,7 @@
 interface:
   display_name: "Implement"
-  short_description: "Implement a clear unit of work"
-  default_prompt: "Use $implement to implement this clear work item from the current plan, spec, or ticket."
+  short_description: "Implement a well-scoped work item"
+  default_prompt: "Use $implement to implement this well-scoped work item from the current plan, spec, or ticket."
 
 policy:
   allow_implicit_invocation: false

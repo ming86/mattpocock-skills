@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.12 - 2026-08-25
+
+- Repair scope and routing distinctions that were weakened during the 0.2.11 prose cleanup while keeping the more natural engineering language.
+- Restore the well-scoped implementation boundary, consequence-based unresolved-decision handling in specs, the explicit distinction among requirements, project facts, assumptions, and unresolved points, and direct-source reasoning for merge conflicts.
+- Tighten `workflow-guide` triggers for implementation, implementation review, and external-owner questionnaires, and keep handoffs focused on unresolved state the next context actually needs.
+
 ## 0.2.11 - 2026-08-25
 
 - Use more direct engineering language in selected workflow guidance where formal abstractions obscured concrete actions, while keeping specialized terms where they carry real technical meaning.

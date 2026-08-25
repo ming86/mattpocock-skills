@@ -1,7 +1,7 @@
 interface:
   display_name: "To Spec"
-  short_description: "Turn settled understanding into a stable spec"
-  default_prompt: "Use $to-spec to turn the settled decisions and project context into a stable implementation specification."
+  short_description: "Turn settled understanding into an implementation spec"
+  default_prompt: "Use $to-spec to turn the settled decisions and project context into an implementation specification later work can rely on."
 
 policy:
   allow_implicit_invocation: false

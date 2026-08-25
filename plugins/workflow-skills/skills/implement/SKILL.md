@@ -1,12 +1,12 @@
 ---
 name: implement
-description: "Implement a clear unit of work whose scope and intended outcome are already defined by a ticket, specification, or current plan. Use for execution rather than requirements discovery; preserve the agreed scope, follow repository practices, match validation to the change, and report when implementation shows that an important assumption or part of the plan is wrong."
+description: "Implement a well-scoped work item whose intended outcome is already defined by a ticket, specification, or current plan. Use for execution rather than requirements discovery; preserve the agreed scope, follow repository practices, match validation to the change, and report when implementation shows that an important assumption or part of the plan is wrong in a way that changes the work."
 disable-model-invocation: true
 ---
 
 # Implement
 
-Implement the work described by the current spec, ticket, or plan.
+Implement the well-scoped work described by the current spec, ticket, or plan.
 
 ## Process
 
@@ -14,5 +14,5 @@ Implement the work described by the current spec, ticket, or plan.
 2. Inspect enough surrounding code to follow existing architecture, vocabulary, interfaces, and validation practices. Prefer existing project patterns when they fit the requested behavior.
 3. Implement the most direct solution that fits the current scope and codebase. Do not add unrelated cleanup, speculative abstractions, compatibility layers, defensive machinery, or future-facing configurability without a concrete need.
 4. Validate the change using the repository's existing practices and checks that match the risk and consequences of the change. Use focused tests, typechecking, integration checks, TDD, full-suite runs, or other techniques when they add useful confidence or are required by the project; none is mandatory merely because this skill is running.
-5. If something discovered during implementation shows that a requirement, assumption, interface, architecture decision, or part of the plan is wrong, treat that as a change to the work rather than silently absorbing it into implementation. Report what changed and what it means before switching to a different direction. When the work already has saved project state and the finding will matter later, update it rather than leaving the old assumption in place.
-6. Complete the implementation and report what changed, what was validated, and any unresolved issue that matters to dependent work. Do not create an implementation diary; save only information that later work would otherwise have to reconstruct.
+5. If something discovered during implementation shows that a requirement, assumption, interface, architecture decision, or part of the plan is wrong in a way that changes the work or planned direction, treat that as a change to the work rather than silently absorbing it into implementation. Report what changed and what it means before switching direction. When the work already has saved project state and the finding will matter later, update it rather than leaving the old assumption in place.
+6. Complete the well-scoped implementation and report what changed, what was validated, and any unresolved issue that matters to dependent work. Do not create an implementation diary; save only information that later work would otherwise have to reconstruct.
