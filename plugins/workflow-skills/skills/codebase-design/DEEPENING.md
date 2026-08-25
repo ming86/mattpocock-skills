@@ -4,29 +4,33 @@ Use this guide when several shallow modules may be simpler as one deeper module.
 
 These are design heuristics, not automatic refactoring rules. Combining modules should make the caller-facing design simpler or keep related change in fewer places without collapsing responsibilities that are genuinely useful to keep separate.
 
-## Dependency categories
+## Dependency shape
 
-When considering a merge of shallow modules, inspect their dependencies. The dependency shape affects how easily the combined behavior can be exercised and tested.
+When considering a merge of shallow modules, inspect the characteristics of their dependencies. Relevant characteristics can include whether a dependency crosses a process, device, or network boundary; who controls its implementation; whether its behavior can be exercised faithfully in a focused test; and operational properties such as determinism, cost, latency, availability, or side effects.
 
-### 1. In-process
+These characteristics can overlap. What matters is how the dependency affects the caller-facing design, the value of a seam, and the evidence available to validate the combined behavior.
 
-Pure computation, in-memory state, no I/O. These are often easier to combine because no external adapter is required. Combine them when the resulting interface hides meaningful complexity and the old separation has no independent value; then test through the resulting observable behavior.
+Common dependency shapes include:
 
-### 2. Local-substitutable
+### In-process dependencies
 
-Dependencies with faithful local test substitutes, such as PGLite for Postgres or an in-memory filesystem. A local substitute can make a deeper module practical, but it is not by itself a reason to merge anything. Use it when it gives credible coverage without forcing test-only concepts into the public interface.
+Pure computation, in-memory state, or other behavior that does not cross an I/O boundary. These are often easier to combine because no external adapter is required. Combine them when the resulting interface hides meaningful complexity and the old separation has no independent value; then test through the resulting observable behavior.
 
-### 3. Remote but owned
+### Dependencies with faithful local substitutes
 
-Your own services across a network boundary, such as internal APIs or microservices. A port or adapter can help when the network boundary is meaningful or several implementations genuinely need the same contract. Keep business or orchestration logic behind the module's normal interface and keep transport details near the network boundary.
+Dependencies with credible local test substitutes, such as PGLite for Postgres or an in-memory filesystem. A local substitute can make a deeper module practical, but it is not by itself a reason to merge anything. Use it when it gives credible coverage without forcing test-only concepts into the public interface.
+
+### Owned external processes or services
+
+Dependencies you control across a process, device, or network boundary, such as a local daemon, internal service, or device-side component. A port or adapter can help when the boundary is meaningful or several implementations genuinely need the same contract. Keep higher-level domain or coordination logic behind the module's normal interface and keep boundary-specific transport or protocol details near the boundary.
 
 For tests, use the cheapest substitute that preserves the behavior the test needs to prove. An in-memory adapter is one option, not a requirement.
 
-Example recommendation: *"Keep transport details behind the existing service interface so callers depend on behavior rather than HTTP/gRPC details. Use a local adapter in tests only if it gives a credible and meaningfully cheaper feedback loop."*
+Example recommendation: *"Keep boundary-specific transport details behind the existing interface so callers depend on behavior rather than HTTP, IPC, or protocol details. Use a local adapter in tests only if it gives a credible and meaningfully cheaper feedback loop."*
 
-### 4. External third party
+### Third-party dependencies
 
-Services such as Stripe or Twilio that you do not control. A narrow adapter is often useful when it prevents vendor details from spreading through the codebase or makes important behavior practical to test. Do not add an abstraction merely because an SDK is external; a direct integration can be appropriate when it is already simple and well contained.
+Dependencies you do not control, such as hosted services, native libraries, device SDKs, or vendor APIs. A narrow adapter is often useful when it prevents vendor details from spreading through the codebase or makes important behavior practical to test. Do not add an abstraction merely because a dependency is external; a direct integration can be appropriate when it is already simple and well contained.
 
 ## When a seam is useful
 

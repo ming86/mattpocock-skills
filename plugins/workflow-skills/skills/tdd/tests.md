@@ -49,10 +49,9 @@ Prefer verification through the normal interface when it credibly exposes the re
 
 ```typescript
 // GOOD: Verifies through the normal interface
-test("createUser makes user retrievable", async () => {
-  const user = await createUser({ name: "Alice" });
-  const retrieved = await getUser(user.id);
-  expect(retrieved.name).toBe("Alice");
+test("parseConfig preserves the declared output directory", () => {
+  const config = parseConfig("output = ./dist");
+  expect(config.outputDir).toBe("./dist");
 });
 ```
 

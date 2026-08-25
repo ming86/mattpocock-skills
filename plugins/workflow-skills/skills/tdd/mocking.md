@@ -40,11 +40,11 @@ Do not add dependency injection mechanically when the dependency is stable, loca
 Specific operations often produce clearer contracts than one generic conditional mock:
 
 ```typescript
-const api = {
-  getUser: (id) => fetch(`/users/${id}`),
-  getOrders: (userId) => fetch(`/users/${userId}/orders`),
-  createOrder: (data) => fetch('/orders', { method: 'POST', body: data }),
+const artifacts = {
+  readManifest: (path) => fs.readFile(path, "utf8"),
+  writeBundle: (path, bytes) => fs.writeFile(path, bytes),
+  inspectOutput: (path) => fs.stat(path),
 };
 ```
 
-Compared with a generic fetch wrapper, this can make test setup clearer and improve type safety. Preserve the repository's existing abstraction when it already communicates the contract well; do not create an SDK-style layer solely for mocking convenience.
+Compared with exposing a generic filesystem wrapper, this can make test setup clearer and express the operations the code actually depends on. Preserve the repository's existing abstraction when it already communicates the contract well; do not create a filesystem abstraction solely for mocking convenience.

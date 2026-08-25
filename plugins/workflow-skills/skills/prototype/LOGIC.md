@@ -1,6 +1,6 @@
 # Logic or State Prototype
 
-Use this pattern when the uncertainty is about state transitions, business rules, data shape, or an interface that becomes easier to judge with concrete scenarios.
+Use this pattern when the uncertainty is about state transitions, domain rules, data shape, or an interface that becomes easier to judge with concrete scenarios.
 
 The goal is evidence about the behavior or model, not reusable production code.
 

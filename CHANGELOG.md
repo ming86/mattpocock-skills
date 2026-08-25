@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.8 - 2026-08-25
+
+- Generalize `codebase-design` dependency guidance from a fixed local/remote/vendor taxonomy to overlapping dependency characteristics and common shapes that also fit systems, native, device, tooling, and service software.
+- Use broader domain terminology where the guidance is not specifically about business software, and diversify a small number of TDD examples beyond web/SaaS application patterns.
+- Remove the unnecessary `most repos` topology claim from the domain-modeling context template.
+- Synchronize all plugin and marketplace manifests at version `0.2.8`.
+
 ## 0.2.7 - 2026-08-25
 
 - Compose `grill-with-docs` directly with `grilling` and `domain-modeling` through the Skill tool instead of partially restating those skills' procedures.

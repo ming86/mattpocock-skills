@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "workflow-skills",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Adaptive engineering workflow skills for clarification, research, planning, implementation, validation, and review.",
   "author": {
     "name": "Ming",
