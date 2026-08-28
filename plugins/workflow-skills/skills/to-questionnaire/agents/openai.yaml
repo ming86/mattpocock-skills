@@ -1,7 +1,7 @@
 interface:
   display_name: "To Questionnaire"
-  short_description: "Ask an external decision-maker for missing information"
-  default_prompt: "Use $to-questionnaire to turn the decisions or facts we need from another person into a focused questionnaire."
+  short_description: "Ask another expert for needed input"
+  default_prompt: "Use $to-questionnaire to turn the input we need from another person or domain expert into a focused questionnaire."
 
 policy:
   allow_implicit_invocation: false

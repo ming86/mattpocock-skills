@@ -21,6 +21,8 @@ When changing a skill:
 - preserve its responsibilities, stopping conditions, and intended scope;
 - keep its description precise enough to distinguish neighboring skills before the body is loaded;
 - prefer ordinary engineering language unless a specialized term carries a useful distinction;
+- describe ordinary methodology primarily in terms of the behavior to pursue; reserve strong prohibitions for hard boundaries and recurring failure modes that need explicit suppression;
+- when a skill depends on distinctions such as source findings, inference, assumptions, or user input, describe how those distinctions are determined rather than assuming the model can label them reliably;
 - do not turn a useful technique into a mandatory project workflow;
 - keep workflow-specific method, semantics, stopping conditions, and output meaning in the skill; leave surrounding orchestration and project workflow to project-level instructions. Express intrinsic boundaries in terms of what the skill establishes, produces, or leaves unresolved rather than restating external policy or adding defensive disclaimers.
 

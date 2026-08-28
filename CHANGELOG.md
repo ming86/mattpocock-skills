@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.13 - 2026-08-28
+
+- Reframe `grilling` around uncertainty that can change or unblock useful work, choosing the right source for each question instead of assuming the model can pre-classify facts or user-owned decisions.
+- Ground `grill-with-docs`, `research`, `prototype`, `to-spec`, Wayfinder, and questionnaires in the distinction between what project sources show, what is inferred, what remains assumed, and where user or expert input is actually needed.
+- Prefer positive methodological guidance in repository maintenance instructions, reserving strong prohibitions for hard boundaries and recurring failure modes, and add routing cases for ordinary implementation judgment and external expertise.
+
 ## 0.2.12 - 2026-08-25
 
 - Repair scope and routing distinctions that were weakened during the 0.2.11 prose cleanup while keeping the more natural engineering language.

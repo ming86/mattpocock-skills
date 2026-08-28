@@ -9,9 +9,9 @@ This package is designed to complement whatever governing instructions, review a
 The `workflow-skills` plugin currently contains 17 skills:
 
 - `workflow-guide`: compact catalog for identifying relevant explicit workflow skills
-- `grilling`: focused clarification of important decisions
-- `grill-with-docs`: clarification grounded in repository and project evidence
-- `research`: primary-source technical and project research
+- `grilling`: focused clarification of uncertainty that could change or block the work
+- `grill-with-docs`: clarification grounded in project context and user input
+- `research`: source-grounded technical and project research
 - `prototype`: smallest useful experiment for an important uncertainty
 - `wayfinder`: durable overview for large, uncertain, or multi-session work
 - `to-spec`: convert settled understanding into an implementation spec
@@ -24,7 +24,7 @@ The `workflow-skills` plugin currently contains 17 skills:
 - `codebase-design`: reason about module boundaries, interfaces, dependencies, and testability
 - `resolving-merge-conflicts`: reconcile in-progress Git conflicts from the intent behind both sides
 - `handoff`: package live work state for a fresh session or agent
-- `to-questionnaire`: ask an external decision-maker or domain expert for missing information
+- `to-questionnaire`: ask another person or domain expert for input they are best placed to provide
 
 The skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
 
@@ -177,7 +177,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.12`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.13`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

@@ -217,6 +217,20 @@ cases:
     avoid: [domain-modeling, implementation-review]
     note: "Do not automatically run Design It Twice. Compare alternative interfaces only when the user asks or a material interface decision cannot be resolved reliably without comparison."
 
+  - id: ordinary-implementation-judgment-no-grilling
+    prompt: "This private helper can return either a tuple or a small object. Pick the form that best fits the surrounding code; no public behavior or product choice depends on it."
+    expected:
+      skill: null
+      invocation: none
+    avoid: [grilling, grill-with-docs]
+
+  - id: questionnaire-external-expertise-not-decision-owner
+    prompt: "Use $to-questionnaire. Our infrastructure specialist is the only person who knows the current failover setup, and we need that context before we can finish the migration plan."
+    expected:
+      skill: to-questionnaire
+      invocation: explicit-only
+    avoid: [grilling, research]
+
   - id: guide-suggest-prototype-after-research-stalls
     prompt: "We checked the official docs and source, but they still do not establish whether this browser behavior works in our sandbox. A small experiment would settle the remaining uncertainty."
     expected:

@@ -1,7 +1,7 @@
 interface:
   display_name: "Grilling"
-  short_description: "Clarify material decisions with focused questions"
-  default_prompt: "Use $grilling to clarify the material decisions blocking the next step."
+  short_description: "Clarify uncertainty with focused questions"
+  default_prompt: "Use $grilling to clarify the uncertainty that could change or block the next useful step."
 
 policy:
   allow_implicit_invocation: true

@@ -16,7 +16,7 @@ The map is a working overview kept outside transient context. It lets a fresh co
 
 - What outcome are we trying to reach?
 - What important decisions have already been made, and why?
-- What facts or constraints are already known?
+- What relevant context has already been established, and where did it come from?
 - What important questions remain unresolved?
 - Which unresolved questions depend on others?
 - What is currently ready to investigate or decide?
@@ -36,7 +36,7 @@ Keep one primary overview of the effort when practical:
 
 ## Known context
 
-<important facts, constraints, standing project instructions, and links to sources that later contexts must not lose>
+<important current behavior, constraints, project instructions, findings, and source links that later contexts must not lose>
 
 ## Decisions so far
 
@@ -59,22 +59,22 @@ Keep detail near its source. The map is an overview and index, not a copy of eve
 
 ## Work units
 
-Each open work unit should resolve one coherent uncertainty: a decision, factual investigation, prototype question, domain clarification, or necessary enabling task. Size and split units at natural reasoning and dependency boundaries rather than an arbitrary token or session quota.
+Each open work unit should resolve one coherent uncertainty: a clarification, research question, prototype question, domain question, or necessary enabling task. Size and split units at natural reasoning and dependency boundaries rather than an arbitrary token or session quota.
 
 Useful modes include:
 
-- **Research:** establish facts from documentation, APIs, repository sources, or experiments.
+- **Research:** establish what documentation, APIs, repository sources, or other relevant sources show about a concrete question.
 - **Prototype:** build the cheapest credible prototype that can resolve a concrete design, behavior, UI, or feasibility question.
-- **Clarification:** obtain user judgment on an important product, scope, interface, domain, or tradeoff decision.
+- **Clarification:** obtain user input when intent, priorities, acceptable behavior, tradeoffs, or direction determine how the work should proceed.
 - **Enabling task:** perform concrete work that is genuinely necessary before a decision can be made.
 
-Do not create a ticket for uncertainty that is still too vague to state clearly. Keep it in the map until new information makes the question precise enough.
+Keep uncertainty in the map until it is clear enough to state as a useful work unit.
 
 ## Chart the map
 
 1. Establish the destination from the current goal, current requirements, and relevant constraints. If genuinely different destinations remain plausible, keep them explicit rather than selecting one as settled.
-2. Inspect existing project sources before creating questions the repository can already answer.
-3. Identify the first set of precise unresolved decisions or investigations and their genuine dependencies.
+2. Use existing project sources to answer what they can before turning remaining uncertainty into questions for the user or other work.
+3. Identify the first set of precise unresolved questions or investigations and their genuine dependencies.
 4. Record less-defined in-scope uncertainty without prematurely decomposing it.
 5. Establish or update the primary overview using the work's existing location or wherever the project normally keeps ongoing work. Prefer an existing overview over creating a new one, and keep detailed research or experiment findings near their source rather than copying them into the map. If no location already exists, use the simplest work-centered location that can serve as the current overview.
 6. Stop charting when the known next questions are enough to proceed. Do not try to predict the complete task graph through unresolved uncertainty.
@@ -87,7 +87,7 @@ For each selected open question:
 
 1. Load the map and only the detailed context relevant to that question.
 2. Resolve it using repository sources, research, a prototype, or by asking the user as appropriate.
-3. Record whether the result is a known fact, explicit decision, working assumption, or unresolved issue.
+3. Record the result as a source-backed finding, explicit decision, working assumption, or unresolved issue. Keep the source or observation attached when later work needs to know how the conclusion was reached.
 4. Update dependencies and retire questions invalidated by the new result.
 5. Turn newly clear uncertainty into a work unit only when doing so is useful.
 6. Reassess whether the destination is clear enough to leave Wayfinder. Do not keep mapping once the remaining route can be captured more simply as a spec, plan, or tickets.

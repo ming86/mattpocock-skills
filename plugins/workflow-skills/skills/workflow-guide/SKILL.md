@@ -1,6 +1,6 @@
 ---
 name: workflow-guide
-description: "Recognize explicit workflow skills that would help now or soon and suggest them early enough to be useful. Use throughout the task for clarification, experiments, long-running work, specs, task decomposition, implementation, review, conflict resolution, handoff, or decisions owned by another person."
+description: "Recognize explicit workflow skills that would help now or soon and suggest them early enough to be useful. Use throughout the task for clarification, experiments, long-running work, specs, task decomposition, implementation, review, conflict resolution, handoff, or input best supplied by another person."
 ---
 
 # Workflow Guide
@@ -9,7 +9,7 @@ Use this guide throughout the work to recognize explicit workflow skills that ar
 
 ## Explicit workflows
 
-- `grill-with-docs` — suggest before dependent planning or implementation when unresolved product, design, or domain decisions could change what gets built, how it behaves, its interfaces, or the direction of the work, and the repository or project context can help the user decide.
+- `grill-with-docs` — suggest before dependent planning or implementation when important uncertainty about the product, design, domain, or direction could change the work, project context can narrow the question, and the remaining answer depends on the user's input.
 - `prototype` — suggest when an important design, behavior, UI, integration, or feasibility question would be easier or more reliable to answer with a small experiment than with more discussion or research.
 - `wayfinder` — suggest when work is becoming large, uncertain, or likely to span contexts while important decisions, findings, dependencies, or open questions still need to survive context replacement and an ordinary plan is not yet enough.
 - `to-spec` — suggest once the requirements and decisions that implementation needs to follow are settled enough that upcoming work would benefit from a spec it can find and rely on.
@@ -18,6 +18,6 @@ Use this guide throughout the work to recognize explicit workflow skills that ar
 - `implementation-review` — suggest when a work item has been implemented and a focused review of the requested outcome and repository integration would be useful before treating that work as finished.
 - `resolving-merge-conflicts` — suggest when Git has stopped on merge or rebase conflicts that require understanding what each side was trying to preserve or change rather than simply choosing ours/theirs.
 - `handoff` — suggest before work deliberately moves to another context, session, or agent when the next context will need live information that is not already saved in the project's working state.
-- `to-questionnaire` — suggest when progress depends on facts or decisions owned by another person or domain expert, those answers could block or significantly change the work, and neither the current user nor repository research can responsibly supply them.
+- `to-questionnaire` — suggest when progress depends on input that another person or domain expert is best placed to provide, the missing input could block or significantly change the work, and neither the current user nor project research can supply it reliably.
 
 Implicit analytical skills such as `research`, `grilling`, `diagnosing-bugs`, `tdd`, `domain-modeling`, and `codebase-design` route normally.

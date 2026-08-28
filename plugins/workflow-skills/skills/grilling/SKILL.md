@@ -1,26 +1,32 @@
 ---
 name: grilling
-description: "Clarify material decisions with focused questions when the next plan, design, or step depends on user judgment. Inspect available evidence first, ask only what the user needs to decide, and stop once the remaining uncertainty would no longer materially change or block the next useful step."
+description: "Clarify uncertainty with focused questions when the next plan, design, or step depends on input from the user. Ground the questions in current project context, resolve each uncertainty through the source best suited to answer it, and stop once the remaining uncertainty no longer changes or blocks useful progress."
 ---
 
 # Grilling
 
-Ask the user only enough to reach the shared understanding needed for the next step. Resolve material ambiguity without exploring every possible branch of the problem.
+Clarify only what is needed to move the work forward. Start from the next useful step and enough of the current task and system context to recognize which uncertainties could lead to different work.
 
-Track unresolved decisions and their dependencies. Focus on decisions that are ready to answer now because their prerequisites are already settled.
+Focus on unresolved questions whose plausible answers could change the work or unblock progress. Lower-impact uncertainty can remain open until it becomes relevant.
 
 ## Process
 
-1. Establish what the clarification is trying to unblock: a decision, plan, specification, implementation, or other next step.
-2. Inspect available evidence before asking factual questions. Facts that can be established from the filesystem, codebase, tools, documentation, or other available sources are the agent's job to investigate.
-3. Identify unresolved user-owned decisions that could materially change the next step. Do not invent questions for minor edge cases, speculative future needs, or details that can safely remain open. Do not promote a possibility supported only by the model's own speculation into a user decision. Ground questions in the user's stated goal, project evidence, established constraints, or a concrete ambiguity in the requested work.
-4. Ask focused questions that are ready to answer. Prefer one decision at a time when later questions depend on it. Group independent questions only when that reduces unnecessary back-and-forth without making the decision harder.
-5. Give a recommended answer when the available evidence supports one, together with the reason or tradeoff that matters. Keep a free-text path open when the provided choices are not exhaustive.
-6. Reassess the open decisions after each answer or new piece of evidence. Drop questions that no longer matter and add newly exposed questions only when they affect the goal.
-7. Stop when the remaining uncertainty would no longer materially change or block the intended next step. Preserve unresolved points according to the calling workflow instead of forcing a decision.
+1. Establish what the clarification is trying to unblock: a plan, specification, implementation, direction, behavior, or other next step. Understand enough of the relevant task, code, system, and current direction to know which uncertainties could change that work.
+2. Identify what is still unclear and what different plausible answers would change. Prioritize questions whose answers could change the work or unblock the next useful step.
+3. Resolve each uncertainty through the source best suited to answer it:
+   - inspect code, documentation, tools, runtime behavior, history, or other relevant project sources for current system behavior and context;
+   - use engineering judgment for ordinary implementation choices that fit the current direction;
+   - use an experiment or prototype when the answer has to be learned by trying something;
+   - ask the user when their intent, priorities, acceptable behavior, tradeoffs, or direction determine how the work should proceed.
+4. Use each source according to what it can actually show. Keep direct observations, reasonable inferences, working assumptions, and user choices distinguishable when later work depends on that distinction.
+5. When useful questions depend on an interpretation of the existing system or intended direction that may not be shared with the user, make that understanding visible before going deeper.
+6. Ask focused questions that are ready to answer. Prefer one question at a time when later questions depend on the answer. Group independent questions when that reduces unnecessary back-and-forth without making them harder to answer.
+7. Give a recommended answer when the current context supports one, together with the reason or tradeoff that matters. Keep a free-text path open when the provided choices are not exhaustive.
+8. Reassess after each answer or new finding. Retire questions that no longer affect the work and surface newly exposed questions when they could change or unblock what happens next.
+9. Stop when the remaining uncertainty no longer changes or blocks useful progress. Preserve unresolved points according to the calling workflow rather than forcing closure.
 
-When later contexts would otherwise have to reconstruct important decisions or open questions, preserve a compact summary in the work's existing durable location or follow the project's durable-state convention. Use local working state for detailed or provisional information that should survive contexts but does not belong in shared project documentation. If no convention exists, use the simplest work-centered location that fits the clarification state. Record conclusions, reasons, status, and evidence pointers rather than an interview transcript. Do not create a file for clarification that will be used immediately and is cheap to reconstruct.
+When later contexts would otherwise have to reconstruct important conclusions or open questions, preserve a compact summary in the work's existing durable location or follow the project's durable-state convention. Use local working state for detailed or provisional information that should survive contexts but does not belong in shared project documentation. If no convention exists, use the simplest work-centered location that fits the clarification state. Record conclusions, reasons, status, and useful source references rather than an interview transcript. A separate clarification file is useful when later contexts need the state or reconstructing it would be costly.
 
-User decisions remain the user's. Do not silently choose a material product, scope, interface, operational, or tradeoff decision merely to finish the interview.
+Bring questions about the user's intent, priorities, acceptable behavior, tradeoffs, or direction back to the user when they affect how the work should proceed.
 
 When another skill calls `grilling`, follow that skill's narrower purpose, documentation behavior, and stopping conditions.

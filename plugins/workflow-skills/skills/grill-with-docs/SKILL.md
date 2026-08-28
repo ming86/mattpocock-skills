@@ -1,16 +1,16 @@
 ---
 name: grill-with-docs
-description: "Clarify material product, design, or domain decisions using both repository evidence and user judgment. Use before dependent work when unresolved choices could materially change scope, behavior, interfaces, or direction; preserve decisions when later contexts will need them."
+description: "Clarify important product, design, domain, or direction questions using project context and user input. Use before dependent work when unresolved questions could change scope, behavior, interfaces, or direction; preserve the resulting state when later contexts will need it."
 disable-model-invocation: true
 ---
 
 # Grill With Docs
 
-Use this skill when unresolved decisions or domain ambiguity could materially affect the work. Ask only enough to reach the shared understanding needed for the next useful phase.
+Use this skill when important uncertainty remains and project context can narrow the questions before the user needs to weigh in. Build enough understanding of the current system and task to know which questions are actually relevant.
 
 ## Process
 
-1. Inspect the conversation, codebase, documentation, ADRs, and other project evidence first. Resolve factual questions from that evidence when practical instead of asking the user for facts the agent can find itself.
-2. Call the Skill tool with `grilling` for material product, behavior, scope, interface, or tradeoff decisions that require the user's judgment.
-3. Call the Skill tool with `domain-modeling` when ambiguity in domain concepts, terminology, entities, invariants, or relationships is itself material to the work.
-4. Preserve important decisions when later contexts will need them. Reuse the work's existing durable location or follow the project's durable-state convention instead of creating a parallel one. Use local working state for detailed or provisional information that should survive contexts but does not belong in shared project documentation. If no convention exists, keep the clarification state in the simplest work-centered location that fits the work. Keep facts, decisions, assumptions, and unresolved points clearly distinguished. Save the current decision state, not a question-and-answer transcript.
+1. Inspect the conversation, codebase, documentation, ADRs, runtime information, and other relevant project sources first. Use them to understand the current system and task, and keep what those sources directly show separate from conclusions about intent, requirements, or direction.
+2. Call the Skill tool with `grilling` when important uncertainty remains and resolving it depends on the user's intent, priorities, acceptable behavior, tradeoffs, or direction.
+3. Call the Skill tool with `domain-modeling` when unclear domain concepts, terminology, entities, rules, or relationships are preventing the work from being understood or the right questions from being asked.
+4. Preserve the resulting state when later contexts will need it. Reuse the work's existing durable location or follow the project's durable-state convention instead of creating a parallel one. Use local working state for detailed or provisional information that should survive contexts but does not belong in shared project documentation. If no convention exists, keep the clarification state in the simplest work-centered location that fits the work. Keep project findings, user clarifications or decisions, working assumptions, and unresolved points distinguishable. Save the current state, not a question-and-answer transcript.

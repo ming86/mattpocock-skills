@@ -1,7 +1,7 @@
 interface:
   display_name: "Grill With Docs"
-  short_description: "Clarify material decisions using project evidence"
-  default_prompt: "Use $grill-with-docs to resolve the material decisions that must be settled before dependent work continues."
+  short_description: "Clarify important questions using project context"
+  default_prompt: "Use $grill-with-docs to narrow the relevant uncertainty from project context and clarify the user input needed before dependent work continues."
 
 policy:
   allow_implicit_invocation: false
