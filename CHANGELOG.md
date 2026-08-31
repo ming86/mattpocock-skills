@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.16 - 2026-08-31
+
+- Reduce repeated lists of optional supporting checks in `to-spec`, `to-tickets`, and `implement` so the skills keep supporting work scoped without repeatedly making gates, preflights, benchmarks, rollout, rollback, or similar machinery salient.
+- Restore prototype-result semantics in specs and tickets: carry forward what an experiment showed and how it informed the current conclusion or decision rather than describing the prototype as having chosen the direction.
+- Remove the remaining validation aside from the headline `codebase-design` principles so useful boundaries are justified by software structure and concrete dependency-control needs rather than test or validation salience.
+
 ## 0.2.15 - 2026-08-31
 
 - Treat plans, specs, findings, assumptions, and decisions as current engineering state that can evolve as implementation or investigation reveals more, rather than describing ordinary work with unnecessary proof or finality language.

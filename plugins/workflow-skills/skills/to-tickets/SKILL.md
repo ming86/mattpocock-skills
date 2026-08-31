@@ -32,7 +32,7 @@ Prefer work units that are coherent in terms of behavior, ownership, dependency,
 
 Tracer-bullet vertical slices are useful for feature work when a narrow end-to-end increment can work independently and gives meaningful progress. Do not force every task through every architectural layer, and do not force vertical slicing onto refactors, migrations, infrastructure changes, or other work whose natural boundary is different.
 
-Keep supporting work at the level where it serves the requested outcome. A ticket boundary organizes execution; it does not create an independent validation, benchmark, preflight, review, rollout, or rollback boundary. Shared or end-to-end checks can remain shared rather than being copied into every ticket.
+Keep supporting work at the level where it serves the requested outcome. A ticket boundary organizes execution; it does not create a separate validation or supporting-process boundary. Shared or end-to-end checks can remain shared rather than being copied into every ticket.
 
 For wide mechanical changes that cannot remain valid as independent vertical slices, use an appropriate staged migration such as expand–migrate–contract when the system actually requires it. Keep the staging no more elaborate than necessary.
 
@@ -66,4 +66,4 @@ References to genuine prerequisite tickets, or `None`.
 
 Only context that a fresh executor would otherwise be likely to miss: important constraints, current decisions, relevant findings or source links, or links to the source spec/prototype. Do not copy the entire planning history.
 
-Avoid volatile file-by-file instructions unless a file or interface location is itself a meaningful constraint. Preserve prototype-derived snippets only when they capture a decision from the prototype more precisely than prose.
+Avoid volatile file-by-file instructions unless a file or interface location is itself a meaningful constraint. Preserve prototype-derived snippets only when they capture an important result or the basis for a current decision more precisely than prose.

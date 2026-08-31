@@ -60,7 +60,7 @@ When designing an interface, ask:
 
 - **Judge depth from the caller's side.** Internal decomposition can still use small helpers, collaborators, or private seams. They do not have to become part of the public interface.
 - **Use the deletion test.** Imagine deleting the module. If its complexity mostly disappears, it may be a pass-through. If that complexity spreads back across many callers, the module is probably doing useful work.
-- **Prefer boundaries around stable behavior.** Callers benefit when the interface reflects behavior that is less volatile than the implementation behind it. Useful validation often becomes easier as a consequence, without making testing the reason for the boundary.
+- **Prefer boundaries around stable behavior.** Callers benefit when the interface reflects behavior that is less volatile than the implementation behind it.
 - **Make an extra seam earn its keep.** Real variation, multiple consumers or implementations, ownership boundaries, volatility, or a concrete need to substitute a dependency can justify a seam. Testing convenience alone is not a reason to introduce one.
 
 ## When dependency control matters

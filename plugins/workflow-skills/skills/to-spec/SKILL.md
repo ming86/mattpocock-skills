@@ -15,7 +15,7 @@ Leave unresolved any question that still affects implementation and is not answe
 1. Inspect the relevant repository state if needed. Check the project's existing vocabulary, ADRs, interfaces, conventions, and behavior.
 2. Keep explicit requirements and decisions separate from what the current code, documentation, or other project sources show, from working assumptions, and from unresolved points. Preserve those distinctions so later work can tell what each statement is based on.
 3. Decide whether later implementation needs validation guidance beyond the project's normal practices. When it does, start from the outcome or important uncertainty that later work needs to check and describe the narrowest useful scope. Prefer existing observable paths and checks; keep shared or end-to-end validation at the level where it can meaningfully show whether the outcome holds.
-4. Write the spec using the structure below, leaving out sections or details that add no useful information. Match the level of detail to the work. A spec organizes requirements and decisions; its sections do not create new gates, preflights, benchmarks, rollback work, verification infrastructure, or other supporting process.
+4. Write the spec using the structure below, leaving out sections or details that add no useful information. Match the level of detail to the work. A spec organizes requirements and decisions; its sections do not create additional supporting work.
 5. Store the spec where the project already keeps this kind of work so later work can find and rely on it. Reuse an existing tracker, documentation area, work-state location, shared spec, issue, or design document instead of creating a parallel one. A configured local working-state area is appropriate for a personal or provisional spec. If no convention exists, keep the spec in the simplest work-centered location that can serve as the reference for this work. A tracker is one option when it fits the project; another document may fit better.
 
 <spec-template>
@@ -36,7 +36,7 @@ The requirements, constraints, and boundaries that implementation needs to follo
 
 Implementation decisions already made, together with existing interfaces, constraints, or system behavior that the implementation needs to work with. Include relevant architecture, interfaces, schema or API contracts, interactions, and constraints. Describe existing repository behavior as a constraint when it matters to the work rather than presenting its existence alone as an intentional decision. Keep file-by-file detail only when a path itself is a meaningful constraint.
 
-If a prototype produced a compact result that captures the chosen conclusion or direction more precisely than prose can, include only the result-rich part and note that it came from the prototype.
+If a prototype produced a compact result that captures what the experiment showed more precisely than prose can, include the relevant result and the current conclusion it informed, and note that it came from the prototype.
 
 ## Validation (when needed)
 
