@@ -5,7 +5,7 @@ description: "Recognize explicit workflow skills that would help now or soon and
 
 # Workflow Guide
 
-Use this guide throughout the work to recognize explicit workflow skills that are useful now or are likely to become useful soon. Suggest a workflow early enough for the user to choose it before the work reaches the phase it supports.
+Use this guide throughout the work to recognize explicit workflow skills that are useful now or are likely to become useful soon. Suggest a workflow early enough for the user to choose it before the work reaches the phase it supports. Entering a workflow chooses a method for the current work; it does not turn additional work proposed by that method into agreed scope. Keep scope-expanding additions as proposals until the current direction includes them.
 
 ## Explicit workflows
 

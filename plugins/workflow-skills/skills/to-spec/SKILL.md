@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # To Spec
 
-Turn the current understanding into a spec that later work can find and rely on. Record what is already known or decided rather than starting a second requirements interview.
+Turn the current understanding into a spec that later work can find and rely on. Record what is already known or decided rather than starting a second requirements interview. Preserve the status of the source material: a useful idea from the agent is not a requirement merely because the spec records it.
 
 Leave unresolved any question that still affects implementation and is not answered by the current requirements, project context, or user decisions.
 
@@ -14,7 +14,7 @@ Leave unresolved any question that still affects implementation and is not answe
 
 1. Inspect the relevant repository state if needed. Check the project's existing vocabulary, ADRs, interfaces, conventions, and behavior.
 2. Keep explicit requirements and decisions separate from what the current code, documentation, or other project sources show, from working assumptions, and from unresolved points. Preserve those distinctions so later work can tell what each statement is based on.
-3. Decide whether later implementation needs validation guidance beyond the project's normal practices. When it does, start from the outcome or important uncertainty that later work needs to check and describe the narrowest useful scope. Prefer existing observable paths and checks; keep shared or end-to-end validation at the level where it can meaningfully show whether the outcome holds.
+3. Carry forward validation guidance already required by the current work or existing project practice when later implementation needs it. Keep shared or end-to-end validation at the level where it actually applies. If preparing the spec reveals an additional validation step or other supporting work that would expand the current scope, keep it as a proposal or unresolved point rather than recording it as a requirement until it becomes part of the current direction.
 4. Write the spec using the structure below, leaving out sections or details that add no useful information. Match the level of detail to the work. A spec organizes requirements and decisions; its sections do not create additional supporting work.
 5. Store the spec where the project already keeps this kind of work so later work can find and rely on it. Reuse an existing tracker, documentation area, work-state location, shared spec, issue, or design document instead of creating a parallel one. A configured local working-state area is appropriate for a personal or provisional spec. If no convention exists, keep the spec in the simplest work-centered location that can serve as the reference for this work. A tracker is one option when it fits the project; another document may fit better.
 
@@ -40,11 +40,11 @@ If a prototype produced a compact result that captures what the experiment showe
 
 ## Validation (when needed)
 
-Include this section only when later work needs guidance beyond normal project practice. State the outcome, behavior, or important assumption that later work needs to check and the validation scope that is useful for this work. Prefer representative existing paths or checks when they are sufficient.
+Include this section when the current work or existing project practice already provides validation guidance that later work needs to carry forward. State the outcome, behavior, or important assumption to check and the relevant scope. Prefer representative existing paths or checks when they are sufficient. Do not turn an additional check into a new requirement here merely because it could increase confidence; keep such an addition as a proposal or unresolved point until it is accepted into the work.
 
 ## Assumptions and Unresolved Points
 
-Working assumptions or unresolved questions that still affect the work. Omit this section when there are none. Keep these items labeled as assumptions or unresolved points rather than requirements.
+Working assumptions, unresolved questions, or proposed additions that still affect the work. Omit this section when there are none. Keep each item labeled by its current status rather than folding assumptions, unresolved points, or proposals into requirements.
 
 ## Out of Scope
 

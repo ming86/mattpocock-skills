@@ -12,13 +12,13 @@ Turn the current plan or spec into work units the project can find and continue.
 
 ### 1. Gather the current source material
 
-Work from the current conversation, current plan, spec, relevant issue, and relevant repository context. If a referenced document or work item exists, read the parts needed to carry forward its requirements, decisions, constraints, and unresolved points accurately.
+Work from the current conversation, current plan, spec, relevant issue, and relevant repository context. If a referenced document or work item exists, read the parts needed to carry forward its requirements, decisions, constraints, assumptions, unresolved points, and proposals accurately. Preserve those statuses during decomposition rather than treating every useful idea in the source material as part of the current work.
 
 ### 2. Understand the implementation surface when needed
 
 Inspect the codebase enough to choose meaningful boundaries and dependencies. Use the project's existing domain vocabulary and respect relevant ADRs and repository conventions.
 
-Do not create preparatory refactors merely because they might make later implementation cleaner. Add enabling refactors only when the requested work actually needs them or they clearly reduce its risk or complexity.
+Do not create preparatory refactors merely because they might make later implementation cleaner or safer. An internal refactor that is genuinely necessary to deliver the current outcome can be part of the decomposition. If codebase inspection reveals an additional prerequisite or refactor that would expand the work beyond the current outcome or requirements, surface it as a proposed change rather than silently turning it into a required ticket.
 
 ### 3. Decompose at natural boundaries
 
@@ -44,7 +44,11 @@ For each ticket, identify only the other tickets that genuinely block it. Ticket
 
 If different ways of splitting the work would change interfaces, scope, sequencing risk, ownership, or the intended delivery shape, keep that decision visible rather than hiding it inside ticket decomposition. Keep meaningfully different choices open until the direction is clear. Routine decomposition can proceed when the direction is already clear.
 
-### 6. Publish the work units
+### 6. Keep newly discovered additions separate
+
+If decomposition reveals a prerequisite, refactor, validation requirement, supporting step, or other work that is not already part of the source work or existing project requirements, report it separately as a proposed addition. Do not publish it as a required ticket, dependency, or completion criterion until it becomes part of the current work.
+
+### 7. Publish the work units
 
 Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, keep the tickets in the simplest work-centered task location that fits the work. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket.
 
@@ -56,7 +60,7 @@ The coherent behavior, result, migration state, or other outcome this ticket mak
 
 ## Completion criteria
 
-A small set of conditions that make this work unit complete according to the source plan or specification. Focus on the outcome this ticket owns. Include specific validation only when the source work or nature of the change requires it; do not manufacture a separate validation program for each ticket.
+A small set of conditions that make this work unit complete according to the source plan or specification. Focus on the outcome this ticket owns. Carry forward specific validation when the source work or existing project practice already requires it; otherwise keep completion criteria about the outcome rather than inventing new validation commitments for the ticket.
 
 ## Blocked by
 

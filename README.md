@@ -28,7 +28,7 @@ The `workflow-skills` plugin currently contains 17 skills:
 
 The skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
 
-Workflow support scales to the work. The requested outcome, project practices, and actual consequences determine the useful validation, verification, preflights, benchmarks, reviews, rollout or rollback checks, and other supporting process. Specs, tickets, workflow transitions, and document sections organize information and execution; they do not create extra engineering or validation obligations merely by existing. Keep shared or end-to-end checks at the level where they can meaningfully show whether the outcome holds instead of repeating them at every work-unit boundary.
+Workflow support scales to the work. Skills carry forward validation and other supporting process already required by the current work or project instead of inventing more because it could increase confidence or reduce risk. Specs, tickets, workflow transitions, and document sections organize information and execution; they do not create extra engineering obligations merely by existing. When a workflow discovers additional work, keep it as a proposal until it becomes part of the current direction rather than silently turning it into a requirement, prerequisite, ticket, completion criterion, or implementation step. Shared or end-to-end checks can remain at the level where they actually apply instead of being repeated at every work-unit boundary.
 
 Engineering work is iterative. Plans, specs, decisions, findings, and assumptions capture the current understanding; later implementation or investigation may refine or replace them. The skills keep this state current rather than treating intermediate documents or earlier conclusions as final.
 
@@ -181,7 +181,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.16`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.17`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

@@ -66,7 +66,7 @@ Useful modes include:
 - **Research:** find what documentation, APIs, repository sources, or other relevant sources show about a concrete question.
 - **Prototype:** build the cheapest credible prototype that can resolve a concrete design, behavior, UI, or feasibility question.
 - **Clarification:** obtain user input when intent, priorities, acceptable behavior, tradeoffs, or direction determine how the work should proceed.
-- **Enabling task:** perform concrete work that is genuinely necessary before a decision can be made.
+- **Enabling task:** perform concrete work already within the current direction that must happen before a decision can be made. If a newly identified prerequisite would expand the work, keep it as a proposed addition rather than a current work unit until the direction includes it.
 
 Keep uncertainty in the map until it is clear enough to state as a useful work unit.
 
@@ -89,5 +89,5 @@ For each selected open question:
 2. Resolve it using repository sources, research, a prototype, or by asking the user as appropriate.
 3. Record the result as a finding, explicit decision, working assumption, or unresolved issue. Keep the source or observation with a finding when later work needs to know how the conclusion was reached.
 4. Update dependencies and retire questions invalidated by the new result.
-5. Turn newly clear uncertainty into a work unit only when doing so is useful.
+5. Turn newly clear uncertainty into a work unit when it belongs to the current direction. If resolving it would introduce additional project work that is not yet part of the current direction, keep that addition visible as a proposal instead of promoting it into a current work unit.
 6. Reassess whether the destination is clear enough to leave Wayfinder. Do not keep mapping once the remaining route can be captured more simply as a spec, plan, or tickets.

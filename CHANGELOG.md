@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.17 - 2026-08-31
+
+- Preserve scope status across workflow transformations: requirements and current decisions remain part of the current work, while assumptions, unresolved points, and agent-proposed additions remain labeled as such instead of being promoted into durable requirements.
+- Make `to-spec` carry forward existing validation requirements without inventing new supporting work, and make `to-tickets` decompose the source work without silently creating preparatory refactors, prerequisites, validation commitments, or other tickets.
+- Align `implement`, Wayfinder, `workflow-guide`, repository maintenance guidance, and package documentation so newly discovered scope-expanding work is surfaced as a proposal while ordinary focused checks and already-required project work continue normally.
+
 ## 0.2.16 - 2026-08-31
 
 - Reduce repeated lists of optional supporting checks in `to-spec`, `to-tickets`, and `implement` so the skills keep supporting work scoped without repeatedly making gates, preflights, benchmarks, rollout, rollback, or similar machinery salient.
