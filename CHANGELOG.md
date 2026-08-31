@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.15 - 2026-08-31
+
+- Treat plans, specs, findings, assumptions, and decisions as current engineering state that can evolve as implementation or investigation reveals more, rather than describing ordinary work with unnecessary proof or finality language.
+- Use direct descriptions of what is observed, chosen, changed, or still uncertain across debugging, domain modeling, clarification, specs, tickets, implementation, review, prototypes, research, handoff, and Wayfinder while keeping investigative evidence and genuine technical invariants where they carry useful meaning.
+- Align repository maintenance guidance and package documentation with the same iterative model of engineering work without weakening the workflow-scope and validation boundaries introduced in 0.2.14.
+
 ## 0.2.14 - 2026-08-31
 
 - Make workflow support scale to the actual work so specs, tickets, workflow transitions, and artifact sections do not manufacture new validation, review, benchmarking, preflight, rollout, rollback, or other supporting obligations.

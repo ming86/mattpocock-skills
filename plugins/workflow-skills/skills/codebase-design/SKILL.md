@@ -11,7 +11,7 @@ The aim is simple: callers should need to know less, related behavior should sta
 
 ## Useful design terms
 
-These terms are analytical tools, not a required dialect. Keep the repository's established names when they are already clear. A project may reasonably call something a service, component, API, boundary, package, or subsystem.
+These terms are analytical tools, not a required dialect. Keep the repository's existing names when they are already clear. A project may reasonably call something a service, component, API, boundary, package, or subsystem.
 
 **Module**: any piece of software with something callers use and an implementation behind it. It can be a function, class, package, service, or larger slice.
 
@@ -67,7 +67,7 @@ When designing an interface, ask:
 
 Good interfaces sometimes make dependencies easier to substitute or important behavior easier to exercise. Treat that as a consequence of a useful boundary, not a reason to invent one.
 
-1. **Make dependencies controllable when substitution has real value.** Pass in an external or variable dependency when that creates a useful runtime, ownership, implementation, or concrete validation boundary. Keep direct construction when it is simpler and the dependency does not need independent control.
+1. **Make dependencies controllable when substitution has real value.** Pass in an external or variable dependency when that creates a useful runtime, ownership, or implementation boundary, or when the work has a concrete need to control the dependency during a check or experiment. Keep direct construction when it is simpler and the dependency does not need independent control.
 
    ```typescript
    // Useful when payment is an external dependency we need to control
@@ -106,7 +106,7 @@ These relationships are reasoning aids, not naming requirements for the codebase
 
 - **Do not measure depth by implementation lines divided by interface lines.** More code is not automatically better. The useful question is whether callers get substantial behavior without learning unnecessary complexity.
 - **Do not reduce "interface" to a language keyword or method list.** The important caller-visible contract can include behavior and constraints that types do not express.
-- **Do not replace ordinary project terms merely to match this skill.** Use `seam` when replaceability is the important distinction; use `boundary`, `API`, `service`, or another established term when it communicates the design more clearly.
+- **Do not replace ordinary project terms merely to match this skill.** Use `seam` when replaceability is the important distinction; use `boundary`, `API`, `service`, or another existing project term when it communicates the design more clearly.
 
 ## Going deeper
 

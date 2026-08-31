@@ -12,7 +12,7 @@ State the question visibly enough that someone evaluating the prototype knows wh
 
 ## Keep the model observable
 
-Represent the relevant state and actions directly. Make it easy to exercise the happy path and the awkward cases that motivated the prototype. If a UI shell is used, keep the domain logic separate enough that the experiment is easy to reason about. Do not treat that prototype structure as a production architecture decision unless the experiment specifically validates it.
+Represent the relevant state and actions directly. Make it easy to exercise the happy path and the awkward cases that motivated the prototype. If a UI shell is used, keep the domain logic separate enough that the experiment is easy to reason about. Do not treat that prototype structure as a production architecture decision unless the experiment was specifically testing that structure and the result supports it.
 
 Useful scenarios include:
 

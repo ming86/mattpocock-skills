@@ -6,19 +6,19 @@ disable-model-invocation: true
 
 # To Tickets
 
-Turn an established plan or spec into durable work units. Each ticket should give a fresh agent or engineer enough context to understand the required outcome without carrying the whole planning conversation.
+Turn the current plan or spec into work units the project can find and continue. Each ticket should give a fresh agent or engineer enough context to understand the required outcome without carrying the whole planning conversation.
 
 ## Process
 
-### 1. Gather the source of truth
+### 1. Gather the current source material
 
-Work from the current conversation, current plan, spec, relevant issue, and repository evidence. If a referenced artifact exists, read the material needed to preserve its requirements, decisions, constraints, and unresolved points accurately.
+Work from the current conversation, current plan, spec, relevant issue, and relevant repository context. If a referenced document or work item exists, read the parts needed to carry forward its requirements, decisions, constraints, and unresolved points accurately.
 
 ### 2. Understand the implementation surface when needed
 
-Inspect the codebase enough to choose meaningful boundaries and dependencies. Use established domain vocabulary and respect relevant ADRs and repository conventions.
+Inspect the codebase enough to choose meaningful boundaries and dependencies. Use the project's existing domain vocabulary and respect relevant ADRs and repository conventions.
 
-Do not create preparatory refactors merely because they might make later implementation cleaner. Add enabling refactors only when evidence shows they are required or meaningfully reduce the risk or complexity of the requested work.
+Do not create preparatory refactors merely because they might make later implementation cleaner. Add enabling refactors only when the requested work actually needs them or they clearly reduce its risk or complexity.
 
 ### 3. Decompose at natural boundaries
 
@@ -40,11 +40,11 @@ For wide mechanical changes that cannot remain valid as independent vertical sli
 
 For each ticket, identify only the other tickets that genuinely block it. Tickets whose blockers are resolved form the ready set.
 
-### 5. Check material decomposition choices
+### 5. Check decomposition choices that change the work
 
-If different ways of splitting the work would materially change interfaces, scope, sequencing risk, ownership, or the intended delivery shape, do not hide that decision inside ticket decomposition. Keep the materially different decomposition choices explicit until the direction is settled. Routine decomposition can proceed when the direction is already clear.
+If different ways of splitting the work would change interfaces, scope, sequencing risk, ownership, or the intended delivery shape, keep that decision visible rather than hiding it inside ticket decomposition. Keep meaningfully different choices open until the direction is clear. Routine decomposition can proceed when the direction is already clear.
 
-### 6. Publish durable work units
+### 6. Publish the work units
 
 Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, keep the tickets in the simplest work-centered task location that fits the work. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket.
 
@@ -64,6 +64,6 @@ References to genuine prerequisite tickets, or `None`.
 
 ## Context
 
-Only decision-relevant context that a fresh executor would otherwise be likely to miss: important constraints, established decisions, relevant evidence, or links to the source spec/prototype. Do not copy the entire planning history.
+Only context that a fresh executor would otherwise be likely to miss: important constraints, current decisions, relevant findings or source links, or links to the source spec/prototype. Do not copy the entire planning history.
 
-Avoid volatile file-by-file instructions unless a file or interface location is itself a meaningful constraint. Preserve prototype-derived snippets only when they encode a validated decision more precisely than prose.
+Avoid volatile file-by-file instructions unless a file or interface location is itself a meaningful constraint. Preserve prototype-derived snippets only when they capture a decision from the prototype more precisely than prose.

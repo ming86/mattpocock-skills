@@ -24,7 +24,7 @@ Some dependencies have credible local substitutes, such as PGLite for Postgres o
 
 Dependencies you control across a process, device, or network boundary, such as a local daemon, internal service, or device-side component. A port or adapter can help when the boundary is meaningful or several implementations genuinely need the same contract. Keep higher-level domain or coordination logic behind the module's normal interface and keep boundary-specific transport or protocol details near the boundary.
 
-When validation needs to control this dependency, use the simplest substitute that preserves the behavior being checked. An in-memory adapter is one option, not a requirement.
+When a check or experiment needs to control this dependency, use the simplest substitute that preserves the behavior being exercised. An in-memory adapter is one option, not a requirement.
 
 Example recommendation: *"Keep boundary-specific transport details behind the existing interface so callers depend on behavior rather than HTTP, IPC, or protocol details. Use a local adapter only when the work actually needs that control and it gives a credible, meaningfully cheaper feedback loop."*
 
@@ -34,7 +34,7 @@ Dependencies you do not control, such as hosted services, native libraries, devi
 
 ## When a seam is useful
 
-- Multiple real uses or implementations are strong evidence that a seam is useful. A validation substitute can also fit an interface that already represents a real contract, but testing convenience alone does not create that contract.
+- Multiple real uses or implementations are a strong sign that a seam is useful. A substitute used during a check can also fit an interface that already represents a real contract, but testing convenience alone does not create that contract.
 - A single implementation can still justify a seam when it hides important complexity, isolates volatility, or marks a real ownership boundary.
 - A module can have private internal seams as well as a caller-facing interface. Do not expose internal collaborators merely because a particular test would find that convenient.
 

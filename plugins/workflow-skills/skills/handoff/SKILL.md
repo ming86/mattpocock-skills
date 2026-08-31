@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: "Package the live state of ongoing work so a fresh agent or session can continue without reconstructing the conversation. Use when deliberately moving to a new context, session, or agent; point to existing specs, issues, work state, commits, and diffs instead of copying settled information."
+description: "Package the live state of ongoing work so a fresh agent or session can continue without reconstructing the conversation. Use when deliberately moving to a new context, session, or agent; point to existing specs, issues, work state, commits, and diffs instead of copying information already saved elsewhere."
 argument-hint: "What should the next session or agent continue?"
 disable-model-invocation: true
 ---
@@ -20,7 +20,7 @@ Create a compact handoff for the next context. Carry only the live information t
    - active assumptions, blockers, or unresolved tradeoffs;
    - relevant checks already run or failures still present;
    - repository pointers needed to resume efficiently.
-4. **Keep the handoff compact.** Preserve conclusions, current status, why important choices were made, and useful references rather than the conversation transcript. Do not repeat settled requirements, design decisions, issue bodies, diffs, or research that already live elsewhere.
+4. **Keep the handoff compact.** Preserve conclusions, current status, why important choices were made, and useful references rather than the conversation transcript. Do not repeat requirements, design decisions, issue bodies, diffs, or research that already live elsewhere and remain current.
 5. **Put it somewhere the receiver can read.** Reuse an existing work-centered location or put it where the project normally keeps ongoing work when appropriate. A local or temporary file is suitable when the handoff is intentionally short-lived or provisional.
 6. **Treat the handoff as transition state.** Its live status can become stale as soon as the next context resumes work. After it is used, move any information that still matters into the project's normal work state and retire, replace, or update the handoff when leaving it in place would mislead a later context. Do not create a cleanup protocol when the handoff is already temporary or its lifecycle is obvious.
 7. **Redact sensitive material.** Do not copy credentials, API keys, passwords, private tokens, or unnecessary personal information into the handoff. Reference secure sources where appropriate instead.

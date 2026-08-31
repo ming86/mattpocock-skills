@@ -12,8 +12,8 @@ Use this skill when a merge or rebase is already in progress and Git has stopped
 
 ## Process
 
-1. **Establish the operation and goal.** Inspect `git status`, the relevant history, and the conflicting files. Understand what is being merged or rebased and the intended outcome of the operation before editing conflict hunks.
-2. **Recover what both sides were trying to preserve or change.** For each important conflict, trace the changes through the most direct available sources: commits and commit messages, surrounding diffs, tests, repository history, linked issues or pull requests, specifications, and nearby code. Identify the behavior, rules, and constraints each side was meant to preserve or change. Do not ask the user for facts the repository can establish directly.
+1. **Understand the operation and goal.** Inspect `git status`, the relevant history, and the conflicting files. Understand what is being merged or rebased and the intended outcome of the operation before editing conflict hunks.
+2. **Recover what both sides were trying to preserve or change.** For each important conflict, trace the changes through the most direct available sources: commits and commit messages, surrounding diffs, tests, repository history, linked issues or pull requests, specifications, and nearby code. Identify the behavior, rules, and constraints each side was meant to preserve or change. Use the repository directly for questions it can answer instead of asking the user to reconstruct that information.
 3. **Compare the intent behind both sides.** Determine whether the intents are compatible, one side has replaced the other, or they are genuinely incompatible. Separate what the repository shows from what you are inferring.
 4. **Resolve the behavior, not just the text.** Preserve compatible intent, rules, and relevant constraints. When one side has clearly replaced the other, retain the current intended behavior rather than mechanically preserving both texts. Do not invent new product behavior merely to make two incompatible changes coexist.
 5. **Report important incompatibility.** If the repository history and surrounding context do not make clear which intent should win, leave that unresolved rather than silently choosing. Do the same when the choice would significantly change behavior, scope, compatibility, or architecture.
@@ -29,5 +29,5 @@ A good resolution should make it possible to explain, for every important confli
 - what each side was trying to preserve or change;
 - which code, history, tests, or project context showed that intent;
 - how the resulting code preserves compatible intent or why one behavior replaced another;
-- what validation showed that the reconciliation works;
+- what checks were used and what they showed about the reconciliation;
 - which unresolved issue, if any, still requires a project or user decision.

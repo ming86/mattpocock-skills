@@ -12,10 +12,10 @@ A URL parameter or small temporary switcher can make comparison easy when the fr
 
 ## Use realistic data only when it matters
 
-Reuse existing read paths or representative fixtures when they meaningfully affect the design question. Avoid wiring prototype variants to production mutations unless the interaction itself is what needs validation.
+Reuse existing read paths or representative fixtures when they meaningfully affect the design question. Avoid wiring prototype variants to production mutations unless the interaction itself is what the experiment needs to check.
 
 ## Capture the result and remove prototype machinery
 
-Stop once the comparison resolves the design question well enough for the next phase. Record the chosen direction and the evidence or feedback that mattered.
+Stop once the comparison resolves the design question well enough for the next phase. Record the chosen direction and the result or feedback that mattered.
 
-The production implementation should follow that validated direction under normal project constraints. Remove losing variants, temporary switchers, and prototype-only routes from the production path. Keep the prototype itself only when project conventions and its value as evidence justify doing so.
+The production implementation should follow the direction supported by the comparison under normal project constraints. Remove losing variants, temporary switchers, and prototype-only routes from the production path. Keep the prototype itself only when project conventions and its value for later work justify doing so.

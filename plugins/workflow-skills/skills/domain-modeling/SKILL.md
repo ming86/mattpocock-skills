@@ -1,25 +1,25 @@
 ---
 name: domain-modeling
-description: "Clarify or evolve domain concepts, terminology, entities, relationships, invariants, and domain decisions. Use when ambiguity in the business or problem model materially affects requirements, interfaces, data, or implementation; not merely for reorganizing software modules."
+description: "Clarify or evolve domain concepts, terminology, entities, relationships, invariants, and domain decisions. Use when ambiguity in the business or problem model could change requirements, interfaces, data, or implementation; not merely for reorganizing software modules."
 ---
 
 # Domain Modeling
 
-Use this skill when the domain model itself is changing or materially ambiguous: terminology, entities, relationships, invariants, or decisions that later code and discussion need to name consistently.
+Use this skill when the domain model itself is changing or unclear enough to affect the work: terminology, entities, relationships, invariants, or decisions that later code and discussion need to name consistently.
 
-Merely reading an existing glossary for vocabulary is not domain modeling. Follow the repository's established documentation convention rather than assuming every project should have a root `CONTEXT.md` or `docs/adr/` tree.
+Merely reading an existing glossary for vocabulary is not domain modeling. Follow the repository's existing documentation convention rather than assuming every project should have a root `CONTEXT.md` or `docs/adr/` tree.
 
-## Establish the current model
+## Understand the current model
 
 Inspect the project's existing glossary, context documents, ADRs, schema, code, tests, and user language that bear on the concept being discussed. If the repository has a configured domain-document convention, use it.
 
-If no durable domain document exists, do not create one automatically for incidental terminology. When a working model is worth keeping across contexts, first reuse the work's existing durable location or follow the project's domain or durable-state convention. A local working-state area is appropriate when the model is provisional or too detailed for shared project documentation. If no convention exists, use a simple work-centered document only when preserving the model is useful.
+If no shared domain document exists, do not create one automatically for incidental terminology. When a working model is worth keeping across contexts, first reuse the work's existing location or follow how the project normally saves domain work. A local working-state area is appropriate when the model is provisional or too detailed for shared project documentation. If no convention exists, use a simple work-centered document only when preserving the model is useful.
 
 ## During the session
 
 ### Challenge conflicting language
 
-When current discussion conflicts with established terminology or behavior, point out the contradiction. Distinguish a vocabulary disagreement from a real change in domain meaning.
+When current discussion conflicts with existing terminology or behavior, point out the contradiction. Distinguish a vocabulary disagreement from a real change in domain meaning.
 
 ### Sharpen fuzzy concepts
 
@@ -31,14 +31,14 @@ Use representative scenarios and edge cases when they help expose whether entiti
 
 ### Cross-check the implementation
 
-When the user states how the domain behaves, compare it with relevant code, schema, tests, or existing docs. Treat discrepancies as evidence to resolve, not as automatic proof that either the code or the conversation should take precedence.
+When the user states how the domain behaves, compare it with relevant code, schema, tests, or existing docs. Treat discrepancies as something to resolve rather than assuming either the code or the conversation is automatically right.
 
-### Preserve durable changes when useful
+### Preserve changes when later work needs them
 
-When a term, relationship, or invariant is materially resolved and later work depends on it, preserve the compact current model in the work's existing durable state. Update the repository's established domain artifact when that is already the appropriate shared source of truth; otherwise keep provisional detail in the work's configured local state when useful. If the project uses `CONTEXT.md`, [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md) is available as a format. Do not record every conversational refinement or preserve a transcript.
+When a term, relationship, or invariant is clear enough that later work depends on it, preserve the compact current model in the work's existing saved state. Update the repository's existing domain document when that is already the appropriate shared source of truth; otherwise keep provisional detail in the work's configured local state when useful. If the project uses `CONTEXT.md`, [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md) is available as a format. Do not record every conversational refinement or preserve a transcript.
 
 ### Record architectural decisions separately
 
 Offer or create an ADR only when the repository uses ADRs and the decision is genuinely costly to reverse, surprising without context, and the result of a meaningful tradeoff. Use [ADR-FORMAT.md](./ADR-FORMAT.md) when that convention fits the project.
 
-Preserve the actual status of facts, explicit decisions, working assumptions, and unresolved points rather than forcing premature closure on material domain decisions.
+Keep direct findings, explicit decisions, working assumptions, and unresolved points distinct so later work can revise the model as understanding changes.

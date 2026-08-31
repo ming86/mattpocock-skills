@@ -16,7 +16,7 @@ The map is a working overview kept outside transient context. It lets a fresh co
 
 - What outcome are we trying to reach?
 - What important decisions have already been made, and why?
-- What relevant context has already been established, and where did it come from?
+- What relevant context do we already have, and where did it come from?
 - What important questions remain unresolved?
 - Which unresolved questions depend on others?
 - What is currently ready to investigate or decide?
@@ -32,7 +32,7 @@ Keep one primary overview of the effort when practical:
 ```markdown
 ## Destination
 
-<the outcome that ends this wayfinding effort: for example a decision-ready design, an implementation-ready spec, or enough evidence to choose a direction>
+<the outcome that ends this wayfinding effort: for example a decision-ready design, an implementation-ready spec, or enough information to choose a direction>
 
 ## Known context
 
@@ -63,7 +63,7 @@ Each open work unit should resolve one coherent uncertainty: a clarification, re
 
 Useful modes include:
 
-- **Research:** establish what documentation, APIs, repository sources, or other relevant sources show about a concrete question.
+- **Research:** find what documentation, APIs, repository sources, or other relevant sources show about a concrete question.
 - **Prototype:** build the cheapest credible prototype that can resolve a concrete design, behavior, UI, or feasibility question.
 - **Clarification:** obtain user input when intent, priorities, acceptable behavior, tradeoffs, or direction determine how the work should proceed.
 - **Enabling task:** perform concrete work that is genuinely necessary before a decision can be made.
@@ -72,11 +72,11 @@ Keep uncertainty in the map until it is clear enough to state as a useful work u
 
 ## Chart the map
 
-1. Establish the destination from the current goal, current requirements, and relevant constraints. If genuinely different destinations remain plausible, keep them explicit rather than selecting one as settled.
+1. Define the destination from the current goal, current requirements, and relevant constraints. If genuinely different destinations remain plausible, keep them explicit rather than treating one as chosen.
 2. Use existing project sources to answer what they can before turning remaining uncertainty into questions for the user or other work.
 3. Identify the first set of precise unresolved questions or investigations and their genuine dependencies.
 4. Record less-defined in-scope uncertainty without prematurely decomposing it.
-5. Establish or update the primary overview using the work's existing location or wherever the project normally keeps ongoing work. Prefer an existing overview over creating a new one, and keep detailed research or experiment findings near their source rather than copying them into the map. If no location already exists, use the simplest work-centered location that can serve as the current overview.
+5. Create or update the primary overview using the work's existing location or wherever the project normally keeps ongoing work. Prefer an existing overview over creating a new one, and keep detailed research or experiment findings near their source rather than copying them into the map. If no location already exists, use the simplest work-centered location that can serve as the current overview.
 6. Stop charting when the known next questions are enough to proceed. Do not try to predict the complete task graph through unresolved uncertainty.
 
 If this process reveals that the route is already clear and the remaining work fits ordinary planning, stop using Wayfinder; the map has served its purpose.
@@ -87,7 +87,7 @@ For each selected open question:
 
 1. Load the map and only the detailed context relevant to that question.
 2. Resolve it using repository sources, research, a prototype, or by asking the user as appropriate.
-3. Record the result as a source-backed finding, explicit decision, working assumption, or unresolved issue. Keep the source or observation attached when later work needs to know how the conclusion was reached.
+3. Record the result as a finding, explicit decision, working assumption, or unresolved issue. Keep the source or observation with a finding when later work needs to know how the conclusion was reached.
 4. Update dependencies and retire questions invalidated by the new result.
 5. Turn newly clear uncertainty into a work unit only when doing so is useful.
 6. Reassess whether the destination is clear enough to leave Wayfinder. Do not keep mapping once the remaining route can be captured more simply as a spec, plan, or tickets.

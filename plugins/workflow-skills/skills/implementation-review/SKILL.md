@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Implementation Review
 
-Review a bounded implementation without letting polished code hide a goal mismatch, or requirement compliance hide poor integration with the repository.
+Review a bounded implementation without letting polished code hide a goal mismatch or a requirements checklist hide poor integration with the repository.
 
 Keep two questions separate:
 
@@ -15,27 +15,27 @@ Keep two questions separate:
 
 This is a focused implementation review, not a broader critique of the plan or approach. It assesses whether the bounded implementation matches its intended behavior and fits the repository; it does not answer whether the underlying plan or approach was the right one.
 
-## 1. Establish the review boundary
+## 1. Identify the review boundary
 
-Identify the exact change being reviewed: a diff against a commit, branch, tag, merge-base, PR, worktree state, or another explicit bounded surface. Verify that the boundary resolves and contains the intended changes before drawing conclusions.
+Identify the exact change being reviewed: a diff against a commit, branch, tag, merge-base, PR, worktree state, or another explicit bounded surface. Confirm that the boundary resolves and contains the intended changes before drawing conclusions.
 
 If the user did not specify a fixed point but the repository makes the intended boundary clear, use it and state what was reviewed. Ask only when meaningfully different boundaries remain plausible.
 
 ## 2. Identify the intent source
 
-Identify the current requirements and decisions that define the requested behavior and scope. These may come from the current user request and established decisions, the originating spec or ticket, an agreed plan or requirements document, and other relevant task context. Account for later decisions or requirements that changed or replaced earlier ones.
+Identify the current requirements and decisions that define the requested behavior and scope. These may come from the current user request and current decisions, the originating spec or ticket, an agreed plan or requirements document, and other relevant task context. Account for later decisions or requirements that changed or replaced earlier ones.
 
-Preserve the actual status of assumptions and unresolved points. Do not invent requirements to make the review more exhaustive.
+Keep assumptions and unresolved points labeled as such. Do not invent requirements to make the review more exhaustive.
 
-## 3. Identify repository evidence
+## 3. Read the relevant repository context
 
 Read the relevant repository instructions, ADRs, coding or contribution guidance, nearby implementation patterns, tests, types, and interfaces needed to judge this change.
 
-Repository conventions are evidence, not an excuse to flag every stylistic difference. Skip findings already enforced mechanically unless the change demonstrates a substantive problem that the tooling does not capture.
+Repository conventions help judge whether the change fits the codebase; they are not a reason to flag every stylistic difference. Skip findings already enforced mechanically unless the change reveals an important problem that the tooling does not capture.
 
 ## 4. Review the axes independently
 
-Keep the two axes independent in reasoning and reporting. Judge each against its own evidence and keep their findings distinct.
+Keep the two axes independent in reasoning and reporting. Judge each against the sources and behavior relevant to that axis, and keep their findings distinct.
 
 ### Intent / Spec
 
@@ -43,36 +43,36 @@ Look for:
 
 - requested behavior that is missing, partial, or incorrect;
 - behavior or commitments added without support from the current scope;
-- acceptance criteria that are not actually established by the implementation;
-- tentative assumptions or prototype artifacts accidentally promoted into requirements;
-- obsolete or superseded requirements preserved in the implementation.
+- acceptance criteria that the implementation does not actually satisfy;
+- tentative assumptions or incidental prototype details accidentally promoted into requirements;
+- earlier requirements that were later changed or replaced but remain in the implementation.
 
 For each finding, point to the relevant requirement or decision source when available.
 
 ### Repository / Implementation
 
-Look for substantive issues in:
+Look for important issues in:
 
 - correctness and important invariants;
 - integration with surrounding modules and interfaces;
 - regressions or realistic failure paths introduced by the change;
-- architecture or dependency direction where the repository establishes a meaningful pattern;
+- architecture or dependency direction where the repository consistently uses a meaningful pattern;
 - unnecessary complexity, indirection, duplication, or abstraction that meaningfully harms the implementation;
 - performance, security, compatibility, or robustness only where the actual system assumptions make the concern relevant;
-- runtime or integration assumptions that inspection alone cannot establish and whose uncertainty matters to the requested outcome;
+- runtime or integration assumptions that inspection alone cannot answer and whose uncertainty matters to the requested outcome;
 - tests or checks changed with the implementation that do not actually bear on the requested behavior, cannot fail for a relevant wrong result, or mainly encode the implementation that was just written.
 
 Do not manufacture generic best-practice findings, cosmetic refactors, hypothetical hardening, or speculative future needs.
 
 ## 5. Report without masking one axis with the other
 
-Present findings under separate `Intent / Spec` and `Repository / Implementation` sections. For each substantive finding state:
+Present findings under separate `Intent / Spec` and `Repository / Implementation` sections. For each important finding state:
 
 - the issue;
 - why it matters;
 - severity or whether it blocks completion;
 - the smallest credible correction, and when the finding depends on an unobserved runtime or integration assumption, the specific targeted check that would resolve that uncertainty.
 
-If an axis has no substantive findings, say so explicitly. Do not merge the axes into a single score or allow a pass on one to cancel a failure on the other.
+If an axis has no important findings, say so explicitly. Do not merge the axes into a single score or allow a pass on one to cancel a failure on the other.
 
-Review findings can remain in the current response when they will be acted on immediately. Persist them only when they become durable follow-up work or materially change the effort's existing state; reuse that work location rather than creating a separate review log.
+Review findings can remain in the current response when they will be acted on immediately. Save them only when they become follow-up work that later contexts need or otherwise change the effort's current state; reuse that work location rather than creating a separate review log.

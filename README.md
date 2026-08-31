@@ -1,6 +1,6 @@
 # Workflow Skills
 
-A focused set of engineering workflow skills for coding agents. The skills help clarify important decisions, gather evidence, preserve long-running work state, turn settled understanding into specs and work units, implement bounded changes, and check the results without imposing a second project-level orchestration policy.
+A focused set of engineering workflow skills for coding agents. The skills help clarify important decisions, investigate questions, preserve long-running work state, turn current understanding into specs and work units, implement bounded changes, and check the results without imposing a second project-level orchestration policy.
 
 This package is designed to complement whatever governing instructions, review agents, issue tracker, and engineering conventions a project already uses. It does not bundle or require a particular `AGENTS.md`, custom reviewer, worker topology, tracker, commit policy, or delivery workflow.
 
@@ -13,14 +13,14 @@ The `workflow-skills` plugin currently contains 17 skills:
 - `grill-with-docs`: clarification grounded in project context and user input
 - `research`: source-grounded technical and project research
 - `prototype`: smallest useful experiment for an important uncertainty
-- `wayfinder`: durable overview for large, uncertain, or multi-session work
-- `to-spec`: convert settled understanding into an implementation spec
+- `wayfinder`: working overview that survives context changes for large, uncertain, or multi-session work
+- `to-spec`: turn current understanding into an implementation spec
 - `to-tickets`: split work into clear units with real dependencies
 - `implement`: execute one bounded work unit while preserving scope
 - `implementation-review`: explicitly review a bounded implementation against the requested outcome and repository integration
 - `diagnosing-bugs`: evidence-driven debugging and regression diagnosis
-- `tdd`: focused red-green-refactor when test-first development is requested or established for the work
-- `domain-modeling`: sharpen durable domain vocabulary, relationships, and invariants
+- `tdd`: focused red-green-refactor when test-first development is requested or project instructions call for it
+- `domain-modeling`: clarify domain vocabulary, relationships, and invariants that later work needs
 - `codebase-design`: reason about module boundaries, interfaces, dependencies, and responsibility placement
 - `resolving-merge-conflicts`: reconcile in-progress Git conflicts from the intent behind both sides
 - `handoff`: package live work state for a fresh session or agent
@@ -28,11 +28,13 @@ The `workflow-skills` plugin currently contains 17 skills:
 
 The skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
 
-Workflow support scales to the work. The requested outcome, project practices, and actual consequences determine the useful validation, verification, preflights, benchmarks, reviews, rollout or rollback checks, and other supporting process. Specs, tickets, workflow transitions, and artifact sections organize information and execution; they do not create extra engineering or validation obligations merely by existing. Keep shared or end-to-end checks at the level where they actually establish the outcome instead of repeating them at every work-unit boundary.
+Workflow support scales to the work. The requested outcome, project practices, and actual consequences determine the useful validation, verification, preflights, benchmarks, reviews, rollout or rollback checks, and other supporting process. Specs, tickets, workflow transitions, and document sections organize information and execution; they do not create extra engineering or validation obligations merely by existing. Keep shared or end-to-end checks at the level where they can meaningfully show whether the outcome holds instead of repeating them at every work-unit boundary.
+
+Engineering work is iterative. Plans, specs, decisions, findings, and assumptions capture the current understanding; later implementation or investigation may refine or replace them. The skills keep this state current rather than treating intermediate documents or earlier conclusions as final.
 
 ## Explicit workflow discovery
 
-Several workflow skills are intentionally explicit-only, which can make their descriptions unavailable to normal model routing. The implicit `workflow-guide` closes that discoverability gap with a compact catalog of those workflows. Each catalog entry is a compressed routing summary of the target skill's own description; when a target description changes materially, review the guide entry too.
+Several workflow skills are intentionally explicit-only, which can make their descriptions unavailable to normal model routing. The implicit `workflow-guide` closes that discoverability gap with a compact catalog of those workflows. Each catalog entry is a compressed routing summary of the target skill's own description; when a target description changes enough to affect when the skill should be suggested, review the guide entry too.
 
 The guide identifies relevant explicit skills; project and user instructions decide whether and how to enter them. A root/worker project can add a small rule to its own `AGENTS.md`, for example:
 
@@ -46,17 +48,17 @@ Delegated workers should surface useful workflow needs to the root agent rather 
 
 The plugin does not bundle an `AGENTS.md`; project and user instructions remain the governing source of orchestration policy.
 
-## Durable working state
+## Saved working state
 
-Coding-agent context is transient. When detailed findings, decisions, assumptions, evidence, or open questions would be expensive or unreliable to reconstruct after compaction or a fresh session, the skills may save that state outside the conversation. Persistence is useful when it preserves real value; it is not mandatory.
+Coding-agent context is transient. When detailed findings, decisions, assumptions, source support, or open questions would be expensive or unreliable to reconstruct after compaction or a fresh session, the skills may save that state outside the conversation. Persistence is useful when it preserves real value; it is not mandatory.
 
-Persistence complements existing project documents and conventions; it does not replace them. Prefer files or records organized around the work rather than around the skill that produced them. First reuse the work's existing durable location or the project's tracker, documentation, or durable-state convention. Use a configured local working-state area, for example `.local/work/<work>/`, when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists and the choice is low-impact, use the simplest permitted work-centered location. When creating a new shared location would be an important project decision, follow the project instructions rather than choosing one implicitly.
+Persistence complements existing project documents and conventions; it does not replace them. Prefer files or records organized around the work rather than around the skill that produced them. First reuse the work's existing location or follow how the project normally saves ongoing work. Use a configured local working-state area, for example `.local/work/<work>/`, when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists and the choice is low-impact, use the simplest permitted work-centered location. When creating a new shared location would be an important project decision, follow the project instructions rather than choosing one implicitly.
 
-Keep durable state compact and current: preserve conclusions, status, rationale, and evidence pointers rather than transcripts or append-only diaries. A shared issue, spec, ADR, design document, or tracker may already be the right place for the current state; local working state may remain provisional. Moving local state into shared project documentation is one possible lifecycle, not a required one. If information is immediately consumed and cheap to reconstruct, leaving it transient is often better.
+Keep saved state compact and current: preserve conclusions, status, rationale, and useful source pointers rather than transcripts or append-only diaries. A shared issue, spec, ADR, design document, or tracker may already be the right place for the current state; local working state may remain provisional. Moving local state into shared project documentation is one possible lifecycle, not a required one. If information is immediately consumed and cheap to reconstruct, leaving it transient is often better.
 
 ## Plugin layout
 
-The canonical package follows Agent Plugins 1.0.0:
+The plugin package follows Agent Plugins 1.0.0:
 
 ```text
 plugins/workflow-skills/
@@ -165,9 +167,9 @@ Run `/reload-plugins` if Claude Code tells you a reload is required after an ins
 
 The workflow instructions remain harness-neutral, but the package keeps additive metadata that a harness can use without changing workflow semantics. Codex reads each skill's `agents/openai.yaml` for presentation metadata and implicit-invocation policy. GitHub Copilot CLI and Claude Code understand `disable-model-invocation` in `SKILL.md`; selected explicit skills also use `argument-hint` when a short invocation hint improves the user-facing command experience.
 
-The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement`, plus `implementation-review`, `resolving-merge-conflicts`, `handoff`, and `to-questionnaire`, default to explicit invocation. The advisory `workflow-guide` plus analytical and support skills remain eligible for automatic selection. `tdd` is eligible only when test-first development is explicitly requested or established by project instructions for the current work; ordinary code changes do not imply a TDD workflow. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
+The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement`, plus `implementation-review`, `resolving-merge-conflicts`, `handoff`, and `to-questionnaire`, default to explicit invocation. The advisory `workflow-guide` plus analytical and support skills remain eligible for automatic selection. `tdd` is eligible only when test-first development is explicitly requested or project instructions call for it in the current work; ordinary code changes do not imply a TDD workflow. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
 
-`disable-model-invocation` is a Copilot/Claude extension rather than a field in the core Agent Skills specification. The canonical skills use that extension deliberately because both target harnesses consume it; other clients should ignore unknown frontmatter fields.
+`disable-model-invocation` is a Copilot/Claude extension rather than a field in the core Agent Skills specification. The packaged skills use that extension deliberately because both target harnesses consume it; other clients should ignore unknown frontmatter fields.
 
 ## Repository agent instructions
 
@@ -179,7 +181,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.14`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.15`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

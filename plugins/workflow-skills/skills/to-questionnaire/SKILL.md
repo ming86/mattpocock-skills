@@ -11,12 +11,12 @@ Use this skill when another identifiable person or role is best placed to provid
 
 ## Clarify who should answer and what you need back
 
-When the current user has already established that they cannot supply the subject matter, focus clarification on these two things when they are not already clear:
+When it is already clear that the current user cannot supply the subject matter, focus clarification on these two things when they are not already clear:
 
-1. **Who should answer?** Establish the recipient or responsible role, their relevant expertise, and enough relationship/context to pitch the questionnaire appropriately.
+1. **Who should answer?** Identify the recipient or responsible role, their relevant expertise, and enough relationship/context to pitch the questionnaire appropriately.
 2. **What must come back?** Identify the information, constraints, confirmations, choices, or judgment the work needs. Focus on what the user must be able to decide or do after receiving the response.
 
-Use the current conversation and work artifacts to answer these where possible.
+Use the current conversation and existing work documents or state to answer these where possible.
 
 ## Draft the questionnaire
 
@@ -28,13 +28,13 @@ Create questions that target the gap between what the recipient knows and what t
 - Explain why a question matters when that is likely to improve the answer.
 - Make uncertainty safe: "I don't know," partial answers, caveats, and confidence levels can be useful input.
 - Present constraints and tradeoffs neutrally so the recipient can answer without being steered toward a preferred result.
-- Use only deadlines, decision roles, and delivery channels already established by the user or project context.
+- Use only deadlines, decision roles, and delivery channels already given by the user or current project context.
 
 ## Questionnaire and answers
 
 Produce the questionnaire in the requested delivery format when one is specified. Otherwise, create or return a Markdown draft appropriate for the work.
 
-When a durable copy is useful, reuse the work's existing location or follow the project's documentation or durable-state convention. A local working-state location is appropriate for a provisional draft that should survive contexts without becoming shared project documentation.
+When a saved copy is useful, reuse the work's existing location or follow how the project normally saves this kind of document. A local working-state location is appropriate for a provisional draft that should survive contexts without becoming shared project documentation.
 
 The questionnaire requests input; it does not itself settle the resulting project direction. When answers return, keep track of who supplied them and any uncertainty. Treat the answers as sourced input until the relevant spec, issue, model, or other project state incorporates them.
 
