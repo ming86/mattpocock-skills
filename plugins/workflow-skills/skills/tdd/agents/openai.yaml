@@ -1,7 +1,7 @@
 interface:
   display_name: "TDD"
   short_description: "Apply a focused test-first development loop"
-  default_prompt: "Use $tdd to implement this behavior with a focused red-green-refactor loop where TDD fits the repository."
+  default_prompt: "Use $tdd to implement this behavior with a focused red-green-refactor loop because test-first development is requested or established for this work."
 
 policy:
   allow_implicit_invocation: true

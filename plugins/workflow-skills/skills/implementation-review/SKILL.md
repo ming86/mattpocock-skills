@@ -59,7 +59,8 @@ Look for substantive issues in:
 - architecture or dependency direction where the repository establishes a meaningful pattern;
 - unnecessary complexity, indirection, duplication, or abstraction that meaningfully harms the implementation;
 - performance, security, compatibility, or robustness only where the actual system assumptions make the concern relevant;
-- runtime or integration assumptions that inspection alone cannot establish and need targeted validation.
+- runtime or integration assumptions that inspection alone cannot establish and whose uncertainty matters to the requested outcome;
+- tests or checks changed with the implementation that do not actually bear on the requested behavior, cannot fail for a relevant wrong result, or mainly encode the implementation that was just written.
 
 Do not manufacture generic best-practice findings, cosmetic refactors, hypothetical hardening, or speculative future needs.
 
@@ -70,7 +71,7 @@ Present findings under separate `Intent / Spec` and `Repository / Implementation
 - the issue;
 - why it matters;
 - severity or whether it blocks completion;
-- the smallest credible correction or validation needed.
+- the smallest credible correction, and when the finding depends on an unobserved runtime or integration assumption, the specific targeted check that would resolve that uncertainty.
 
 If an axis has no substantive findings, say so explicitly. Do not merge the axes into a single score or allow a pass on one to cancel a failure on the other.
 

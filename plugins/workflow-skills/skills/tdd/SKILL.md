@@ -1,11 +1,11 @@
 ---
 name: tdd
-description: "Apply a focused red-green-refactor loop when test-first development fits the behavior being changed. Use when the user requests TDD, the repository favors it, or writing the test first would meaningfully clarify or protect the behavior; do not make TDD a prerequisite for every code change."
+description: "Apply a focused red-green-refactor loop when test-first development is explicitly requested or established by project instructions for the current work. Use the method to shape and protect behavior within that chosen workflow rather than treating TDD as the default companion to code changes."
 ---
 
 # Test-Driven Development
 
-TDD is a technique for discovering and protecting behavior through a short test-first loop. Use it when the requested work, repository practices, or uncertainty benefit from test-first execution. It is not a prerequisite for `implement` or for every code change.
+TDD is a technique for discovering and protecting behavior through a short test-first loop. Use it when the user has requested test-first development or project instructions establish it for the current work. Within that chosen workflow, keep the loop focused on behavior the work actually needs to deliver.
 
 When exploring the codebase, use the project's domain language and existing test conventions.
 

@@ -76,6 +76,13 @@ cases:
       invocation: implicit-ok
     avoid: [diagnosing-bugs, implementation-review]
 
+  - id: ordinary-change-does-not-imply-tdd
+    prompt: "Reduce allocations in this hot path and run the relevant existing checks. Test-first development is not part of the request."
+    expected:
+      skill: null
+      invocation: none
+    avoid: [tdd, codebase-design, diagnosing-bugs]
+
   - id: wayfinder-long-running-uncertainty
     prompt: "Use $wayfinder for this migration. It will span several sessions and we still have unresolved architecture and rollout decisions."
     expected:
@@ -117,6 +124,13 @@ cases:
       skill: implementation-review
       invocation: explicit-only
     avoid: [codebase-design, diagnosing-bugs]
+
+  - id: routine-ticket-completion-no-extra-review-workflow
+    prompt: "This small ticket is implemented and its relevant existing check passes. Continue with the next already-planned ticket."
+    expected:
+      skill: null
+      invocation: none
+    avoid: [workflow-guide, implementation-review, tdd]
 
   - id: resolve-in-progress-merge
     prompt: "Use $resolving-merge-conflicts on the merge Git has stopped on. Recover why both sides changed this code before reconciling it."

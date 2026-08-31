@@ -16,6 +16,8 @@ This repository maintains a focused set of engineering workflow skills for codin
 
 Keep changes proportional to the concrete problem being solved. Do not add workflow stages, abstractions, compatibility machinery, documentation, or validation merely for completeness.
 
+Workflow methods should scale to the work they support. Let the task, project context, and actual consequences determine how much validation, verification, preflight work, benchmarking, review, rollout or rollback checking, compatibility checking, integrity checking, and other supporting process is useful. A skill invocation, artifact section, ticket boundary, or workflow transition does not by itself create another obligation. When an explicit scope boundary would prevent a likely expansion, state that boundary without enumerating hypothetical work that was never in play.
+
 When changing a skill:
 
 - preserve its responsibilities, stopping conditions, and intended scope;
@@ -26,7 +28,7 @@ When changing a skill:
 - do not turn a useful technique into a mandatory project workflow;
 - keep workflow-specific method, semantics, stopping conditions, and output meaning in the skill; leave surrounding orchestration and project workflow to project-level instructions. Express intrinsic boundaries in terms of what the skill establishes, produces, or leaves unresolved rather than restating external policy or adding defensive disclaimers.
 
-If an explicit workflow skill's routing description changes materially, review its compressed entry in `workflow-guide` as well.
+If an explicit workflow skill's routing description changes materially, review its compressed entry in `workflow-guide` as well. When a change affects validation, review, persistence, or other supporting process, also inspect common skill compositions so a harmless local instruction does not multiply into repeated obligations across specs, tickets, implementation, review, and handoff.
 
 Use `evals/routing-cases.yaml` when changing routing or invocation boundaries. Add or change cases when they protect a real semantic boundary; do not grow the corpus ceremonially.
 

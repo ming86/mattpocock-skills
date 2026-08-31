@@ -14,8 +14,8 @@ Mark as unresolved any question that still affects implementation and cannot be 
 
 1. Inspect the relevant repository state if needed. Check the project's existing vocabulary, ADRs, interfaces, conventions, and behavior.
 2. Keep explicit requirements and decisions separate from what the current code, documentation, or other project sources show, from working assumptions, and from unresolved points. Preserve those distinctions so later work can tell what each statement is based on.
-3. Identify verification seams appropriate to the change. Prefer existing observable boundaries when they provide useful confidence. New seams or testing commitments should follow from the work itself rather than from the template.
-4. Write the spec using the structure below, leaving out sections or details that add no useful information. Match the level of detail to the work.
+3. Decide whether later implementation needs validation guidance beyond the project's normal practices. When it does, start from the outcome or important uncertainty that must be established and describe the narrowest useful scope. Prefer existing observable paths and checks; keep shared or end-to-end validation at the level where it actually establishes the outcome.
+4. Write the spec using the structure below, leaving out sections or details that add no useful information. Match the level of detail to the work. A spec organizes requirements and decisions; its sections do not create new gates, preflights, benchmarks, rollback work, verification infrastructure, or other supporting process.
 5. Store the spec where the project already keeps this kind of work so later work can find and rely on it. Reuse an existing tracker, documentation area, work-state location, shared spec, issue, or design document instead of creating a parallel one. A configured local working-state area is appropriate for a personal or provisional spec. If no convention exists, keep the spec in the simplest work-centered location that can serve as the reference for this work. A tracker is one option when it fits the project; another document may fit better.
 
 <spec-template>
@@ -38,9 +38,9 @@ Implementation decisions already made, together with existing interfaces, constr
 
 If a prototype produced a compact result that captures a validated conclusion or direction more precisely than prose can, include only the result-rich part and note that it came from the prototype.
 
-## Verification
+## Validation (when needed)
 
-How the important behavior or assumptions will be checked, using existing project practices and the most useful observable interfaces or outcomes for the change. Distinguish required verification from optional ideas.
+Include this section only when later work needs guidance beyond normal project practice. State the outcome, behavior, or important assumption that needs to be established and the validation scope that is useful for this work. Prefer representative existing paths or checks when they are sufficient.
 
 ## Assumptions and Unresolved Points
 
@@ -48,7 +48,7 @@ Working assumptions or unresolved questions that still affect the work. Omit thi
 
 ## Out of Scope
 
-Boundaries that prevent likely misunderstanding or accidental expansion. Include only boundaries that help later work understand the intended scope.
+Boundaries that prevent likely misunderstanding or accidental expansion. Include supporting-process boundaries when they prevent a likely expansion of validation, benchmarking, rollout, migration, or similar work. Keep this section focused on boundaries that are actually relevant rather than enumerating hypothetical exclusions.
 
 ## Further Notes
 

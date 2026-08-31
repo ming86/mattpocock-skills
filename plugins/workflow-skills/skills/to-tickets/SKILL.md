@@ -1,6 +1,6 @@
 ---
 name: to-tickets
-description: "Split a plan or specification into clear work units with real dependencies that can be executed and checked in focused contexts. Use when the work is large enough to benefit from multiple independently understandable units or sessions; keep tightly coupled reasoning together instead of splitting work just to make smaller tickets."
+description: "Split a plan or specification into clear work units with real dependencies that can be executed in focused contexts. Use when the work is large enough to benefit from multiple independently understandable units or sessions; keep tightly coupled reasoning together instead of splitting work just to make smaller tickets."
 disable-model-invocation: true
 ---
 
@@ -24,13 +24,15 @@ Do not create preparatory refactors merely because they might make later impleme
 
 Prefer work units that are coherent in terms of behavior, ownership, dependency, and reasoning. A ticket should normally:
 
-- deliver an observable or independently verifiable increment of the requested outcome;
+- deliver a coherent increment of the requested outcome or a necessary part of it;
 - contain enough focused context for a fresh session to understand reliably;
 - state genuine prerequisites rather than incidental ordering preferences;
 - avoid bundling semantically independent work merely because it is adjacent;
 - avoid splitting tightly coupled reasoning merely to make tickets smaller.
 
-Tracer-bullet vertical slices are a strong default for feature work when a narrow end-to-end increment can work independently. Do not force every task through every architectural layer, and do not force vertical slicing onto refactors, migrations, infrastructure changes, or other work whose natural boundary is different.
+Tracer-bullet vertical slices are useful for feature work when a narrow end-to-end increment can work independently and gives meaningful progress. Do not force every task through every architectural layer, and do not force vertical slicing onto refactors, migrations, infrastructure changes, or other work whose natural boundary is different.
+
+Keep supporting work at the level where it serves the requested outcome. A ticket boundary organizes execution; it does not create an independent validation, benchmark, preflight, review, rollout, or rollback boundary. Shared or end-to-end checks can remain shared rather than being copied into every ticket.
 
 For wide mechanical changes that cannot remain valid as independent vertical slices, use an appropriate staged migration such as expand–migrate–contract when the system actually requires it. Keep the staging no more elaborate than necessary.
 
@@ -54,7 +56,7 @@ The coherent behavior, result, migration state, or other outcome this ticket mak
 
 ## Completion criteria
 
-A small set of observable conditions or evidence sufficient to establish that the intended outcome has been achieved.
+A small set of conditions that make this work unit complete according to the source plan or specification. Focus on the outcome this ticket owns. Include specific validation only when the source work or nature of the change requires it; do not manufacture a separate validation program for each ticket.
 
 ## Blocked by
 

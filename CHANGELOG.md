@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.14 - 2026-08-31
+
+- Make workflow support scale to the actual work so specs, tickets, workflow transitions, and artifact sections do not manufacture new validation, review, benchmarking, preflight, rollout, rollback, or other supporting obligations.
+- Recenter `codebase-design`, `to-spec`, `to-tickets`, and `implement` on the requested outcome: testability supports useful design rather than driving it, validation is conditional and outcome-derived, ticket boundaries do not become validation boundaries, and implementation uses the smallest representative checks the work actually needs.
+- Narrow TDD routing to work where test-first development is explicitly requested or established by project instructions, and refine debugging, implementation review, merge-conflict resolution, handoff, workflow routing, repository maintenance guidance, and package documentation to avoid cross-skill assurance amplification.
+
 ## 0.2.13 - 2026-08-28
 
 - Reframe `grilling` around uncertainty that can change or unblock useful work, choosing the right source for each question instead of assuming the model can pre-classify facts or user-owned decisions.

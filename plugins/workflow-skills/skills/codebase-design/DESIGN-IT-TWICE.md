@@ -36,7 +36,7 @@ For each alternative, capture:
 2. A short example showing how representative callers use it.
 3. The complexity hidden behind the interface.
 4. Dependency or adapter choices when relevant.
-5. The important tradeoffs: caller simplicity, how concentrated changes stay, flexibility, testability, and migration cost.
+5. The important tradeoffs that actually matter to this decision, such as caller simplicity, how concentrated changes stay, flexibility, operational behavior, or migration cost.
 
 ### 3. Compare and recommend
 

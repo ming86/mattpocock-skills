@@ -18,7 +18,7 @@ Create a compact handoff for the next context. Carry only the live information t
    - the exact next useful action or decision;
    - recent important discoveries not yet recorded elsewhere;
    - active assumptions, blockers, or unresolved tradeoffs;
-   - current validation or failure state;
+   - relevant checks already run or failures still present;
    - repository pointers needed to resume efficiently.
 4. **Keep the handoff compact.** Preserve conclusions, current status, why important choices were made, and useful references rather than the conversation transcript. Do not repeat settled requirements, design decisions, issue bodies, diffs, or research that already live elsewhere.
 5. **Put it somewhere the receiver can read.** Reuse an existing work-centered location or put it where the project normally keeps ongoing work when appropriate. A local or temporary file is suitable when the handoff is intentionally short-lived or provisional.
@@ -49,9 +49,9 @@ Use only the sections that carry useful transition state.
 
 <unresolved questions, assumptions, blockers, or tradeoffs the next context needs to continue>
 
-## Validation state
+## Checks / failures
 
-<relevant checks already run, failures still present, or confidence gaps>
+<only checks already relevant to the work, failures still present, or an important unresolved behavior the next context needs to know about>
 
 ## References
 

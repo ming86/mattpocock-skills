@@ -50,7 +50,7 @@ Choose probes that distinguish competing explanations with the least disruption.
 
 Change one important variable at a time when you need to know which change caused the result. Tag temporary instrumentation so it can be found and removed reliably.
 
-For performance regressions, measure before changing code. Use the metric or profiler that can establish whether the suspected cause actually explains the regression.
+For performance regressions, establish a before-change signal that can show whether the suspected cause actually explains the regression. Reuse an existing metric, profiler, or representative workflow when it is sufficient; add measurement machinery only when the current signal cannot answer the question.
 
 ## 5. Act on the established cause within the requested work
 
@@ -58,11 +58,11 @@ Once the evidence supports a cause, distinguish diagnosis from fixing the system
 
 If the evidence invalidates a material requirement, architecture assumption, interface, or operational direction, treat that as a change in the problem definition rather than folding a redesign into the bug fix. Report the mismatch and its consequence clearly.
 
-When fixing the bug is part of the requested work, add or retain a regression test when there is a correct observable seam and the test materially protects the behavior. A shallow or artificial test that cannot reproduce the real failure is not useful merely because a regression test seems customary.
+When fixing the bug is part of the requested work, preserve a regression check when it captures the real failure through a useful observable path and remains a maintainable signal. That check may be an existing workflow, test, reproduction, or measurement; choose the form that best represents the failure rather than creating a test by default.
 
-## 6. Verify and clean up
+## 6. Confirm the result and clean up
 
-Before considering the task complete, establish the evidence appropriate to its scope:
+Before considering the task complete, confirm the result at the scope of the reported problem:
 
 - the root cause is established to the degree the available evidence permits;
 - when the bug was fixed, the original symptom no longer reproduces or the measured regression is corrected;

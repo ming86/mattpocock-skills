@@ -1,13 +1,13 @@
 ---
 name: codebase-design
-description: "Design or improve module boundaries, interfaces, dependency structure, and testability. Use when deciding where responsibilities belong, simplifying what callers must understand, or making code easier for humans and coding agents to navigate; focus on software structure rather than domain-model discovery."
+description: "Design or improve module boundaries, interfaces, dependency structure, and responsibility placement. Use when deciding where responsibilities belong, simplifying what callers must understand, or making code easier for humans and coding agents to navigate; focus on software structure rather than domain-model discovery."
 ---
 
 # Codebase Design
 
 Prefer modules that hide useful complexity behind a small, clear interface. Use the ideas in this skill when they help explain or improve the design; do not force the repository to adopt this vocabulary.
 
-The aim is simple: callers should need to know less, related behavior should be easier to change in one place, and important behavior should be practical to test.
+The aim is simple: callers should need to know less, related behavior should stay together when that improves coherence, and important changes should remain understandable and localized.
 
 ## Useful design terms
 
@@ -60,26 +60,26 @@ When designing an interface, ask:
 
 - **Judge depth from the caller's side.** Internal decomposition can still use small helpers, collaborators, or private seams. They do not have to become part of the public interface.
 - **Use the deletion test.** Imagine deleting the module. If its complexity mostly disappears, it may be a pass-through. If that complexity spreads back across many callers, the module is probably doing useful work.
-- **Prefer stable behavior as the main test surface.** Tests and callers often benefit from the same stable interface. Lower-level tests can still be useful when they protect an algorithm, invariant, performance property, or failure mode more directly.
-- **Make an extra seam earn its keep.** Real variation, multiple consumers or implementations, ownership boundaries, volatility, or a meaningful testing need can justify a seam. Do not add one solely to satisfy a pattern or make a mock convenient.
+- **Prefer boundaries around stable behavior.** Callers benefit when the interface reflects behavior that is less volatile than the implementation behind it. Useful validation often becomes easier as a consequence, without making testing the reason for the boundary.
+- **Make an extra seam earn its keep.** Real variation, multiple consumers or implementations, ownership boundaries, volatility, or a concrete need to substitute a dependency can justify a seam. Testing convenience alone is not a reason to introduce one.
 
-## Designing for testability
+## When dependency control matters
 
-Good interfaces usually make important behavior easy to observe and dependencies easy to control when control is actually useful.
+Good interfaces sometimes make dependencies easier to substitute or important behavior easier to exercise. Treat that as a consequence of a useful boundary, not a reason to invent one.
 
-1. **Make dependencies controllable when substitution has real value.** Pass in an external or variable dependency when that creates a useful testing, ownership, or implementation boundary. Do not add dependency injection mechanically around stable local details.
+1. **Make dependencies controllable when substitution has real value.** Pass in an external or variable dependency when that creates a useful runtime, ownership, implementation, or concrete validation boundary. Keep direct construction when it is simpler and the dependency does not need independent control.
 
    ```typescript
    // Useful when payment is an external dependency we need to control
    function processOrder(order, paymentGateway) {}
 
-   // More coupled to Stripe and harder to control in a focused test
+   // Direct construction can be fine when no independent control is needed
    function processOrder(order) {
      const gateway = new StripeGateway();
    }
    ```
 
-2. **Separate computation from side effects when doing so improves the design.** Returning a value is often easier to test and compose, but side effects are legitimate when performing them is the module's job.
+2. **Separate computation from side effects when doing so improves the design.** Returning a value can be easier to compose and reason about, but side effects are legitimate when performing them is the module's job.
 
    ```typescript
    // Computation with a directly observable result
@@ -91,7 +91,7 @@ Good interfaces usually make important behavior easy to observe and dependencies
    }
    ```
 
-3. **Prefer a small interface.** Fewer methods and parameters usually reduce what callers and tests must understand, as long as the interface still exposes the genuinely different operations the module owns.
+3. **Prefer a small interface.** Fewer methods and parameters usually reduce what callers must understand, as long as the interface still exposes the genuinely different operations the module owns.
 
 ## Relationships between the terms
 
