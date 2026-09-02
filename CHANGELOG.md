@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.21 - 2026-09-03
+
+- Refine `simplify-by-ablation` to say “see what, if anything, materially changes” so the lightweight removal check does not imply formal observation, instrumentation, benchmarks, or validation work.
+- Synchronize plugin and marketplace manifests at version `0.2.21`.
+
 ## 0.2.20 - 2026-09-03
 
 - Refine `simplify-by-ablation` so a cheap targeted ablation observes whether the relevant behavior, property, or metric materially changes, without framing the result as evidence that could imply additional benchmark or validation machinery.

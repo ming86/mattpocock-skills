@@ -7,7 +7,7 @@ description: "Simplify designs and implementations by testing which complexity m
 
 Evaluate questionable complexity by testing what materially changes if it is removed or simplified.
 
-When the contribution can be checked cheaply and directly, prefer a targeted ablation: remove or simplify one candidate and observe whether the relevant behavior, property, or metric materially changes. Otherwise, reason through the same counterfactual without manufacturing an experiment.
+When the contribution can be checked cheaply and directly, prefer a targeted ablation: remove or simplify one candidate and see what, if anything, materially changes. Otherwise, reason through the same counterfactual without manufacturing an experiment.
 
 For an abstraction, layer, mechanism, guard, supporting artifact, or design commitment whose contribution is unclear, ask what concrete current requirement, behavior, constraint, or demonstrated benefit would be lost without it.
 
