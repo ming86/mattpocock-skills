@@ -83,6 +83,13 @@ cases:
       invocation: implicit-ok
     avoid: [implementation-review, codebase-design]
 
+  - id: simplify-by-ablation-optimization-contribution
+    prompt: "We added several optimizations and performance improved, but I don't know which ones are actually helping. Ablate them and identify which changes materially contribute."
+    expected:
+      skill: simplify-by-ablation
+      invocation: implicit-ok
+    avoid: [codebase-design, implementation-review]
+
   - id: tdd-requested
     prompt: "Implement this behavior test-first with a tight red-green-refactor loop."
     expected:

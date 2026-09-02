@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.19 - 2026-09-03
+
+- Refine `simplify-by-ablation` to prefer a targeted comparison when contribution can be checked cheaply and directly, while keeping counterfactual reasoning for cases where an experiment would add unnecessary work.
+- Judge defensive machinery against realistic failure frequency, consequence, repairability, and ongoing prevention or recovery complexity instead of theoretical possibility alone.
+- Extend ablation routing to performance work where several optimizations need their individual contribution isolated, and synchronize plugin and marketplace manifests at version `0.2.19`.
+
 ## 0.2.18 - 2026-09-03
 
 - Add `simplify-by-ablation`, an implicit analytical skill for testing whether abstractions, mechanisms, supporting work, and other complexity materially contribute to the current solution.
