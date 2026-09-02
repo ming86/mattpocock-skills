@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.18 - 2026-09-03
+
+- Add `simplify-by-ablation`, an implicit analytical skill for testing whether abstractions, mechanisms, supporting work, and other complexity materially contribute to the current solution.
+- Compose ablation reasoning with codebase design and bounded implementation review where contribution is unclear, without making it a mandatory implementation or review stage.
+- Add routing boundaries that distinguish ablation from module-boundary design and ordinary implementation, and synchronize plugin and marketplace manifests at version `0.2.18`.
+
 ## 0.2.17 - 2026-08-31
 
 - Preserve scope status across workflow transformations: requirements and current decisions remain part of the current work, while assumptions, unresolved points, and agent-proposed additions remain labeled as such instead of being promoted into durable requirements.

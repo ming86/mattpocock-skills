@@ -112,3 +112,4 @@ These relationships are reasoning aids, not naming requirements for the codebase
 
 - For **combining shallow modules when dependencies make that useful**, see [DEEPENING.md](DEEPENING.md).
 - For **comparing genuinely different interface designs when the decision warrants it**, see [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md).
+- When the broader question is whether an abstraction, layer, mechanism, or other design complexity materially contributes to the current solution, use `simplify-by-ablation`.

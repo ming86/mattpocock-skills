@@ -20,4 +20,4 @@ Use this guide throughout the work to recognize explicit workflow skills that ar
 - `handoff` — suggest before work deliberately moves to another context, session, or agent when the next context will need live information that is not already saved in the project's working state.
 - `to-questionnaire` — suggest when progress depends on input that another person or domain expert is best placed to provide, the missing input could block or significantly change the work, and neither the current user nor project research can supply it reliably.
 
-Implicit analytical skills such as `research`, `grilling`, `diagnosing-bugs`, `domain-modeling`, and `codebase-design` route normally. `tdd` routes when test-first development is explicitly requested or project instructions call for it in the current work.
+Implicit analytical skills such as `research`, `grilling`, `diagnosing-bugs`, `domain-modeling`, `codebase-design`, and `simplify-by-ablation` route normally. `tdd` routes when test-first development is explicitly requested or project instructions call for it in the current work.

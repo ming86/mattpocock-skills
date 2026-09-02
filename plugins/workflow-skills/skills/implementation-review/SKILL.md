@@ -58,6 +58,7 @@ Look for important issues in:
 - regressions or realistic failure paths introduced by the change;
 - architecture or dependency direction where the repository consistently uses a meaningful pattern;
 - unnecessary complexity, indirection, duplication, or abstraction that meaningfully harms the implementation;
+- when the contribution of complexity introduced by the reviewed change is unclear, use `simplify-by-ablation` to test what would actually be lost by removing or simplifying it, while staying within the current implementation and design boundary;
 - performance, security, compatibility, or robustness only where the actual system assumptions make the concern relevant;
 - runtime or integration assumptions that inspection alone cannot answer and whose uncertainty matters to the requested outcome;
 - tests or checks changed with the implementation that do not actually bear on the requested behavior, cannot fail for a relevant wrong result, or mainly encode the implementation that was just written.

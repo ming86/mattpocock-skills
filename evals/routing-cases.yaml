@@ -67,7 +67,21 @@ cases:
     expected:
       skill: codebase-design
       invocation: implicit-ok
-    avoid: [domain-modeling, implementation-review]
+    avoid: [domain-modeling, implementation-review, simplify-by-ablation]
+
+  - id: simplify-by-ablation-overengineered-design
+    prompt: "Which parts of this design are actually earning their complexity? Do an ablation pass and simplify anything whose absence loses nothing material."
+    expected:
+      skill: simplify-by-ablation
+      invocation: implicit-ok
+    avoid: [codebase-design, implementation-review]
+
+  - id: simplify-by-ablation-existing-implementation
+    prompt: "This implementation feels overengineered. Identify abstractions or supporting machinery that are not materially contributing and simplify them."
+    expected:
+      skill: simplify-by-ablation
+      invocation: implicit-ok
+    avoid: [implementation-review, codebase-design]
 
   - id: tdd-requested
     prompt: "Implement this behavior test-first with a tight red-green-refactor loop."
@@ -314,4 +328,4 @@ cases:
     expected:
       skill: null
       invocation: none
-    avoid: [workflow-guide, implement, to-spec, to-tickets, prototype, wayfinder]
+    avoid: [workflow-guide, implement, to-spec, to-tickets, prototype, wayfinder, simplify-by-ablation]

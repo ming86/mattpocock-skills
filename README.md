@@ -6,7 +6,7 @@ This package is designed to complement whatever governing instructions, review a
 
 ## What is included
 
-The `workflow-skills` plugin currently contains 17 skills:
+The `workflow-skills` plugin currently contains 18 skills:
 
 - `workflow-guide`: compact catalog for identifying relevant explicit workflow skills
 - `grilling`: focused clarification of uncertainty that could change or block the work
@@ -22,6 +22,7 @@ The `workflow-skills` plugin currently contains 17 skills:
 - `tdd`: focused red-green-refactor when test-first development is requested or project instructions call for it
 - `domain-modeling`: clarify domain vocabulary, relationships, and invariants that later work needs
 - `codebase-design`: reason about module boundaries, interfaces, dependencies, and responsibility placement
+- `simplify-by-ablation`: test whether abstractions and other complexity materially contribute to the current solution
 - `resolving-merge-conflicts`: reconcile in-progress Git conflicts from the intent behind both sides
 - `handoff`: package live work state for a fresh session or agent
 - `to-questionnaire`: ask another person or domain expert for input they are best placed to provide
