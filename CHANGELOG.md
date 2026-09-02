@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.20 - 2026-09-03
+
+- Refine `simplify-by-ablation` so a cheap targeted ablation observes whether the relevant behavior, property, or metric materially changes, without framing the result as evidence that could imply additional benchmark or validation machinery.
+- Synchronize plugin and marketplace manifests at version `0.2.20`.
+
 ## 0.2.19 - 2026-09-03
 
 - Refine `simplify-by-ablation` to prefer a targeted comparison when contribution can be checked cheaply and directly, while keeping counterfactual reasoning for cases where an experiment would add unnecessary work.
