@@ -1,7 +1,7 @@
 interface:
   display_name: "Simplify by Ablation"
-  short_description: "Test whether complexity materially contributes"
-  default_prompt: "Use $simplify-by-ablation to identify complexity that can be removed or simplified without materially weakening the current solution."
+  short_description: "Assess whether complexity materially contributes"
+  default_prompt: "Use $simplify-by-ablation to assess which complexity materially contributes, and simplify only where nothing material is lost."
 
 policy:
   allow_implicit_invocation: true

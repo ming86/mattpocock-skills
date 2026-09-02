@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.22 - 2026-09-03
+
+- Refine `simplify-by-ablation` wording to frame ablation as asking what changes under removal rather than testing or proving contribution.
+- Reduce deletion bias by describing useful properties and material benefits directly, and by making explicit that an ablation pass may justify keeping existing complexity.
+
 ## 0.2.21 - 2026-09-03
 
 - Refine `simplify-by-ablation` to say “see what, if anything, materially changes” so the lightweight removal check does not imply formal observation, instrumentation, benchmarks, or validation work.
