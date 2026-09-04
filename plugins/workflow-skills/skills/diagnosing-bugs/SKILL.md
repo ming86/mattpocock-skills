@@ -42,6 +42,8 @@ A minimal reproduction is useful evidence, not a gate. Do not block diagnosis on
 
 When direct observations do not already make the cause clear, form multiple plausible hypotheses and rank them by the evidence available. Each hypothesis should predict an observation that would make it more or less likely.
 
+When a failure recurs or previous fixes cluster around the visible symptom, trace the behavior back to the component, state source, or decision point that can actually produce it. Check for shared upstream causes, duplicate logic, competing state, or misplaced responsibility before accepting another local explanation.
+
 Share the hypotheses when user knowledge or judgment could change the ranking. Do not create a user round-trip merely because this skill has reached a hypothesis step.
 
 ## 4. Test the differences that best separate the hypotheses

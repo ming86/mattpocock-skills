@@ -33,6 +33,8 @@ Respect real dependencies. Where later work genuinely rests on a foundation, est
 
 Use layers, branches, dependency order, or a thin end-to-end path according to the actual shape of the problem. Do not force an artificial structure, and do not assume the initial structure is complete or final.
 
+For engineering or systems work, distinguish where an effect appears from the component, layer, object, or state source that can produce it. When relevant state or facts can diverge, identify the source that actually determines the behavior before deciding what should change. If the same problem persists or local fixes accumulate, widen the investigation enough to check shared causes, duplicate logic, competing state, or misplaced responsibility before adding another local fix.
+
 ## 3. Advance meaningful work
 
 Choose a coherent piece of work that materially advances or clarifies the outcome in the context of the whole task.
