@@ -1,0 +1,7 @@
+interface:
+  display_name: "Creating Agent Skills"
+  short_description: "Create or update effective agent skills"
+  default_prompt: "Use $creating-agent-skills to create or improve an agent skill for this repository."
+
+policy:
+  allow_implicit_invocation: true

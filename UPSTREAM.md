@@ -51,3 +51,7 @@ A direct cherry-pick can be appropriate for a small isolated fix, but it is not 
 ## Attribution
 
 The original MIT copyright and permission notice remain in `LICENSE`, including in the distributable plugin directory. Git history and the `upstream-main` branch preserve the detailed derivation history.
+
+## OpenAI skill-creator lineage
+
+`plugins/workflow-skills/skills/creating-agent-skills/` is based on OpenAI's `skills/.system/skill-creator` package. The bundled `scripts/`, `references/openai_yaml.md`, and `LICENSE.txt` track the corresponding OpenAI resources; `SKILL.md` and the local harness metadata contain project-specific modifications. The nested Apache-2.0 license applies to that upstream-derived material.

@@ -399,3 +399,24 @@ cases:
       skill: null
       invocation: none
     avoid: [visual-explanation]
+
+  - id: creating-agent-skills-new-package
+    prompt: "Create a new agent skill for our repository, including the right SKILL.md structure, bundled references or scripts where useful, agents/openai.yaml metadata, and validation."
+    expected:
+      skill: creating-agent-skills
+      invocation: implicit-ok
+    avoid: [writing-agent-instructions, workflow-guide]
+
+  - id: creating-agent-skills-update-structure
+    prompt: "This existing skill has outgrown its SKILL.md. Rework the skill package so core workflow stays in the main file, branch-specific material moves to references, and the metadata and validation stay coherent."
+    expected:
+      skill: creating-agent-skills
+      invocation: implicit-ok
+    avoid: [writing-agent-instructions, workflow-guide]
+
+  - id: focused-skill-wording-stays-agent-instructions
+    prompt: "The skill package is already correct. Review only this skill description and instructions so they trigger reliably and steer behavior without duplicated or stale wording."
+    expected:
+      skill: writing-agent-instructions
+      invocation: implicit-ok
+    avoid: [creating-agent-skills, readable-prose]
