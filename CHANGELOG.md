@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.25 - 2026-09-04
+
+- Add `creating-agent-skills`, based on OpenAI's `skill-creator`, with the current upstream creation, metadata-generation, validation, reference, and licensing resources intact.
+- Preserve the local skill-creation refinements that describe normal methodology positively and diagnose observed skill failures as context, selection, principle, or true-boundary problems before making the smallest useful correction.
+- Keep `creating-agent-skills` focused on whole-skill capability, structure, resources, metadata, tooling, validation, and iteration while `writing-agent-instructions` remains focused on the behavioral design and wording of reusable agent instructions.
+- Add routing cases for those boundaries and synchronize package metadata at version `0.2.25`.
+
 ## 0.2.24 - 2026-09-04
 
 - Add `writing-agent-instructions`, a general-purpose skill for designing and reviewing reusable agent-facing instructions around routing, context placement, completion conditions, duplication, observed model behavior, and pruning.

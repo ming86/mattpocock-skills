@@ -5,13 +5,13 @@
   },
   "metadata": {
     "description": "Engineering workflow and general-purpose agent skills",
-    "version": "0.2.24"
+    "version": "0.2.25"
   },
   "plugins": [
     {
       "name": "workflow-skills",
       "description": "Engineering workflow and general-purpose reasoning, execution, writing, explanation, and skill-creation capabilities for coding agents.",
-      "version": "0.2.24",
+      "version": "0.2.25",
       "source": "./plugins/workflow-skills"
     }
   ]
