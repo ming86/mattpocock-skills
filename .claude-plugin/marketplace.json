@@ -4,14 +4,14 @@
     "name": "Ming"
   },
   "metadata": {
-    "description": "Adaptive engineering workflow skills",
-    "version": "0.2.23"
+    "description": "Engineering workflow and general-purpose agent skills",
+    "version": "0.2.24"
   },
   "plugins": [
     {
       "name": "workflow-skills",
-      "description": "Adaptive engineering workflow skills for clarification, research, planning, implementation, and review.",
-      "version": "0.2.23",
+      "description": "Engineering workflow and general-purpose reasoning, execution, writing, and explanation skills for coding agents.",
+      "version": "0.2.24",
       "source": "./plugins/workflow-skills"
     }
   ]

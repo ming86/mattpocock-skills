@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.24 - 2026-09-04
+
+- Add `writing-agent-instructions`, a general-purpose skill for designing and reviewing reusable agent-facing instructions around routing, context placement, completion conditions, duplication, observed model behavior, and pruning.
+- Add `visual-explanation`, a terminal-first visual explanation skill that selects text-native trees, flows, pseudocode, diffs, tables, rendered markup, or richer artifacts according to the subject, audience, and current interface.
+- Strengthen `goal-aligned-execution`, `diagnosing-bugs`, and `codebase-design` with focused architecture-first reasoning about symptom location versus behavioral ownership, competing state or logic, and responsibility placement without turning first-principles reasoning into an engineering procedure.
+- Keep the new skills independent of `workflow-guide`, add routing boundaries for their implicit invocation, and synchronize package metadata at version `0.2.24`.
+
 ## 0.2.23 - 2026-09-04
 
 - Add `goal-aligned-execution`, `readable-prose`, and `reason-from-first-principles` as independent general-purpose skills distributed by the plugin without making them workflow stages or `workflow-guide` transitions.
