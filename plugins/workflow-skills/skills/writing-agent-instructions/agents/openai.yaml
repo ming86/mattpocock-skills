@@ -1,0 +1,7 @@
+interface:
+  display_name: "Writing Agent Instructions"
+  short_description: "Write reusable instructions that reliably steer agents"
+  default_prompt: "Use $writing-agent-instructions to write or review these agent-facing instructions so they guide behavior clearly without unnecessary context, duplication, or stale rules."
+
+policy:
+  allow_implicit_invocation: true

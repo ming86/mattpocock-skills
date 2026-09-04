@@ -6,7 +6,7 @@ This package is designed to complement whatever governing instructions, review a
 
 ## What is included
 
-The `workflow-skills` plugin currently contains 21 skills. Eighteen are engineering workflow skills:
+The `workflow-skills` plugin currently contains 23 skills. Eighteen are engineering workflow skills:
 
 - `workflow-guide`: compact catalog for identifying relevant explicit workflow skills
 - `grilling`: focused clarification of uncertainty that could change or block the work
@@ -27,11 +27,13 @@ The `workflow-skills` plugin currently contains 21 skills. Eighteen are engineer
 - `handoff`: package live work state for a fresh session or agent
 - `to-questionnaire`: ask another person or domain expert for input they are best placed to provide
 
-Three are general-purpose skills distributed by the same plugin but are not workflow stages:
+Five are general-purpose skills distributed by the same plugin but are not workflow stages:
 
 - `goal-aligned-execution`: keep broad, ambiguous, or multi-step work connected to the overall goal and surrounding structure
 - `readable-prose`: write or revise prose for clarity, readability, structure, and high signal-to-noise
 - `reason-from-first-principles`: reason beneath inherited framing from what is fundamental to the subject
+- `writing-agent-instructions`: write and review reusable agent-facing instructions for effective routing, behavior, context use, and maintenance
+- `visual-explanation`: make mechanisms, structure, flows, and changes easier to see using the smallest useful representation for the current interface
 
 Plugin membership is a distribution choice, not workflow composition. These general-purpose skills keep their own triggers and may be selected independently; `workflow-guide` continues to catalog only the explicit workflow family and does not make them workflow transitions.
 

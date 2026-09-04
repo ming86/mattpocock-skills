@@ -357,3 +357,45 @@ cases:
       skill: reason-from-first-principles
       invocation: implicit-ok
     avoid: [workflow-guide]
+
+  - id: writing-agent-instructions-review-steering
+    prompt: "Review this AGENTS.md and skill description. I want the rules to steer the agent reliably without duplicated always-loaded instructions or stale wording."
+    expected:
+      skill: writing-agent-instructions
+      invocation: implicit-ok
+    avoid: [readable-prose, workflow-guide]
+
+  - id: writing-agent-instructions-skill-wording
+    prompt: "Help me rewrite this skill description so the distinct situations that should trigger it are covered without repeating synonyms for the same case."
+    expected:
+      skill: writing-agent-instructions
+      invocation: implicit-ok
+    avoid: [readable-prose, workflow-guide]
+
+  - id: ordinary-prose-does-not-trigger-agent-instructions
+    prompt: "Rewrite this release note so it is clearer and less repetitive."
+    expected:
+      skill: readable-prose
+      invocation: implicit-ok
+    avoid: [writing-agent-instructions]
+
+  - id: visual-explanation-terminal-flow
+    prompt: "Show me the runtime flow from the CLI command through session creation and persistence. I am in a terminal, so use whatever text-native view makes it easiest to see."
+    expected:
+      skill: visual-explanation
+      invocation: implicit-ok
+    avoid: [workflow-guide]
+
+  - id: visual-explanation-eli5-picture
+    prompt: "ELI5 how DNS resolution works with a simple picture or diagram."
+    expected:
+      skill: visual-explanation
+      invocation: implicit-ok
+    avoid: [reason-from-first-principles, readable-prose]
+
+  - id: ordinary-explanation-does-not-force-visualization
+    prompt: "Explain why this cache invalidation strategy can return stale data. I do not need a diagram."
+    expected:
+      skill: null
+      invocation: none
+    avoid: [visual-explanation]

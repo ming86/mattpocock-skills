@@ -1,0 +1,7 @@
+interface:
+  display_name: "Visual Explanation"
+  short_description: "Show mechanisms and structure in the clearest useful form"
+  default_prompt: "Use $visual-explanation to make this mechanism or structure easier to see, preferring a concise terminal-native representation when it communicates the point well."
+
+policy:
+  allow_implicit_invocation: true
