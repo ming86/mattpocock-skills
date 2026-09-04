@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.23 - 2026-09-04
+
+- Add `goal-aligned-execution`, `readable-prose`, and `reason-from-first-principles` as independent general-purpose skills distributed by the plugin without making them workflow stages or `workflow-guide` transitions.
+- Refine the `goal-aligned-execution` and `readable-prose` descriptions to describe their positive routing conditions without adding speculative over-trigger suppression; keep `reason-from-first-principles` unchanged.
+- Preserve all `simplify-by-ablation` refinements released through 0.2.22 while integrating the general-purpose skills, and synchronize plugin, marketplace, documentation, and routing metadata at version `0.2.23`.
+
 ## 0.2.22 - 2026-09-03
 
 - Refine `simplify-by-ablation` wording to frame ablation as asking what changes under removal rather than testing or proving contribution.

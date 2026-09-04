@@ -1,12 +1,12 @@
 # Workflow Skills
 
-A focused set of engineering workflow skills for coding agents. The skills help clarify important decisions, investigate questions, preserve long-running work state, turn current understanding into specs and work units, implement bounded changes, and check the results without imposing a second project-level orchestration policy.
+A focused collection of engineering workflow and general-purpose reasoning, execution, and writing skills for coding agents. The workflow skills help clarify important decisions, investigate questions, preserve long-running work state, turn current understanding into specs and work units, implement bounded changes, and check the results without imposing a second project-level orchestration policy. The general-purpose skills keep their own triggers and can be used independently.
 
 This package is designed to complement whatever governing instructions, review agents, issue tracker, and engineering conventions a project already uses. It does not bundle or require a particular `AGENTS.md`, custom reviewer, worker topology, tracker, commit policy, or delivery workflow.
 
 ## What is included
 
-The `workflow-skills` plugin currently contains 18 skills:
+The `workflow-skills` plugin currently contains 21 skills. Eighteen are engineering workflow skills:
 
 - `workflow-guide`: compact catalog for identifying relevant explicit workflow skills
 - `grilling`: focused clarification of uncertainty that could change or block the work
@@ -27,7 +27,15 @@ The `workflow-skills` plugin currently contains 18 skills:
 - `handoff`: package live work state for a fresh session or agent
 - `to-questionnaire`: ask another person or domain expert for input they are best placed to provide
 
-The skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
+Three are general-purpose skills distributed by the same plugin but are not workflow stages:
+
+- `goal-aligned-execution`: keep broad, ambiguous, or multi-step work connected to the overall goal and surrounding structure
+- `readable-prose`: write or revise prose for clarity, readability, structure, and high signal-to-noise
+- `reason-from-first-principles`: reason beneath inherited framing from what is fundamental to the subject
+
+Plugin membership is a distribution choice, not workflow composition. These general-purpose skills keep their own triggers and may be selected independently; `workflow-guide` continues to catalog only the explicit workflow family and does not make them workflow transitions.
+
+The workflow skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
 
 Workflow support scales to the work. Skills carry forward validation and other supporting process already required by the current work or project instead of inventing more because it could increase confidence or reduce risk. Specs, tickets, workflow transitions, and document sections organize information and execution; they do not create extra engineering obligations merely by existing. When a workflow discovers additional work, keep it as a proposal until it becomes part of the current direction rather than silently turning it into a requirement, prerequisite, ticket, completion criterion, or implementation step. Shared or end-to-end checks can remain at the level where they actually apply instead of being repeated at every work-unit boundary.
 
@@ -166,9 +174,9 @@ Run `/reload-plugins` if Claude Code tells you a reload is required after an ins
 
 ## Harness-specific skill metadata
 
-The workflow instructions remain harness-neutral, but the package keeps additive metadata that a harness can use without changing workflow semantics. Codex reads each skill's `agents/openai.yaml` for presentation metadata and implicit-invocation policy. GitHub Copilot CLI and Claude Code understand `disable-model-invocation` in `SKILL.md`; selected explicit skills also use `argument-hint` when a short invocation hint improves the user-facing command experience.
+The skill instructions remain harness-neutral, but the package keeps additive metadata that a harness can use without changing workflow semantics. Codex reads each skill's `agents/openai.yaml` for presentation metadata and implicit-invocation policy. GitHub Copilot CLI and Claude Code understand `disable-model-invocation` in `SKILL.md`; selected explicit skills also use `argument-hint` when a short invocation hint improves the user-facing command experience.
 
-The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement`, plus `implementation-review`, `resolving-merge-conflicts`, `handoff`, and `to-questionnaire`, default to explicit invocation. The advisory `workflow-guide` plus analytical and support skills remain eligible for automatic selection. `tdd` is eligible only when test-first development is explicitly requested or project instructions call for it in the current work; ordinary code changes do not imply a TDD workflow. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
+The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement`, plus `implementation-review`, `resolving-merge-conflicts`, `handoff`, and `to-questionnaire`, default to explicit invocation. The advisory `workflow-guide` plus analytical, support, and general-purpose skills remain eligible for automatic selection from their own descriptions. The general-purpose skills are not routed as workflow transitions by `workflow-guide`. `tdd` is eligible only when test-first development is explicitly requested or project instructions call for it in the current work; ordinary code changes do not imply a TDD workflow. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
 
 `disable-model-invocation` is a Copilot/Claude extension rather than a field in the core Agent Skills specification. The packaged skills use that extension deliberately because both target harnesses consume it; other clients should ignore unknown frontmatter fields.
 
@@ -182,7 +190,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.17`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.23`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

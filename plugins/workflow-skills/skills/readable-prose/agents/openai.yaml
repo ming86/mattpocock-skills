@@ -1,0 +1,7 @@
+interface:
+  display_name: "Readable Prose"
+  short_description: "Write clear, natural, high-signal prose"
+  default_prompt: "Use $readable-prose to write or revise this as clear, natural, high-signal prose that preserves the reasoning and context the reader needs."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Reason from First Principles"
+  short_description: "Look beneath framing and reason from fundamentals"
+  default_prompt: "Use $reason-from-first-principles to look beneath the usual framing and reason from what is fundamental to the subject."
+
+policy:
+  allow_implicit_invocation: true

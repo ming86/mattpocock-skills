@@ -336,3 +336,24 @@ cases:
       skill: null
       invocation: none
     avoid: [workflow-guide, implement, to-spec, to-tickets, prototype, wayfinder, simplify-by-ablation]
+
+  - id: goal-aligned-execution-larger-multistep-work
+    prompt: "Help me structure and carry out this ambiguous multi-step migration without losing sight of the overall outcome as we discover more."
+    expected:
+      skill: goal-aligned-execution
+      invocation: implicit-ok
+    avoid: [workflow-guide, to-spec, to-tickets]
+
+  - id: readable-prose-developed-explanation
+    prompt: "Rewrite this technical explanation so the reasoning and relationships stay intact but the prose is clearer, more natural, and less repetitive."
+    expected:
+      skill: readable-prose
+      invocation: implicit-ok
+    avoid: [workflow-guide]
+
+  - id: first-principles-explicit-reframing
+    prompt: "Explain from first principles why coordination becomes necessary when independent actors share mutable state, rather than starting from the usual distributed-systems patterns."
+    expected:
+      skill: reason-from-first-principles
+      invocation: implicit-ok
+    avoid: [workflow-guide]

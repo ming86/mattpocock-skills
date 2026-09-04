@@ -1,0 +1,7 @@
+interface:
+  display_name: "Goal-Aligned Execution"
+  short_description: "Keep multi-step work aligned to the overall goal"
+  default_prompt: "Use $goal-aligned-execution to keep this multi-step work aligned to the overall goal and the structure that determines what matters."
+
+policy:
+  allow_implicit_invocation: true
