@@ -1,6 +1,6 @@
 {
   "name": "workflow-skills",
-  "version": "0.2.25",
+  "version": "0.2.26",
   "description": "Engineering workflow and general-purpose reasoning, execution, writing, explanation, and skill-creation capabilities for coding agents.",
   "author": {
     "name": "Ming"

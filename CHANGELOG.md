@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.26 - 2026-09-07
+
+- Preserve existing host-specific metadata and optional interface fields when `creating-agent-skills` regenerates `agents/openai.yaml`, so invocation policy is not lost during routine metadata updates.
+- Align the bundled skill validator and creation guidance with the workflow frontmatter fields used by this repository, including `disable-model-invocation`, `argument-hint`, and `metadata`.
+- Correct the TDD reference to describe recomputed expected values as duplicated test logic that can reproduce the same mistake rather than as tests that pass by construction.
+- Synchronize plugin, marketplace, and documentation metadata at version `0.2.26`.
+
 ## 0.2.25 - 2026-09-04
 
 - Add `creating-agent-skills`, based on OpenAI's `skill-creator`, with the current upstream creation, metadata-generation, validation, reference, and licensing resources intact.
