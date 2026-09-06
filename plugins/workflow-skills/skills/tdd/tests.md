@@ -57,10 +57,10 @@ test("parseConfig preserves the declared output directory", () => {
 
 Direct inspection of storage, events, logs, or another lower-level surface is not automatically wrong. Use it when that surface is itself the behavior being protected or when the normal interface cannot show the property without excessive setup. Make the reason clear so the test does not accidentally become an implementation-coupled substitute for a simpler behavioral check.
 
-**Tautological tests**: Expected value restates the implementation, so the test passes by construction.
+**Duplicated-logic tests**: Expected-value calculations that repeat the implementation algorithm can reproduce the same mistake and weaken the test's independence.
 
 ```typescript
-// BAD: Expected value is recomputed the way the code computes it
+// BAD: Expected value duplicates the implementation algorithm
 test("calculateTotal sums line items", () => {
   const items = [{ price: 10 }, { price: 5 }];
   const expected = items.reduce((sum, i) => sum + i.price, 0);
