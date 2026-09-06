@@ -152,9 +152,70 @@ def parse_interface_overrides(raw_overrides):
     return overrides, optional_order
 
 
+def read_existing_openai_yaml(output_path):
+    if not output_path.exists():
+        return "", {}
+
+    content = output_path.read_text()
+    try:
+        metadata = yaml.safe_load(content)
+    except yaml.YAMLError as exc:
+        print(f"[ERROR] Invalid existing agents/openai.yaml: {exc}")
+        return None, None
+
+    if metadata is None:
+        metadata = {}
+    if not isinstance(metadata, dict):
+        print("[ERROR] Existing agents/openai.yaml must be a YAML dictionary.")
+        return None, None
+
+    interface = metadata.get("interface", {})
+    if interface is None:
+        interface = {}
+    if not isinstance(interface, dict):
+        print("[ERROR] Existing agents/openai.yaml 'interface' must be a YAML dictionary.")
+        return None, None
+
+    return content, interface
+
+
+def replace_interface_block(existing_content, interface_lines):
+    rendered = "\n".join(interface_lines)
+    if not existing_content.strip():
+        return rendered + "\n"
+
+    lines = existing_content.splitlines()
+    start = next((i for i, line in enumerate(lines) if line == "interface:"), None)
+    if start is None:
+        return rendered + "\n\n" + existing_content.lstrip("\n")
+
+    end = len(lines)
+    for i in range(start + 1, len(lines)):
+        line = lines[i]
+        if line and not line[0].isspace():
+            end = i
+            break
+
+    before = lines[:start]
+    after = lines[end:]
+    result = before + interface_lines
+    if after and result and result[-1] != "" and after[0] != "":
+        result.append("")
+    result.extend(after)
+    return "\n".join(result).rstrip("\n") + "\n"
+
+
 def write_openai_yaml(skill_dir, skill_name, raw_overrides):
     overrides, optional_order = parse_interface_overrides(raw_overrides)
     if overrides is None:
+        return None
+
+    agents_dir = Path(skill_dir) / "agents"
+    agents_dir.mkdir(parents=True, exist_ok=True)
+    output_path = agents_dir / "openai.yaml"
+
+    existing_content, existing_interface = read_existing_openai_yaml(output_path)
+    if existing_content is None:
         return None
 
     display_name = overrides.get("display_name") or format_display_name(skill_name)
@@ -173,15 +234,24 @@ def write_openai_yaml(skill_dir, skill_name, raw_overrides):
         f"  short_description: {yaml_quote(short_description)}",
     ]
 
+    preserved_optional_order = [
+        key
+        for key in existing_interface
+        if key not in ("display_name", "short_description") and key in ALLOWED_INTERFACE_KEYS
+    ]
     for key in optional_order:
-        value = overrides.get(key)
+        if key not in preserved_optional_order:
+            preserved_optional_order.append(key)
+
+    for key in preserved_optional_order:
+        value = overrides.get(key, existing_interface.get(key))
         if value is not None:
+            if not isinstance(value, str):
+                print(f"[ERROR] Existing interface field '{key}' must be a string.")
+                return None
             interface_lines.append(f"  {key}: {yaml_quote(value)}")
 
-    agents_dir = Path(skill_dir) / "agents"
-    agents_dir.mkdir(parents=True, exist_ok=True)
-    output_path = agents_dir / "openai.yaml"
-    output_path.write_text("\n".join(interface_lines) + "\n")
+    output_path.write_text(replace_interface_block(existing_content, interface_lines))
     print(f"[OK] Created agents/openai.yaml")
     return output_path
 

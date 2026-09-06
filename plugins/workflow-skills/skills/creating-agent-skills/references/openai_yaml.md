@@ -13,6 +13,9 @@ interface:
   brand_color: "#3B82F6"
   default_prompt: "Optional surrounding prompt to use the skill with"
 
+policy:
+  allow_implicit_invocation: false
+
 dependencies:
   tools:
     - type: "mcp"
@@ -26,6 +29,7 @@ dependencies:
 
 Top-level constraints:
 
+- When updating an existing file, preserve top-level metadata and optional interface fields that are not being changed.
 - Quote all string values.
 - Keep keys unquoted.
 - For `interface.default_prompt`: generate a helpful, short (typically 1 sentence) example starting prompt based on the skill. It must explicitly mention the skill as `$skill-name` (e.g., "Use $skill-name-here to draft a concise weekly status update.").
@@ -36,6 +40,7 @@ Top-level constraints:
 - `interface.icon_large`: Path to a larger logo asset (relative to skill dir). Default to `./assets/` and place icons in the skill's `assets/` folder.
 - `interface.brand_color`: Hex color used for UI accents (e.g., badges).
 - `interface.default_prompt`: Default prompt snippet inserted when invoking the skill.
+- `policy.allow_implicit_invocation`: Host-specific invocation setting used by this repository. `true` permits implicit invocation; `false` keeps an explicit workflow user-invoked. Preserve an existing value when regenerating interface metadata unless the invocation policy itself is being changed.
 - `dependencies.tools[].type`: Dependency category. Only `mcp` is supported for now.
 - `dependencies.tools[].value`: Identifier of the tool or dependency.
 - `dependencies.tools[].description`: Human-readable explanation of the dependency.
