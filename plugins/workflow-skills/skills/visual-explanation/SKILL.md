@@ -1,6 +1,6 @@
 ---
 name: visual-explanation
-description: Make a mechanism, architecture, runtime flow, state relationship, code structure, or change easier to understand with a visual or text-visual representation. Use when the user asks to show, visualize, diagram, sketch, illustrate, or give a picture or ELI5-style explainer. Choose a form the current interface can display conveniently; prefer terminal-native representations in CLI coding environments.
+description: Make a mechanism, process, concept, argument, timeline, comparison, architecture, runtime flow, state relationship, code structure, or change easier to understand with a visual or text-visual representation. Use when the user asks to show, visualize, diagram, sketch, illustrate, or give a picture or ELI5-style explainer. Choose a form the current interface can display conveniently; prefer terminal-native representations in terminal-oriented environments.
 ---
 
 # Visual Explanation
@@ -17,9 +17,14 @@ Use the form that naturally exposes what matters:
 - runtime calls or control flow: an indented call tree or sequence sketch;
 - file, module, component, or ownership structure: a shallow tree;
 - a before-and-after structural change: a focused diff;
-- data or state movement: arrows, a small flow diagram, or a sequence diagram;
+- data or state movement, process stages, or handoffs: arrows, a small flow diagram, or a sequence diagram;
+- chronology, milestones, or ordering: a timeline;
+- conceptual relationships or the structure of an argument: a labeled tree or relationship map;
 - a compact comparison: a table when rows and columns make the relationship clearer;
+- quantitative comparisons or trends: a chart when it makes the relevant values or pattern easier to see;
 - a dense spatial, interactive, or presentation-oriented concept: a richer diagram or artifact when simpler forms would hide the point.
+
+For quantitative views, label units and scales and make clear whether values come from data, calculations, or an illustrative example.
 
 Use several forms only when each reveals a different part of the explanation. Do not turn a simple question into a diagram collection.
 
@@ -27,7 +32,7 @@ Use several forms only when each reveals a different part of the explanation. Do
 
 Prefer a representation the user can see directly where the conversation is happening.
 
-In CLI coding agents and terminal-oriented VS Code workflows, prefer text-native forms such as trees, arrows, pseudocode, diffs, and tables. They remain visible in the transcript, copy cleanly, and do not require another viewer.
+In CLI agents and terminal-oriented VS Code workflows, prefer text-native forms such as trees, arrows, pseudocode, diffs, and tables. They remain visible in the transcript, copy cleanly, and do not require another viewer.
 
 Use Mermaid or another rendered-markup format when the current surface renders it conveniently and the structure benefits from it. Raw diagram source is not an improvement when a clear text sketch would be easier to read.
 
@@ -43,4 +48,4 @@ For an experienced reader, preserve the technical distinctions that matter and r
 
 ## Keep the visual focused
 
-Show only the calls, files, states, components, relationships, or changes needed for the current point. Keep supporting prose close to the representation and brief enough that the visual structure remains the main aid to understanding.
+Show only the elements, relationships, or changes needed for the current point. Keep supporting prose close to the representation and brief enough that the visual structure remains the main aid to understanding.
