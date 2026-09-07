@@ -420,3 +420,53 @@ cases:
       skill: writing-agent-instructions
       invocation: implicit-ok
     avoid: [creating-agent-skills, readable-prose]
+
+  - id: research-nonengineering-records
+    prompt: "Investigate what the workshop attendance records and participant surveys show about participation before and after the schedule changed. Distinguish findings from explanations the records cannot establish."
+    expected:
+      skill: research
+      invocation: implicit-ok
+    avoid: [diagnosing-bugs, prototype]
+
+  - id: domain-modeling-manual-process
+    prompt: "Our paper-based equipment-loan process uses borrower, member, and custodian inconsistently. Clarify the concepts, responsibilities, relationships, and rules; there is no software implementation."
+    expected:
+      skill: domain-modeling
+      invocation: implicit-ok
+    avoid: [codebase-design, to-spec]
+
+  - id: domain-modeling-mixed-manual-and-software
+    prompt: "The equipment-loan forms and application use custodian differently. Clarify the domain model across the manual process and the software, using representative records, code, schemas, and tests to identify the discrepancies."
+    expected:
+      skill: domain-modeling
+      invocation: implicit-ok
+    avoid: [codebase-design, diagnosing-bugs]
+
+  - id: simplify-by-ablation-plan-and-documents
+    prompt: "This workshop plan has repeated check-ins and three overlapping summary reports. Identify which steps or documents can be removed without losing useful coordination, evidence, or clarity."
+    expected:
+      skill: simplify-by-ablation
+      invocation: implicit-ok
+    avoid: [codebase-design, implementation-review]
+
+  - id: visual-explanation-noncoding-terminal
+    prompt: "Show how the stages of our volunteer onboarding process connect and who handles each handoff. I am working in a terminal; use a clear text-native view."
+    expected:
+      skill: visual-explanation
+      invocation: implicit-ok
+    avoid: [workflow-guide]
+
+  - id: visual-explanation-quantitative-report
+    prompt: "Visualize the attendance trends in this supplied dataset for the workshop report. This interface can display charts directly."
+    expected:
+      skill: visual-explanation
+      invocation: implicit-ok
+    avoid: [workflow-guide]
+    note: "Select the representation for the data, reader, and current interface; do not inherit a terminal preference from the subject or metadata prompt."
+
+  - id: handoff-writing-project
+    prompt: "Use $handoff. Move this report to a fresh session using the current draft, source notes, and editorial decisions already saved in the project folder. Preserve the unresolved argument and exact next action; there is no repository."
+    expected:
+      skill: handoff
+      invocation: explicit-only
+    avoid: [wayfinder, to-spec]

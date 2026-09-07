@@ -1,17 +1,17 @@
 # Workflow Skills
 
-A focused collection of engineering workflow skills plus general-purpose reasoning, execution, writing, explanation, and skill-creation capabilities for coding agents. The workflow skills help clarify important decisions, investigate questions, preserve long-running work state, turn current understanding into specs and work units, implement bounded changes, and check the results without imposing a second project-level orchestration policy. The general-purpose skills keep their own triggers and can be used independently.
+A focused collection of engineering workflow skills plus general-purpose research, reasoning, execution, writing, explanation, and skill-creation capabilities for agents. The workflow skills help clarify important decisions, investigate questions, preserve long-running work state, turn current understanding into specs and work units, implement bounded changes, and check the results without imposing a second project-level orchestration policy. The general-purpose skills keep their own triggers and can be used independently.
 
 This package is designed to complement whatever governing instructions, review agents, issue tracker, and engineering conventions a project already uses. It does not bundle or require a particular `AGENTS.md`, custom reviewer, worker topology, tracker, commit policy, or delivery workflow.
 
 ## What is included
 
-The `workflow-skills` plugin currently contains 24 skills. Eighteen are engineering workflow skills:
+The `workflow-skills` plugin currently contains 24 skills. Eighteen support project workflows, including methods that also apply outside engineering:
 
 - `workflow-guide`: compact catalog for identifying relevant explicit workflow skills
 - `grilling`: focused clarification of uncertainty that could change or block the work
 - `grill-with-docs`: clarification grounded in project context and user input
-- `research`: source-grounded technical and project research
+- `research`: source-grounded investigation using evidence suited to the question, with concrete guidance for technical and engineering sources
 - `prototype`: smallest useful experiment for an important uncertainty
 - `wayfinder`: working overview that survives context changes for large, uncertain, or multi-session work
 - `to-spec`: turn current understanding into an implementation spec
@@ -20,23 +20,25 @@ The `workflow-skills` plugin currently contains 24 skills. Eighteen are engineer
 - `implementation-review`: explicitly review a bounded implementation against the requested outcome and repository integration
 - `diagnosing-bugs`: evidence-driven debugging and regression diagnosis
 - `tdd`: focused red-green-refactor when test-first development is requested or project instructions call for it
-- `domain-modeling`: clarify domain vocabulary, relationships, and invariants that later work needs
+- `domain-modeling`: clarify concepts, roles, relationships, and invariants in business processes, other problem domains, and software
 - `codebase-design`: reason about module boundaries, interfaces, dependencies, and responsibility placement
-- `simplify-by-ablation`: test whether abstractions and other complexity materially contribute to the current solution
+- `simplify-by-ablation`: assess what would be lost by simplifying designs, implementations, plans, documents, or procedures
 - `resolving-merge-conflicts`: reconcile in-progress Git conflicts from the intent behind both sides
-- `handoff`: package live work state for a fresh session or agent
+- `handoff`: package live coding, research, writing, or other work state for a fresh session or agent
 - `to-questionnaire`: ask another person or domain expert for input they are best placed to provide
 
-Six are general-purpose skills distributed by the same plugin but are not workflow stages:
+Six additional general-purpose skills are distributed by the same plugin without becoming workflow stages:
 
 - `goal-aligned-execution`: keep broad, ambiguous, or multi-step work connected to the overall goal and surrounding structure
 - `readable-prose`: write or revise prose for clarity, readability, structure, and high signal-to-noise
 - `reason-from-first-principles`: reason beneath inherited framing from what is fundamental to the subject
 - `writing-agent-instructions`: write and review reusable agent-facing instructions for effective routing, behavior, context use, and maintenance
-- `visual-explanation`: make mechanisms, structure, flows, and changes easier to see using the smallest useful representation for the current interface
+- `visual-explanation`: make mechanisms, processes, concepts, arguments, timelines, comparisons, and software structure easier to see in the current interface
 - `creating-agent-skills`: create and evolve agent skills using the OpenAI skill-creator foundation plus this project's steering refinements
 
 Plugin membership is a distribution choice, not workflow composition. These general-purpose skills keep their own triggers and may be selected independently; `workflow-guide` continues to catalog only the explicit workflow family and does not make them workflow transitions.
+
+The shared methods retain concrete engineering guidance where it applies. Non-coding work can use research, domain modeling, simplification, visual explanation, and handoff without assuming that a repository or implementation exists; mixed work can use the relevant guidance at each step.
 
 The workflow skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
 
