@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.27 - 2026-09-07
+
+- Extend `simplify-by-ablation` to plans, documents, and procedures while retaining its engineering guidance and treating clarity, evidence, and coordination as possible material benefits.
+- Broaden `research` to source-based investigation across domains while preserving concrete engineering sources, version awareness, source attribution, and the distinction between findings and inference.
+- Extend `domain-modeling` to manual processes and other problem domains, keeping code, schema, and test cross-checks wherever software represents the domain and distinguishing current practice from intended behavior and proposed changes.
+- Broaden `visual-explanation` to processes, concepts, arguments, timelines, and quantitative comparisons while preserving engineering representations and selecting terminal-native output according to the current interface.
+- Extend `handoff` to drafts, research findings, datasets, and non-repository work state while preserving repository references, explicit invocation, and compact transition-state semantics.
+- Align discovery metadata and documentation, add seven non-coding and mixed-work routing cases to the existing corpus, and synchronize plugin, marketplace, and documentation metadata at version `0.2.27`.
+
 ## 0.2.26 - 2026-09-07
 
 - Preserve existing host-specific metadata and optional interface fields when `creating-agent-skills` regenerates `agents/openai.yaml`, so invocation policy is not lost during routine metadata updates.
