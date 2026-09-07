@@ -1,6 +1,6 @@
 ---
 name: simplify-by-ablation
-description: "Simplify designs and implementations by asking what materially changes when questionable complexity is removed or simplified. Use when asked to do an ablation pass, simplify overengineered work, remove unnecessary abstractions or design complexity, assess whether layers, mechanisms, guards, supporting work, or other complexity earn their place, or isolate which optimizations materially contribute."
+description: "Simplify designs, implementations, plans, documents, and procedures by asking what materially changes when questionable complexity is removed or simplified. Use when asked to do an ablation pass, simplify overengineered work, remove unnecessary abstractions or design complexity, assess whether layers, mechanisms, guards, document sections, process steps, supporting work, or other complexity earn their place, or isolate which optimizations materially contribute."
 ---
 
 # Simplify by Ablation
@@ -9,9 +9,9 @@ Evaluate questionable complexity by asking what materially changes if it is remo
 
 When the effect can be checked cheaply and directly, prefer a targeted ablation: remove or simplify one candidate and see what, if anything, materially changes. Otherwise, reason through the same counterfactual without manufacturing an experiment.
 
-For an abstraction, layer, mechanism, guard, supporting work, or design commitment whose contribution is unclear, ask what concrete current requirement, behavior, constraint, or useful property would be lost without it.
+For an abstraction, layer, mechanism, guard, document section, process step, supporting work, or other commitment whose contribution is unclear, ask what concrete current requirement, behavior, constraint, or useful property would be lost without it.
 
-Prefer the simpler form when removing or simplifying something causes no material loss. Do not treat fewer components or less code as inherently better: keep complexity when its removal would lose required behavior, useful structure, a real boundary, necessary control, or another material benefit.
+Prefer the simpler form when removing or simplifying something causes no material loss. Do not treat fewer components, less code, fewer words, or fewer steps as inherently better. Keep complexity when its removal would lose required behavior, useful structure, a real boundary, necessary control, explanatory clarity, supporting evidence, coordination, or another material benefit.
 
 Judge contribution in the context of the whole solution. A component can make sense locally yet add more complexity, coupling, or ongoing obligation than its role justifies.
 
