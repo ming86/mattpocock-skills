@@ -50,7 +50,7 @@ If decomposition reveals a prerequisite, refactor, validation requirement, suppo
 
 ### 7. Publish the work units
 
-Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, keep the tickets in the simplest work-centered task location that fits the work. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket.
+Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, keep the tickets in the simplest work-centered task location that fits the work. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket. When splitting an existing issue or work item, link each ticket to its source with a native parent-child relationship when the tracker supports one, following the project's convention. This records hierarchy, while blocking relationships record prerequisites. If no native parent-child relationship is available, include a concise source reference in the existing Context section.
 
 Each ticket should contain:
 
@@ -64,7 +64,7 @@ A small set of conditions that make this work unit complete according to the sou
 
 ## Blocked by
 
-References to genuine prerequisite tickets, or `None`.
+References to genuine prerequisite tickets, or `None`. Omit this section when native blocking relationships already record the dependencies.
 
 ## Context
 
