@@ -6,7 +6,7 @@ This package is designed to complement whatever governing instructions, review a
 
 ## What is included
 
-The `workflow-skills` plugin currently contains 24 skills. Eighteen support project workflows, including methods that also apply outside engineering:
+The `workflow-skills` plugin currently contains 25 skills. Nineteen support project workflows, including methods that also apply outside engineering:
 
 - `workflow-guide`: compact catalog for identifying relevant explicit workflow skills
 - `grilling`: focused clarification of uncertainty that could change or block the work
@@ -18,6 +18,7 @@ The `workflow-skills` plugin currently contains 24 skills. Eighteen support proj
 - `to-tickets`: split work into clear units with real dependencies
 - `implement`: execute one bounded work unit while preserving scope
 - `implementation-review`: explicitly review a bounded implementation against the requested outcome and repository integration
+- `retro`: reflect on observed session friction and propose agent-environment improvements
 - `diagnosing-bugs`: evidence-driven debugging and regression diagnosis
 - `tdd`: focused red-green-refactor when test-first development is requested or project instructions call for it
 - `domain-modeling`: clarify concepts, roles, relationships, and invariants in business processes, other problem domains, and software
@@ -181,7 +182,7 @@ Run `/reload-plugins` if Claude Code tells you a reload is required after an ins
 
 The skill instructions remain harness-neutral, but the package keeps additive metadata that a harness can use without changing workflow semantics. Codex reads each skill's `agents/openai.yaml` for presentation metadata and implicit-invocation policy. GitHub Copilot CLI and Claude Code understand `disable-model-invocation` in `SKILL.md`; selected explicit skills also use `argument-hint` when a short invocation hint improves the user-facing command experience.
 
-The workflow-transition skills `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, and `implement`, plus `implementation-review`, `resolving-merge-conflicts`, `handoff`, and `to-questionnaire`, default to explicit invocation. The advisory `workflow-guide` plus analytical, support, and general-purpose skills remain eligible for automatic selection from their own descriptions. The general-purpose skills are not routed as workflow transitions by `workflow-guide`. `tdd` is eligible only when test-first development is explicitly requested or project instructions call for it in the current work; ordinary code changes do not imply a TDD workflow. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
+Explicit workflows `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, `implement`, `implementation-review`, `resolving-merge-conflicts`, `handoff`, `retro`, and `to-questionnaire` default to explicit invocation. The advisory `workflow-guide` plus analytical, support, and general-purpose skills remain eligible for automatic selection from their own descriptions. The general-purpose skills are not routed as workflow transitions by `workflow-guide`. `tdd` is eligible only when test-first development is explicitly requested or project instructions call for it in the current work; ordinary code changes do not imply a TDD workflow. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
 
 `disable-model-invocation` is a Copilot/Claude extension rather than a field in the core Agent Skills specification. The packaged skills use that extension deliberately because both target harnesses consume it; other clients should ignore unknown frontmatter fields.
 
@@ -195,7 +196,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.27`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.28`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

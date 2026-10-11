@@ -144,14 +144,21 @@ cases:
     expected:
       skill: implementation-review
       invocation: explicit-only
-    avoid: [codebase-design, diagnosing-bugs]
+    avoid: [codebase-design, diagnosing-bugs, retro]
+
+  - id: retro-explicit-session-friction
+    prompt: "Use $retro to review this session's concrete difficulties and propose agent-environment improvements. Do not change instructions or create tickets."
+    expected:
+      skill: retro
+      invocation: explicit-only
+    avoid: [implementation-review, implement]
 
   - id: routine-ticket-completion-no-extra-review-workflow
     prompt: "This small ticket is implemented and its relevant existing check passes. Continue with the next already-planned ticket."
     expected:
       skill: null
       invocation: none
-    avoid: [workflow-guide, implementation-review, tdd]
+    avoid: [workflow-guide, implementation-review, tdd, retro]
 
   - id: resolve-in-progress-merge
     prompt: "Use $resolving-merge-conflicts on the merge Git has stopped on. Recover why both sides changed this code before reconciling it."
@@ -329,6 +336,14 @@ cases:
       invocation: implicit-ok
     candidate: implementation-review
     avoid: [codebase-design, diagnosing-bugs]
+
+  - id: guide-suggest-retro-after-concrete-session-friction
+    prompt: "During this coding session, I had to correct the agent several times about repository instructions, and it repeatedly chose a command that does not exist here. Should we learn from this friction?"
+    expected:
+      skill: workflow-guide
+      invocation: implicit-ok
+    candidate: retro
+    avoid: [implementation-review, implement]
 
   - id: guide-does-not-sell-workflow-for-simple-change
     prompt: "Update this existing error message and its matching test expectation. The scope and desired text are already clear."
