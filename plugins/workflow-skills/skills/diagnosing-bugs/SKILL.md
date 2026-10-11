@@ -52,6 +52,8 @@ Choose probes that distinguish competing explanations with the least disruption.
 
 Change one important variable at a time when you need to know which change caused the result. Tag temporary instrumentation so it can be found and removed reliably.
 
+If you deliberately mutate code or a fixture to force a failure, inspect the diff against the original state to confirm the mutation took effect before relying on the failing result.
+
 For performance regressions, capture a before-change signal that can show whether the suspected cause actually explains the regression. Reuse an existing metric, profiler, or representative workflow when it is sufficient; add measurement machinery only when the current signal cannot answer the question.
 
 ## 5. Act once the cause is clear enough within the requested work
