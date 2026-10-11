@@ -21,6 +21,8 @@ Prefer an existing public, integration, or other stable interface that exposes t
 
 Choose the test surface from the spec, ticket, repository architecture, existing tests, and call sites. If different choices would change architecture, scope, or what the test can tell you, treat the test surface as a design decision rather than choosing it solely for testing convenience.
 
+When viable surfaces materially differ in what they reveal, briefly compare what each can detect and what it may miss before choosing.
+
 When the interface itself is the design question, use `codebase-design` for design guidance.
 
 ## The loop
