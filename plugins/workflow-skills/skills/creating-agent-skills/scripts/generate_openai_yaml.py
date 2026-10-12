@@ -218,8 +218,8 @@ def write_openai_yaml(skill_dir, skill_name, raw_overrides):
     if existing_content is None:
         return None
 
-    display_name = overrides.get("display_name") or format_display_name(skill_name)
-    short_description = overrides.get("short_description") or generate_short_description(display_name)
+    display_name = overrides.get("display_name") or existing_interface.get("display_name") or format_display_name(skill_name)
+    short_description = overrides.get("short_description") or existing_interface.get("short_description") or generate_short_description(display_name)
 
     if not (25 <= len(short_description) <= 64):
         print(
@@ -237,7 +237,7 @@ def write_openai_yaml(skill_dir, skill_name, raw_overrides):
     preserved_optional_order = [
         key
         for key in existing_interface
-        if key not in ("display_name", "short_description") and key in ALLOWED_INTERFACE_KEYS
+        if key not in ("display_name", "short_description")
     ]
     for key in optional_order:
         if key not in preserved_optional_order:
@@ -246,10 +246,13 @@ def write_openai_yaml(skill_dir, skill_name, raw_overrides):
     for key in preserved_optional_order:
         value = overrides.get(key, existing_interface.get(key))
         if value is not None:
-            if not isinstance(value, str):
-                print(f"[ERROR] Existing interface field '{key}' must be a string.")
-                return None
-            interface_lines.append(f"  {key}: {yaml_quote(value)}")
+            if isinstance(value, str):
+                interface_lines.append(f"  {key}: {yaml_quote(value)}")
+            else:
+                nested = yaml.safe_dump(
+                    {key: value}, sort_keys=False, allow_unicode=True
+                ).rstrip().splitlines()
+                interface_lines.extend("  " + line for line in nested)
 
     output_path.write_text(replace_interface_block(existing_content, interface_lines))
     print(f"[OK] Created agents/openai.yaml")

@@ -54,4 +54,4 @@ The original MIT copyright and permission notice remain in `LICENSE`, including 
 
 ## OpenAI skill-creator lineage
 
-`plugins/workflow-skills/skills/creating-agent-skills/` is based on OpenAI's `skills/.system/skill-creator` package. The bundled `scripts/`, `references/openai_yaml.md`, and `LICENSE.txt` track the corresponding OpenAI resources; `SKILL.md` and the local harness metadata contain project-specific modifications. The nested Apache-2.0 license applies to that upstream-derived material.
+`plugins/workflow-skills/skills/creating-agent-skills/` is based on OpenAI's `skills/.system/skill-creator` package. The initializer and validator incorporate selected updates from the newer OpenAI Codex `skill-creator`. The metadata generator, references, `SKILL.md`, and harness metadata retain project-specific compatibility and steering adaptations. The bundled `LICENSE.txt` remains the upstream license. The nested Apache-2.0 license applies to that upstream-derived material.
