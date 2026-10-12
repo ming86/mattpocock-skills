@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.30 - 2026-10-12
+
+- Refresh `creating-agent-skills` with adaptive creation guidance, scope and authorization boundaries, concise routing, and proportional behavioral testing, while preserving its local steering principles and cross-host conventions.
+- Adopt the smaller upstream initializer and unfinished-placeholder detection while retaining host-specific frontmatter validation.
+- Preserve existing `agents/openai.yaml` interface values, additional interface fields, policy, and dependencies during metadata regeneration.
+- Synchronize plugin and versioned marketplace manifests at `0.2.30`, including the previously lagging GitHub marketplace.
+
+
 ## 0.2.27 - 2026-09-07
 
 - Extend `simplify-by-ablation` to plans, documents, and procedures while retaining its engineering guidance and treating clarity, evidence, and coordination as possible material benefits.
