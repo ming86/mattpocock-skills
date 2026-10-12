@@ -29,7 +29,7 @@ dependencies:
 
 Top-level constraints:
 
-- When updating an existing file, preserve top-level metadata and optional interface fields that are not being changed.
+- When updating an existing file, preserve existing interface values (including host-specific keys), top-level metadata, invocation policy, and dependencies unless explicitly changing them. The bundled generator retains these by default.
 - Quote all string values.
 - Keep keys unquoted.
 - For `interface.default_prompt`: generate a helpful, short (typically 1 sentence) example starting prompt based on the skill. It must explicitly mention the skill as `$skill-name` (e.g., "Use $skill-name-here to draft a concise weekly status update.").
