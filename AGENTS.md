@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository maintains a focused set of engineering workflow skills for coding agents. The skills complement project-level instructions and orchestration; they do not define a user's worker topology, reviewer policy, issue tracker, commit policy, delivery workflow, or who makes important project decisions.
+This repository maintains a focused collection of project workflow skills plus independent general-purpose skills covering research, reasoning, execution, writing, visual explanation, and skill authoring (including methods that apply to non-coding and mixed work). The skills complement project-level instructions and orchestration; they do not define a user's worker topology, reviewer policy, issue tracker, commit policy, delivery workflow, or who makes important project decisions.
 
 ## Source of truth
 
@@ -16,7 +16,9 @@ This repository maintains a focused set of engineering workflow skills for codin
 
 Keep changes proportional to the concrete problem being solved. Do not add workflow stages, abstractions, compatibility machinery, documentation, or validation merely for completeness.
 
-Workflow methods should scale to the work they support. Do not make a skill invent validation, verification, preflight work, benchmarking, review, rollout or rollback checking, compatibility checking, integrity checking, or other supporting process merely because it could increase confidence or reduce risk. Carry forward supporting work already required by the current task or project, and keep focused checks that are intrinsic to the skill's method. When a workflow discovers additional work beyond the current scope, keep it as a proposal or unresolved point until it is accepted into the current direction; do not turn it into required spec content, a ticket, a prerequisite, a completion criterion, or an implementation step. A skill invocation, document section, ticket boundary, or workflow transition does not by itself create another obligation. When an explicit scope boundary would prevent a likely expansion, state that boundary without enumerating hypothetical work that was never in play.
+Workflow methods should scale to the work they support. Carry forward supporting work already required by the current task or project, and keep focused checks intrinsic to the skill's method without inventing extra validation, preflight, benchmarking, review, rollout, or compatibility machinery merely to increase confidence.
+
+When a workflow discovers additional work beyond the current scope, keep it as a proposal or unresolved point until it is accepted into the current direction; do not turn it into required spec content, a ticket, a prerequisite, a completion criterion, or an implementation step. A skill invocation, document section, ticket boundary, or workflow transition does not by itself create another obligation. When an explicit scope boundary would prevent a likely expansion, state that boundary without enumerating hypothetical work that was never in play.
 
 Treat engineering work as iterative. Plans, designs, findings, assumptions, and decisions reflect the current understanding and may change as implementation or investigation reveals more. Describe ordinary engineering state directly in terms of what is current, observed, chosen, changed, or still uncertain. Use language of proof or finality only when the work genuinely supports that stronger claim, and keep specialized technical terms when they carry a real domain distinction.
 
