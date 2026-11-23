@@ -54,6 +54,7 @@ Use the work's existing task location or follow the project's issue-tracker or t
 
 Each ticket should contain:
 
+```markdown
 ## What to deliver
 
 The coherent behavior, result, migration state, or other outcome this ticket makes true.
@@ -69,5 +70,6 @@ References to genuine prerequisite tickets, or `None`. Omit this section when na
 ## Context
 
 Only context that a fresh executor would otherwise be likely to miss: important constraints, current decisions, relevant findings or source links, or links to the source spec/prototype. Do not copy the entire planning history.
+```
 
 Avoid volatile file-by-file instructions unless a file or interface location is itself a meaningful constraint. Preserve prototype-derived snippets only when they capture an important result or the basis for a current decision more precisely than prose.
