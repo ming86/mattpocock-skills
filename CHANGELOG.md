@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.32 - 2026-11-24
+
+- Split dense multi-condition publishing instructions in `to-tickets` into parallel rules (`Local state`, `Dependencies`, `Hierarchy`) and tighten defensive contrast phrasing in `to-spec` while preserving all scope and validation boundaries.
+- Streamline repeated saved-working-state boilerplate across `wayfinder`, `grilling`, `grill-with-docs`, `research`, `prototype`, and `diagnosing-bugs` into concise, consistent guidance.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.32`.
+
 ## 0.2.31 - 2026-11-24
 
 - Streamline `cognitive-clarity-editor` by removing redundant body triggers (`When to Use`) and deduplicating repeated boundary rules into single primary locations.
