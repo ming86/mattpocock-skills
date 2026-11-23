@@ -1,12 +1,97 @@
 # Workflow Skills
 
-A focused collection of engineering workflow skills plus general-purpose research, reasoning, execution, writing, explanation, and skill-creation capabilities for agents. The workflow skills help clarify important decisions, investigate questions, preserve long-running work state, turn current understanding into specs and work units, implement bounded changes, and check the results without imposing a second project-level orchestration policy. The general-purpose skills keep their own triggers and can be used independently.
+A focused collection of 25 agent skills: 19 project workflow skills and 6 independent general-purpose skills covering research, reasoning, execution, writing, visual explanation, and skill authoring. The workflow skills help clarify decisions, investigate open questions, preserve long-running state, produce specs and work units, implement bounded changes, and review results.
 
-This package is designed to complement whatever governing instructions, review agents, issue tracker, and engineering conventions a project already uses. It does not bundle or require a particular `AGENTS.md`, custom reviewer, worker topology, tracker, commit policy, or delivery workflow.
+This package complements your project's existing governing instructions, review agents, issue tracker, commit policy, and delivery workflow. It ships without a bundled `AGENTS.md`, custom reviewer, worker topology, or mandatory orchestration policy.
+
+## Install
+
+### Codex
+
+Install:
+
+```bash
+codex plugin marketplace add ming86/mattpocock-skills --ref main
+codex plugin add workflow-skills@ming86-workflow
+```
+
+Inspect:
+
+```bash
+codex plugin marketplace list
+codex plugin list
+```
+
+Update:
+
+```bash
+codex plugin marketplace upgrade ming86-workflow
+codex plugin add workflow-skills@ming86-workflow
+```
+
+Remove:
+
+```bash
+codex plugin remove workflow-skills@ming86-workflow
+codex plugin marketplace remove ming86-workflow
+```
+
+Codex namespaces plugin skills under the plugin name (for example, `workflow-skills:to-spec` and `workflow-skills:prototype`).
+
+### GitHub Copilot CLI
+
+Install:
+
+```bash
+copilot plugin marketplace add ming86/mattpocock-skills
+copilot plugin install workflow-skills@ming86-workflow
+```
+
+Inspect and update:
+
+```bash
+copilot plugin list
+copilot plugin marketplace update ming86-workflow
+copilot plugin update workflow-skills
+```
+
+Remove:
+
+```bash
+copilot plugin uninstall workflow-skills
+copilot plugin marketplace remove ming86-workflow
+```
+
+Run `/skills list` inside an interactive Copilot session to view skills contributed by installed plugins.
+
+### Claude Code
+
+Install:
+
+```text
+/plugin marketplace add ming86/mattpocock-skills
+/plugin install workflow-skills@ming86-workflow
+```
+
+Update:
+
+```text
+/plugin marketplace update ming86-workflow
+/plugin update workflow-skills@ming86-workflow
+```
+
+Remove:
+
+```text
+/plugin uninstall workflow-skills@ming86-workflow
+/plugin marketplace remove ming86-workflow
+```
+
+Claude Code namespaces plugin skills (for example, `/workflow-skills:prototype` and `/workflow-skills:to-spec`). Run `/reload-plugins` if Claude Code prompts for a reload after installing or updating.
 
 ## What is included
 
-The `workflow-skills` plugin currently contains 25 skills. Nineteen support project workflows, including methods that also apply outside engineering:
+### Project workflow skills (19)
 
 - `workflow-guide`: compact catalog for identifying relevant explicit workflow skills
 - `grilling`: focused clarification of uncertainty that could change or block the work
@@ -28,7 +113,9 @@ The `workflow-skills` plugin currently contains 25 skills. Nineteen support proj
 - `handoff`: package live coding, research, writing, or other work state for a fresh session or agent
 - `to-questionnaire`: ask another person or domain expert for input they are best placed to provide
 
-Six additional general-purpose skills are distributed by the same plugin without becoming workflow stages:
+### General-purpose skills (6)
+
+These six skills ship in the same plugin for convenience, trigger independently from their own descriptions, and stay outside `workflow-guide`:
 
 - `goal-aligned-execution`: keep broad, ambiguous, or multi-step work connected to the overall goal and surrounding structure
 - `cognitive-clarity-editor`: write, revise, or polish text for clarity, readability, structure, and high signal-to-noise calibrated to medium, audience, and stakes
@@ -37,21 +124,19 @@ Six additional general-purpose skills are distributed by the same plugin without
 - `visual-explanation`: make mechanisms, processes, concepts, arguments, timelines, comparisons, and software structure easier to see in the current interface
 - `creating-agent-skills`: create and evolve agent skills using the OpenAI skill-creator foundation plus this project's steering refinements
 
-Plugin membership is a distribution choice, not workflow composition. These general-purpose skills keep their own triggers and may be selected independently; `workflow-guide` continues to catalog only the explicit workflow family and does not make them workflow transitions.
+Shared methods such as `research`, `domain-modeling`, `simplify-by-ablation`, `visual-explanation`, and `handoff` retain concrete engineering guidance where it applies and also work on non-coding or mixed tasks without assuming a repository exists.
 
-The shared methods retain concrete engineering guidance where it applies. Non-coding work can use research, domain modeling, simplification, visual explanation, and handoff without assuming that a repository or implementation exists; mixed work can use the relevant guidance at each step.
+## How the workflows operate
 
-The workflow skills are procedures, not mandatory stages. A clear small change can go directly to implementation. A large uncertain project may use clarification, research or prototypes, Wayfinder, a spec, tickets, and then bounded implementation. Use only the mechanisms that help the current work.
+Use only the procedures that help the current task. A clear small change can move straight to `implement`, while a large uncertain project can chain clarification, research or prototypes, `wayfinder`, `to-spec`, `to-tickets`, and bounded implementation.
 
-Workflow support scales to the work. Skills carry forward validation and other supporting process already required by the current work or project instead of inventing more because it could increase confidence or reduce risk. Specs, tickets, workflow transitions, and document sections organize information and execution; they do not create extra engineering obligations merely by existing. When a workflow discovers additional work, keep it as a proposal until it becomes part of the current direction rather than silently turning it into a requirement, prerequisite, ticket, completion criterion, or implementation step. Shared or end-to-end checks can remain at the level where they actually apply instead of being repeated at every work-unit boundary.
-
-Engineering work is iterative. Plans, specs, decisions, findings, and assumptions capture the current understanding; later implementation or investigation may refine or replace them. The skills keep this state current rather than treating intermediate documents or earlier conclusions as final.
+Process weight scales to the task. Skills carry forward only the validation and checks your project already requires, keeping shared or end-to-end verification at the level where it applies. Specs, tickets, and document sections organize execution without creating extra obligations; newly discovered work stays as a proposal until you explicitly adopt it into scope. As investigation or implementation advances, skills update plans, specs, and assumptions to reflect current understanding.
 
 ## Explicit workflow discovery
 
-Several workflow skills are intentionally explicit-only, which can make their descriptions unavailable to normal model routing. The implicit `workflow-guide` closes that discoverability gap with a compact catalog of those workflows. Each catalog entry is a compressed routing summary of the target skill's own description; when a target description changes enough to affect when the skill should be suggested, review the guide entry too.
+Eleven workflow skills are explicit-only so they never hijack routine tasks, which hides their descriptions from automatic model routing. The implicit `workflow-guide` closes that gap with a compact catalog summarizing each target skill's routing conditions. Whenever a target skill's description changes enough to alter when it should be suggested, update its `workflow-guide` entry as well.
 
-The guide identifies relevant explicit skills; project and user instructions decide whether and how to enter them. A root/worker project can add a small rule to its own `AGENTS.md`, for example:
+`workflow-guide` identifies relevant explicit skills while your project and user instructions govern whether and how to enter them. A root/worker project can add a brief rule to its own `AGENTS.md`:
 
 ```md
 ### Workflow skills
@@ -61,19 +146,21 @@ When available, the root agent should use the workflow guide to identify relevan
 Delegated workers should surface useful workflow needs to the root agent rather than prompting the user or expanding their assignment.
 ```
 
-The plugin does not bundle an `AGENTS.md`; project and user instructions remain the governing source of orchestration policy.
-
 ## Saved working state
 
-Coding-agent context is transient. When detailed findings, decisions, assumptions, source support, or open questions would be expensive or unreliable to reconstruct after compaction or a fresh session, the skills may save that state outside the conversation. Persistence is useful when it preserves real value; it is not mandatory.
+Coding-agent context is transient. Save state outside the conversation when detailed findings, decisions, assumptions, source pointers, or open questions would be costly or unreliable to reconstruct after compaction or a fresh session. Leave information transient when it is immediately consumed and cheap to rebuild.
 
-Persistence complements existing project documents and conventions; it does not replace them. Prefer files or records organized around the work rather than around the skill that produced them. First reuse the work's existing location or follow how the project normally saves ongoing work. Use a configured local working-state area, for example `.local/work/<work>/`, when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists and the choice is low-impact, use the simplest permitted work-centered location. When creating a new shared location would be an important project decision, follow the project instructions rather than choosing one implicitly.
+Organize saved state around the work itself following three priorities:
 
-Keep saved state compact and current: preserve conclusions, status, rationale, and useful source pointers rather than transcripts or append-only diaries. A shared issue, spec, ADR, design document, or tracker may already be the right place for the current state; local working state may remain provisional. Moving local state into shared project documentation is one possible lifecycle, not a required one. If information is immediately consumed and cheap to reconstruct, leaving it transient is often better.
+1. Reuse the work's existing shared location first (an issue, spec, ADR, design document, or tracker) according to project conventions.
+2. Store provisional or session-specific detail under a local working-state area such as `.local/work/<work>/`, or the simplest permitted work-centered path when no convention exists and impact is low.
+3. Follow project instructions before creating a new shared documentation location.
 
-## Plugin layout
+Keep saved state compact and current by recording conclusions, status, rationale, and source pointers while omitting raw transcripts or append-only diaries. Promote local working state into shared project docs only when it belongs there permanently.
 
-The plugin package follows Agent Plugins 1.0.0:
+## Plugin layout and harness metadata
+
+The package follows Agent Plugins 1.0.0:
 
 ```text
 plugins/workflow-skills/
@@ -88,118 +175,24 @@ plugins/workflow-skills/
 └── LICENSE
 ```
 
-`plugin.json` and `skills/` are the portable core. `.claude-plugin/plugin.json` is a small Claude Code compatibility manifest. Repository-level marketplace catalogs adapt the same plugin package to Codex, GitHub Copilot CLI, and Claude Code without duplicating the skills.
+`plugin.json` and `skills/` form the portable core, `.claude-plugin/plugin.json` provides Claude Code compatibility, and repository-level marketplace catalogs adapt the same package to Codex, GitHub Copilot CLI, and Claude Code without duplicating skill files.
 
-## Install with Codex
+Skill instructions remain harness-neutral, accompanied by additive metadata that controls discovery and presentation without altering workflow semantics (or choosing models, workers, reviewers, permission escalation, or governing policy):
 
-Register this repository as a marketplace, then install the plugin:
-
-```bash
-codex plugin marketplace add ming86/mattpocock-skills --ref main
-codex plugin add workflow-skills@ming86-workflow
-```
-
-Inspect the installation with:
-
-```bash
-codex plugin marketplace list
-codex plugin list
-```
-
-To refresh the marketplace and reinstall the current plugin version:
-
-```bash
-codex plugin marketplace upgrade ming86-workflow
-codex plugin add workflow-skills@ming86-workflow
-```
-
-To remove it:
-
-```bash
-codex plugin remove workflow-skills@ming86-workflow
-codex plugin marketplace remove ming86-workflow
-```
-
-Codex namespaces plugin skills with the plugin name. In the CLI skill picker, expect names such as `workflow-skills:to-spec` and `workflow-skills:prototype`.
-
-## Install with GitHub Copilot CLI
-
-```bash
-copilot plugin marketplace add ming86/mattpocock-skills
-copilot plugin install workflow-skills@ming86-workflow
-```
-
-Inspect or update it with:
-
-```bash
-copilot plugin list
-copilot plugin marketplace update ming86-workflow
-copilot plugin update workflow-skills
-```
-
-Remove it with:
-
-```bash
-copilot plugin uninstall workflow-skills
-copilot plugin marketplace remove ming86-workflow
-```
-
-Inside an interactive Copilot session, `/skills list` shows the skills contributed by installed plugins.
-
-## Install with Claude Code
-
-In Claude Code:
-
-```text
-/plugin marketplace add ming86/mattpocock-skills
-/plugin install workflow-skills@ming86-workflow
-```
-
-Plugin skills are namespaced, for example:
-
-```text
-/workflow-skills:prototype
-/workflow-skills:to-spec
-```
-
-Update with:
-
-```text
-/plugin marketplace update ming86-workflow
-/plugin update workflow-skills@ming86-workflow
-```
-
-Remove with:
-
-```text
-/plugin uninstall workflow-skills@ming86-workflow
-/plugin marketplace remove ming86-workflow
-```
-
-Run `/reload-plugins` if Claude Code tells you a reload is required after an install or update.
-
-## Harness-specific skill metadata
-
-The skill instructions remain harness-neutral, but the package keeps additive metadata that a harness can use without changing workflow semantics. Codex reads each skill's `agents/openai.yaml` for presentation metadata and implicit-invocation policy. GitHub Copilot CLI and Claude Code understand `disable-model-invocation` in `SKILL.md`; selected explicit skills also use `argument-hint` when a short invocation hint improves the user-facing command experience.
-
-Explicit workflows `grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, `implement`, `implementation-review`, `resolving-merge-conflicts`, `handoff`, `retro`, and `to-questionnaire` default to explicit invocation. The advisory `workflow-guide` plus analytical, support, and general-purpose skills remain eligible for automatic selection from their own descriptions. The general-purpose skills are not routed as workflow transitions by `workflow-guide`. `tdd` is eligible only when test-first development is explicitly requested or project instructions call for it in the current work; ordinary code changes do not imply a TDD workflow. These adapters may control discovery and presentation, but must not choose models, workers, reviewers, permission escalation, or governing project policy.
-
-`disable-model-invocation` is a Copilot/Claude extension rather than a field in the core Agent Skills specification. The packaged skills use that extension deliberately because both target harnesses consume it; other clients should ignore unknown frontmatter fields.
-
-## Repository agent instructions
-
-This source repository includes a root `AGENTS.md` with repository-specific maintenance guidance. It is for agents working on this repository and is not part of the installed workflow plugin. `CLAUDE.md` imports the same file for Claude Code so the repository guidance has one source of truth.
+- **Codex** reads each skill's `agents/openai.yaml` for display metadata and implicit-invocation policy.
+- **GitHub Copilot CLI and Claude Code** read `disable-model-invocation` (a Copilot/Claude extension outside the core Agent Skills specification, safely ignored by other clients) and optional `argument-hint` in `SKILL.md`.
+- **Invocation defaults**: Eleven workflows default to explicit invocation (`grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, `implement`, `implementation-review`, `resolving-merge-conflicts`, `handoff`, `retro`, and `to-questionnaire`). `workflow-guide` and all remaining analytical, support, and general-purpose skills trigger automatically from their descriptions. `tdd` activates only when test-first development is explicitly requested or called for by project instructions.
 
 ## Local development
 
-Each harness can install or register a local checkout for testing. The source of truth remains `plugins/workflow-skills/`; do not maintain separate Codex, Copilot, and Claude copies of the skills.
+Each harness can install or register a local checkout for testing. Keep `plugins/workflow-skills/` as the single source of truth across Codex, Copilot CLI, and Claude Code.
 
-`evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
-
-The plugin version is currently `0.2.30`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+- **Repository instructions**: The root `AGENTS.md` (imported by `CLAUDE.md` for Claude Code) governs maintenance of this source repository and is excluded from the installed plugin.
+- **Routing reference**: `evals/routing-cases.yaml` lists sample prompts, expected skill matches, and implicit-invocation rules. Consult it when editing trigger descriptions or adjusting boundaries between neighboring skills.
+- **Versioning**: The plugin version is currently `0.2.30`. Bump it whenever a released change should be visible to version-driven updates.
 
 ## Relationship to upstream
 
-This project was derived from Matt Pocock's `skills` repository and substantially adapted. The product branch intentionally contains only the workflow package used here; the clean upstream line is retained separately as `upstream-main` for comparison and selective porting.
+This repository was derived from Matt Pocock's `skills` repository and substantially adapted. The `main` branch contains only this workflow package, while `upstream-main` preserves the clean upstream line for comparison and selective porting.
 
-See [UPSTREAM.md](UPSTREAM.md) for lineage and synchronization details. The original MIT copyright and license notice are preserved in [LICENSE](LICENSE).
+See [UPSTREAM.md](UPSTREAM.md) for lineage and synchronization details. The original MIT copyright and license notice remain in [LICENSE](LICENSE).
