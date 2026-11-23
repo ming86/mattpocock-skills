@@ -31,7 +31,7 @@ The `workflow-skills` plugin currently contains 25 skills. Nineteen support proj
 Six additional general-purpose skills are distributed by the same plugin without becoming workflow stages:
 
 - `goal-aligned-execution`: keep broad, ambiguous, or multi-step work connected to the overall goal and surrounding structure
-- `readable-prose`: write or revise prose for clarity, readability, structure, and high signal-to-noise
+- `cognitive-clarity-editor`: write, revise, or polish text for clarity, readability, structure, and high signal-to-noise calibrated to medium, audience, and stakes
 - `reason-from-first-principles`: reason beneath inherited framing from what is fundamental to the subject
 - `writing-agent-instructions`: write and review reusable agent-facing instructions for effective routing, behavior, context use, and maintenance
 - `visual-explanation`: make mechanisms, processes, concepts, arguments, timelines, comparisons, and software structure easier to see in the current interface
@@ -196,7 +196,7 @@ Each harness can install or register a local checkout for testing. The source of
 
 `evals/routing-cases.yaml` is a lightweight, non-executable corpus of representative routing boundaries. It records which skill should semantically match a prompt and whether the current package policy permits implicit invocation; use it when changing trigger descriptions or reconsidering neighboring skill boundaries rather than treating it as a mandatory workflow test harness.
 
-The plugin version is currently `0.2.29`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
+The plugin version is currently `0.2.30`. Bump it whenever a released plugin change should be visible to version-driven update mechanisms.
 
 ## Relationship to upstream
 

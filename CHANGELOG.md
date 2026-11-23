@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.30 - 2026-11-23
+
+- Replace the general-purpose `readable-prose` skill with `cognitive-clarity-editor`, preserving reader-comprehension ordering, reasoning retention during compression, and zero meta-commentary while adding the two-tier cognitive clarity architecture, medium/audience/stakes calibration, bilingual native topology, and workplace commitment-boundary protection.
+- Keep `cognitive-clarity-editor` as an independent general-purpose skill outside `workflow-guide`, update routing cases and documentation references, and synchronize plugin and marketplace manifests at version `0.2.30`.
+
 ## 0.2.27 - 2026-09-07
 
 - Extend `simplify-by-ablation` to plans, documents, and procedures while retaining its engineering guidance and treating clarity, evidence, and coordination as possible material benefits.

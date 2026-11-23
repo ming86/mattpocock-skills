@@ -359,10 +359,10 @@ cases:
       invocation: implicit-ok
     avoid: [workflow-guide, to-spec, to-tickets]
 
-  - id: readable-prose-developed-explanation
+  - id: cognitive-clarity-editor-developed-explanation
     prompt: "Rewrite this technical explanation so the reasoning and relationships stay intact but the prose is clearer, more natural, and less repetitive."
     expected:
-      skill: readable-prose
+      skill: cognitive-clarity-editor
       invocation: implicit-ok
     avoid: [workflow-guide]
 
@@ -378,19 +378,19 @@ cases:
     expected:
       skill: writing-agent-instructions
       invocation: implicit-ok
-    avoid: [readable-prose, workflow-guide]
+    avoid: [cognitive-clarity-editor, workflow-guide]
 
   - id: writing-agent-instructions-skill-wording
     prompt: "Help me rewrite this skill description so the distinct situations that should trigger it are covered without repeating synonyms for the same case."
     expected:
       skill: writing-agent-instructions
       invocation: implicit-ok
-    avoid: [readable-prose, workflow-guide]
+    avoid: [cognitive-clarity-editor, workflow-guide]
 
   - id: ordinary-prose-does-not-trigger-agent-instructions
     prompt: "Rewrite this release note so it is clearer and less repetitive."
     expected:
-      skill: readable-prose
+      skill: cognitive-clarity-editor
       invocation: implicit-ok
     avoid: [writing-agent-instructions]
 
@@ -406,7 +406,7 @@ cases:
     expected:
       skill: visual-explanation
       invocation: implicit-ok
-    avoid: [reason-from-first-principles, readable-prose]
+    avoid: [reason-from-first-principles, cognitive-clarity-editor]
 
   - id: ordinary-explanation-does-not-force-visualization
     prompt: "Explain why this cache invalidation strategy can return stale data. I do not need a diagram."
@@ -434,7 +434,7 @@ cases:
     expected:
       skill: writing-agent-instructions
       invocation: implicit-ok
-    avoid: [creating-agent-skills, readable-prose]
+    avoid: [creating-agent-skills, cognitive-clarity-editor]
 
   - id: research-nonengineering-records
     prompt: "Investigate what the workshop attendance records and participant surveys show about participation before and after the schedule changed. Distinguish findings from explanations the records cannot establish."
