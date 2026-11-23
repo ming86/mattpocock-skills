@@ -49,3 +49,5 @@ For an experienced reader, preserve the technical distinctions that matter and r
 ## Keep the visual focused
 
 Show only the elements, relationships, or changes needed for the current point. Keep supporting prose close to the representation and brief enough that the visual structure remains the main aid to understanding.
+
+For charts and rendered diagrams, cut non-data ink such as heavy gridlines and decorative clutter, and label series or elements directly when practical rather than forcing eye-jumps to a distant legend. Mute secondary or comparison elements to neutral gray and reserve a single accent color for the key signal or takeaway.
