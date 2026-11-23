@@ -1,6 +1,6 @@
 ---
 name: grilling
-description: "Clarify uncertainty with focused questions when the next plan, design, or step depends on input from the user. Ground the questions in current project context, resolve each uncertainty through the source best suited to answer it, and stop once the remaining uncertainty no longer changes or blocks useful progress."
+description: "Clarify immediate uncertainty with focused questions when the next plan, design, or step depends on user input. Ground questions in the current task and context, resolve each uncertainty through the best-suited source, and stop once remaining uncertainty no longer changes or blocks the next step."
 ---
 
 # Grilling

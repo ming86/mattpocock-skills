@@ -462,7 +462,14 @@ cases:
     expected:
       skill: simplify-by-ablation
       invocation: implicit-ok
-    avoid: [codebase-design, implementation-review]
+    avoid: [codebase-design, implementation-review, cognitive-clarity-editor]
+
+  - id: cognitive-clarity-editor-short-workplace-message
+    prompt: "Polish this Teams message so my status update is clear and concise without making it sound like I am committing to fix the issue myself."
+    expected:
+      skill: cognitive-clarity-editor
+      invocation: implicit-ok
+    avoid: [writing-agent-instructions, simplify-by-ablation]
 
   - id: visual-explanation-noncoding-terminal
     prompt: "Show how the stages of our volunteer onboarding process connect and who handles each handoff. I am working in a terminal; use a clear text-native view."
