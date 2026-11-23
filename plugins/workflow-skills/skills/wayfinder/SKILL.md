@@ -21,7 +21,7 @@ The map is a working overview kept outside transient context. It lets a fresh co
 - Which unresolved questions depend on others?
 - What is currently ready to investigate or decide?
 
-A Wayfinder map should normally persist because surviving context replacement is part of its purpose. Follow the project's existing conventions for where this state lives and which file, document, tracker entry, or other work state represents the current view. The map may be an existing planning document, tracker state, work document, or local working state. Reuse the work's existing overview instead of creating a parallel one. A configured local area such as `.local/` is appropriate when detailed or provisional information should survive contexts but does not belong in shared project documentation. If no convention exists, keep the map in the simplest work-centered location that can survive the intended context transitions.
+Persist the map so it survives context replacement. Reuse the work's existing overview (planning doc, tracker entry, or work document) per project conventions; use a configured local area such as `.local/` for provisional detail that does not belong in shared docs, or the simplest work-centered location when no convention exists.
 
 Treat the map as current working state, not an append-only log. Update or remove assumptions and questions that are no longer current as understanding changes. Preserve conclusions, status, short reasons, and useful references rather than discussion transcripts. Tracker-specific metadata and relationships can be useful when available but are not part of the core method.
 

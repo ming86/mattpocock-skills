@@ -50,7 +50,11 @@ If decomposition reveals a prerequisite, refactor, validation requirement, suppo
 
 ### 7. Publish the work units
 
-Use the work's existing task location or follow the project's issue-tracker or task convention. Reuse an existing tracker, planning document, or work location instead of creating a parallel ticket store. When the tracker already preserves the work units and dependencies, do not copy the same tickets into local state just for persistence. Local working state should contain only detail or provisional context the shared record does not preserve well. If no convention exists, keep the tickets in the simplest work-centered task location that fits the work. Use native blocking relationships when practical; otherwise state dependencies explicitly in the ticket. When splitting an existing issue or work item, link each ticket to its source with a native parent-child relationship when the tracker supports one, following the project's convention. This records hierarchy, while blocking relationships record prerequisites. If no native parent-child relationship is available, include a concise source reference in the existing Context section.
+Publish tickets to the project's existing tracker, planning document, or task location (or the simplest work-centered location when no convention exists) without creating a parallel ticket store:
+
+- **Local state:** Keep tickets only in the tracker when it already stores work units and dependencies; reserve local working state for provisional detail the shared record cannot hold.
+- **Dependencies:** Use native blocking links when supported; otherwise list prerequisites in `Blocked by`.
+- **Hierarchy:** When splitting an existing issue, attach native parent-child links per project convention (or add a concise source reference in `Context` when unavailable).
 
 Each ticket should contain:
 

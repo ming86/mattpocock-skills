@@ -25,7 +25,7 @@ Focus on unresolved questions whose plausible answers could change the work or u
 8. Reassess after each answer or new finding. Retire questions that no longer affect the work and surface newly exposed questions when they could change or unblock what happens next.
 9. Stop when the remaining uncertainty no longer changes or blocks useful progress. Preserve unresolved points according to the calling workflow rather than forcing closure.
 
-When later contexts would otherwise have to reconstruct important conclusions or open questions, preserve a compact summary in the work's existing location or follow how the project normally saves ongoing work. Use local working state for detailed or provisional information that should survive contexts but does not belong in shared project documentation. If no convention exists, use the simplest work-centered location that fits the clarification state. Record conclusions, reasons, status, and useful source references rather than an interview transcript. A separate clarification file is useful when later contexts need the state or reconstructing it would be costly.
+When later contexts need the conclusions or open questions, save a compact summary (conclusions, reasons, status, and source references—not a transcript) in the work's existing location per project conventions, in local working state for provisional detail, or in the simplest work-centered location when no convention exists.
 
 Bring questions about the user's intent, priorities, acceptable behavior, tradeoffs, or direction back to the user when they affect how the work should proceed.
 
