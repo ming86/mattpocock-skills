@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.31 - 2026-11-24
+
+- Streamline `cognitive-clarity-editor` by removing redundant body triggers (`When to Use`) and deduplicating repeated boundary rules into single primary locations.
+- Make `grill-with-docs` harness-neutral (`Use` instead of `Call the Skill tool with`), deduplicate persistence guidance in `research`, and fence the `to-tickets` ticket template in a Markdown code block.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.31`.
+
 ## 0.2.30 - 2026-11-23
 
 - Replace the general-purpose `readable-prose` skill with `cognitive-clarity-editor`, preserving reader-comprehension ordering, reasoning retention during compression, and zero meta-commentary while adding the two-tier cognitive clarity architecture, medium/audience/stakes calibration, bilingual native topology, and workplace commitment-boundary protection.
