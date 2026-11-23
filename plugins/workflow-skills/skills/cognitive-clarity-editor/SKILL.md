@@ -4,14 +4,7 @@ description: Write, revise, or polish text for clarity, readability, structure, 
 ---
 # Cognitive Clarity Editor
 
-Apply psycholinguistic, information-theoretic, and cognitive writing principles to produce effortless, high-signal text. Write with the natural fluency of a sharp human expert - direct and rigorous, never stiff or clinical - while calibrating directness, structure, and pacing to the exact text type, audience, and medium.
-
-## When to Use
-
-- The user wants to draft, edit, or rewrite text for maximum clarity and minimal cognitive load.
-- The user references the "11 cognitive writing principles", "zombie nouns", "Given-Before-New", or "3-step surgical editing".
-- The user wants to strip AI defensive hedging, manufactured contrasts ("Not X, it's Y"), meta-commentary filler, or fragmented bullet-list prose from a draft.
-- The user needs medium- and audience-calibrated clarity optimization across Teams/Slack chat messages, emails, UI microcopy, technical docs, executive summaries, academic papers, or AI prompts.
+Apply psycholinguistic, information-theoretic, and cognitive writing principles to produce effortless, high-signal text. Write with the natural fluency of a sharp human expert - direct and rigorous, never cold, telegraphic, or clinical - while calibrating directness, structure, and pacing to the exact text type, audience, and medium.
 
 ## Core Principles (2-Tier Architecture)
 
@@ -23,11 +16,11 @@ Apply these core mechanics to every draft to protect working memory without dist
 - **Preserve Reasoning Under Compression**: Cut repetition, filler, ceremonial support, and meta-commentary labels ("this is important/interesting/nuanced") first; never strip the connective reasoning that explains why one point follows from another.
 - **Close Subject-Verb Proximity**: Keep grammatical subjects and main verbs close; move long modifiers out of the middle so working memory does not hang.
 - **Native Language Topology**: Adapt single-sentence branching to the target language's natural order - favor right-branching (main clause first) and avoid dense noun clusters in English; use natural topic-comment flow in Chinese without Westernized translationese or stacked pre-nominal chains.
-- **Avoid Center-Embedding**: Never nest clauses inside subordinate clauses (`[ A [ B [ C ] B ] A ]`). Split nested thoughts into sequential clauses while retaining natural connectors so prose never turns telegraphic.
+- **Avoid Center-Embedding**: Never nest clauses inside subordinate clauses (`[ A [ B [ C ] B ] A ]`). Split nested thoughts into sequential clauses while retaining natural grammatical connectors so prose never turns telegraphic.
 - **Uniform Information Density (UID)**: Distribute new concepts evenly rather than packing dense jargon spikes into one clause.
-- **Selective Anti-Nominalization (Unpack Zombie Nouns, Keep Functional Nouns)**: Eliminate bloated nominalizations paired with empty weak verbs ("conduct an analysis", "perform an optimization", "achieve a reduction") by restoring concrete actors and active verbs. Keep nominalizations when they compress a prior sentence into a Given-Before-New recap ("This rewrite cut database load"), name established domain concepts ("latency", "garbage collection", "informed consent"), de-emphasize personal blame in blameless post-mortems or diplomatic outreach ("a config drift occurred"), or form scannable headings, table labels, and UI controls.
+- **Selective Anti-Nominalization (Unpack Zombie Nouns, Keep Functional Nouns)**: Eliminate bloated nominalizations paired with empty weak verbs ("conduct an analysis", "perform an optimization", "achieve a reduction") by restoring concrete actors and active verbs. Keep functional nominalizations: Given-Before-New recap nouns ("this rewrite cut database load"), established domain terms ("latency", "garbage collection", "dependency injection", "informed consent"), blameless or diplomatic agent de-emphasis ("a config drift occurred"), and compact headings, table labels, or UI controls.
 - **Parallelism & Syntactic Priming**: Format parallel items using identical grammatical structures so the brain reuses the active syntactic parser, relaxing only when strict symmetry would force awkward phrasing or hide a real asymmetry.
-- **Preserve Speech-Act & Commitment Boundaries**: Strictly preserve the draft's original semantic tier across *Observation* (fact), *Hypothesis* (unverified theory), *Option* (candidate path), *Decision* (approved choice), *Action Item / Commitment* (explicit owner + deliverable), and *Open Question*. Never turn a neutral description, status update, or exploratory idea into a binding work commitment ("I will...", "We will handle..."), invent an unstated owner, or upgrade a hypothesis into a confirmed fact.
+- **Preserve Speech-Act & Commitment Boundaries**: Strictly preserve the draft's original semantic tier across *Observation* (fact), *Hypothesis* (unverified theory), *Option* (candidate path), *Decision* (approved choice), *Action Item / Commitment* (explicit owner + deliverable), and *Open Question*. Never turn a neutral description, status update, or exploratory idea into a binding work commitment (e.g., turning "Module X needs refactoring" into "I will refactor Module X"), invent an unstated owner, or upgrade a hypothesis into a confirmed fact.
 
 ### Tier 2: Context-Calibrated Dials (Set in Step 1 Before Editing)
 
@@ -37,14 +30,14 @@ Adjust these dials based on genre, audience, and medium rather than applying the
    - *Deep Mechanistic & Strict Terms (Technical Docs, RFCs, Debugging, Legal, KB Notes)*: Unpack how A concretely causes B without black-box abstractions or empty status verbs ("plays a pivotal role in"), and enforce strict single-term consistency so readers never confuse entities.
    - *Outcome-Level & Natural Variation (Executive Briefs, Quick Teams/Slack Updates, Essays)*: Focus on outcome, impact, or decision rather than step-by-step causal gears; allow natural, unambiguous phrasing variation in essays or casual chat to avoid robotic repetition.
 2. **Information Ordering & Signposting Dial**:
-   - *Sustained Prose Flow (Multi-Paragraph Explanations, Papers, KB Notes)*: Chain sentences via Given-Before-New, place the highest-value insight in the closing Stress Position, and add explicit logical signposts (*therefore, specifically, in contrast*) where clause jumps are non-obvious.
-   - *Front-Loaded Scanning (Urgent Alerts, Incident Escalations, UI Errors, Fast-Scanned Teams/Slack)*: Invert Given-Before-New and end-of-sentence Stress when urgency or F-pattern scanning dominates - put the breaking fact, blocker, or ask in the first 3-5 words, and drop heavy signposting ("Furthermore", "Consequently") in short or self-evident sequences.
+   - *Sustained Prose Flow (Multi-Paragraph Explanations, Papers, KB Notes)*: Chain sentences via Given-Before-New, place the highest-value insight in the closing Stress Position, and add explicit logical signposts (*therefore, specifically, in contrast*) only where clause jumps are non-obvious (avoid textbook-like over-signposting such as "Furthermore... Consequently...").
+   - *Front-Loaded Scanning (Urgent Alerts, Incident Escalations, UI Errors, Fast-Scanned Teams/Slack)*: Invert Given-Before-New and end-of-sentence Stress when urgency or F-pattern scanning dominates - put the breaking fact, blocker, or ask in the first 3-5 words, and drop heavy signposting in short or self-evident sequences.
 3. **Directness & Hedging Dial**:
    - *High Directness (Technical Docs, KB Notes, PRs, SOPs, Executive Briefs)*: Commit to direct affirmative claims; eliminate manufactured contrasts ("Not X, it's Y") and reflexive mid-sentence or trailing hedging ("can do A, yet cannot B"); state real limits as objective conditional causal statements ("When condition X holds, action Y causes result Z").
    - *Epistemic Calibration (Legal, Compliance, Clinical, Risk Audits)*: Preserve explicit uncertainty bounds, confidence tiers, and legally binding phrasing.
    - *Diplomatic Buffering (High-Context Diplomacy, Negotiation, Sensitive Feedback, Client De-escalation)*: Keep strategic politeness, face-saving buffers, and collaborative framing while keeping the actual ask clear.
 4. **Linearity vs. Buildup & Medium Pacing Dial**:
-   - *Short-Form Chat / IM (Teams, Slack, DM)*: Front-load the ask, status, or blocker in sentence one. Keep it brief, conversational, and low-friction (1-3 short sentences, or a tight parallel list only for 2+ distinct asks). Never inflate a quick chat message into a formal memo, and preserve collegial warmth while cutting throat-clearing filler.
+   - *Short-Form Chat / IM (Teams, Slack, DM)*: Front-load the ask, status, or blocker in sentence one. Keep it brief, conversational, and low-friction (1-3 short sentences, or a tight parallel list only for 2+ distinct asks). Never inflate a 2-sentence chat message into a stiff corporate memo or bullet template, and preserve collegial warmth while cutting throat-clearing filler.
    - *Email, Async Updates & UI Microcopy*: Lead with the outcome or ask, keep paragraphs short and scannable, and use parallel bullets for action items or constraints.
    - *Long-Form Prose (Technical RFCs, Deep Essays, KB Notes, Papers)*: Use focused, cohesive prose paragraphs for causal or analytical progression; reserve lists or tables for 4+ parallel items, sequences, or multi-attribute comparisons.
    - *Narrative & Spoken Media (Speeches, Storytelling, Brand Copy, Video Scripts)*: Permit deliberate narrative buildup instead of spoiling the payoff in sentence one, and use breath-length clauses that read smoothly aloud.
@@ -74,17 +67,10 @@ Before rewriting or drafting, silently classify three parameters and lock in the
 Apply three sequential passes within the boundaries set in Step 1:
 
 1. **Pass 1 - Structure & Syntactic Relief**: Reorder content into reader-comprehension order when it follows the author's raw discovery trail. Pull subjects and verbs closer, align sentence branching to the target language's native topology, and unpack center-embedded clauses while keeping natural connectors intact.
-2. **Pass 2 - Lexical Decompression & Intent Check**: Replace empty weak-verb zombie nouns, status verbs, and meta-commentary labels ("important/interesting/nuanced") with concrete actors, active verbs, and direct substance, while preserving functional nominalizations. Verify that activating verbs did not accidentally turn a descriptive observation, hypothesis, or discussion point into a work commitment or assigned action item.
-3. **Pass 3 - Discourse, Compression & Medium Alignment**: Apply the Step 1 dials for ordering (Given-Before-New vs. Front-Loaded Scanning), signposting restraint, directness vs. calibration/buffering, and paragraph/list rhythm matched to the target medium. Trim repetition and ceremonial support while keeping the causal reasoning chain intact.
+2. **Pass 2 - Lexical Decompression & Intent Check**: Replace empty weak-verb zombie nouns, status verbs, and meta-commentary labels with concrete actors, active verbs, and direct substance while preserving functional nominalizations. Verify that activating verbs did not alter the original speech act or invent a work commitment.
+3. **Pass 3 - Discourse, Compression & Medium Alignment**: Apply the Step 1 dials for ordering, signposting restraint, directness vs. calibration/buffering, and paragraph/list rhythm matched to the target medium. Trim repetition and ceremonial support while keeping the causal reasoning chain intact.
 
 ### Step 3: Deliver Output
 
 - When asked to **write from scratch**: Silently apply the calibrated rules to produce crisp, natural text suited to the medium.
 - When asked to **edit or critique a draft**: Provide the polished version first, followed by a brief breakdown of key edits mapped to the principles applied. For short-form Teams/chat messages, keep any explanation ultra-brief (or omit it if the user only asked to rewrite the message).
-
-## Gotchas
-
-- **Never Fabricate Commitments**: Activating passive or descriptive workplace sentences can accidentally volunteer the speaker for work (e.g., turning "Module X needs refactoring" into "I will refactor Module X"). Keep observations descriptive unless the user explicitly intends a commitment.
-- **Keep Functional Nominalizations**: Preserve domain terms ("garbage collection", "dependency injection"), Given-Before-New recap nouns ("this change"), blameless post-mortem phrasing, and compact UI/table labels.
-- **Prevent Over-Formalizing Short Chat**: Do not turn a 2-sentence Teams or Slack message into a stiff corporate memo or over-engineered bullet template; clarity in chat means effortless human conversation with zero ambiguity.
-- **Avoid Tone Contagion & Over-Signposting**: Applying cognitive rules aggressively can produce cold, telegraphic, or textbook-like prose ("Furthermore... Consequently..."). Keep natural grammatical connectors and human cadence.
