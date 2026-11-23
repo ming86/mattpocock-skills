@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.33 - 2026-11-24
+
+- Extend `visual-explanation` with chart and diagram decluttering guidance: cut non-data ink, prefer direct labeling over distant legends, mute secondary elements to neutral gray, and reserve a single accent color for the key signal.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.33`.
+
 ## 0.2.32 - 2026-11-24
 
 - Split dense multi-condition publishing instructions in `to-tickets` into parallel rules (`Local state`, `Dependencies`, `Hierarchy`) and tighten defensive contrast phrasing in `to-spec` while preserving all scope and validation boundaries.
