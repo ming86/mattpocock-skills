@@ -1,0 +1,7 @@
+interface:
+  display_name: "Cognitive Clarity Editor"
+  short_description: "Write and revise clear, calibrated, high-signal text"
+  default_prompt: "Use $cognitive-clarity-editor to write or revise this for clarity, structure, and high signal-to-noise calibrated to the medium and audience."
+
+policy:
+  allow_implicit_invocation: true
