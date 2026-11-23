@@ -3,7 +3,18 @@
 ## 0.2.30 - 2026-11-23
 
 - Replace the general-purpose `readable-prose` skill with `cognitive-clarity-editor`, preserving reader-comprehension ordering, reasoning retention during compression, and zero meta-commentary while adding the two-tier cognitive clarity architecture, medium/audience/stakes calibration, bilingual native topology, and workplace commitment-boundary protection.
-- Keep `cognitive-clarity-editor` as an independent general-purpose skill outside `workflow-guide`, update routing cases and documentation references, and synchronize plugin and marketplace manifests at version `0.2.30`.
+- Keep `cognitive-clarity-editor` as an independent general-purpose skill outside `workflow-guide`, update routing cases and documentation references, and synchronize all plugin and marketplace manifests (including `.github/plugin/marketplace.json`) at version `0.2.30`.
+
+## 0.2.29 - 2026-10-11
+
+- Tighten `diagnosing-bugs` to verify mutations before trusting forced failures, and extend `tdd` to compare meaningful test surface tradeoffs.
+- Update `grilling` so binary recommendations phrase "yes" as accepting the recommendation, `implement` to resolve referenced work items before editing, and `to-tickets` to preserve source hierarchy and native dependencies.
+- Synchronize plugin and marketplace manifests at version `0.2.29`.
+
+## 0.2.28 - 2026-10-11
+
+- Add `retro`, an explicit-only optional session retrospective skill that turns observed session friction into prioritized agent-environment improvement proposals without making automatic edits or creating tickets.
+- Register `retro` in `workflow-guide`, add routing boundaries, update the 25-skill catalog, and synchronize plugin and marketplace manifests at version `0.2.28`.
 
 ## 0.2.27 - 2026-09-07
 
