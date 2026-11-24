@@ -1,6 +1,6 @@
 # Workflow Skills
 
-A focused collection of 25 agent skills: 19 project workflow skills and 6 independent general-purpose skills covering research, reasoning, execution, writing, visual explanation, and skill authoring. The workflow skills help clarify decisions, investigate open questions, preserve long-running state, produce specs and work units, implement bounded changes, and review results.
+A focused collection of 26 agent skills: 19 project workflow skills and 7 independent general-purpose skills covering research, reasoning, decision-making, execution, writing, visual explanation, and skill authoring. The workflow skills help clarify decisions, investigate open questions, preserve long-running state, produce specs and work units, implement bounded changes, and review results.
 
 This package complements your project's existing governing instructions, review agents, issue tracker, commit policy, and delivery workflow. It ships without a bundled `AGENTS.md`, custom reviewer, worker topology, or mandatory orchestration policy.
 
@@ -113,10 +113,11 @@ Claude Code namespaces plugin skills (for example, `/workflow-skills:prototype` 
 - `handoff`: package live coding, research, writing, or other work state for a fresh session or agent
 - `to-questionnaire`: ask another person or domain expert for input they are best placed to provide
 
-### General-purpose skills (6)
+### General-purpose skills (7)
 
-These six skills ship in the same plugin for convenience, trigger independently from their own descriptions, and stay outside `workflow-guide`:
+These seven skills ship in the same plugin for convenience, trigger independently from their own descriptions, and stay outside `workflow-guide`:
 
+- `decide-under-uncertainty`: structure high-stakes or ambiguous decisions under incomplete information using hard constraints, marginal tradeoffs, second-order effects, value of information, and reversibility
 - `goal-aligned-execution`: keep broad, ambiguous, or multi-step work connected to the overall goal and surrounding structure
 - `cognitive-clarity-editor`: write, revise, or polish text for clarity, readability, structure, and high signal-to-noise calibrated to medium, audience, and stakes
 - `reason-from-first-principles`: reason beneath inherited framing from what is fundamental to the subject

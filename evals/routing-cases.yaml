@@ -492,3 +492,10 @@ cases:
       skill: handoff
       invocation: explicit-only
     avoid: [wayfinder, to-spec]
+
+  - id: decide-under-uncertainty-high-stakes-tradeoff
+    prompt: "We have six weeks before production launch and must decide whether to rewrite the legacy test platform now, wrap it with an adapter, or keep the status quo. Help weigh the tradeoffs, tail risks, second-order effects, and whether a small check is worth running first."
+    expected:
+      skill: decide-under-uncertainty
+      invocation: implicit-ok
+    avoid: [workflow-guide, grilling, simplify-by-ablation]

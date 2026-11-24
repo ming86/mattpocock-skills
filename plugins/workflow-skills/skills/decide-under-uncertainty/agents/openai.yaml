@@ -1,0 +1,7 @@
+interface:
+  display_name: "Decide Under Uncertainty"
+  short_description: "Weigh tradeoffs, tail risk, VoI, and reversibility"
+  default_prompt: "Use $decide-under-uncertainty to evaluate these options, check hard constraints and second-order effects, and recommend whether to act, stage commitment, or gather more information."
+
+policy:
+  allow_implicit_invocation: true
