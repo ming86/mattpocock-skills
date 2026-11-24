@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.35 - 2026-11-24
+
+- Convert `decide-under-uncertainty` into a concise high-freedom latent-space activator without rigid sequential checklists or fixed output templates.
+- Streamline `cognitive-clarity-editor` into a balanced medium-freedom editor: remove the rigid scenario lookup matrix and repeated 3-pass procedure while preserving named working-memory principles, concrete positive/negative guardrail anchors, and all four medium-pacing dials (chat, email/async/UI, long-form prose, narrative/spoken).
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.35`.
+
 ## 0.2.34 - 2026-11-24
 
 - Add `decide-under-uncertainty`, an independent general-purpose skill for structuring high-stakes or ambiguous decisions using reversibility, hard constraints, marginal tradeoffs, second-order effects, value of information, switching thresholds, and `Fails if` stress-tests.
