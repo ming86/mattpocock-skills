@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.37 - 2026-11-24
+
+- Enhance `cognitive-clarity-editor` with four high-leverage knowledge-base mechanisms: positive framing over stacked negations, summary nouns for sentence-initial pronouns, audience-calibrated Minimum Sufficient Context with concrete grounding anchors, and assertion-evidence headings for reports and RFCs.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.37`.
+
 ## 0.2.36 - 2026-11-24
 
 - Refine `cognitive-clarity-editor` from real-world Teams update testing: keep chat status updates to flat single-level lists (never nested bullets), strip decision-irrelevant implementation telemetry and internal jargon for manager/non-debugging audiences, and avoid presenting preliminary or small-sample measurements as settled final numbers.
