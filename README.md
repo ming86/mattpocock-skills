@@ -190,7 +190,7 @@ Each harness can install or register a local checkout for testing. Keep `plugins
 
 - **Repository instructions**: The root `AGENTS.md` (imported by `CLAUDE.md` for Claude Code) governs maintenance of this source repository and is excluded from the installed plugin.
 - **Routing reference**: `evals/routing-cases.yaml` lists sample prompts, expected skill matches, and implicit-invocation rules. Consult it when editing trigger descriptions or adjusting boundaries between neighboring skills.
-- **Versioning**: The plugin version is currently `0.2.33`. Bump it whenever a released change should be visible to version-driven updates.
+- **Versioning**: The plugin version is currently `0.2.34`. Bump it whenever a released change should be visible to version-driven updates.
 
 ## Relationship to upstream
 

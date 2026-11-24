@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.34 - 2026-11-24
+
+- Add `decide-under-uncertainty`, an independent general-purpose skill for structuring high-stakes or ambiguous decisions using reversibility, hard constraints, marginal tradeoffs, second-order effects, value of information, switching thresholds, and `Fails if` stress-tests.
+- Update the 26-skill catalog in `README.md`, add a routing case in `evals/routing-cases.yaml`, and synchronize all plugin and marketplace manifests at version `0.2.34`.
+
 ## 0.2.33 - 2026-11-24
 
 - Extend `visual-explanation` with chart and diagram decluttering guidance: cut non-data ink, prefer direct labeling over distant legends, mute secondary elements to neutral gray, and reserve a single accent color for the key signal.
