@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.36 - 2026-11-24
+
+- Refine `cognitive-clarity-editor` from real-world Teams update testing: keep chat status updates to flat single-level lists (never nested bullets), strip decision-irrelevant implementation telemetry and internal jargon for manager/non-debugging audiences, and avoid presenting preliminary or small-sample measurements as settled final numbers.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.36`.
+
 ## 0.2.35 - 2026-11-24
 
 - Convert `decide-under-uncertainty` into a concise high-freedom latent-space activator without rigid sequential checklists or fixed output templates.
