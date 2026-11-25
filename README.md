@@ -89,6 +89,34 @@ Remove:
 
 Claude Code namespaces plugin skills (for example, `/workflow-skills:prototype` and `/workflow-skills:to-spec`). Run `/reload-plugins` if Claude Code prompts for a reload after installing or updating.
 
+### Google Antigravity
+
+Install:
+
+```bash
+agy plugin install https://github.com/ming86/mattpocock-skills
+```
+
+Inspect:
+
+```bash
+agy plugin list
+```
+
+Update:
+
+```bash
+agy plugin install https://github.com/ming86/mattpocock-skills
+```
+
+Remove:
+
+```bash
+agy plugin uninstall workflow-skills
+```
+
+Antigravity exposes installed plugin skills via `/<skill-name>` (for example, `/to-spec` and `/prototype`) and synchronizes installed plugins between the Antigravity App and Antigravity CLI.
+
 ## What is included
 
 ### Project workflow skills (19)
@@ -176,17 +204,17 @@ plugins/workflow-skills/
 └── LICENSE
 ```
 
-`plugin.json` and `skills/` form the portable core, `.claude-plugin/plugin.json` provides Claude Code compatibility, and repository-level marketplace catalogs adapt the same package to Codex, GitHub Copilot CLI, and Claude Code without duplicating skill files.
+`plugin.json` and `skills/` form the portable core, `.claude-plugin/plugin.json` provides Claude Code compatibility, `.antigravity-plugin/plugin.json` adapts the repository root for Google Antigravity, and repository-level marketplace catalogs adapt the same package to Codex, GitHub Copilot CLI, and Claude Code without duplicating skill files.
 
 Skill instructions remain harness-neutral, accompanied by additive metadata that controls discovery and presentation without altering workflow semantics (or choosing models, workers, reviewers, permission escalation, or governing policy):
 
 - **Codex** reads each skill's `agents/openai.yaml` for display metadata and implicit-invocation policy.
-- **GitHub Copilot CLI and Claude Code** read `disable-model-invocation` (a Copilot/Claude extension outside the core Agent Skills specification, safely ignored by other clients) and optional `argument-hint` in `SKILL.md`.
+- **GitHub Copilot CLI, Claude Code, and Google Antigravity** read `disable-model-invocation` in `SKILL.md`; Copilot CLI and Claude Code also read optional `argument-hint`.
 - **Invocation defaults**: Eleven workflows default to explicit invocation (`grill-with-docs`, `prototype`, `wayfinder`, `to-spec`, `to-tickets`, `implement`, `implementation-review`, `resolving-merge-conflicts`, `handoff`, `retro`, and `to-questionnaire`). `workflow-guide` and all remaining analytical, support, and general-purpose skills trigger automatically from their descriptions. `tdd` activates only when test-first development is explicitly requested or called for by project instructions.
 
 ## Local development
 
-Each harness can install or register a local checkout for testing. Keep `plugins/workflow-skills/` as the single source of truth across Codex, Copilot CLI, and Claude Code.
+Each harness can install or register a local checkout for testing. Keep `plugins/workflow-skills/` as the single source of truth across Codex, Copilot CLI, Claude Code, and Google Antigravity.
 
 - **Repository instructions**: The root `AGENTS.md` (imported by `CLAUDE.md` for Claude Code) governs maintenance of this source repository and is excluded from the installed plugin.
 - **Routing reference**: `evals/routing-cases.yaml` lists sample prompts, expected skill matches, and implicit-invocation rules. Consult it when editing trigger descriptions or adjusting boundaries between neighboring skills.
