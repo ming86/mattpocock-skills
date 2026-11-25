@@ -20,9 +20,9 @@ The canonical plugin is `plugins/workflow-skills/`:
 - `skills/`: canonical Agent Skills
 - `.claude-plugin/plugin.json`: Claude Code compatibility manifest
 
-Marketplace files are distribution adapters and must all point to that same plugin directory. Do not duplicate skill trees per harness.
+Marketplace files and the root `.antigravity-plugin/plugin.json` manifest are distribution adapters and must all point to that same plugin directory. Do not duplicate skill trees per harness.
 
-When changing released behavior, keep the plugin version and all marketplace versions synchronized.
+When changing released behavior, keep the plugin version, `.antigravity-plugin/plugin.json`, and all marketplace versions synchronized.
 
 ## Upstream
 

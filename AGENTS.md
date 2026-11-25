@@ -9,7 +9,7 @@ This repository maintains a focused collection of project workflow skills plus i
 - `plugins/workflow-skills/` is the installable plugin maintained by this repository.
 - Keep portable workflow behavior in each skill's `SKILL.md` and its local reference files.
 - Harness-specific metadata may adapt discovery, presentation, or invocation controls, but must not create a separate implementation of a skill or change its workflow semantics.
-- Repository marketplace files should point to that same plugin package.
+- Repository marketplace files and the root `.antigravity-plugin/plugin.json` adapter should point to that same plugin package.
 - Keep repository-maintenance instructions at the repository level; do not add `AGENTS.md` or project orchestration policy inside the installable plugin.
 
 ## Change discipline
@@ -39,9 +39,9 @@ Use `evals/routing-cases.yaml` when changing routing or invocation boundaries. A
 
 ## Harness compatibility
 
-Keep the core skill behavior harness-neutral. Harness-specific metadata is additive and may differ where Codex, GitHub Copilot CLI, and Claude Code expose different controls.
+Keep the core skill behavior harness-neutral. Harness-specific metadata is additive and may differ where Codex, GitHub Copilot CLI, Claude Code, and Google Antigravity expose different controls.
 
-When changing harness metadata, preserve the intended routing and invocation semantics rather than forcing identical fields to mean identical behavior. Keep package and marketplace versions synchronized when the installable plugin version changes.
+When changing harness metadata, preserve the intended routing and invocation semantics rather than forcing identical fields to mean identical behavior. Keep package, root adapter (`.antigravity-plugin/plugin.json`), and marketplace versions synchronized when the installable plugin version changes.
 
 ## Upstream
 
@@ -56,7 +56,7 @@ Validate what the change can realistically break. For relevant changes, check:
 - skill frontmatter and harness sidecars parse;
 - folder names, skill names, prompts, and invocation metadata remain coherent;
 - routing cases when routing changed;
-- package and marketplace versions when the plugin version changed;
+- package, root adapter (`.antigravity-plugin/plugin.json`), and marketplace versions when the plugin version changed;
 - `git diff --check` and the worktree for unrelated changes.
 
 Use broader validation only when the change justifies it.
