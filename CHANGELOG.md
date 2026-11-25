@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.38 - 2026-11-25
+
+- Rename `Selective Anti-Nominalization` to `Concrete Verbs Over Empty Nominalizations` in `cognitive-clarity-editor` for unambiguous positive framing of the target criterion.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.38`.
+
 ## 0.2.37 - 2026-11-24
 
 - Enhance `cognitive-clarity-editor` with four high-leverage knowledge-base mechanisms: positive framing over stacked negations, summary nouns for sentence-initial pronouns, audience-calibrated Minimum Sufficient Context with concrete grounding anchors, and assertion-evidence headings for reports and RFCs.
