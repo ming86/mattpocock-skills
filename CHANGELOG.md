@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.42 - 2026-11-28
+
+- Add two lightweight anchoring cues to `cognitive-clarity-editor`: briefly acknowledging what works or the other person's intent before critiques (without empty flattery) to lower defensiveness, and considering multi-resolution layering (bottom-line summary, bold lead-ins, prioritized next steps) for long analyses or reviews.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.42`.
+
 ## 0.2.41 - 2026-11-28
 
 - Extend `cognitive-clarity-editor` `Output & Collaboration` guidance to flag sensitivity and over-disclosure risks (alongside tone and length tradeoffs) on both scratch drafts and draft edits.
