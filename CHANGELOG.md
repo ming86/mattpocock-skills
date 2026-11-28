@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.44 - 2026-11-28
+
+- Add paragraph-pacing guidance to `cognitive-clarity-editor` (one idea per paragraph, ~2–4 sentences) so cohesive prose stays breathable instead of collapsing into a wall of text.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.44`.
+
 ## 0.2.43 - 2026-11-28
 
 - Add a dedicated `Macro Presentation Strategy (For Substantive Pieces)` layer to `cognitive-clarity-editor` covering premise reframing and narrative arcs (BLUF vs. SCQA/problem-first), multi-resolution layering and strategic omission, progressive disclosure with running examples and contrasting cases, anticipated objections and decision convergence, and spatial/cross-modal fit (with short-chat skip guard and deduplication).
