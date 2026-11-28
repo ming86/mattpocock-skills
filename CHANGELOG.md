@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.39 - 2026-11-28
+
+- Elevate epistemic, commitment, and interpersonal-safety boundaries into top-level `Non-Negotiable Guardrails` in `cognitive-clarity-editor`, generalize `Context & Medium Calibration` around reader goals and section functions (including layered release notes/reference docs), and add `Output & Collaboration` guidance for edit rationales and non-text presentation suggestions.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.39`.
+
 ## 0.2.38 - 2026-11-25
 
 - Rename `Selective Anti-Nominalization` to `Concrete Verbs Over Empty Nominalizations` in `cognitive-clarity-editor` for unambiguous positive framing of the target criterion.
