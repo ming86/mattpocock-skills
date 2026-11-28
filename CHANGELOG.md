@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.47 - 2026-11-28
+
+- Add a proportional clarification rule to `Output & Collaboration` in `cognitive-clarity-editor`: ask 1–2 brief questions before drafting when missing audience, medium, stakes, or certainty would materially change the outcome, and state assumed defaults in one short line for low-stakes edits.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.47`.
+
 ## 0.2.46 - 2026-11-28
 
 - Extend `No Silent Escalation` in `cognitive-clarity-editor` to guard against rhetorical inflation (no hype, inflated/dramatic phrasing, or overstated reach) alongside certainty, ownership, and social authority.
