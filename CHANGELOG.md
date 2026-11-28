@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.45 - 2026-11-28
+
+- Broaden `Directness vs. Buffering` in `cognitive-clarity-editor` to preserve calibrated scope and uncertainty bounds whenever claims are partial, provisional, or high-stakes (never overstating reach or confidence) rather than limiting that guard to legal/compliance/risk domains.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.45`.
+
 ## 0.2.44 - 2026-11-28
 
 - Add paragraph-pacing guidance to `cognitive-clarity-editor` (one idea per paragraph, ~2–4 sentences) so cohesive prose stays breathable instead of collapsing into a wall of text.
