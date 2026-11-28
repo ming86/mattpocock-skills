@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.43 - 2026-11-28
+
+- Add a dedicated `Macro Presentation Strategy (For Substantive Pieces)` layer to `cognitive-clarity-editor` covering premise reframing and narrative arcs (BLUF vs. SCQA/problem-first), multi-resolution layering and strategic omission, progressive disclosure with running examples and contrasting cases, anticipated objections and decision convergence, and spatial/cross-modal fit (with short-chat skip guard and deduplication).
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.43`.
+
 ## 0.2.42 - 2026-11-28
 
 - Add two lightweight anchoring cues to `cognitive-clarity-editor`: briefly acknowledging what works or the other person's intent before critiques (without empty flattery) to lower defensiveness, and considering multi-resolution layering (bottom-line summary, bold lead-ins, prioritized next steps) for long analyses or reviews.
