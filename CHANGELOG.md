@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.46 - 2026-11-28
+
+- Extend `No Silent Escalation` in `cognitive-clarity-editor` to guard against rhetorical inflation (no hype, inflated/dramatic phrasing, or overstated reach) alongside certainty, ownership, and social authority.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.46`.
+
 ## 0.2.45 - 2026-11-28
 
 - Broaden `Directness vs. Buffering` in `cognitive-clarity-editor` to preserve calibrated scope and uncertainty bounds whenever claims are partial, provisional, or high-stakes (never overstating reach or confidence) rather than limiting that guard to legal/compliance/risk domains.
