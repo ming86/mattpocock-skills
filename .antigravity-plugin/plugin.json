@@ -2,7 +2,7 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "workflow-skills",
   "displayName": "Workflow Skills",
-  "version": "0.2.40",
+  "version": "0.2.41",
   "description": "Engineering workflow and general-purpose reasoning, execution, writing, explanation, and skill-creation capabilities for coding agents.",
   "skills": [
     "./plugins/workflow-skills/skills"

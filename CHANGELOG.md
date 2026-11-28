@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.41 - 2026-11-28
+
+- Extend `cognitive-clarity-editor` `Output & Collaboration` guidance to flag sensitivity and over-disclosure risks (alongside tone and length tradeoffs) on both scratch drafts and draft edits.
+- Synchronize all plugin and marketplace manifests and `README.md` at version `0.2.41`.
+
 ## 0.2.40 - 2026-11-28
 
 - Unify `cognitive-clarity-editor` guardrails around `No Silent Escalation` (preventing certainty, self-commitment, and imperative task-assignment inflation across both draft edits and scratch drafting from background notes) and extend `Output & Collaboration` to flag tone/length tradeoffs or lighter strategies on external/cross-team scratch drafts.
